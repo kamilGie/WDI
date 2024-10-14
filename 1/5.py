@@ -1,9 +1,11 @@
+# Proszę napisać program obliczający taki pierwiastek korzystając z zależności 1 + 3 + 5 + ... = n^2
+
 n = int(input("wprowadz liczbe do spierwiastkowania calkowicie"))
 
-x = 0
-a = 0
-while x + (a + 1) * 2 - 1 <= n:
-    a += 1
-    x += a * 2 - 1
+suma = 0
+licznik = 0
+while suma + (licznik + 1) * 2 - 1 <= n:
+    licznik += 1
+    suma += licznik * 2 - 1
 
-print(int(a))
+print(int(licznik))
