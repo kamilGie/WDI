@@ -5,7 +5,14 @@
 # ====================================================================================================>
 
 
-def Zadanie_5(): ...
+def Zadanie_5(n):
+    suma = 0
+    licznik = 0
+    while suma + (licznik + 1) * 2 - 1 <= n:
+        licznik += 1
+        suma += licznik * 2 - 1
+
+    print(int(licznik))
 
 
-Zadanie_5()
+Zadanie_5(2)
