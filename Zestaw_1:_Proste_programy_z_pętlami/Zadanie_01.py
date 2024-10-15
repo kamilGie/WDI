@@ -5,11 +5,7 @@
 # ====================================================================================================>
 
 
-def Zadanie_1(n):
-    for a in range(1, n):
-        for b in range(1, n):
-            for c in range(1, n):
-                print(a, b, c)
+def Zadanie_1(): ...
 
 
-Zadanie_1(5)
+Zadanie_1()

@@ -1,14 +1,10 @@
 # ====================================================================================================>
-# Zadanie 2
-# Proszę napisać program wypisujący elementy ciągu Fibonacciego mniejsze od miliona.
+# Zadanie 6
+# Proszę napisać program wyznaczający pierwiastek kwadratowy ze wzoru Newtona.
 # ====================================================================================================>
 
 
-def Zadanie_2():
-    b = a = 1
-    while a < 1e6:
-        print(a)
-        b, a = a, a + b
+def Zadanie_6(): ...
 
 
-Zadanie_2()
+Zadanie_6()

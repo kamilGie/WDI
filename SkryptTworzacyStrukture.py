@@ -33,7 +33,7 @@ def StworzPlikPython(zadanie, nrZadania, nazwaZestawu):
         f"Zadanie_{nrZadania}()\n"
     )
 
-    sciezka_pliku = os.path.join(nazwaZestawu, f"Zadanie_{nrZadania}.py")
+    sciezka_pliku = os.path.join(nazwaZestawu, f"Zadanie_{nrZadania:02}.py")
     try:
         with open(sciezka_pliku, "w") as plik:
             plik.write(zawartoscPliku)
