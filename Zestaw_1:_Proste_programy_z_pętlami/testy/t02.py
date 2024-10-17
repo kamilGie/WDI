@@ -9,8 +9,9 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.abspath(os.path.join(current_dir, os.pardir)))
 Zadanie_2 = importlib.import_module("02").Zadanie_2
 
-# testy pisze sie kopiujac jedna z tych funkcji i zmieniajac nazwe. trzeba zostawic przedrostek test_<tutaj dowolnosci> 
+# testy pisze sie kopiujac jedna z tych funkcji i zmieniajac nazwe. trzeba zostawic przedrostek test_<tutaj dowolnosci>
 # jesli funkcja przyjmuje wartosci trzeba dodac do wywolan aby testy dzialaly
+# test
 
 
 class Test_2(unittest.TestCase):
