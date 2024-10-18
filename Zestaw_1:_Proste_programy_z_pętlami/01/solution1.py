@@ -5,4 +5,9 @@
 # ====================================================================================================>
 
 
-
+# Patryk Pietryka
+def Zadanie_1(n):
+    for a in range(1, n):
+        for b in range(1, n):
+            for c in range(1, n):
+                print(a, b, c)
