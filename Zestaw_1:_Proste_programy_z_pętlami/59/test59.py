@@ -1,6 +1,6 @@
 import unittest
-import sys
 import io
+from contextlib import redirect_stdout
 
 from exercise59 import Zadanie_59
 
@@ -13,23 +13,19 @@ TESTY = False  # po napisaniu testow zmienic na true
 class Test59(unittest.TestCase):
 
     def test_wypisywania(self):
-        # te komendy przejmuja wyniki printa
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
+        f = io.StringIO()
+        with redirect_stdout(f):
+            Zadanie_59()
+        wynik = f.getvalue().strip()
 
-        Zadanie_59()
-
-        # przestajemy przejmowac wyniki printa i zwracamy jakie zmienne wypisalo po odpaleniu funkcji
-        sys.stdout = sys.__stdout__
-        wynik = captured_output.getvalue().strip()
-
-        prawdziwyWynik = ""
-        self.assertEqual(wynik, prawdziwyWynik)
+        oczekiwany_wynik = ""
+        self.assertEqual(wynik, oczekiwany_wynik)
 
     def test_zwracania(self):
         wynik = Zadanie_59()
-        prawdziwyWynik = None
-        self.assertEqual(wynik, prawdziwyWynik)
+
+        oczekiwany_wynik = None
+        self.assertEqual(wynik, oczekiwany_wynik)
 
 
 def odpalTesty():

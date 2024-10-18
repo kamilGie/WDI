@@ -2,7 +2,7 @@ import unittest
 import io
 from contextlib import redirect_stdout
 
-from exercise72 import Zadanie_72
+from exercise11 import Zadanie_11
 
 TESTY = False  # po napisaniu testow zmienic na true
 
@@ -10,19 +10,19 @@ TESTY = False  # po napisaniu testow zmienic na true
 # jesli funkcja przyjmuje wartosci trzeba dodac do wywolan aby testy dzialaly
 
 
-class Test72(unittest.TestCase):
+class Test11(unittest.TestCase):
 
     def test_wypisywania(self):
         f = io.StringIO()
         with redirect_stdout(f):
-            Zadanie_72()
+            Zadanie_11()
         wynik = f.getvalue().strip()
 
         oczekiwany_wynik = ""
         self.assertEqual(wynik, oczekiwany_wynik)
 
     def test_zwracania(self):
-        wynik = Zadanie_72()
+        wynik = Zadanie_11()
 
         oczekiwany_wynik = None
         self.assertEqual(wynik, oczekiwany_wynik)
@@ -30,5 +30,5 @@ class Test72(unittest.TestCase):
 
 def odpalTesty():
     assert TESTY, "Testy do tego zadania nie zostaly jeszcze napisane"
-    suite = unittest.TestLoader().loadTestsFromTestCase(Test72)
+    suite = unittest.TestLoader().loadTestsFromTestCase(Test11)
     unittest.TextTestRunner(verbosity=2).run(suite)

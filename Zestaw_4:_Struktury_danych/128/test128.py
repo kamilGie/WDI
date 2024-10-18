@@ -1,6 +1,6 @@
 import unittest
-import sys
 import io
+from contextlib import redirect_stdout
 
 from exercise128 import Zadanie_128
 
@@ -13,23 +13,19 @@ TESTY = False  # po napisaniu testow zmienic na true
 class Test128(unittest.TestCase):
 
     def test_wypisywania(self):
-        # te komendy przejmuja wyniki printa
-        captured_output = io.StringIO()
-        sys.stdout = captured_output
+        f = io.StringIO()
+        with redirect_stdout(f):
+            Zadanie_128()
+        wynik = f.getvalue().strip()
 
-        Zadanie_128()
-
-        # przestajemy przejmowac wyniki printa i zwracamy jakie zmienne wypisalo po odpaleniu funkcji
-        sys.stdout = sys.__stdout__
-        wynik = captured_output.getvalue().strip()
-
-        prawdziwyWynik = ""
-        self.assertEqual(wynik, prawdziwyWynik)
+        oczekiwany_wynik = ""
+        self.assertEqual(wynik, oczekiwany_wynik)
 
     def test_zwracania(self):
         wynik = Zadanie_128()
-        prawdziwyWynik = None
-        self.assertEqual(wynik, prawdziwyWynik)
+
+        oczekiwany_wynik = None
+        self.assertEqual(wynik, oczekiwany_wynik)
 
 
 def odpalTesty():
