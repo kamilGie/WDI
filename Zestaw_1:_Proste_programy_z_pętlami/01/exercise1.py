@@ -5,11 +5,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_1(): ...
+def Zadanie_1(n): ...
 
 
 if __name__ == "__main__":
     from test1 import odpalTesty
 
-    Zadanie_1()
-    # odpalTesty()
+    Zadanie_1(input())
+
+    odpalTesty()
