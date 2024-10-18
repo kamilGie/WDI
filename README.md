@@ -1,4 +1,6 @@
-## Lista rozwiązań do  zadań
+
+<details>
+  <summary><strong> Lista rozwiązań do  zadań</strong> </summary>
 
 <details>
   <summary><strong>Zestaw 1</strong> </summary>
@@ -279,7 +281,10 @@
 
 </details>
 
-## Lista testów do zadań
+</details>
+
+<details>
+  <summary><strong>  Lista testów do zadań </strong> </summary>
 
 <details>
   <summary><strong>Zestaw 1</strong> </summary>
@@ -382,7 +387,6 @@
   - [ ] Zadanie 89
   - [ ] Zadanie 90
   - [ ] Zadanie 91
-
 </details>
 
 <details>
@@ -416,7 +420,6 @@
   - [ ] Zadanie 117
   - [ ] Zadanie 118
   - [ ] Zadanie 119
-
 </details>
 
 <details>
@@ -435,7 +438,6 @@
   - [ ] Zadanie 129
   - [ ] Zadanie 130
   - [ ] Zadanie 131
-
 </details>
 
 <details>
@@ -482,7 +484,6 @@
   - [ ] Zadanie 170
   - [ ] Zadanie 171
   - [ ] Zadanie 172
-
 </details>
 
 <details>
@@ -530,7 +531,6 @@
   - [ ] Zadanie 211
   - [ ] Zadanie 212
   - [ ] Zadanie 213
-
 </details>
 
 <details>
@@ -545,7 +545,6 @@
   - [ ] Zadanie 220
   - [ ] Zadanie 221
   - [ ] Zadanie 222
-
 </details>
 
 <details>
@@ -557,5 +556,5 @@
   - [ ] Zadanie 226
   - [ ] Zadanie 227
   - [ ] Zadanie 228
-
+</details>
 </details>
