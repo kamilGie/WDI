@@ -5,11 +5,11 @@
 # ====================================================================================================>
 
 
-def Zadanie_4(): ...
+def Zadanie_4(n): ...
 
 
 if __name__ == "__main__":
     from test4 import odpalTesty
 
-    Zadanie_4()
+    print("yes") if Zadanie_4(1) else print("nie jest")
     # odpalTesty()

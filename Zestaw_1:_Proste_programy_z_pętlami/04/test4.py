@@ -1,30 +1,45 @@
 import unittest
-import io
-from contextlib import redirect_stdout
-
 from exercise4 import Zadanie_4
 
-TESTY = False  # po napisaniu testow zmienic na true
+TESTY = True  # po napisaniu testow zmienic na true
 
 
-# testy pisze sie kopiujac jedna z tych funkcji i zmieniajac nazwe. trzeba zostawic przedrostek test_<tutaj dowolnosci> 
+# testy pisze sie kopiujac jedna z tych funkcji i zmieniajac nazwe. trzeba zostawic przedrostek test_<tutaj dowolnosci>
 # jesli funkcja przyjmuje wartosci trzeba dodac do wywolan aby testy dzialaly
 class Test4(unittest.TestCase):
 
-    def test_wypisywania(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            Zadanie_4()
-        wynik = f.getvalue().strip()
+    def test_zwracania1(self):
+        self.assertTrue(Zadanie_4(1))
 
-        oczekiwany_wynik = ""
-        self.assertEqual(wynik, oczekiwany_wynik)
+    def test_zwracania9(self):
+        self.assertFalse(Zadanie_4(9))
 
-    def test_zwracania(self):
-        wynik = Zadanie_4()
+    def test_zwracania2(self):
+        self.assertTrue(Zadanie_4(2))
 
-        oczekiwany_wynik = None
-        self.assertEqual(wynik, oczekiwany_wynik)
+    def test_zwracania843(self):
+        self.assertTrue(Zadanie_4(843))
+
+    def test_zwracania377(self):
+        self.assertTrue(Zadanie_4(377))
+
+    def test_zwracania987(self):
+        self.assertTrue(Zadanie_4(987))
+
+    def test_zwracania26(self):
+        self.assertTrue(Zadanie_4(26))
+
+    def test_zwracania100(self):
+        self.assertFalse(Zadanie_4(100))
+
+    def test_zwracania2115(self):
+        self.assertFalse(Zadanie_4(2115))
+
+    def test_zwracania12345(self):
+        self.assertFalse(Zadanie_4(12345))
+
+    def test_zwracania5000(self):
+        self.assertFalse(Zadanie_4(5000))
 
 
 def odpalTesty():
