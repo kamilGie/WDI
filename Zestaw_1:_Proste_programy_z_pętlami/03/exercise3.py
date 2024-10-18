@@ -5,11 +5,11 @@
 # ====================================================================================================>
 
 
-def Zadanie_3(): ...
+def Zadanie_3(rok): ...
 
 
 if __name__ == "__main__":
     from test3 import odpalTesty
 
-    Zadanie_3()
+    Zadanie_3(2024)
     # odpalTesty()
