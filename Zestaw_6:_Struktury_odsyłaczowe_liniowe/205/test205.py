@@ -6,10 +6,9 @@ from exercise205 import Zadanie_205
 
 TESTY = False  # po napisaniu testow zmienic na true
 
+
 # testy pisze sie kopiujac jedna z tych funkcji i zmieniajac nazwe. trzeba zostawic przedrostek test_<tutaj dowolnosci> 
 # jesli funkcja przyjmuje wartosci trzeba dodac do wywolan aby testy dzialaly
-
-
 class Test205(unittest.TestCase):
 
     def test_wypisywania(self):
