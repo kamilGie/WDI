@@ -35,7 +35,7 @@ from exercise{nrZadania} import Zadanie_{nrZadania}
 TESTY = False  # po napisaniu testow zmienic na true
 
 
-# testy pisze sie kopiujac jedna z tych funkcji i zmieniajac nazwe. trzeba zostawic przedrostek test_<tutaj dowolnosci> 
+# testy pisze sie kopiujac jedna z tych funkcji i zmieniajac nazwe. trzeba zostawic przedrostek test_<tutaj dowolnosci>
 # jesli funkcja przyjmuje wartosci trzeba dodac do wywolan aby testy dzialaly
 class Test{nrZadania}(unittest.TestCase):
 
@@ -45,14 +45,14 @@ class Test{nrZadania}(unittest.TestCase):
             Zadanie_{nrZadania}()
         wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = ""
-        self.assertEqual(wynik, oczekiwany_wynik)
+        oczekiwany_wynik = [""]
+        self.assertIn(wynik, oczekiwany_wynik)
 
     def test_zwracania(self):
         wynik = Zadanie_{nrZadania}()
 
-        oczekiwany_wynik = None
-        self.assertEqual(wynik, oczekiwany_wynik)
+        oczekiwany_wynik = [None]
+        self.assertIn(wynik, oczekiwany_wynik)
 
 
 def odpalTesty():
@@ -80,7 +80,7 @@ def StworzFolderZadania(FolderZadania, nrZadania, Zadanie):
         f"{FolderZadania}/exercise{nrZadania}.py",
     )
     StworzPlikiPython(
-        wstep + "\n\n\n",
+        wstep,
         f"{FolderZadania}/solution{nrZadania}.py",
     )
     StworzPlikiPython(
