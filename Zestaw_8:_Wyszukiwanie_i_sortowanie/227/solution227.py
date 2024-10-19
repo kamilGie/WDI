@@ -4,6 +4,3 @@
 # wiającąistniejącyelementdoposortowanejlisty,anastępniezrealizowaćfunkcjęsortowaniaprzezwstawianie
 # (insertion sort).
 # ====================================================================================================>
-
-
-

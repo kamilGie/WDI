@@ -9,6 +9,3 @@
 # napisaćfunkcjˆe,któradladanejtablicyzwracanumerwie¿y,którawygrawyściglubzerojeżeliwyścigbędzie
 # nierozstrzygnięty. Można założyć, ¿e podczas wyścigu wieże nie spotkają się na jednym polu
 # ====================================================================================================>
-
-
-

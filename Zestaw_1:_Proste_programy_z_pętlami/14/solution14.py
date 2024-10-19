@@ -4,6 +4,3 @@
 # właściwychdrugiejliczby,naprzykład220i284.Proszęnapisaćprogramwyszukującyliczbyzaprzyjaźnione
 # mniejsze od miliona.
 # ====================================================================================================>
-
-
-

@@ -5,6 +5,3 @@
 # nej granicy nazywanej średnią arytmetyczno-geometryczną. Proszę napisać program wyznaczający średnią
 # arytmetyczno-geometryczną dwóch liczb naturalnych.
 # ====================================================================================================>
-
-
-

@@ -4,6 +4,3 @@
 # odpowiada na pytanie, czy w każdym wierszu tablicy występuje co najmniej jedna liczba złożona wyłącznie
 # z nieparzystych cyfr.
 # ====================================================================================================>
-
-
-

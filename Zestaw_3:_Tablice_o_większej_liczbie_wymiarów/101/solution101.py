@@ -4,6 +4,3 @@
 # tośćTruewprzypadku,gdywkażdymwierszuikażdejkolumniewystępujeconajmniejjedno0orazwartość
 # False w przeciwnym przypadku.
 # ====================================================================================================>
-
-
-

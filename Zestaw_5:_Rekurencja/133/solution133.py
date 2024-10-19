@@ -4,6 +4,3 @@
 # conajmniejdwucyfroweliczbypierwsze,powstałepoprzezwykreśleniezliczbypierwotnejconajmniejjednej
 # cyfry.
 # ====================================================================================================>
-
-
-

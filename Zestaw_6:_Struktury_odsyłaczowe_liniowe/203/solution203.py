@@ -5,6 +5,3 @@
 # drugiej.Dofunkcjinależyprzekazaćwskazanianaobielisty,funkcjapowinnazwrócićłącznąliczbęusuniętych
 # elementów.
 # ====================================================================================================>
-
-
-

@@ -2,6 +2,3 @@
 # Zadanie 145
 # Proszę zmodyfikować poprzedni program aby wypisywał znalezione n-ki.
 # ====================================================================================================>
-
-
-

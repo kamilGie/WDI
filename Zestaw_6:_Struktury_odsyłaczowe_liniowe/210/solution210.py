@@ -10,6 +10,3 @@
 # zawierającą elementy będące częścią wspólna zbiorów z1,z2,z3. Funkcja powinna zwrócić wskazanie do listy
 # wynikowej.
 # ====================================================================================================>
-
-
-

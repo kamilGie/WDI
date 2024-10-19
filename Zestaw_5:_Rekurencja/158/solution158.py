@@ -5,6 +5,3 @@
 # funkcję, która sprawdza, czy da się przejść z pola 0 do N-1 – jeśli się da, zwraca ilość skoków, jeśli się nie
 # da, zwraca -1.
 # ====================================================================================================>
-
-
-

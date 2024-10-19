@@ -3,6 +3,3 @@
 # Proszę napisać funkcję, która dla drzewa BST zwraca wysokość najwyższego poddrzewa
 # będącego listą.
 # ====================================================================================================>
-
-
-

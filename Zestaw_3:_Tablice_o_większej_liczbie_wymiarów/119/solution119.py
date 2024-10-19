@@ -5,6 +5,3 @@
 # fragment złożony z liczb o tej samej wartości. W przypadku kilku fragmentów o tej samej długości należy
 # zwrócić pozycję pierwszego z nich.
 # ====================================================================================================>
-
-
-

@@ -4,6 +4,3 @@
 # jej samej), na przykład 6 = 1+2+3. Proszę napisać program wyszukujący liczby doskonałe mniejsze od
 # miliona.
 # ====================================================================================================>
-
-
-

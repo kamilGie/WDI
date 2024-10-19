@@ -4,6 +4,3 @@
 # zwraca wiersz i kolumnę dowolnego elementu, dla którego iloraz sumy elementów w kolumnie w którym leży
 # element do sumy elementów wiersza w którym leży element jest największa.
 # ====================================================================================================>
-
-
-

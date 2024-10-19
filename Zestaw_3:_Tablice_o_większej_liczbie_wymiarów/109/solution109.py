@@ -5,6 +5,3 @@
 # podciągumożewynosić10elementów.DofunkcjinależyprzekazaćtablicęT,funkcjapowinnazwrócićsumę
 # maksymalnego podciągu.
 # ====================================================================================================>
-
-
-

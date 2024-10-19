@@ -5,6 +5,3 @@
 # mentówkażdyczynnikipierwszywystępujeconajwyżejraz.Naprzykładdlatablicyt=[2,23,33,35,7,4,6,7,5,11,13,22]
 # wynikiem jest wartość 5.
 # ====================================================================================================>
-
-
-

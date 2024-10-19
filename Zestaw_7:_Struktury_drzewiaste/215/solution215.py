@@ -5,6 +5,3 @@
 # 2. Funkcja, która usunie węzły powyżej n-tego poziomu.
 # 3. Funkcja, która usunie wszystkie aktualne liście drzewa.
 # ====================================================================================================>
-
-
-

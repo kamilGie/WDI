@@ -4,6 +4,3 @@
 # pułapki.Skoczekmusidotrzećzgórnegowierszaplanszydodolnego.Każdyruchskoczkamusigoprzybliżaćdo dolnego wiersza. Proszę napisać program, który zwraca długość najkrótszej bezpiecznej drogi skoczka z
 # wiersza górnego do wiersza dolnego.
 # ====================================================================================================>
-
-
-

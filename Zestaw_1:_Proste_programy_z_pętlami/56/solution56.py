@@ -6,6 +6,3 @@
 # przykładdlaliczby1202742516spośródobciętychliczbpierwszych:2,5,7,251,2027liczbąspełniającąwarunek
 # jest liczba 251.
 # ====================================================================================================>
-
-
-

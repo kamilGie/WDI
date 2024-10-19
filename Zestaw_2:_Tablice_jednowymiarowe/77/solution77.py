@@ -5,6 +5,3 @@
 # z liczb nieparzystych. Do funkcji należy przekazać tablicę, funkcja powinna zwrócić długość znalezionego
 # podciągu lub wartość 0 jeżeli taki podciąg nie istnieje.
 # ====================================================================================================>
-
-
-

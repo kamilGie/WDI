@@ -5,6 +5,3 @@
 # prawo kreska) pozwalające dekodować znak poprzez schodzenie w drzewie od korzenia do odpowiedniego
 # węzła. Następnie proszę napisać funkcję dekodującą napis złożony ze znaków kropek i kresek.
 # ====================================================================================================>
-
-
-

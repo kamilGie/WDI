@@ -3,6 +3,3 @@
 # Proszęnapisaćprogramwczytującyliczbęnaturalnąiodpowiadającynapytanie,czyliczba
 # ta zawiera cyfrę równą liczbie swoich cyfr.
 # ====================================================================================================>
-
-
-

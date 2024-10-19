@@ -5,6 +5,3 @@
 # założyć, że liczba podzielników pierwszych nie przekracza 20, zatem w pierwszym etapie funkcja powinna
 # wpisaćpodzielnikidotablicypomocniczej.Przykład:60→[2,3,5]→2+3+5+2∗3+2∗5+3∗5+2∗3∗5=71
 # ====================================================================================================>
-
-
-

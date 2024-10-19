@@ -2,6 +2,3 @@
 # Zadanie 96
 # Poprzednie zadanie z tablicą wypełnioną liczbami całkowitymi.
 # ====================================================================================================>
-
-
-

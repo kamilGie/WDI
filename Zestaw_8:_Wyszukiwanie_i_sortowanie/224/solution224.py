@@ -4,6 +4,3 @@
 # zamiastpodziałunadwazastosowanopodziałnatrzyczęści.Proszęocenićszybkośćdziałaniawyszukiwania
 # w porównaniu z klasycznym wyszukiwaniem połówkowym.
 # ====================================================================================================>
-
-
-

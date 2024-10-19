@@ -6,6 +6,3 @@
 # cję, która odpowiada na pytanie: czy żadne z dwa hetmany się nie szachują? Do funkcji należy przekazać
 # położenie hetmanów.
 # ====================================================================================================>
-
-
-

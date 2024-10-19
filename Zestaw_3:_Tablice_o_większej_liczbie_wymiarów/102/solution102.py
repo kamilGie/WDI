@@ -5,6 +5,3 @@
 # naturalnymi. Proszę napisać funkcję, która dla tablicy T zwraca ile elementów tablicy sąsiaduje wyłącznie z
 # przyjaciółkami
 # ====================================================================================================>
-
-
-

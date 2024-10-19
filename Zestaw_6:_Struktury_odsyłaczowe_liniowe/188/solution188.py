@@ -4,6 +4,3 @@
 # wartościach typu int, usuwającą wszystkie elementy, których wartość dzieli bez reszty wartość bezpośrednio
 # następujących po nich elementów.
 # ====================================================================================================>
-
-
-

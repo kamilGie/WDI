@@ -6,6 +6,3 @@
 # jednakowa. Na przykład: [2,3,5,7,15] → true, bo podzbiory {2,7} {3,5} {15} wymagają użycia 4 jedynek,
 # [5,7,15]→false, podział nie istnieje.
 # ====================================================================================================>
-
-
-

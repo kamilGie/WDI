@@ -3,6 +3,3 @@
 # Nieskończony iloczyn 0.5∗ 0.5+0.5∗ 0.5∗ 0.5+0.5∗ 0.5+0.5∗ 0.5 ∗... ma
 # wartość 2/π. Proszę napisać program korzystający z tej zależności i wyznaczający wartość π.
 # ====================================================================================================>
-
-
-

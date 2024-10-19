@@ -5,6 +5,3 @@
 # Długość każdego z kawałków nie może przekraczać 30. Na przykład dla ciągu 111011 jest to możliwe, a dla
 # ciągu 110100 nie jest możliwe.
 # ====================================================================================================>
-
-
-

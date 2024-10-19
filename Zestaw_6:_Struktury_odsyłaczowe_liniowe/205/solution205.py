@@ -5,6 +5,3 @@
 # należy przekazać wskaźniki na listę z danymi oraz wskaźniki na listy wynikowe. Funkcja powinna zwrócić
 # liczbę usuniętych elementów.
 # ====================================================================================================>
-
-
-

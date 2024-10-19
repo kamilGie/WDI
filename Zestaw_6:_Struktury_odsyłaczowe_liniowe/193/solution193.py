@@ -4,6 +4,3 @@
 # wającązlistyelementyonieunikalnymkluczu.Dofunkcjiprzekazujemywskazanienapierwszyelementlisty,
 # funkcja powinna zwrócić liczbę usuniętych elementów.
 # ====================================================================================================>
-
-
-

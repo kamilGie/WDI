@@ -5,6 +5,3 @@
 # liczba zaginęła ale wiadomo, że była to największa z możliwych takich liczb. Proszę napisać program, który
 # na podstawie zachowanej sumy wyznaczy pierwotną liczbę
 # ====================================================================================================>
-
-
-

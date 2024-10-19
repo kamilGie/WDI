@@ -5,6 +5,3 @@
 # ojednakowejsumieelementów,takabysumamocyobupodzbiorówwynosiłak.Dofunkcjinależyprzekazać
 # wyłącznie tablicę T oraz liczbę naturalną k, funkcja powinna zwrócić wartość typu bool.
 # ====================================================================================================>
-
-
-

@@ -4,6 +4,3 @@
 # wyrazów ciągu Fibonacciego. Wyznaczyć ten ilorazy dla różnych wartości dwóch początkowych wyrazów
 # ciągu.
 # ====================================================================================================>
-
-
-

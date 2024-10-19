@@ -6,6 +6,3 @@
 # zbudowaniewyrazuzpodzbioruliterzawartychws2ważącegotylecowyrazs1.Dodatkowofunkcjapowinna
 # wypisać znaleziony wyraz.
 # ====================================================================================================>
-
-
-

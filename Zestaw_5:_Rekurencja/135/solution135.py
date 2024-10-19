@@ -6,6 +6,3 @@
 # minimalny koszt przejścia króla. Do funkcji należy przekazać tablicę t oraz startową kolumnę k. Koszt
 # przebywania na polu startowym i ostatnim także wliczamy do kosztu przejścia.
 # ====================================================================================================>
-
-
-

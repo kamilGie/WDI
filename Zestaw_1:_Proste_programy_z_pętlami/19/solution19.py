@@ -5,6 +5,3 @@
 # Startujączdowolnejliczbynaturalnej>1ciągtenosiągawartość1.Proszęnapisaćprogram,któryznajdzie
 # wyraz początkowy z przedziału 2-10000 dla którego wartość 1 jest osiągalna po największej liczbie kroków.
 # ====================================================================================================>
-
-
-

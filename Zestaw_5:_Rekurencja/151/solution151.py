@@ -8,6 +8,3 @@
 # ma współrzędne w=0 i k=0. Proszę napisać funkcję sprawdzającą czy król może dostać się z pola w,k do
 # prawego dolnego narożnika.
 # ====================================================================================================>
-
-
-

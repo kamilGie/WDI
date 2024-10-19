@@ -6,6 +6,3 @@
 # zgodnych elementów jest większa od 33%. Do funkcji należy przekazać tablicę T1 i T2. Obie oryginalne
 # tablice powinny pozostać nie zmieniane.
 # ====================================================================================================>
-
-
-

@@ -6,6 +6,3 @@
 # gdy w tablicy nie ma takiego podciągu dłuższego niż 2 elementy, funkcja powinna zwrócić wartość 0. Można
 # założyć, że tablica wejściowa liczy więcej niż 2 elementy.
 # ====================================================================================================>
-
-
-

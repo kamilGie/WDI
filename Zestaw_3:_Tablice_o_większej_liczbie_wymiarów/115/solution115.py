@@ -6,6 +6,3 @@
 # sąsiednichkolumnachalboleżąwtejsamejkolumnieisąsiednichwierszach.Proszęnapisaćfunkcjęfour(T),
 # która zwraca ilość liczb sąsiadujących z 4 liczbami wspólno-czynnikowymi.
 # ====================================================================================================>
-
-
-

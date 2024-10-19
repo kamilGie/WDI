@@ -4,6 +4,3 @@
 # odpowiada na pytanie, czy w tablicy każdy wiersz zawiera co najmniej jedną liczbą złożoną wyłącznie z cyfr
 # będących liczbami pierwszymi?
 # ====================================================================================================>
-
-
-

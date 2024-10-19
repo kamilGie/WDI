@@ -10,6 +10,3 @@
 # cja powinna zwrócić wskazanie na przekształconą listę. Można założyć, że lista wejściowa liczy więcej niż 2
 # elementy.
 # ====================================================================================================>
-
-
-

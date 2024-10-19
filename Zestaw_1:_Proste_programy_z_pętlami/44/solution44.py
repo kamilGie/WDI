@@ -6,6 +6,3 @@
 # szymisą:2,3,5,7,11,131,151.Proszęnapisaćprogram,którywyliczailejestsuperpalindromówpierwszych
 # mniejszych od zadanej liczby n.
 # ====================================================================================================>
-
-
-

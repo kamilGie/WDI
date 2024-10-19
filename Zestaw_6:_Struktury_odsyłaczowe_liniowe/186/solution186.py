@@ -5,6 +5,3 @@
 # funkcję dodającą napis do zbioru. Do funkcji należy przekazać wskaźnik do listy oraz wstawiany napis,
 # funkcja powinna zwrócić wartość logiczną wskazującą, czy w wyniku operacji moc zbioru uległa zmianie.
 # ====================================================================================================>
-
-
-

@@ -5,6 +5,3 @@
 # co najmniej 3 elementy. Do funkcji należy przekazać tablicę. Funkcja powinna zwrócić informacje czy udało
 # się znaleźć taki ciąg oraz długość tego ciągu.
 # ====================================================================================================>
-
-
-

@@ -3,6 +3,3 @@
 # Proszęnapisaćprogramwczytującyliczbęnaturalnąiodpowiadającynapytanie,czyliczba
 # ta zakończona jest unikalną cyfrą.
 # ====================================================================================================>
-
-
-

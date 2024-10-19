@@ -6,6 +6,3 @@
 # tablicy T1 do T2, tak aby liczby w tablicy T2 były uporządkowane rosnąco. Pozostałe elementy tablicy T2
 # powinny zawierać zera.
 # ====================================================================================================>
-
-
-

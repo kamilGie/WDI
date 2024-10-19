@@ -7,6 +7,3 @@
 # i wypisująca wszystkie poprawne sumy, które są liczbami pierwszymi. Do funkcji należy przekazać dwie
 # tablice, funkcja powinna zwrócić liczbę znalezionych i wypisanych sum.
 # ====================================================================================================>
-
-
-

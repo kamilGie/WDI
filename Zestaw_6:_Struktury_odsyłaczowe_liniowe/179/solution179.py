@@ -4,6 +4,3 @@
 # ostatniej cyfry pola val. W drugim kroku powstałe listy należy połączyć w jedną listę odsyłaczową, która
 # jest posortowana niemalejąco według ostatniej cyfry pola val.
 # ====================================================================================================>
-
-
-

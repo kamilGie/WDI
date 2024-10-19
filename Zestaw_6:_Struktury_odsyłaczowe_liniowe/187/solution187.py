@@ -4,6 +4,3 @@
 # wartościachtypuint,usuwającąwszystkieelementy,którychwartośćjestmniejszaodwartościbezpośrednio
 # poprzedzających je elementów.
 # ====================================================================================================>
-
-
-

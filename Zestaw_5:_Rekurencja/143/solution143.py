@@ -2,6 +2,3 @@
 # Zadanie 143
 # Rekurencyjne obliczanie wyznacznika z macierzy (treść oczywista)
 # ====================================================================================================>
-
-
-

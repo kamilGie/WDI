@@ -4,6 +4,3 @@
 # jącalicznik,m-liczbanaturalnaoznaczającamianownik.Proszęnapisaćpodstawoweoperacjenaułamkach,
 # m.in. dodawanie, odejmowanie, mnożenie, dzielenie, potęgowanie, skracanie, wypisywanie i wczytywanie.
 # ====================================================================================================>
-
-
-

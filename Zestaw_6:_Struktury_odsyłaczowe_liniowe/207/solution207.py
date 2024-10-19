@@ -8,6 +8,3 @@
 # udało się wstawić napis do listy. Po wstawieniu elementu wskaźnik do listy powinien wskazywać na nowo
 # wstawiony element.
 # ====================================================================================================>
-
-
-

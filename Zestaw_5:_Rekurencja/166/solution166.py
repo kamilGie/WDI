@@ -5,6 +5,3 @@
 # rzenie to jest jednoznaczne lub stwierdza brak możliwości jednoznacznego odtworzenia napisu. Na przykład
 # dla zbiorów (1) ab,cde,cfed,fab (2) abc,abc,def,fed odtworzony napis to: abcdefabcfed
 # ====================================================================================================>
-
-
-

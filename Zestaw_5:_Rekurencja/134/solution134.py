@@ -5,6 +5,3 @@
 # naturalne. Proszę napisać funkcję, która sprawdza czy można elementy tablicy podzielić na 3 podzbiory o
 # równychwagach.Dofunkcjinależyprzekazaćwyłącznietablicę,funkcjapowinnazwrócićwartośćtypuBool.
 # ====================================================================================================>
-
-
-

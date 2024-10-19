@@ -7,6 +7,3 @@
 # tego kwadratu nie ma żadnych innych punktów. Do funkcji należy przekazać strukturę opisującą położenie
 # punktów.
 # ====================================================================================================>
-
-
-

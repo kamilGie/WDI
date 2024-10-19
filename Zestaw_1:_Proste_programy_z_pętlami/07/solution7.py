@@ -3,6 +3,3 @@
 # ProszęzmodyfikowaćwzórNewtonaabyprogramzpoprzedniegozadaniaobliczałpierwiastek
 # stopnia 3.
 # ====================================================================================================>
-
-
-

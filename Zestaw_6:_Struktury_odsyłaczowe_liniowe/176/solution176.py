@@ -6,6 +6,3 @@
 # • zwracającą wartość elementu o indeksie n,
 # • podstawiającą wartość value pod indeks n.
 # ====================================================================================================>
-
-
-

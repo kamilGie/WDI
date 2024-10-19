@@ -5,6 +5,3 @@
 # jeden element największy (liczba elementów najmniejszych oznacza liczbę takich elementów o tej samej
 # wartości).
 # ====================================================================================================>
-
-
-

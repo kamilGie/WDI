@@ -5,6 +5,3 @@
 # narożnych wynosi k. Do funkcji należy przekazać tablicę i wartość k. Funkcja powinna zwrócić informacje
 # czy udało się znaleźć kwadrat oraz współrzędne (wiersz, kolumna) środka kwadratu.
 # ====================================================================================================>
-
-
-

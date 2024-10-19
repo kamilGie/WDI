@@ -3,6 +3,3 @@
 # Proszę znaleźć najmniejszą liczbę pierwszą, której suma cyfr wynosi 101, a cyfry są w
 # porządku nierosnącym
 # ====================================================================================================>
-
-
-

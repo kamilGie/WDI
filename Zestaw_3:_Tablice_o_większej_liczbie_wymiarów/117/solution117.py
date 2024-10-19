@@ -5,6 +5,3 @@
 # poziomowkierunkurosnącymlubmalejącym.Proszęnapisaćfunkcje,któradlazadanejtablicyodszukaten
 # fragment i zwróci jego długość.
 # ====================================================================================================>
-
-
-

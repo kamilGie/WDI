@@ -4,6 +4,3 @@
 # nającą maksymalny element z listy, a następnie zrealizować funkcję sortowania przez wybieranie (selection
 # sort)
 # ====================================================================================================>
-
-
-

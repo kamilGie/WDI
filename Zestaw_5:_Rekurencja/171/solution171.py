@@ -9,6 +9,3 @@
 # - Usunąć rekurencję zastępując ją stosem,
 # - Zaimplementować algorytm bez użycia stosu ani rekurencji (Wikipedia).
 # ====================================================================================================>
-
-
-

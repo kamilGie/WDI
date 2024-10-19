@@ -2,6 +2,3 @@
 # Zadanie 142
 # Poprzednie zadanie. Program powinien wypisywać wybrane odważniki.
 # ====================================================================================================>
-
-
-

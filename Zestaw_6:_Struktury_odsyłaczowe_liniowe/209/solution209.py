@@ -10,6 +10,3 @@
 # nia listę elementami, tak aby ponownie zawierała kolejne wyrazy ciągu arytmetycznego. Funkcja powinna
 # zwrócić liczbę wstawionych elementów. Można założyć, że lista wejściowa liczy więcej niż 2 elementy.
 # ====================================================================================================>
-
-
-

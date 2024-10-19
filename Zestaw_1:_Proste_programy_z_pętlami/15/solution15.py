@@ -3,6 +3,3 @@
 # Proszę napisać program wyznaczający największy wspólny dzielnik 3 zadanych liczb natu-
 # ralnych.
 # ====================================================================================================>
-
-
-

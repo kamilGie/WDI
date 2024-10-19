@@ -5,6 +5,3 @@
 # elementy nie leżały w tej samej kolumnie ani wierszu. Do funkcji należy przekazać wyłącznie tablicę oraz
 # wartość sumy, funkcja powinna zwrócić wartość typu bool.
 # ====================================================================================================>
-
-
-

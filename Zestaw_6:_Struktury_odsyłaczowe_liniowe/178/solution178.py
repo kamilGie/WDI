@@ -3,6 +3,3 @@
 # Proszęnapisaćfunkcję,któradlapodanejlistyodsyłaczowejodwracakolejnośćjejelemen-
 # tów.
 # ====================================================================================================>
-
-
-

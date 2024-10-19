@@ -5,6 +5,3 @@
 # najesttablicaT[N]zawierającanapisy.Proszęnapisaćfunkcjęmulti(T),którazwracadługośćnajdłuższego
 # napisu wielokrotnego występującego w tablicy T lub wartość 0, jeżeli takiego napisu nie ma w tablicy.
 # ====================================================================================================>
-
-
-

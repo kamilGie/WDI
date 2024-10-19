@@ -5,6 +5,3 @@
 # naturalne. Proszę napisać funkcję przepisującą wszystkie liczby z tablicy T1 do T2, tak aby liczby w tablicy
 # T2 były uporządkowane niemalejąco.
 # ====================================================================================================>
-
-
-

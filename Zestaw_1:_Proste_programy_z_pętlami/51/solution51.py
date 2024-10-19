@@ -6,6 +6,3 @@
 # 12375,17523,75123,17253, itd. Proszę napisać funkcję która wyznaczy ile liczb pierwszych można zbudować
 # z dwóch zadanych liczb.
 # ====================================================================================================>
-
-
-

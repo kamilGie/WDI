@@ -7,6 +7,3 @@
 # należy przekazać dokładnie 3 parametry: tablicę t, promień r, oraz ograniczenie k, funkcja powinna zwrócić
 # wartość typu bool.
 # ====================================================================================================>
-
-
-

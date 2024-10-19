@@ -7,6 +7,3 @@
 # Proszę napisać funkcję, która zwraca wartość logiczną True, jeśli danej tablicy można znaleźć 13 nienacho-
 # dzących na siebie kwadratów, których suma pól jest równa 2012 i False w przeciwnym przypadku.
 # ====================================================================================================>
-
-
-

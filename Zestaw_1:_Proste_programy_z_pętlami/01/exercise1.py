@@ -3,7 +3,7 @@
 # Proszę napisać program poszukujący trójkątów Pitagorejskich w których długość przekątnej
 # jest mniejsza od liczby N wprowadzonej z klawiatury.
 # ====================================================================================================>
-# wypisz w formie print(katA,katB,katC)
+# print(katA,katB,katC)
 
 
 def Zadanie_1(n): ...

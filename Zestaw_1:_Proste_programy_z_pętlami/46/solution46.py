@@ -7,6 +7,3 @@
 # kwadratową”. Proszę napisać program, który znajduje K-tą liczbę w zadanym przedziale [L, U ], która jest
 # jednocześnie jedno-kwadratowa i pierwsza.
 # ====================================================================================================>
-
-
-

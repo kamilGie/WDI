@@ -4,6 +4,3 @@
 # tablica T[N][N] wypełniona liczbami naturalnymi. Proszę napisać funkcję, która zeruje elementy nie posia-
 # dające liczby komplementarnej.
 # ====================================================================================================>
-
-
-

@@ -4,6 +4,3 @@
 # grupie N przypadkowo spotkanych osób, co najmniej dwie urodziły się tego samego dnia roku. Wyznaczyć
 # wartości prawdopodobieństwa dla N z zakresu 20-40.
 # ====================================================================================================>
-
-
-

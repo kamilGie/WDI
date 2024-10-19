@@ -11,6 +11,3 @@
 # Dana jest tablica T[N] zawierająca N liczb naturalnych. Proszę napisać funkcję, która zwraca długość naj-
 # dłuższego podciągu (niekoniecznie spójnego) złożonego z liczb 4-zgodnych.
 # ====================================================================================================>
-
-
-

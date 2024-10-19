@@ -4,6 +4,3 @@
 # zwraca liczbę par elementów, o określonym iloczynie, takich że elementy są odległe o jeden ruch skoczka
 # szachowego.
 # ====================================================================================================>
-
-
-

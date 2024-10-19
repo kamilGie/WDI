@@ -4,6 +4,3 @@
 # skoczyć z pola o indeksie k o n pól w prawo jeżeli wartość n jest czynnikiem pierwszym liczby T[k]. Napisać
 # funkcję sprawdzającą czy jest możliwe przejście z pierwszego pola tablicy na ostatnie pole.
 # ====================================================================================================>
-
-
-

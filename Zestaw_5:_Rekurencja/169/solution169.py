@@ -6,6 +6,3 @@
 # sąsiednich kolumnach albo leżą w tej samej kolumnie i sąsiednich wierszach. Proszę napisać funkcję four(T),
 # która zwraca ilość liczb sąsiadujących z 4 liczbami wspólno-czynnikowymi.
 # ====================================================================================================>
-
-
-

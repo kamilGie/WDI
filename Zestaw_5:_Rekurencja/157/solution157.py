@@ -4,6 +4,3 @@
 # wartościamitypufloat.Proszęnapisaćfunkcję,którazwrócinajmniejsząodległośćmiędzyśrodkamiciężkości
 # 2 niepustych podzbiorów tego zbioru.
 # ====================================================================================================>
-
-
-

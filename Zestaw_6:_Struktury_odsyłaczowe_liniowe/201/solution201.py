@@ -4,6 +4,3 @@
 # funkcji należy przekazać wskazania na pierwsze elementy obu list, funkcja powinna zwrócić wskazanie do
 # scalonej listy. - funkcja iteracyjna, - funkcja rekurencyjna.
 # ====================================================================================================>
-
-
-

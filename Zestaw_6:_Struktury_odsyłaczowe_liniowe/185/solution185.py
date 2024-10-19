@@ -5,6 +5,3 @@
 # usunąć z listy. Jeżeli elementu o zadanym kluczu brak jest w liście należy element o takim kluczu wstawić
 # do listy.
 # ====================================================================================================>
-
-
-

@@ -6,6 +6,3 @@
 # tycznego o ujemnej różnicy, przy założeniu, że kolejnymi wyrazami ciągu są elementy tablicy o kolejnych
 # indeksach.
 # ====================================================================================================>
-
-
-

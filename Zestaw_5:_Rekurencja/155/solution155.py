@@ -6,6 +6,3 @@
 # możliwe przejście z pola o indeksie 0 na pole o indeksie N-1. Funkcja powinna zwrócić liczbę wykonanych
 # skoków lub wartość -1 jeżeli powyższe przejście nie jest możliwe.
 # ====================================================================================================>
-
-
-

@@ -5,6 +5,3 @@
 # mianyreprezentowanesąprzezwyżejopisanelisty.Procedurapowinnazwracaćwskaźnikdonowoutworzonej
 # listy reprezentującej wielomian wynikowy. Listy wejściowe powinny pozostać niezmienione.
 # ====================================================================================================>
-
-
-

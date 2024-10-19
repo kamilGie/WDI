@@ -10,6 +10,3 @@
 # 7. Funkcja, która zwróci liczbę węzłów mających jednego potomka.
 # Każdą funkcję proszę zrealizować jako funkcję rekurencyjną, a następnie jako funkcję bez użycia rekurencji.
 # ====================================================================================================>
-
-
-

@@ -7,6 +7,3 @@
 # kolejne wyrazy ciągu arytmetycznego. Funkcja powinna zwrócić liczbę wstawionych elementów. Komentarz:
 # Można założyć, że lista wejściowa liczy więcej niż 2 elementy
 # ====================================================================================================>
-
-
-

@@ -4,6 +4,3 @@
 # by,im-częśćurojonaliczby.Proszęnapisaćpodstawoweoperacjenaliczbachzespolonych,m.in.dodawanie,
 # odejmowanie, mnożenie, dzielenie, potęgowanie, wypisywanie i wczytywanie.
 # ====================================================================================================>
-
-
-

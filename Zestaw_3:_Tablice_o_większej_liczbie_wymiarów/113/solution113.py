@@ -7,6 +7,3 @@
 # pomiędzy znalezionymi wierszami. Można założyć, że żadne dwa wiersze nie zawierają identycznego ciągu
 # cyfr.
 # ====================================================================================================>
-
-
-

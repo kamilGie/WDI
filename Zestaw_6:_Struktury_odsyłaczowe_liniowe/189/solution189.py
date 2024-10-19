@@ -4,6 +4,3 @@
 # jednokierunkowej,usuwazniejwszystkieelementy,wktórychwartośćkluczawzapisietrójkowymmawiększą
 # ilość jedynek niż dwójek.
 # ====================================================================================================>
-
-
-

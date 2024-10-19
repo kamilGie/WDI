@@ -8,6 +8,3 @@
 # dodatniej liczby S istnieje co najwyżej jedna taka wartość X. Jeżeli nie ma takiego X program powinien
 # wypisać -1.
 # ====================================================================================================>
-
-
-

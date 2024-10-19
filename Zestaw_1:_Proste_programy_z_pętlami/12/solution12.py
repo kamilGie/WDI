@@ -2,6 +2,3 @@
 # Zadanie 12
 # Proszę napisać program wypisujący rozkład liczby na czynniki pierwsze.
 # ====================================================================================================>
-
-
-

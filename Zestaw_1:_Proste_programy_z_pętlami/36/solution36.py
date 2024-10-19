@@ -2,6 +2,3 @@
 # Zadanie 36
 # Proszę napisać program wyliczający pierwiastek równania xx =2020 metodą stycznych.
 # ====================================================================================================>
-
-
-

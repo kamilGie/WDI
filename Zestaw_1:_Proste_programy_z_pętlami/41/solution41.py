@@ -4,6 +4,3 @@
 # działać dla N rzędu 10100. Komentarz: Rozwiązanie tego zadania w języku Python jest proste, trochę więk-
 # szym wyzwaniem jest rozwiązanie w języku C/C++
 # ====================================================================================================>
-
-
-

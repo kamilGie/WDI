@@ -5,6 +5,3 @@
 # występujące w obu listach. Do funkcji należy przekazać wskazania na obie listy, funkcja powinna zwrócić
 # łączną liczbę usuniętych elementów.
 # ====================================================================================================>
-
-
-

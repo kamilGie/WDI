@@ -5,6 +5,3 @@
 # równasumieindeksówtychelementów.Dofunkcjinależyprzekazaćtablicę,funkcjapowinnazwrócićdługość
 # znalezionego podciągu lub wartość 0 jeżeli taki podciąg nie istnieje.
 # ====================================================================================================>
-
-
-

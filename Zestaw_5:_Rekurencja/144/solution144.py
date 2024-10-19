@@ -3,6 +3,3 @@
 # Dana jest tablica T[N]. Proszę napisać program zliczający liczbę “enek” o określonym
 # iloczynie.
 # ====================================================================================================>
-
-
-

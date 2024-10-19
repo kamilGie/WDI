@@ -6,6 +6,3 @@
 # (2) pomiędzy dwoma kolejnymi elementami trójki może być co najwyżej jedna przerwa.
 # Funkcja powinna zwrócić liczbę znalezionych trójek.
 # ====================================================================================================>
-
-
-

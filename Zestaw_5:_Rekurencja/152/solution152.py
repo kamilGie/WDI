@@ -3,6 +3,3 @@
 # Zadanie jak powyżej. Funkcja sprawdzająca czy król może dostać się z pola w,k do które-
 # gokolwiek z narożników.
 # ====================================================================================================>
-
-
-

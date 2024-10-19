@@ -4,6 +4,3 @@
 # Proszę napisać funkcję, która usuwa z listy wejściowej najdłuższą podlistę rosnącą. Warunkiem usunięcia
 # jest istnienie w liście dokładnie jednej najdłuższej podlisty rosnącej.
 # ====================================================================================================>
-
-
-
