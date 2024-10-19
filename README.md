@@ -6,11 +6,11 @@
   <summary><strong>Zestaw 1</strong> </summary>
 
   - [x] Zadanie 1
-  - [ ] Zadanie 2
-  - [ ] Zadanie 3
-  - [ ] Zadanie 4
-  - [ ] Zadanie 5
-  - [ ] Zadanie 6
+  - [x] Zadanie 2
+  - [x] Zadanie 3
+  - [x] Zadanie 4
+  - [x] Zadanie 5
+  - [x] Zadanie 6
   - [ ] Zadanie 7
   - [ ] Zadanie 8
   - [ ] Zadanie 9
@@ -290,11 +290,11 @@
   <summary><strong>Zestaw 1</strong> </summary>
 
   - [x] Zadanie 1
-  - [ ] Zadanie 2
-  - [ ] Zadanie 3
-  - [ ] Zadanie 4
-  - [ ] Zadanie 5
-  - [ ] Zadanie 6
+  - [x] Zadanie 2
+  - [x] Zadanie 3
+  - [x] Zadanie 4
+  - [x] Zadanie 5
+  - [x] Zadanie 6
   - [ ] Zadanie 7
   - [ ] Zadanie 8
   - [ ] Zadanie 9
