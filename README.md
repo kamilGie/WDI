@@ -1,6 +1,6 @@
-# Zbiór Rozwiązań ,Szablonów startowych i  Testów do WDI na AGH
+# Zbiór Rozwiązań, Szablonów Startowych i Testów do WDI na AGH
 
-### Używanie Projektu
+### 🔧 Używanie Projektu
 
 Każdy folder z zadaniem składa się z trzech kluczowych plików:
 
@@ -8,17 +8,35 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 2. `solution.py` – plik z gotowym rozwiązaniem zadania.
 3. `test.py` – plik zawierający testy jednostkowe, które sprawdzają poprawność funkcji napisanych w pliku `exercise.py`.
 
-### Jak testować swoje rozwiązania?
+### 🧪 Jak testować swoje rozwiązania?
 
-Aby przetestować swoje rozwiązanie:
-
-1. Otwórz plik `exercise.py` w folderze zadania i wypełni je.
-2. Odkomentuj funkcję `odpaltesty()`, która automatycznie zaimportuje testy z pliku `testy.py`.
+1. Otwórz plik `exercise.py` w folderze zadania i wypełnij rozwiazaniem zadania.
+2. Odkomentuj funkcję `odpaltesty()`.
 3. Uruchom plik `exercise.py`, a funkcja `odpaltesty()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
 
+# 🗿 Jak pomóc?
+
+Preferowana forma to **fork** repozytorium i:
+
+- ✏️ Wklejenie swojego rozwiązania do pliku `solution.py`.
+- 🔍 Dodanie kilku testów do pliku `test.py`.
+- 🛠️ Poprawienie treści zadania, jeśli jest niejasna lub brakuje np. znaków potęgowania.
+
+### 🎯 Jeśli masz więcej chęci, można przygotować całe zadanie:
+
+- 🗒️ Dodaj zmienne do pliku `exercise.py`, jeśli są potrzebne.
+- 🧪 Dodaj testy (instrukcja jak je pisać znajduje się w pliku `testy.py`).
+- 📥 Umieść poprawne rozwiązanie w pliku `solution.py`.
+
+### 🐛 Zgłaszanie błędów
+
+Błędy w rozwiązaniach, testach lub treściach zgłasza sie w  zakładce **Issues** (2. opcja od góry) 🚀.
+
+
+***
 <details>
 
-  <summary><strong> Lista rozwiązań do  zadań</strong> </summary>
+  <summary><strong>Lista rozwiązań do  zadań</strong> </summary>
 
 <details>
   <summary><strong>Zestaw 1</strong> </summary>
@@ -298,6 +316,3 @@ Aby przetestować swoje rozwiązanie:
   - [ ] Zadanie 228
 </details>
 </details>
-
-# Jak pomóc   
-https://youtu.be/HqwnHbs-QUQ
