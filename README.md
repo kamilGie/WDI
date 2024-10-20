@@ -33,7 +33,7 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 
 ### 🐛 Zgłaszanie błędów
 
-- Błędy w rozwiązaniach, testach lub treściach  mozna zgłaszać <a href="https://github.com/kamilGie/WDI/issueshttps://github.com/kamilgie/wdi/issues/new?labels=bug"> ****tutaj**** </a>
+- Błędy w rozwiązaniach, testach lub treściach  mozna zgłaszać <a href="https://github.com/kamilgie/wdi/issues/new?labels=bug"> ****tutaj**** </a>
 ### 🗿 Najwięksi współtwórcy:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://github.com/kamilGie/WDI/graphs/contributors">
