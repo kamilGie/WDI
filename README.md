@@ -5,7 +5,7 @@
 Każdy folder z zadaniem składa się z trzech kluczowych plików:
 
 1. `exercise.py` – plik zawierający szablon do wypełnienia własnym rozwiązaniem.
-2. `solution.py` – plik z gotowym rozwiązaniem zadania, który można używać jako referencję.
+2. `solution.py` – plik z gotowym rozwiązaniem zadania.
 3. `test.py` – plik zawierający testy jednostkowe, które sprawdzają poprawność funkcji napisanych w pliku `exercise.py`.
 
 ### Jak testować swoje rozwiązania?
