@@ -28,7 +28,7 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 
 ### 🎯 Jeśli masz więcej chęci, można przygotować całe zadanie:
 - 🗒️ Dodaj zmienne do pliku `exercise.py`, jeśli są potrzebne.
-- 🧪 Dodaj testy (instrukcja jak je pisać znajduje się w pliku `testy.py`).
+- 🧪 Napisz testy (instrukcja jak je pisać znajduje się w pliku `testy.py`.
 - 📥 Umieść poprawne rozwiązanie w pliku `solution.py`.
 
 ### 🐛 Zgłaszanie błędów
