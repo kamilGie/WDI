@@ -9,7 +9,7 @@ def Zadanie_66(): ...
 
 
 if __name__ == "__main__":
-    from testy66 import StworzTesty
+    from testy66 import Testy66
 
     Zadanie_66()
-    # StworzTesty([Zadanie_66])
+    # Testy66.StworzTesty([Zadanie_66])

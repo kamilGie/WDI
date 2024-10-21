@@ -2,36 +2,11 @@ import os
 import inspect
 import io
 from contextlib import redirect_stdout
-from TemplateGenerator import DolKlasyTestow, metodaKlasyTestow, GoraKlasyTestow
-
-
-def ApendOnKeyword(file_path, new_content, keyword):
-    with open(file_path, "r") as file:
-        lines = file.readlines()  # Odczytaj wszystkie linie z pliku
-
-    # Otwórz plik do zapisu
-    with open(file_path, "w") as file:
-        for line in lines:
-            if keyword in line:
-                file.write(line.replace(keyword, new_content))  # Dopisz nowe dane
-            else:
-                file.write(line)  # Zapisz oryginalne linie
-
-
-# prosze niech ktos wymysli cos lepszego xd
-# to jest totlanie glupia i do usuniecia funkcja ale nie mam pomyslu jak narazie
-def usunZmienneFunkcjiOdpalTesty(file_path):
-    keyword = "odpalTesty("
-    with open(file_path, "r") as file:
-        lines = file.readlines()  # Odczytaj wszystkie linie z pliku
-
-    # Otwórz plik do zapisu
-    with open(file_path, "w") as file:
-        for line in lines:
-            if keyword in line:
-                file.write("    " + keyword + ")")
-            else:
-                file.write(line)  # Zapisz oryginalne linie
+from TemplateGenerator import (
+    DolKlasyTestow,
+    MetodaKlasyTestow,
+    GoraKlasyTestow,
+)
 
 
 def indexLiniKoncaOpisu(lines):
@@ -46,14 +21,17 @@ def indexLiniKoncaOpisu(lines):
 
 
 def GenerujTest(numerTestu, funkcje):
-    wynik = GoraKlasyTestow(numerTestu)
+    res = GoraKlasyTestow(numerTestu)
     for funkcja in funkcje:
         signature = inspect.signature(funkcja)
         num_args = len(signature.parameters)
 
         for _ in range(num_args * 10 + 1):
             argumenty = ()
-            if num_args > 0:
+            if num_args == 1:
+                user_input = input("Podaj argument Testowy: ")
+                argumenty = tuple(map(int, user_input.split()))
+            if num_args > 1:
                 user_input = input(
                     f"Podaj {num_args} argumenty testowe, oddzielone spacją: "
                 )
@@ -61,14 +39,16 @@ def GenerujTest(numerTestu, funkcje):
             f = io.StringIO()
             with redirect_stdout(f):
                 funkcja(*argumenty)
-            wynik += metodaKlasyTestow(numerTestu, argumenty, f.getvalue().strip())
+            wynik = f.getvalue().strip()
+            print(f"wynik dla tego testu to {wynik}")
+            res += MetodaKlasyTestow(numerTestu, argumenty, f.getvalue().strip())
 
-    wynik += "\n"
-    wynik += DolKlasyTestow(numerTestu)
-    return wynik
+    res += "\n"
+    res += DolKlasyTestow(numerTestu)
+    return res
 
 
-def PrzeniesRozwiazanie(filePath, numerTestu):
+def PrzeniesRozwiazanie_PrzygotujSzablon(filePath, numerTestu):
     sciezkaRozwiazania = filePath + "rozwiazanie" + str(numerTestu) + ".py"
     sciezkaSzablonu = filePath + "szablon" + str(numerTestu) + ".py"
 
@@ -76,14 +56,21 @@ def PrzeniesRozwiazanie(filePath, numerTestu):
         lines = file.readlines()
 
     with open(sciezkaRozwiazania, "w") as file:
-        file.writelines(lines)
+        # testy importuja funkcje z szablonu wiec zeby nie dawac sugesti usuwamy z rozwiazania testy
+        for line in lines:
+            if not f"Testy{numerTestu}" in line:
+                file.write(line)
 
     with open(sciezkaSzablonu, "w") as file:
+        # pisze tresci
         indexKonca = indexLiniKoncaOpisu(lines)
         file.writelines(lines[0 : indexKonca + 1])
+
+        # zapisuje do pliku tylko wtedy gdy nie jestem w ciele funkcji
         LiniaCialaFunkcji = False
         for line in lines[indexKonca + 1 :]:
             if line.startswith("def "):
+                # jak bedzie kilka funkcji to daje \n by nie bylo na sobie
                 if LiniaCialaFunkcji:
                     file.write("\n\n\n")
 
@@ -95,27 +82,19 @@ def PrzeniesRozwiazanie(filePath, numerTestu):
                 LiniaCialaFunkcji = False
 
             if not LiniaCialaFunkcji:
-                file.write(line)
+                if not "StworzTesty" in line:
+                    file.write(line)
+
+        file.write(f"    Testy{numerTestu}.uruchom()")
 
 
-def StworzTesty(numerTestu, sciezkaPliku, funkcje):
+def StworzTesty(numerZadania, sciezkaPliku, funkcje):
     current_dir = os.path.dirname(os.path.abspath(__file__))
     new_file_path = os.path.join(current_dir, "../", sciezkaPliku + "/")
 
-    sciezkaTestow = new_file_path + "testy" + str(numerTestu) + ".py"
-    sciezkaSzablonu = new_file_path + "szablon" + str(numerTestu) + ".py"
-    ApendOnKeyword(
-        sciezkaTestow,
-        GenerujTest(numerTestu, funkcje),
-        "### TU BEDA TESTY ###",
-    )
+    sciezkaTestow = new_file_path + "testy" + str(numerZadania) + ".py"
+    with open(sciezkaTestow, "w") as file:
+        file.write(GenerujTest(numerZadania, funkcje))
 
-    sciezkaSzablonu = new_file_path + "szablon" + str(numerTestu) + ".py"
-    ApendOnKeyword(
-        sciezkaSzablonu,
-        "odpalTesty",
-        "StworzTesty",
-    )
-    usunZmienneFunkcjiOdpalTesty(sciezkaSzablonu)
-
-    PrzeniesRozwiazanie(new_file_path, numerTestu)
+    # wywalone w solid ta funkcja robi 2 rzeczy
+    PrzeniesRozwiazanie_PrzygotujSzablon(new_file_path, numerZadania)

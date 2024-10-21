@@ -11,7 +11,7 @@ def Zadanie_138(): ...
 
 
 if __name__ == "__main__":
-    from testy138 import StworzTesty
+    from testy138 import Testy138
 
     Zadanie_138()
-    # StworzTesty([Zadanie_138])
+    # Testy138.StworzTesty([Zadanie_138])
