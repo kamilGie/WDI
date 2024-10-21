@@ -5,15 +5,15 @@
 
 Każdy folder z zadaniem składa się z trzech kluczowych plików:
 
-1. `exercise.py` – plik zawierający szablon do wypełnienia własnym rozwiązaniem.
-2. `solution.py` – plik z gotowym rozwiązaniem zadania.
-3. `test.py` – plik zawierający testy jednostkowe, które sprawdzają poprawność funkcji napisanych w pliku `exercise.py`.
+1. `rozwiazanie.py` – plik z gotowym rozwiązaniem zadania.
+2. `szablon.py` – plik zawierający szablon do wypełnienia własnym rozwiązaniem.
+3. `testy.py` – plik zawierający testy jednostkowe, które sprawdzają poprawność funkcji napisanych w pliku `exercise.py`.
 
 ### 🧪 Jak testować swoje rozwiązania?
 
-1. Otwórz plik `exercise.py` w folderze zadania i wypełnij rozwiazaniem zadania.
+1. Otwórz plik `szablon.py` w folderze zadania i wypełnij rozwiazaniem zadania.
 2. Odkomentuj funkcję `odpaltesty()`.
-3. Uruchom plik `exercise.py`, a funkcja `odpaltesty()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
+3. Uruchom plik `szablon.py`, a funkcja `odpaltesty()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
 ---
 
 
@@ -22,14 +22,14 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 [***Utwórz fork***](https://github.com/kamilGie/WDI/fork)
 
 ### 💡 Drobne poprawki ### 
-- ✏️ Wklejenie swojego rozwiązania do pliku `solution.py`.
-- 🔍 Dodanie kilku testów do pliku `test.py`.
+- ✏️ Wklejenie swojego rozwiązania do pliku `szablon.py`.
+- 🔍 Dodanie kilku testów do pliku `testy.py`.
 - 🛠️ Poprawienie treści zadania, jeśli jest niejasna lub brakuje np. znaków potęgowania.
 
 ### 🎯 Jeśli masz więcej chęci, można przygotować całe zadanie:
-- 🗒️ Dodaj zmienne do pliku `exercise.py`, jeśli są potrzebne.
+- 🗒️ Dodaj zmienne do pliku `szablon.py`, jeśli są potrzebne.
 - 🧪 Napisz testy (instrukcja jak je pisać znajduje się w pliku `testy.py`.
-- 📥 Umieść poprawne rozwiązanie w pliku `solution.py`.
+- 📥 Umieść poprawne rozwiązanie w pliku `rozwiazanie.py`.
 
 ### 🐛 Zgłaszanie błędów
 
