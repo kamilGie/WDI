@@ -1,5 +1,8 @@
 import os
-from TemplateGenerator import GenerujTest
+import inspect
+import io
+from contextlib import redirect_stdout
+from TemplateGenerator import DolKlasyTestow, metodaKlasyTestow, GoraKlasyTestow
 
 
 def ApendOnKeyword(file_path, new_content, keyword):
@@ -15,6 +18,22 @@ def ApendOnKeyword(file_path, new_content, keyword):
                 file.write(line)  # Zapisz oryginalne linie
 
 
+# prosze niech ktos wymysli cos lepszego xd
+# to jest totlanie glupia i do usuniecia funkcja ale nie mam pomyslu jak narazie
+def usunZmienneFunkcjiOdpalTesty(file_path):
+    keyword = "odpalTesty("
+    with open(file_path, "r") as file:
+        lines = file.readlines()  # Odczytaj wszystkie linie z pliku
+
+    # Otwórz plik do zapisu
+    with open(file_path, "w") as file:
+        for line in lines:
+            if keyword in line:
+                file.write("    " + keyword + ")")
+            else:
+                file.write(line)  # Zapisz oryginalne linie
+
+
 def indexLiniKoncaOpisu(lines):
     ramkaOpisu = "# ====================================================================================================>"
     licznikRamek = 0
@@ -24,6 +43,29 @@ def indexLiniKoncaOpisu(lines):
         if licznikRamek >= 2:
             return i
     return 0
+
+
+def GenerujTest(numerTestu, funkcje):
+    wynik = GoraKlasyTestow(numerTestu)
+    for funkcja in funkcje:
+        signature = inspect.signature(funkcja)
+        num_args = len(signature.parameters)
+
+        for _ in range(num_args * 10 + 1):
+            argumenty = ()
+            if num_args > 0:
+                user_input = input(
+                    f"Podaj {num_args} argumenty testowe, oddzielone spacją: "
+                )
+                argumenty = tuple(map(int, user_input.split()))
+            f = io.StringIO()
+            with redirect_stdout(f):
+                funkcja(*argumenty)
+            wynik += metodaKlasyTestow(numerTestu, argumenty, f.getvalue().strip())
+
+    wynik += "\n"
+    wynik += DolKlasyTestow(numerTestu)
+    return wynik
 
 
 def PrzeniesRozwiazanie(filePath, numerTestu):
@@ -56,21 +98,24 @@ def PrzeniesRozwiazanie(filePath, numerTestu):
                 file.write(line)
 
 
-def StworzTesty(numerTestu, sciezkaPliku):
+def StworzTesty(numerTestu, sciezkaPliku, funkcje):
     current_dir = os.path.dirname(os.path.abspath(__file__))
     new_file_path = os.path.join(current_dir, "../", sciezkaPliku + "/")
 
     sciezkaTestow = new_file_path + "testy" + str(numerTestu) + ".py"
+    sciezkaSzablonu = new_file_path + "szablon" + str(numerTestu) + ".py"
     ApendOnKeyword(
         sciezkaTestow,
-        GenerujTest(numerTestu),
+        GenerujTest(numerTestu, funkcje),
         "### TU BEDA TESTY ###",
     )
+
     sciezkaSzablonu = new_file_path + "szablon" + str(numerTestu) + ".py"
     ApendOnKeyword(
         sciezkaSzablonu,
         "odpalTesty",
         "StworzTesty",
     )
+    usunZmienneFunkcjiOdpalTesty(sciezkaSzablonu)
 
     PrzeniesRozwiazanie(new_file_path, numerTestu)

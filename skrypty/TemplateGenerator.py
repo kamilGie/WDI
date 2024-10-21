@@ -17,7 +17,7 @@ if __name__ == "__main__":
     from testy{nrZadania} import StworzTesty
 
     Zadanie_{nrZadania}()
-    # StworzTesty()
+    # StworzTesty([Zadanie_{nrZadania}])
 """
 
 
@@ -38,16 +38,16 @@ sys.path.append(
 )
 
 
-def StworzTesty():
+def StworzTesty(funkcje):
     current_dir = os.path.dirname(os.path.abspath(__file__))
     full_path = os.path.abspath(current_dir)
     path_parts = full_path.split(os.sep)
     sciezka_do_folderu = os.path.join(path_parts[-2], path_parts[-1])
 
-    importlib.import_module("StworzTesty").StworzTesty({nrZadania}, sciezka_do_folderu)"""
+    importlib.import_module("StworzTesty").StworzTesty({nrZadania}, sciezka_do_folderu, funkcje)"""
 
 
-def GenerujTest(nrZadania):
+def GoraKlasyTestow(nrZadania):
     return f"""import unittest
 import io
 from contextlib import redirect_stdout
@@ -55,10 +55,34 @@ from contextlib import redirect_stdout
 from szablon{nrZadania} import Zadanie_{nrZadania}
 
 
-# testy pisze sie kopiujac jedna z tych funkcji i zmieniajac nazwe. trzeba zostawic przedrostek test_<tutaj dowolnosci>
-# jesli funkcja przyjmuje wartosci trzeba dodac do wywolan aby testy dzialaly
-# oczekiwne wyniki sa w tablicy zeby moc akceptowac kilka mozliwych dobrych wynikow w roznej kolejnosci/formacie np ["(1,2)","1 2","1\\n2\\n"]
-# print(f"{{repr(wynik)}}") # Przydaje sie, wyświetla wynik wraz z niewidocznymi znakami (np"\\t1\\n2\\n3\\n") gotowe do wklejenia do oczekiwanego_wyniku
+class Testy{nrZadania}(unittest.TestCase):"""
+
+
+def metodaKlasyTestow(nrZadania, zmienne, wynikWywolania):
+    return f"""\n
+    def test_{'_'.join(map(str, zmienne))}(self):
+        f = io.StringIO()
+        with redirect_stdout(f):
+            Zadanie_{nrZadania}({', '.join(map(str, zmienne))})
+        wynik = f.getvalue().strip()
+
+        oczekiwany_wynik = [{ repr(wynikWywolania) }]
+        self.assertIn(wynik, oczekiwany_wynik)\n"""
+
+
+def DolKlasyTestow(nrZadania):
+    return f"""\ndef odpalTesty():
+    suite = unittest.TestLoader().loadTestsFromTestCase(Testy{nrZadania})
+    unittest.TextTestRunner(verbosity=2).run(suite)"""
+
+
+def Test(nrZadania):
+    return f"""import unittest
+import io
+from contextlib import redirect_stdout
+
+from szablon{nrZadania} import Zadanie_{nrZadania}
+
 class Testy{nrZadania}(unittest.TestCase):
 
     def test_wypisywania(self):

@@ -12,4 +12,4 @@ if __name__ == "__main__":
     from testy146 import StworzTesty
 
     Zadanie_146()
-    # StworzTesty()
+    # StworzTesty([Zadanie_146])
