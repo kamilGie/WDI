@@ -11,7 +11,7 @@ def Zadanie_17(): ...
 
 
 if __name__ == "__main__":
-    from testy17 import odpalTesty
+    from testy17 import StworzTesty
 
     Zadanie_17()
-    # odpalTesty()
+    # StworzTesty()
