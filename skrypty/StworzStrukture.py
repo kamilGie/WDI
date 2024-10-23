@@ -1,10 +1,6 @@
 import pdfplumber
 import os
-from TemplateGenerator import (
-    Tresci,
-    SzablonBezTresci,
-    ImportSkrypuTworzeniaTestow,
-)
+from utils import PrototypBezTresci, Tresci, Develop
 
 
 def StworzPlikiPython(zawartosc, pelnaSciezka):
@@ -14,21 +10,6 @@ def StworzPlikiPython(zawartosc, pelnaSciezka):
             plik.write(zawartosc)
     except IOError as e:
         print(f"Nie udało się zapisać pliku {sciezka_pliku}: {e}")
-
-
-def StworzFolderZadania(FolderZadania, nrZadania, Zadanie):
-    os.makedirs(FolderZadania)
-
-    wstep = Tresci(Zadanie, nrZadania)
-    StworzPlikiPython(
-        wstep + SzablonBezTresci(nrZadania),
-        f"{FolderZadania}/szablon{nrZadania}.py",
-    )
-
-    StworzPlikiPython(
-        ImportSkrypuTworzeniaTestow(nrZadania),
-        f"{FolderZadania}/testy{nrZadania}.py",
-    )
 
 
 def PodzielTextNaZestawy(text):
@@ -59,18 +40,21 @@ def Skrypt():
             nazwaZestawu = zestaw[:PoczatekNastZad].replace(" ", "_").replace("\n", "")
             os.makedirs("../" + nazwaZestawu)
 
+            StworzPlikiPython(
+                Develop(),
+                f"../{nazwaZestawu}/Develop.py",
+            )
             while PoczatekNastZad != -1:
                 zestaw = zestaw[PoczatekNastZad:]
                 PoczatekNastZad = zestaw.find(f"Zadanie {nrZadania+1}.")
                 if PoczatekNastZad == -1:  # czasami pdf reader usuwa spacje pomiedzy
                     PoczatekNastZad = zestaw.find(f"Zadanie{nrZadania+1}.")
 
-                StworzFolderZadania(
-                    "../" + nazwaZestawu + f"/{nrZadania:02}",
-                    nrZadania,
-                    zestaw[:PoczatekNastZad],
+                StworzPlikiPython(
+                    Tresci(zestaw[:PoczatekNastZad], nrZadania)
+                    + PrototypBezTresci(nrZadania),
+                    f"../{nazwaZestawu}/prototyp{nrZadania:02}.py",
                 )
-
                 nrZadania += 1
 
 
