@@ -12,4 +12,4 @@ if __name__ == "__main__":
     from Develop import stworz_zadanie
 
     Zadanie_1()
-    stworz_zadanie([Zadanie_1])
+    # stworz_zadanie([Zadanie_1])
