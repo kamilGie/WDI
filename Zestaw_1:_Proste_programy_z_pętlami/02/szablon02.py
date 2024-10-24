@@ -8,7 +8,8 @@ def Zadanie_2(): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy02 import Testy02
 
     Zadanie_2()
-    # stworz_zadanie([Zadanie_2])
+
+    # Testy02.Uruchom()

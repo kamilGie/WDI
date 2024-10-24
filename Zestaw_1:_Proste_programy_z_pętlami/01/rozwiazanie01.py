@@ -5,11 +5,9 @@
 # ====================================================================================================>
 
 
-def Zadanie_1(): ...
-
-
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    Zadanie_1()
-    # stworz_zadanie([Zadanie_1])
+def Zadanie_1(n):
+    for a in range(1, n):
+        for b in range(a, n):
+            c = (a * a + b * b) ** 0.5
+            if c.is_integer() and c < n:
+                print(a, b, int(c))

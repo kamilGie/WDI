@@ -5,11 +5,15 @@
 # ====================================================================================================>
 
 
-def Zadanie_3(): ...
+def Zadanie_3():
+    rok = 2024
+    best = (rok - 1, 1)
 
-
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    Zadanie_3()
-    # stworz_zadanie([Zadanie_3])
+    for i in range(1, rok + 1):
+        x = i
+        y = rok
+        while y > x:
+            x, y = y - x, x
+        if x + y < sum(best):
+            best = (x, y)
+    print(best)

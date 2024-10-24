@@ -3,13 +3,15 @@
 # Proszę napisać program sprawdzający czy istnieje spójny podciąg ciągu Fibonacciego o za-
 # danej sumie.
 # ====================================================================================================>
+# print("True") albo print("False")
 
 
-def Zadanie_4(): ...
+def is_in_fib(a): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy04 import Testy04
 
-    Zadanie_4()
-    # stworz_zadanie([Zadanie_4])
+    is_in_fib(input('Podaj a: '))
+
+    # Testy04.Uruchom()
