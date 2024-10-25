@@ -15,14 +15,14 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 3. Uruchom plik `szablon.py`, a funkcja `odpal_testy()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
 
 ### 🧱 Prototypy
-Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest uznawane za prototyp.
+Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest wtedy `prototyp.py`.
 1. Po rozwiązaniu zadania na `prototyp.py` można stworzyć pełne zadanie, odkomentowując funkcję `stworz_zadanie` i przekazując w tablicy funkcje, które mają być objęte testami.
 2. Funkcja `stworz_zadanie` automatycznie przygotuje testy na podstawie przekazanych funkcji. Poprosi również o podanie argumentów testowych, które Twoim zdaniem mogą być interesujące lub problematyczne.
-3. Następnie utworzy folder zadania zawierający pliki: `rozwiazanie.py` oraz `szablon.py` na podstawie `prototyp.py`, a także `testy.py` na podstawie wcześniej wygenerowanych testów
+3. Następnie utworzy folder zadania zawierający pliki: `rozwiazanie.py` oraz `szablon.py` na podstawie `prototyp.py`, a także `testy.py` na podstawie wcześniej wygenerowanych testów.
 
    
 
- [Szczegóły dotyczące używania projektu, prototypów i działania tutaj](#Szczegóły)
+ [Szczegóły dotyczące używania projektu, prototypów i działania tutaj](#szczegóły-projektu)
  
 ---
 ### 🗿 Najwięksi współtwórcy:
@@ -37,11 +37,10 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest uz
 - Można też wysłać mi kody bezpośrednio [kontakt tutaj](http://www.gieras.pl).
 
 ### 💡 Możliwe poprawki ### 
-- ✏️ Stworzenie Zadania [Szczegóły](#Szczegóły-Projektu)
+- ✏️ Stworzenie Zadania
 - 🛠️ Poprawienie treści zadania, jeśli jest niejasna lub brakuje np. znaków potęgowania.
-- 🔧 Ulepszanie testow poprzez komendy [Szczegóły](#komendy)
-- 💻 Stworzenie wlasnej komendy [Szczegóły](#komendy)
-- 🧠 Tworzenie/Ulepszanie Strategi Tworzenia Zadań [Szczegóły](#Strategie)
+- 🔧 Ulepszanie testow poprzez komendy lub stworzeniej własnej [Szczegóły](#komendy)
+- 🧠 Tworzenie/Ulepszanie Strategi Tworzenia Zadań [Szczegóły](#strategie)
 
 ### 🐛 Zgłaszanie błędów
 
@@ -207,7 +206,7 @@ Na tym konczy sie funkcja `stworz_rozwiazanie` jesli jednak komus nie podoba sie
 <details>
   <summary>🧠 Strategie</summary>
 
-## Strategie 
+## Strategie
 moja strategia jest kiedys to napisac teraz to mi sie nie chce ale w skrocie to 
 ## strategia to taki swtich case 
 i definiuje w jaki spoosb bedziemy tworzyc zadanie narazie to jest swtich case 1 mozliwosci bo jest 1 strategia `'bazowa'` ale w przyszlosci moze byc jakas strategia np  ze 
@@ -266,10 +265,7 @@ Taka funkcjonalnosci pozwala w mega prosty sposob rozszerzac projekt o nowe kome
 
 - Jesli komenda ma dopis lokalna oznacza ze jej dzialanie nie moze wyjsci po za lokalne repozytorium. By uniknoc przypadkow ze ktos nie spodziwal ze mu poleci [najlepsza  domyslna piosenka zwycieska](https://www.youtube.com/watch?v=CpeJiGDVMGo) po napisaniu szablonu
 - Zapis `link_do_muzyki="https://www.youtube.com/watch?v=CpeJiGDVMGo` oznacza ze zmienna `link_do_muzyki` jest opcjonalna i domyslnie uzyjemy `https://www.youtube.com/watch?v=CpeJiGDVMGo`
-  
-
-mam jeszcze duzo pomyslow na komendy ale nie chce pisac ich wszystkich poki co ich zasady to
-- Kazda ma miec swoj plik nawet jakby plik mialby miec 20 linijek lub 100000 linijek
+- Kazda ma miec swoj plik i ograniczać sie tylko do niego nawet jakby plik mialby miec 20 linijek lub 100000 linijek.
 - Każda komenda musi być w pełni niezależna i działać poprawnie samodzielnie, ale może wywoływać inne komendy w ramach swoich działań [zgodnie z wzorcem łańcucha zobowiązań]( https://refactoring.guru/pl/design-patterns/chain-of-responsibility)
 
   
@@ -278,8 +274,9 @@ mam jeszcze duzo pomyslow na komendy ale nie chce pisac ich wszystkich poki co i
 ---
 
 ## 🤓 Kilka slów od Autora
-Projekt wydaje się być znacznie ambitniejszy, niż sugeruje problem, jakim jest WDI, oraz forma, w jakiej jest realizowany — czyli pisanie na kartce a program nie ma dzialac ma byc ladny. Powstał jednak z myślą o tym, by uniknąć wielu mniejszych rozwiązań, ponieważ raczej nikt nie wykona wszystkich 200 zadań. 
-Na początku nie sądziłem, że projekt rozwinie się do takiego stopnia. Uważam, że stał się bardziej systemem rozwiązań, szablonów i testów RST (stad nazwa), które planuje wykorzystać w innych zbiorach zadań lub przedmiotach. Tworzenie go dało mi fajny projekt w cv, fun i wiele doswiadczenia.I tak wgl, projekt srt nie tylko dlatego ze to skrot tez czytajac to mozna poczuc podobienstwo do slowa asSeRT xddd co za legenda ⭐⭐⭐
+Projekt wydaje się być znacznie ambitniejszy, niż sugeruje problem, jakim jest WDI, oraz forma, w jakiej jest realizowany — czyli pisanie na kartce a program nie ma dzialac ma byc ladny. Powstał jednak z myślą o tym, że raczej nikt nie wykona wszystkich 200 zadań. By uniknac repozytoriów po 40 zadan i wspólnie stworzyć jakies większe.
+Na początku nie sądziłem, że projekt rozwinie się do takiego stopnia. Uważam, że stał się bardziej systemem rozwiązań, szablonów i testów RST (stad nazwa), które planuje wykorzystać w innych zbiorach zadań lub przedmiotach. Tworzenie go dało mi fajny projekt w cv, fun i wiele doswiadczenia wiec nie istotne co sie dalej z nim stanie i tak bede z niego bardzo zadowolony. I tak wgl, projekt SRT nie tylko dlatego ze to skrot 
+ale tez czytajac to  mozna poczuc podobienstwo do slowa asSeRT xddd co za legenda dajcie gwiazdke chce tego achigmenta za gwiazdki  plz ⭐⭐⭐
 
 
 
