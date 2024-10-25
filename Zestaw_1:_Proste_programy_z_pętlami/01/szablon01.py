@@ -5,12 +5,17 @@
 # ====================================================================================================>
 
 
-def Zadanie_1(n): ...
+def Zadanie_1(n):
+    for a in range(1, n):
+        for b in range(a, n):
+            c = (a * a + b * b) ** 0.5
+            if c.is_integer() and c < n:
+                print(a, b, int(c))
 
 
 if __name__ == "__main__":
-    from testy01 import Testy01
+    from testy01 import odpal_testy
 
-    Zadanie_1(input('Podaj n: '))
+    # Zadanie_1(input('Podaj n: '))
 
-    # Testy01.Uruchom()
+    odpal_testy()

@@ -9,8 +9,8 @@ def Zadanie_3(): ...
 
 
 if __name__ == "__main__":
-    from testy03 import Testy03
+    from testy03 import odpal_testy
 
     Zadanie_3()
 
-    # Testy03.Uruchom()
+    # odpal_testy()

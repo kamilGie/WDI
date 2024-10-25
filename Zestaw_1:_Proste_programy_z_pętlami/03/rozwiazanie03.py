@@ -17,3 +17,8 @@ def Zadanie_3():
         if x + y < sum(best):
             best = (x, y)
     print(best)
+
+
+if __name__ == "__main__":
+
+    # Zadanie_3()

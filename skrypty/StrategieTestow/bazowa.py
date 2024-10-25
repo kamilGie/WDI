@@ -1,8 +1,14 @@
 import inspect
 import io
 from contextlib import redirect_stdout
-from _utils_T import DolKlasyTestow, MetodaKlasyTestow, GoraKlasyTestow, RAMKA
+from _utils_T import (
+    metoda_nasluchujaca_testow,
+    metoda_zwracajaca_testow,
+    GoraKlasyTestow,
+    RAMKA,
+)
 from typing import List, Callable, Tuple, Any
+
 
 class Bazowa:
     """
@@ -18,7 +24,13 @@ class Bazowa:
         res (str): Zbiera wyniki generacji testów jako string.
     """
 
-    def __init__( self, linie_prototypu: List[str], nr_zadania: int, funkcje: List[Callable], sciezka_zadania: str):
+    def __init__(
+        self,
+        linie_prototypu: List[str],
+        nr_zadania: int,
+        funkcje: List[Callable],
+        sciezka_zadania: str,
+    ):
         self.nr_zadania = nr_zadania
         self.funkcje = funkcje
         self.linie_prototypu = linie_prototypu
@@ -48,18 +60,25 @@ class Bazowa:
 
         liczba_argumentow = len(inspect.signature(funkcja).parameters)
 
-        i = 1
-        while i <= liczba_argumentow * 10 + 1:
+        nr_testu = 1
+        while nr_testu <= liczba_argumentow * 10 + 1:
             try:
-                parametry = self.pobierz_parametry(i, liczba_argumentow)
+                parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
                 wynik_funkcji = self.nasluchuj_funkcje(funkcja, parametry)
             except Exception as e:
                 print(f"{str(e)} Wprowadz Ponownie!")
                 continue
 
             print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
-            self.res += MetodaKlasyTestow(funkcja.__name__, i, parametry, wynik_funkcji)
-            i += 1
+            if isinstance(wynik_funkcji, str):
+                self.res += metoda_nasluchujaca_testow(
+                    funkcja.__name__, nr_testu, parametry, wynik_funkcji
+                )
+            else:
+                self.res += metoda_zwracajaca_testow(
+                    funkcja.__name__, nr_testu, parametry, wynik_funkcji
+                )
+            nr_testu += 1
 
         print("\n")
 
@@ -85,7 +104,6 @@ class Bazowa:
         print(f"\033[F\033[K\033[F\033[K", end="")
         return tuple(map(int, wejscie.split()))
 
-
     def nasluchuj_funkcje(self, funkcja: Callable, parametry: Tuple) -> Any:
         """
         Uruchamia podaną funkcję z przekazanymi parametrami i przechwycuje jej wynik.
@@ -99,8 +117,10 @@ class Bazowa:
         """
         f = io.StringIO()
         with redirect_stdout(f):
-            funkcja(*parametry)
-        return repr(f.getvalue().strip())
+            wynik = funkcja(*parametry)
+        if wynik == None:
+            return repr(f.getvalue().strip())
+        return wynik
 
     def finalizuj_testy(self):
         """
@@ -114,4 +134,3 @@ class Bazowa:
         )
         print(RAMKA)
         self.res += "\n"
-        self.res += DolKlasyTestow(self.nr_zadania)

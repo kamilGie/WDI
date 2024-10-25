@@ -23,8 +23,6 @@ class Bazowa:
         sciezka_zadania: str,
     ):
         """
-        Inicjalizuje obiekt klasy Bazowa.
-
         Args:
             linie_prototypu (List[str]): Lista linijek kodu prototypu.
             nr_zadania (int): Numer zadania, dla którego generowany jest kod.
@@ -44,8 +42,9 @@ class Bazowa:
         Kod jest generowany poprzez iterację przez linie prototypu,
         zbierając odpowiednie linie oraz informacje o funkcjach.
 
-        - Linijki zaczynające się od "#" są dodawane do rezultatu jako komentarze.
-        - Linijki z definicjami funkcji są dodawane do rezultatu z dodatkowymi informacjami.
+        - Linijki zaczynające plik z "#" są dodawane do rezultatu jako komentarze.
+        - Linijki z definicjami funkcji ktore byly przekazane do funkcji jako istotne
+          są dodawane do rezultatu z dodatkowymi informacjami.
         - Na końcu generowany jest blok `if __name__ == "__main__":`,
           gdzie importowane są testy dla danego zadania oraz wywoływane funkcje.
         """
@@ -62,7 +61,7 @@ class Bazowa:
                 break
 
         self.res += '\nif __name__ == "__main__":\n'
-        self.res += f"    from testy{self.nr_zadania} import Testy{self.nr_zadania}\n\n"
+        self.res += f"    from testy{self.nr_zadania} import odpal_testy\n\n"
         for funkcja in self.funkcje:
             self.res += FunkcjaInput(funkcja)
-        self.res += f"\n    # Testy{self.nr_zadania}.Uruchom()\n"
+        self.res += f"\n    # odpal_testy()\n"
