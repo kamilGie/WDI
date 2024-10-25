@@ -2,15 +2,19 @@ import inspect
 import io
 from contextlib import redirect_stdout
 from _utils_T import (
+    IMPORTY,
+    KOMENDA,
+    NAGLOWEK,
+    ODPAL_TESTY,
     metoda_nasluchujaca_testow,
     metoda_zwracajaca_testow,
-    GoraKlasyTestow,
+    dynamiczny_import_funkcji,
     RAMKA,
 )
 from typing import List, Callable, Tuple, Any
 
 
-class Bazowa:
+class bazowa:
     """
     Klasa Bazowa do generowania testów dla zadania.
 
@@ -43,7 +47,17 @@ class Bazowa:
         struktury testów i ich wyników.
         """
         print(f"\nPisanie testów dla zadania nr: {self.nr_zadania}\n{RAMKA}")
-        self.res += GoraKlasyTestow(self.nr_zadania, self.funkcje)
+
+        self.res = IMPORTY
+        self.res += "\n"
+        self.res += dynamiczny_import_funkcji(self.nr_zadania, self.funkcje)
+        self.res += "\n\n"
+        self.res += ODPAL_TESTY
+        self.res += "\n"
+        self.res += KOMENDA
+        self.res += "\n\n"
+        self.res += NAGLOWEK
+        self.res += "\n"
         for funkcja in self.funkcje:
             self.generuj_testy_dla_funkcji(funkcja)
         self.finalizuj_testy()
@@ -64,7 +78,7 @@ class Bazowa:
         while nr_testu <= liczba_argumentow * 10 + 1:
             try:
                 parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
-                wynik_funkcji = self.nasluchuj_funkcje(funkcja, parametry)
+                wynik_funkcji = self.wynik_funkcje(funkcja, parametry)
             except Exception as e:
                 print(f"{str(e)} Wprowadz Ponownie!")
                 continue
@@ -104,7 +118,7 @@ class Bazowa:
         print(f"\033[F\033[K\033[F\033[K", end="")
         return tuple(map(int, wejscie.split()))
 
-    def nasluchuj_funkcje(self, funkcja: Callable, parametry: Tuple) -> Any:
+    def wynik_funkcje(self, funkcja: Callable, parametry: Tuple) -> Any:
         """
         Uruchamia podaną funkcję z przekazanymi parametrami i przechwycuje jej wynik.
 
@@ -113,7 +127,7 @@ class Bazowa:
             parametry (Tuple): Argumenty przekazywane do funkcji.
 
         Returns:
-            Any: Zwraca wynik funkcji jako string.
+            Any: Zwraca wynik funkcji
         """
         f = io.StringIO()
         with redirect_stdout(f):
@@ -129,8 +143,5 @@ class Bazowa:
         """
         print(RAMKA, end="")
         print(f"🥳 Testy dla zadania {self.nr_zadania} zostały pomyślnie wygenerowane!")
-        print(
-            f"\tNalezy sprawdzic czy folder zadania wyglada poprawnie i usunac prototyp"
-        )
         print(RAMKA)
         self.res += "\n"

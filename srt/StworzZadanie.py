@@ -5,6 +5,7 @@ import sys
 from contextlib import contextmanager
 import StrategieZestawy
 
+
 @contextmanager
 def add_sys_path(new_path: str):
     """Dodaje nową ścieżkę do sys.path w kontekście."""
@@ -14,8 +15,9 @@ def add_sys_path(new_path: str):
     finally:
         sys.path.remove(new_path)
 
+
 class Zadanie:
-    def __init__( self, linie_prototypu: List[str], sciezka_zadania: str, nr_zadania: str,  funkcje: List[Callable]):
+    def __init__( self, linie_prototypu: List[str], sciezka_zadania: str, nr_zadania: str, funkcje: List[Callable]):
         """
         Inicjalizuje instancję klasy Zadanie.
 
@@ -48,7 +50,7 @@ class Zadanie:
         with add_sys_path(sciezka_do_strategii):
             try:
                 modul_strategii = importlib.import_module(f"{sciezka}.{nazwa}")
-                strategia = getattr(modul_strategii, nazwa.title())
+                strategia = getattr(modul_strategii, nazwa)
             except (ImportError, AttributeError) as e:
                 raise ImportError(f"Nie można zaimportować strategii '{nazwa}': {e}")
 
@@ -95,8 +97,8 @@ def stworz_zadanie(
         ImportError: Jeśli strategia nie może być zaimportowana.
     """
     try:
-        s = getattr(StrategieZestawy, strategia)
-        strategia_rozwiazania, strategia_szablonow, strategia_testow = s()
+        funkcja_ze_strategiami = getattr(StrategieZestawy, strategia)
+        strategia_szablonow, strategia_rozwiazania, strategia_testow = ( funkcja_ze_strategiami())
     except (ImportError, AttributeError) as e:
         raise ImportError(f"Nie można zaimportować strategii '{strategia}': {e}")
 
@@ -106,8 +108,8 @@ def stworz_zadanie(
     with open(sciezka_prototypu, "r") as file:
         linie_prototypu = file.readlines()
     zadanie = Zadanie(linie_prototypu, sciezka_zadania, nr_zadania, funkcje)
-    zadanie.stworz_plik(strategia_rozwiazania, "StrategieRozwiazania", "rozwiazanie")
     zadanie.stworz_plik(strategia_szablonow, "StrategieSzablonow", "szablon")
+    zadanie.stworz_plik(strategia_rozwiazania, "StrategieRozwiazania", "rozwiazanie")
     zadanie.stworz_plik(strategia_testow, "StrategieTestow", "testy")
 
     # Jeśli piszemy na prototypie, który nie jest backupem, stwórz z niego backup i usuń

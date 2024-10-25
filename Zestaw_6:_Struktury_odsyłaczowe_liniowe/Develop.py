@@ -4,12 +4,12 @@ import os
 import importlib
 
 # Można nadpisać bazową strategię i mieć jakąś domyślną
-STRATEGIA_DOMYSLNA = "bazowa"
+STRATEGIA_DOMYSLNA = "domyslna"
 
 # Ustalamy ścieżkę do pliku wykonywalnego
 sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
-skrypty_folder = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../skrypty")
-sys.path.append(skrypty_folder)
+srt_folder = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../srt")
+sys.path.append(srt_folder)
 
 # Numer zadania na podstawie nazwy pliku
 nr_zadania = (os.path.basename(sciezka_pliku_wykonalnego)

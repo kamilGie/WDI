@@ -21,4 +21,4 @@ def Zadanie_3():
 
 if __name__ == "__main__":
 
-    # Zadanie_3()
+    Zadanie_3()

@@ -9,3 +9,5 @@ def Zadanie_2():
     while a < 1e6:
         print(a)
         a, b = b, a + b
+
+

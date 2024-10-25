@@ -1,23 +1,12 @@
 RAMKA = "# ====================================================================================================>\n"
 
+NAGLOWEK = "class testy(unittest.TestCase):\n"
 
-def GoraKlasyTestow(nr_zadania, funkcje):
-    funkcjeStr = ", ".join(funkcja.__name__ for funkcja in funkcje)
-    return f"""import unittest
-import io
-import os
-import sys
-from contextlib import redirect_stdout
-import importlib
+IMPORTY = "import unittest\nimport io\nimport os\nimport sys\nfrom contextlib import redirect_stdout\nimport importlib\n"
 
-from szablon{nr_zadania} import {funkcjeStr}
+ODPAL_TESTY = "def odpal_testy():\n    suite = unittest.TestLoader().loadTestsFromTestCase(testy)\n    unittest.TextTestRunner(verbosity=2).run(suite)\n"
 
-
-def odpal_testy():
-    suite = unittest.TestLoader().loadTestsFromTestCase(testy)
-    unittest.TextTestRunner(verbosity=2).run(suite)
-
-
+KOMENDA = f"""
 def komenda(k: str, *args, **kwargs):
     \"\"\"
     Wykonuje zadaną komendę z przekazanymi argumentami.
@@ -31,35 +20,34 @@ def komenda(k: str, *args, **kwargs):
         **kwargs: Dodatkowe argumenty kluczowe do komendy.
     \"\"\"
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
-    skrypty_dir = os.path.join(
-        os.path.dirname(sciezka_pliku_wykonalnego), "../../skrypty"
-    )
-    sys.path.append(skrypty_dir)
+    srt_dir = os.path.join( os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
+    sys.path.append(srt_dir)
     nr_zadania = os.path.dirname(sciezka_pliku_wykonalnego)
     return importlib.import_module("WykonajKomende").wykonaj_komende(
         k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
     )
+"""
 
 
-class testy(unittest.TestCase):"""
+def dynamiczny_import_funkcji(nr_zadania, funkcje):
+    funkcjeStr = ", ".join(funkcja.__name__ for funkcja in funkcje)
+    return f"from szablon{nr_zadania} import {funkcjeStr}\n"
 
 
 def metoda_zwracajaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
-    return f"""\n
-    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(map(str, zmienne))}(self):
+    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(map(str, zmienne))}(self):
         wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
 
         oczekiwany_wynik = [{ wynikWywolania }]
-        self.assertIn(wynik, oczekiwany_wynik)"""
+        self.assertIn(wynik, oczekiwany_wynik)\n"""
 
 
 def metoda_nasluchujaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
-    return f"""\n
-    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(map(str, zmienne))}(self):
+    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(map(str, zmienne))}(self):
         f = io.StringIO()
         with redirect_stdout(f):
             {NazwaTestu}({', '.join(map(str, zmienne))})
         wynik = f.getvalue().strip()
 
         oczekiwany_wynik = [{ wynikWywolania }]
-        self.assertIn(wynik, oczekiwany_wynik)"""
+        self.assertIn(wynik, oczekiwany_wynik)\n"""

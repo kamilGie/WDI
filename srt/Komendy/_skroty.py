@@ -1,10 +1,10 @@
 # Dla ulatwienia pisania komend tutaj jest plik z skrotami do wykonania danej komendy
 
 
-def hello(nr_zadania):
-    from helloWorld import helloWorld
+def hz(nr_zadania, sciezka):
+    from hello_zadanie import hello_zadanie
 
-    helloWorld(nr_zadania)
+    hello_zadanie(nr_zadania, sciezka)
 
 
 def sswdi(nr_zadania):

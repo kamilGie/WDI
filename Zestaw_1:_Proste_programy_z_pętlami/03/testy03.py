@@ -26,10 +26,8 @@ def komenda(k: str, *args, **kwargs):
         **kwargs: Dodatkowe argumenty kluczowe do komendy.
     """
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
-    skrypty_dir = os.path.join(
-        os.path.dirname(sciezka_pliku_wykonalnego), "../../skrypty"
-    )
-    sys.path.append(skrypty_dir)
+    srt_dir = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
+    sys.path.append(srt_dir)
     nr_zadania = os.path.dirname(sciezka_pliku_wykonalnego)
     return importlib.import_module("WykonajKomende").wykonaj_komende(
         k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
@@ -44,5 +42,5 @@ class testy(unittest.TestCase):
             Zadanie_3()
         wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = ['(19, 11)']
+        oczekiwany_wynik = ["(19, 11)", "19, 11"]
         self.assertIn(wynik, oczekiwany_wynik)

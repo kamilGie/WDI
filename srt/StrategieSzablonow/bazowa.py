@@ -1,8 +1,9 @@
-from _utils_S import FunkcjaInput
 from typing import List, Callable
 
+from _utils_S import main, parsuj_prototyp
 
-class Bazowa:
+
+class bazowa:
     """
     Klasa ta jest odpowiedzialna za generowanie Szablonu w oparciu o linie prototypu
     oraz funkcje, które są dostarczane podczas jej inicjalizacji.
@@ -46,22 +47,7 @@ class Bazowa:
         - Linijki z definicjami funkcji ktore byly przekazane do funkcji jako istotne
           są dodawane do rezultatu z dodatkowymi informacjami.
         - Na końcu generowany jest blok `if __name__ == "__main__":`,
-          gdzie importowane są testy dla danego zadania oraz wywoływane funkcje.
+        - oraz import odpal_testy wraz  z wywolaniem zakomentowanym
         """
-        wstep = True
-        for linia in self.linie_prototypu:
-            if wstep:
-                if linia.strip().startswith("#"):
-                    self.res += linia
-                else:
-                    wstep = False
-            elif any(linia.startswith(f"def {f.__name__}") for f in self.funkcje):
-                self.res += "\n\n" + linia.replace("\n", "") + " ...\n\n"
-            elif 'if __name__ == "__main__":\n' in linia:
-                break
-
-        self.res += '\nif __name__ == "__main__":\n'
-        self.res += f"    from testy{self.nr_zadania} import odpal_testy\n\n"
-        for funkcja in self.funkcje:
-            self.res += FunkcjaInput(funkcja)
-        self.res += f"\n    # odpal_testy()\n"
+        self.res = parsuj_prototyp(self.linie_prototypu, self.funkcje)
+        self.res += main(self.nr_zadania)

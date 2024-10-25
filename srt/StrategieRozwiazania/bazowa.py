@@ -1,7 +1,7 @@
 from typing import List, Callable
 
 
-class Bazowa:
+class bazowa:
     """
     Klasa Bazowa do generowania kodu na podstawie prototypu zadania.
 
@@ -13,7 +13,13 @@ class Bazowa:
         res (str): Zbierany wygenerowany kod.
     """
 
-    def __init__( self, linie_prototypu: List[str], nr_zadania: int, funkcje: List[Callable], sciezka_zadania: str):
+    def __init__(
+        self,
+        linie_prototypu: List[str],
+        nr_zadania: int,
+        funkcje: List[Callable],
+        sciezka_zadania: str,
+    ):
         """Inicjalizuje obiekt klasy Bazowa."""
         self.nr_zadania = nr_zadania
         self.funkcje = funkcje
@@ -22,7 +28,8 @@ class Bazowa:
         self.res = ""
 
     def generuj(self):
-        """Generuje kod na podstawie prototypu bez funkcji stworz zadanie."""
+        """Generuje kod na podstawie prototypu bez maina."""
         for linia in self.linie_prototypu:
-            if "stworz_zadanie" not in linia and "komenda(" not in linia:
-                self.res += linia
+            if 'if __name__ == "__main__":' in linia:
+                return
+            self.res += linia
