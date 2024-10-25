@@ -24,12 +24,13 @@ class bazowa:
         self.nr_zadania = nr_zadania
         self.funkcje = funkcje
         self.linie_prototypu = linie_prototypu
-        self.sciezka = sciezka_zadania
-        self.res = ""
+        self.sciezka_zadania = sciezka_zadania
 
-    def generuj(self):
+    def generuj(self) -> str:
         """Generuje kod na podstawie prototypu bez maina."""
+        res = ""
         for linia in self.linie_prototypu:
             if 'if __name__ == "__main__":' in linia:
-                return
-            self.res += linia
+                return res
+            res += linia
+        return res

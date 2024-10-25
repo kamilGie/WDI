@@ -13,7 +13,6 @@ class bazowa:
         funkcje (List[Callable]): Lista funkcji, które mają być używane w kodzie.
         linie_prototypu (List[str]): Linijki kodu prototypu zadania.
         sciezka (str): Ścieżka do folderu, w którym będzie zapisany generowany kod.
-        res (str): Zbiera wygenerowany kod jako string.
     """
 
     def __init__(
@@ -33,10 +32,9 @@ class bazowa:
         self.nr_zadania = nr_zadania
         self.funkcje = funkcje
         self.linie_prototypu = linie_prototypu
-        self.sciezka = sciezka_zadania
-        self.res = ""
+        self.sciezka_zadnia = sciezka_zadania
 
-    def generuj(self):
+    def generuj(self) -> str:
         """
         Generuje kod na podstawie prototypu oraz dostarczonych funkcji.
 
@@ -49,5 +47,6 @@ class bazowa:
         - Na końcu generowany jest blok `if __name__ == "__main__":`,
         - oraz import odpal_testy wraz  z wywolaniem zakomentowanym
         """
-        self.res = parsuj_prototyp(self.linie_prototypu, self.funkcje)
-        self.res += main(self.nr_zadania)
+        res = parsuj_prototyp(self.linie_prototypu, self.funkcje)
+        res += main(self.nr_zadania)
+        return res

@@ -3,7 +3,7 @@ import importlib
 from typing import List, Callable
 import sys
 from contextlib import contextmanager
-import StrategieZestawy
+import Strategie
 
 
 @contextmanager
@@ -17,7 +17,13 @@ def add_sys_path(new_path: str):
 
 
 class Zadanie:
-    def __init__( self, linie_prototypu: List[str], sciezka_zadania: str, nr_zadania: str, funkcje: List[Callable]):
+    def __init__(
+        self,
+        linie_prototypu: List[str],
+        sciezka_zadania: str,
+        nr_zadania: str,
+        funkcje: List[Callable],
+    ):
         """
         Inicjalizuje instancję klasy Zadanie.
 
@@ -77,8 +83,7 @@ class Zadanie:
         sciezka_rozwiazania = os.path.join(self.sciezka_zadania, nazwa_pliku)
 
         with open(sciezka_rozwiazania, "w") as file:
-            strategia.generuj()
-            file.write(strategia.res)
+            file.write(strategia.generuj())
 
 
 def stworz_zadanie(
@@ -97,8 +102,10 @@ def stworz_zadanie(
         ImportError: Jeśli strategia nie może być zaimportowana.
     """
     try:
-        funkcja_ze_strategiami = getattr(StrategieZestawy, strategia)
-        strategia_szablonow, strategia_rozwiazania, strategia_testow = ( funkcja_ze_strategiami())
+        funkcja_ze_strategiami = getattr(Strategie, strategia)
+        strategia_szablonow, strategia_rozwiazania, strategia_testow = (
+            funkcja_ze_strategiami()
+        )
     except (ImportError, AttributeError) as e:
         raise ImportError(f"Nie można zaimportować strategii '{strategia}': {e}")
 

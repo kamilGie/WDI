@@ -1,4 +1,3 @@
-DOMYSLNA = "domyslna"
 BAZOWA = "bazowa"
 
 # kontrowersyjny plik mozna by bylo strategie zimportowac poprostu skoro zawsze jest w tym samym miejscu
@@ -19,11 +18,12 @@ def domyslna():
             - strategia rozwiązań (str): R
             - strategia testów (str): T
     """
-    return DOMYSLNA, DOMYSLNA, BAZOWA
+    return "input_main", "importless", BAZOWA
 
 
-def bez_main():
-    return DOMYSLNA, BAZOWA, BAZOWA
+# sama funkcja w rozwiązaniu
+def meritum():
+    return "input_main", "meritum", BAZOWA
 
 
 def bazowa():

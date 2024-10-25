@@ -28,17 +28,11 @@ class bazowa:
         res (str): Zbiera wyniki generacji testów jako string.
     """
 
-    def __init__(
-        self,
-        linie_prototypu: List[str],
-        nr_zadania: int,
-        funkcje: List[Callable],
-        sciezka_zadania: str,
-    ):
+    def __init__( self, linie_prototypu: List[str], nr_zadania: int, funkcje: List[Callable], sciezka_zadania: str):
         self.nr_zadania = nr_zadania
         self.funkcje = funkcje
         self.linie_prototypu = linie_prototypu
-        self.sciezka = sciezka_zadania
+        self.sciezka_zadania = sciezka_zadania
         self.res = ""
 
     def generuj(self):
@@ -61,6 +55,7 @@ class bazowa:
         for funkcja in self.funkcje:
             self.generuj_testy_dla_funkcji(funkcja)
         self.finalizuj_testy()
+        return self.res
 
     def generuj_testy_dla_funkcji(self, funkcja: Callable):
         """

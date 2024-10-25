@@ -2,11 +2,13 @@ from bazowa import bazowa
 from _utils_S import funkcja_input, main, parsuj_prototyp
 
 
-class domyslna(bazowa):
+class input_main(bazowa):
     def generuj(self):
-        self.res = parsuj_prototyp(self.linie_prototypu, self.funkcje)
+        res = parsuj_prototyp(self.linie_prototypu, self.funkcje)
 
         cialo_maina = "\n"
         for funkcja in self.funkcje:
             cialo_maina += funkcja_input(funkcja)
-        self.res += main(self.nr_zadania, cialo_maina)
+        res += main(self.nr_zadania, cialo_maina)
+        print(res)
+        return res
