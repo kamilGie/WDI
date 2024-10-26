@@ -93,7 +93,34 @@ class Prime(Bazowa):
                 f"\ntest nr {test_index} Podaj {param_count} argumenty testowe, oddzielone spacją: "
             )
         print(f"\033[F\033[K\033[F\033[K", end="")
-        return tuple(map(int, wejscie.split()))
+        wyniki = []
+        argumenty = (
+            wejscie.split()
+        )  # Dzieli wejście na pojedyncze elementy oddzielone spacją
+
+        i = 0
+        while i < len(argumenty):
+            arg = argumenty[i]
+
+            if arg.startswith(
+                "["
+            ):  # Jeśli argument zaczyna się od "[", traktujemy go jako początek tablicy
+                tablica = []
+
+                # Łączymy kolejne argumenty do zamknięcia nawiasu
+                while not arg.endswith("]"):
+                    tablica.append(int(arg.strip("[]")))
+                    i += 1
+                    arg = argumenty[i]
+                tablica.append(int(arg.strip("[]")))  # Dodaj ostatni element w nawiasie
+                wyniki.append(tablica)  # Dodajemy całą tablicę do wyników
+            else:
+                # Jeśli to pojedyncza liczba, dodajemy ją jako int
+                wyniki.append(int(arg))
+
+            i += 1
+
+        return tuple(wyniki)  # Zwraca wynik jako krotkę
 
     def wynik_funkcje(self, funkcja: Callable, parametry: Tuple) -> Any:
         """

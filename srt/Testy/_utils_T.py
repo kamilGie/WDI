@@ -35,24 +35,48 @@ def dynamiczny_import_funkcji(nr_zadania, funkcje):
 
 
 def metoda_zwracajaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
-    zmienne_nazwa = ["minus_" + str(abs(z)) if z < 0 else str(z) for z in zmienne]
-    zmienne_abs = [abs(z) for z in zmienne]
+    zmienne_nazwa = [
+        (
+            "minus_" + str(abs(z))
+            if isinstance(z, int) and z < 0
+            else (
+                str(z)
+                if isinstance(z, int)
+                else "t"
+                + "_".join(["minus_" + str(abs(i)) if i < 0 else str(i) for i in z])
+                + "t"
+            )
+        )
+        for z in zmienne
+    ]
 
     return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
-        wynik  = {NazwaTestu}({', '.join(map(str, zmienne_abs))})
+        wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
 
         oczekiwany_wynik = [{ wynikWywolania }]
         self.assertIn(wynik, oczekiwany_wynik)\n"""
 
 
 def metoda_nasluchujaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
-    zmienne_nazwa = ["minus_" + str(abs(z)) if z < 0 else str(z) for z in zmienne]
-    zmienne_abs = [abs(z) for z in zmienne]
+    zmienne_nazwa = [
+        (
+            "minus_" + str(abs(z))
+            if isinstance(z, int) and z < 0
+            else (
+                str(z)
+                if isinstance(z, int)
+                else "t"
+                + "_".join(["minus_" + str(abs(i)) if i < 0 else str(i) for i in z])
+                + "t"
+            )
+        )
+        for z in zmienne
+    ]
 
     return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
         with redirect_stdout(f):
-            {NazwaTestu}({', '.join(map(str, zmienne_abs))})
+            {NazwaTestu}({', '.join(map(str, zmienne))})
         wynik = f.getvalue().strip()
 
         oczekiwany_wynik = [{ wynikWywolania }]
