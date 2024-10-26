@@ -75,9 +75,7 @@ def stworz_zadanie(
     # zmiana nazwy nie dzialala zawsze z gitem wiec lepiej usunac i stworzyc nowe
     if "Backup" not in sciezka_prototypu:
         os.remove(sciezka_prototypu)
-        sciezka_backupu = (
-            os.path.dirname(sciezka_prototypu) + f"/prototypBackup{nr_zadania}.py"
-        )
+        sciezka_backupu = os.path.join( os.path.dirname(sciezka_prototypu), f"prototypBackup{nr_zadania}.py")
         print("Backup prototypu zostal stworzony w", sciezka_backupu)
         with open(sciezka_backupu, "w") as file:
             file.writelines(linie_prototypu)
