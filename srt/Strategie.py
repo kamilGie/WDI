@@ -1,42 +1,48 @@
 import os
 import sys
 
-srt_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Testy")
-sys.path.append(srt_dir)
-srt_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Rozwiazania")
-sys.path.append(srt_dir)
-srt_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Szablony")
-sys.path.append(srt_dir)
+# Dodaj wszystkie podfoldery po za komendy do sys.path
+for root, dirs, files in os.walk(os.path.dirname(os.path.abspath(__file__))):
+    if "Komendy" != root:
+        sys.path.append(root)
+
+# Liczba plików tworzonych na podstawie strategii zależy od liczby zwracanych klas.
+# Jeśli użyjemy strategii zwracającej 1 klasę, zostanie stworzony 1 plik.
+# Możemy jednak opracować strategię zwracającą 10 klas, co pozwoli na stworzenie 10 plików zadania.
+# Pliki będą miały nazwy odpowiadające nazwom folderów, z których pochodzą.
+# Na przykład, jeśli w przyszłości planujemy dodać plik z wyjaśnieniami autora zadania
+# lub innymi informacjami, wystarczy stworzyć dodatkowy folder z nazwą, jaką chcemy nadać plikowi,
+# oraz dodać klasę dziedziczącą po bazowej, która zapisze te treści.
 
 
-BAZOWA = "bazowa"
+def testy_domyslne():
+    "Aktualizowana najlepsza strategia testow"
+    from Testy.Prime import Prime
+
+    return Prime
+
+
+def szablon_domyslny():
+    "Aktualizowana najlepsza strategia Szablonow"
+    from Szablon.input_main import input_main
+
+    return input_main
+
+
+def rozwiazania_domyslne():
+    "Aktualizowana najlepsza strategia rozwiazania"
+    from Rozwiazanie.importless import importless
+
+    return importless
 
 
 def domyslna():
-    """
-    Strategia domyslna strategii.
-
-    Zwraca domyslna wartości dla strategii szablonów,rozwiązań i testów.
-    Jesli kiedys jakas strategia bedzie powszechniej uzywana i lepsza wtedy
-    strategia domyslna zmieni swoje strategie zwracane
-
-    Returns:
-        tuple: Krotka z trzema wartościami domyślnymi:
-            - strategia szablonów (str): S
-            - strategia rozwiązań (str): R
-            - strategia testów (str): T
-    """
-    from Testy.Prime import Prime
-    from Szablony.input_main import input_main
-    from Rozwiazanie.importless import importless
-
-    return input_main, Prime, importless
+    """Zwraca domyslna wartości dla strategii czyli akutalizowna najlepsza strategie szablonów,rozwiązań i testów."""
+    return (szablon_domyslny(), rozwiazania_domyslne(), testy_domyslne())
 
 
-# sama funkcja w rozwiązaniu
 def meritum():
-    return "input_main", "meritum", BAZOWA
+    "sama funkcja w rozwiązaniu"
+    from Rozwiazanie.meritum import meritum
 
-
-def bazowa():
-    return BAZOWA, BAZOWA, BAZOWA
+    return szablon_domyslny(), meritum, testy_domyslne()

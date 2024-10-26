@@ -28,16 +28,15 @@ class Zadanie:
         self.funkcje = funkcje
         os.makedirs(sciezka_zadania, exist_ok=True)
 
-    def stworz_plikk(self, generator_dokumentu: Type[bb]):
+    def stworz_plik(self, generator_dokumentu: Type[bb]):
         Generator_dokumentu = generator_dokumentu(
             self.linie_prototypu, self.nr_zadania, self.funkcje, self.sciezka_zadania
         )
         sciezka_rozwiazania = os.path.join(
             self.sciezka_zadania, Generator_dokumentu.nazwa_pliku
         )
-
         with open(sciezka_rozwiazania, "w") as file:
-            file.write(Generator_dokumentu.generuj())
+            file.write(str(Generator_dokumentu))
 
 
 def stworz_zadanie(
@@ -61,8 +60,8 @@ def stworz_zadanie(
     except (ImportError, AttributeError) as e:
         raise ImportError(f"Nie można zaimportować strategii '{strategia}': {e}")
 
-    sciezka_zestawu = os.path.dirname(sciezka_prototypu)
-    sciezka_zadania = os.path.join(sciezka_zestawu, str(nr_zadania))
+    sciezka_zadania = os.path.dirname(sciezka_prototypu)
+    sciezka_zadania = os.path.join(sciezka_zadania, nr_zadania)
 
     with open(sciezka_prototypu, "r") as file:
         linie_prototypu = file.readlines()
@@ -70,10 +69,15 @@ def stworz_zadanie(
     zadanie = Zadanie(linie_prototypu, sciezka_zadania, nr_zadania, funkcje)
 
     for plik in nowe_pliki:
-        zadanie.stworz_plikk(plik)
+        zadanie.stworz_plik(plik)
 
     # Jeśli piszemy na prototypie, który nie jest backupem, stwórz z niego backup i usuń
+    # zmiana nazwy nie dzialala zawsze z gitem wiec lepiej usunac i stworzyc nowe
     if "Backup" not in sciezka_prototypu:
         os.remove(sciezka_prototypu)
-        with open(sciezka_zestawu + f"/prototypBackup{nr_zadania}.py", "w") as file:
+        sciezka_backupu = (
+            os.path.dirname(sciezka_prototypu) + f"/prototypBackup{nr_zadania}.py"
+        )
+        print("Backup prototypu zostal stworzony w", sciezka_backupu)
+        with open(sciezka_backupu, "w") as file:
             file.writelines(linie_prototypu)

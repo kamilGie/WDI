@@ -3,7 +3,7 @@ from Bazowa import Bazowa
 
 
 class normalna(Bazowa):
-    def generuj(self) -> str:
+    def __str__(self) -> str:
         """
         Generuje kod na podstawie prototypu oraz dostarczonych funkcji.
 

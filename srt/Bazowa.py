@@ -1,6 +1,7 @@
 from abc import abstractmethod
 import os
 from typing import List, Callable
+import inspect
 
 
 class Bazowa:
@@ -15,7 +16,13 @@ class Bazowa:
         sciezka (str): Ścieżka do folderu, w którym będzie zapisany generowany kod.
     """
 
-    def __init__( self, linie_prototypu: list[str], nr_zadania: str, funkcje: List[Callable], sciezka_zadania: str,):
+    def __init__(
+        self,
+        linie_prototypu: list[str],
+        nr_zadania: str,
+        funkcje: List[Callable],
+        sciezka_zadania: str,
+    ):
         """
         Args:
             linie_prototypu (List[str]): Lista linijek kodu prototypu.
@@ -27,8 +34,13 @@ class Bazowa:
         self.funkcje = funkcje
         self.linie_prototypu = linie_prototypu
         self.sciezka_zadnia = sciezka_zadania
-        self.nazwa_pliku: str = f"{os.path.dirname(os.path.abspath(__file__)).lower()}{nr_zadania}.py"
+        # bierze Folder klasy do ktorej nalezy i z tego bierze nazwe pliku
+        nazwa_folderu = os.path.basename(
+            os.path.dirname(os.path.abspath(inspect.getfile(self.__class__)))
+        )
+        self.nazwa_pliku: str = f"{nazwa_folderu.lower()}{nr_zadania}.py"
 
     @abstractmethod
-    def generuj(self) -> str:
+    def __str__(self) -> str:
+        """Abstrakcyjna metoda do generowania tekstowej reprezentacji obiektu."""
         pass

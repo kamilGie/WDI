@@ -3,7 +3,9 @@ from Bazowa import Bazowa
 
 
 class meritum(Bazowa):
-    def generuj(self):
+    """Sama funkcja przekazana"""
+
+    def __str__(self) -> str:
         res = ""
         for funkcja in self.funkcje:
             res += inspect.getsource(funkcja)

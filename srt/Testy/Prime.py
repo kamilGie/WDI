@@ -17,7 +17,7 @@ from _utils_T import (
 
 
 class Prime(Bazowa):
-    def generuj(self):
+    def __str__(self) -> str:
         """
         Generuje testy dla zadania, wywołując odpowiednie metody w celu utworzenia
         struktury testów i ich wyników.
