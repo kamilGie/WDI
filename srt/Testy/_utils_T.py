@@ -35,18 +35,24 @@ def dynamiczny_import_funkcji(nr_zadania, funkcje):
 
 
 def metoda_zwracajaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
-    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(map(str, zmienne))}(self):
-        wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
+    zmienne_nazwa = ["minus_" + str(abs(z)) if z < 0 else str(z) for z in zmienne]
+    zmienne_abs = [abs(z) for z in zmienne]
+
+    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+        wynik  = {NazwaTestu}({', '.join(map(str, zmienne_abs))})
 
         oczekiwany_wynik = [{ wynikWywolania }]
         self.assertIn(wynik, oczekiwany_wynik)\n"""
 
 
 def metoda_nasluchujaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
-    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(map(str, zmienne))}(self):
+    zmienne_nazwa = ["minus_" + str(abs(z)) if z < 0 else str(z) for z in zmienne]
+    zmienne_abs = [abs(z) for z in zmienne]
+
+    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
         with redirect_stdout(f):
-            {NazwaTestu}({', '.join(map(str, zmienne))})
+            {NazwaTestu}({', '.join(map(str, zmienne_abs))})
         wynik = f.getvalue().strip()
 
         oczekiwany_wynik = [{ wynikWywolania }]

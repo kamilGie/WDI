@@ -12,4 +12,8 @@ def Zadanie_5(n):
         licznik += 1
         suma += licznik * 2 - 1
 
-    print(licznik)
+    return licznik
+
+
+if __name__ == "__main__":
+
