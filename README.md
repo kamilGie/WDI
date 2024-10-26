@@ -588,7 +588,7 @@ Dalej zajmiemy się `rozwiazanie.py`, gdzie dodam możliwe do użycia atrybuty k
 - **`nr_zadania`** – numer zadania, które zrealizowaliśmy.
 - **`funkcje`** – funkcje, które zostały przekazane do testów szablonu i inne.
 - **`sciezka`** – ścieżka folderu z zadaniem, które jest tworzone.
-- **`nazwa_pliku`** – nazwa pliku ktorego wygeneruje domyslnie pochodzi od nazwy folderu, w którym znajduje się klasa. Na przykład, w folderze *Rozwiazanie*, klasy dziedziczące mają ten atrybut ustawiony na "rozwiazanie{`nr_zadania`}.py".Mozna jednak zmienic nazwe pliku zmieniajac ten atrybut.
+- **`nazwa_pliku`** – nazwa pliku ktorego wygeneruje domyslnie pochodzi od nazwy folderu, w którym znajduje się klasa. Na przykład, w folderze *Rozwiazanie*, klasy dziedziczące mają ten atrybut ustawiony na "rozwiazanie{`nr_zadania`}.py".
 
 Wszystkich tych atrybutów można używać w klasach pochodnych od klasy bazowej, jednego z nich użyjemy co będzie widoczne w naszym przykładzie.
 
