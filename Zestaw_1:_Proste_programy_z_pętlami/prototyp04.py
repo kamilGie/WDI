@@ -1,7 +1,7 @@
 # ====================================================================================================>
-# Zadanie 5
-# Pierwiastekcałkowitoliczbowyzliczbynaturalnejtoczęśćcałkowitazpierwiastkaztejliczby.
-# Proszę napisać program obliczający taki pierwiastek korzystając z zależności 1+3+5+...=n2.
+# Zadanie 4
+# Proszę napisać program sprawdzający czy istnieje spójny podciąg ciągu Fibonacciego o za-
+# danej sumie.
 # ====================================================================================================>
 
 
@@ -16,4 +16,6 @@ def Zadanie_5(n):
 
 
 if __name__ == "__main__":
+    from Develop import stworz_zadanie
 
+    stworz_zadanie([Zadanie_5])
