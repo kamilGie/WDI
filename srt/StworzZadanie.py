@@ -1,19 +1,8 @@
 import os
-import importlib
 from typing import List, Callable
-import sys
-from contextlib import contextmanager
+from Bazowa import Bazowa as bb
+from typing import Type
 import Strategie
-
-
-@contextmanager
-def add_sys_path(new_path: str):
-    """Dodaje nową ścieżkę do sys.path w kontekście."""
-    sys.path.append(new_path)
-    try:
-        yield
-    finally:
-        sys.path.remove(new_path)
 
 
 class Zadanie:
@@ -39,51 +28,16 @@ class Zadanie:
         self.funkcje = funkcje
         os.makedirs(sciezka_zadania, exist_ok=True)
 
-    def import_strategii(self, nazwa: str, sciezka: str):
-        """
-        Importuje strategię z zadanego modułu.
-
-        Args:
-            nazwa (str): Nazwa strategii do zaimportowania.
-            sciezka (str): Ścieżka do folderu z modułem strategii.
-
-        Returns:
-            obiekt strategii: Zwraca zaimportowaną strategię z przekazanymi argumentami.
-        """
-        katalog_pliku = os.path.dirname(os.path.abspath(__file__))
-        sciezka_do_strategii = os.path.join(katalog_pliku, sciezka)
-
-        with add_sys_path(sciezka_do_strategii):
-            try:
-                modul_strategii = importlib.import_module(f"{sciezka}.{nazwa}")
-                strategia = getattr(modul_strategii, nazwa)
-            except (ImportError, AttributeError) as e:
-                raise ImportError(f"Nie można zaimportować strategii '{nazwa}': {e}")
-
-        return strategia(
+    def stworz_plikk(self, generator_dokumentu: Type[bb]):
+        Generator_dokumentu = generator_dokumentu(
             self.linie_prototypu, self.nr_zadania, self.funkcje, self.sciezka_zadania
         )
-
-    def stworz_plik(
-        self, nazwa_strategii: str, folder_strategii: str, nazwa_pliku: str
-    ):
-        """
-        Tworzy plik z rozwiązaniem na podstawie strategii.
-
-        Args:
-            nazwa_strategii (str): Nazwa strategii do zaimportowania.
-            folder_strategii (str): Nazwa folderu, w którym znajduje się strategia.
-            nazwa_pliku (str): Nazwa pliku do utworzenia (bez rozszerzenia).
-
-        Raises:
-            ImportError: Jeśli strategia nie może być zaimportowana.
-        """
-        strategia = self.import_strategii(nazwa_strategii, folder_strategii)
-        nazwa_pliku = f"{nazwa_pliku}{self.nr_zadania}.py"
-        sciezka_rozwiazania = os.path.join(self.sciezka_zadania, nazwa_pliku)
+        sciezka_rozwiazania = os.path.join(
+            self.sciezka_zadania, Generator_dokumentu.nazwa_pliku
+        )
 
         with open(sciezka_rozwiazania, "w") as file:
-            file.write(strategia.generuj())
+            file.write(Generator_dokumentu.generuj())
 
 
 def stworz_zadanie(
@@ -103,9 +57,7 @@ def stworz_zadanie(
     """
     try:
         funkcja_ze_strategiami = getattr(Strategie, strategia)
-        strategia_szablonow, strategia_rozwiazania, strategia_testow = (
-            funkcja_ze_strategiami()
-        )
+        nowe_pliki = funkcja_ze_strategiami()
     except (ImportError, AttributeError) as e:
         raise ImportError(f"Nie można zaimportować strategii '{strategia}': {e}")
 
@@ -114,10 +66,11 @@ def stworz_zadanie(
 
     with open(sciezka_prototypu, "r") as file:
         linie_prototypu = file.readlines()
+
     zadanie = Zadanie(linie_prototypu, sciezka_zadania, nr_zadania, funkcje)
-    zadanie.stworz_plik(strategia_szablonow, "StrategieSzablonow", "szablon")
-    zadanie.stworz_plik(strategia_rozwiazania, "StrategieRozwiazania", "rozwiazanie")
-    zadanie.stworz_plik(strategia_testow, "StrategieTestow", "testy")
+
+    for plik in nowe_pliki:
+        zadanie.stworz_plikk(plik)
 
     # Jeśli piszemy na prototypie, który nie jest backupem, stwórz z niego backup i usuń
     if "Backup" not in sciezka_prototypu:

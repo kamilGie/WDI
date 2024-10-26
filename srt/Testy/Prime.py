@@ -1,6 +1,9 @@
 import inspect
 import io
 from contextlib import redirect_stdout
+from Bazowa import Bazowa
+from typing import Callable, Tuple, Any
+
 from _utils_T import (
     IMPORTY,
     KOMENDA,
@@ -11,30 +14,9 @@ from _utils_T import (
     dynamiczny_import_funkcji,
     RAMKA,
 )
-from typing import List, Callable, Tuple, Any
 
 
-class bazowa:
-    """
-    Klasa Bazowa do generowania testów dla zadania.
-
-    Klasa ta służy do generowania testów na podstawie funkcji zdefiniowanych w prototypie zadania.
-
-    Attributes:
-        nr_zadania (int): Numer zadania, dla którego generowane są testy.
-        funkcje (List[Callable]): Lista funkcji, dla których mają być generowane testy.
-        linie_prototypu (List[str]): Linijki kodu prototypu zadania.
-        sciezka (str): Ścieżka do folderu zadania, gdzie będą zapisywane wyniki testów.
-        res (str): Zbiera wyniki generacji testów jako string.
-    """
-
-    def __init__( self, linie_prototypu: List[str], nr_zadania: int, funkcje: List[Callable], sciezka_zadania: str):
-        self.nr_zadania = nr_zadania
-        self.funkcje = funkcje
-        self.linie_prototypu = linie_prototypu
-        self.sciezka_zadania = sciezka_zadania
-        self.res = ""
-
+class Prime(Bazowa):
     def generuj(self):
         """
         Generuje testy dla zadania, wywołując odpowiednie metody w celu utworzenia

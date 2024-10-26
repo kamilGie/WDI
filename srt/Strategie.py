@@ -1,7 +1,15 @@
-BAZOWA = "bazowa"
+import os
+import sys
 
-# kontrowersyjny plik mozna by bylo strategie zimportowac poprostu skoro zawsze jest w tym samym miejscu
-# a nie jakies dodatkowe importwy stringi na stringach i wgl, zgadzam sie ale nie mam czasu tego poprawiac
+srt_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Testy")
+sys.path.append(srt_dir)
+srt_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Rozwiazania")
+sys.path.append(srt_dir)
+srt_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Szablony")
+sys.path.append(srt_dir)
+
+
+BAZOWA = "bazowa"
 
 
 def domyslna():
@@ -18,7 +26,11 @@ def domyslna():
             - strategia rozwiązań (str): R
             - strategia testów (str): T
     """
-    return "input_main", "importless", BAZOWA
+    from Testy.Prime import Prime
+    from Szablony.input_main import input_main
+    from Rozwiazanie.importless import importless
+
+    return input_main, Prime, importless
 
 
 # sama funkcja w rozwiązaniu

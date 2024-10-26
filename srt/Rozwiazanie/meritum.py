@@ -1,8 +1,8 @@
-from bazowa import bazowa
 import inspect
+from Bazowa import Bazowa
 
 
-class meritum(bazowa):
+class meritum(Bazowa):
     def generuj(self):
         res = ""
         for funkcja in self.funkcje:

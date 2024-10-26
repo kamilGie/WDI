@@ -1,7 +1,7 @@
-from bazowa import bazowa
+from Bazowa import Bazowa
 
 
-class importless(bazowa):
+class importless(Bazowa):
     """
     Wszystko z prototypu po za linijami zawierajacymi `stworz_zadanie` oraz `komenda(`
     """

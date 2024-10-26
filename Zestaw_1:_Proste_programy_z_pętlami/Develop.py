@@ -12,13 +12,17 @@ srt_folder = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../srt")
 sys.path.append(srt_folder)
 
 # Numer zadania na podstawie nazwy pliku
-nr_zadania = (os.path.basename(sciezka_pliku_wykonalnego)
-              .replace("prototyp", "")
-              .replace(".py", "")
-              .replace("Backup", "")
-              )
+nr_zadania = (
+    os.path.basename(sciezka_pliku_wykonalnego)
+    .replace("prototyp", "")
+    .replace(".py", "")
+    .replace("Backup", "")
+)
 
-def stworz_zadanie(funkcje: List[Callable], strategia: str = STRATEGIA_DOMYSLNA) -> None:
+
+def stworz_zadanie(
+    funkcje: List[Callable], strategia: str = STRATEGIA_DOMYSLNA
+) -> None:
     """
     Tworzy folder z rozwiązaniem na podstawie przekazanych funkcji.
 
@@ -27,9 +31,12 @@ def stworz_zadanie(funkcje: List[Callable], strategia: str = STRATEGIA_DOMYSLNA)
         strategia (str): Nazwa strategii. Domyślnie 'bazowa'.
     """
     try:
-        importlib.import_module("StworzZadanie").stworz_zadanie(sciezka_pliku_wykonalnego, nr_zadania, funkcje, strategia)
+        importlib.import_module("StworzZadanie").stworz_zadanie(
+            sciezka_pliku_wykonalnego, nr_zadania, funkcje, strategia
+        )
     except ImportError as e:
         print(f"Błąd importu modułu: {e}")
+
 
 def komenda(k: str, *args: List[str], **kwargs: dict):
     """
@@ -44,7 +51,9 @@ def komenda(k: str, *args: List[str], **kwargs: dict):
         **kwargs: Dodatkowe argumenty kluczowe do komendy.
     """
     try:
-        return importlib.import_module("WykonajKomende").wykonaj_komende(k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs)
+        return importlib.import_module("WykonajKomende").wykonaj_komende(
+            k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
+        )
     except ImportError as e:
         print(f"Błąd importu modułu: {e}")
     except Exception as e:

@@ -1,8 +1,10 @@
-from bazowa import bazowa
+from Bazowa import Bazowa
+
+print("kurwa")
 from _utils_S import funkcja_input, main, parsuj_prototyp
 
 
-class input_main(bazowa):
+class input_main(Bazowa):
     def generuj(self):
         res = parsuj_prototyp(self.linie_prototypu, self.funkcje)
 
