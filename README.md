@@ -1,5 +1,6 @@
 
-# Szablony Startowe, Rozwiązania i Automatycznie Generujące się Testy do WDI na AGH
+# SRT-WDI 
+## Szablony Startowe, Rozwiązania i Automatycznie Generujące się Testy do WDI na AGH
 ### 🔧 Używanie Projektu
 
 Każdy folder z zadaniem składa się z trzech kluczowych plików:
@@ -15,7 +16,7 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 3. Uruchom plik `szablon.py`, a funkcja `odpal_testy()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
 
 ### 🧱 Prototypy
-Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest wtedy `prototyp.py`.
+Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest nazwane `prototyp.py`.
 1. Po rozwiązaniu zadania na `prototyp.py` można stworzyć pełne zadanie, odkomentowując funkcję `stworz_zadanie` i przekazując w tablicy funkcje, które mają być objęte testami.
 2. Funkcja `stworz_zadanie` automatycznie przygotuje testy na podstawie przekazanych funkcji. Poprosi również o podanie argumentów testowych, które Twoim zdaniem mogą być interesujące lub problematyczne.
 3. Następnie utworzy folder zadania zawierający pliki: `rozwiazanie.py` oraz `szablon.py` na podstawie `prototyp.py`, a także `testy.py` na podstawie wcześniej wygenerowanych testów.
@@ -33,15 +34,16 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest wt
 
 ## 🤝 Jak pomóc i zostac współtwórcą?
 
-- Zalecam [***Utwórzyć fork***](https://github.com/kamilGie/WDI/fork) i zgłaszanie swoich zmian za pomocą pull requestów. Dzięki temu staniesz się widocznym współtwórcą projektu. 
+- Zalecam [***Utwórzyć fork***](https://github.com/kamilGie/WDI/fork) i zgłaszanie swoich zmian za pomocą pull requestów. Dzięki temu staniesz się widocznym współtwórcą projektu.
 - Można też wysłać mi kody bezpośrednio [kontakt tutaj](http://www.gieras.pl).
 
-### 💡 Możliwe poprawki ### 
+### 💡 Możliwe Ulepszenia ### 
 - ✏️ Stworzenie Zadania
 - 🛠️ Poprawienie treści zadania, jeśli jest niejasna lub brakuje np. znaków potęgowania.
 - 🔧 Ulepszanie testow poprzez komendy lub stworzeniej własnej [Szczegóły](#komendy)
-- 🧠 Tworzenie/Ulepszanie Strategi Tworzenia Zadań [Szczegóły](#strategie)
-
+- 🧠 Tworzenie Strategi Tworzenia Zadań [Szczegóły](#strategie)
+  
+SRT opiera się na **rozszerzaniu funkcjonalności**. Dzięki temu możesz dodawać nowe funkcje i strategie bez modyfikacji istniejącego kodu, co ułatwia wdrożenie bez potrzeby wiedzy o całym systemie i unika konfliktów.
 ### 🐛 Zgłaszanie błędów
 
 - Błędy w rozwiązaniach, testach lub treściach  mozna zgłaszać <a href="https://github.com/kamilgie/wdi/issues/new?labels=bug"> ****tutaj**** </a>
@@ -134,69 +136,410 @@ Więcej o tym, jak działa cały projekt w
 
 ## Tworzenie Zadania
 ### `stworz_zadanie()` 
-W kazdym prototypie mamy funkcje `stworz_zadanie` importowana z  pliku `Develop`. Plik `Develop` zbiera informacje o pliku która ja importuje a funkcja `stworz_zadanie` wysyla
-- `funkcje` ktore chcemy testowac
-- `nr_zadania` ktore rozwiązaliśmy (bierze to z nazwy prototypu)
-- `sciezke` do folderu w ktorym jest prototyp
-- `strategie` rodzaj w jaki chcemy by testy zostaly napisane domyslnie jest to strategia bazowa. [Wiecej o strategi](#Strategie)
-
-te zmienn odbiera inna  funkcjia `stowrz_zadanie` ktora znajduje sie w katalogu skrypty w  katalogu glownym projektu  w pliku o nazwie `StworzZadanie`.
-Z tamtad funkcja z  `sciezca` ktora przeslalismy stworzy folder  zadania oraz 3 pliki . `rozwiazanie.py`, `szablon.py`, `testy.py`. to jak stworzy jest zaleznie od `strategi` jaka przeslalismy ale domyslnie przesylamy strategie `bazowa` ktora 
-### `rozwiazanie.py` 
-1. przepisuje prototyp usuwajac tylko linijki ktore maja w sobie `stworz_zadanie`
-### `szablon.py` 
-1. przepisuje pierwsze linie póki sa komatarzami by zostawic opis zadania. wraz z mozliwymi kometarzami tworcy zadania (np jak zwracac by testy przeszly)
-2. Nastepnie usuwa wszystkie linijki po za linijkami zaczynajacymi sie od `def FunkcjaKtoraTestujemy(` ta linijke zostawia i dopsiuje trzy kropki by uzytkownik wiedzial ze te funkcje sa do napisania.
-3. Usuwa tak do napotkania maina ktorego zapisuje 
-4. importuje klase testy
-5. zapisuje odpalenia funkcje  ktore testujemy wraz z inputem nazw ich arguemntow.
-6. zakomentowana metode  `Uruchom()` ktora bedzie uruchamiac testy
+Każdy prototyp zawiera funkcję `stworz_zadanie`, importowaną z pliku `Develop`. funkcja `stworz_zadanie` przesyla funkcje ktore chcemy by obejmowaly testy oraz wchodzily w sklad szablonu do wypelnienia. Wiec przykladowo wypelniony `prototyp` powinnien wygladac tak:
 ```python
 # ====================================================================================================>
-# Zadanie 21
-# zrob szablon
+# Zadanie 0
+# Stworz 2 funkcje jedna dodaje 2 liczby druga mnoży 2 liczby
 # ====================================================================================================>
-# tutaj moge dodac swoje kometarze
-# wynik zwroc w print(a,b,c)
 
-def Zadanie_21(n, b):
-    # implementacja funkcji
+def dodaj(a, b):
+    return a + b
+
+def mnoż(a, b):
+    return a * b
 
 if __name__ == "__main__":
-    from testy21 import Testy21
-    Zadanie_21(input("Podaj n: "), input("Podaj b: "))
+    from Develop import stworz_zadanie
 
-    # Testy21.Uruchom()
+    # stworz_zadanie([dodaj, mnoż])
+```
+Na tak wypełnionym prototypie możemy odkomentować `stworz_zadanie` i rozpocząć proces tworzenia.
+
+<details>
+    <summary> Dzialanie Developa </summary>
+   
+Plik `Develop` zbiera informacje o pliku, który importuje tę funkcję. Następnie zbiera  następujące dane:
+- `funkcje` ktore chcemy testowac.
+- `nr_zadania` ktore rozwiązaliśmy bierze to z nazwy prototypu.
+- `sciezke` do folderu w ktorym jest prototyp aby `stworz_zadanie` mogło w tym samym stworzyć folder zadania.
+- `strategie` rodzaj w jaki chcemy by testy zostaly napisane domyslnie jest to strategia bazowa. [Wiecej o strategi](#Strategie)
+
+Nastepnie Develop do tego dodaje nowa sciezke importu ktora znajduje sie w [srt](srt) i tam wczesniej przygotowana zmienne przesyla na dalszy proces.
+</details>
+
+
+Funkcja `stworz_zadanie` znajduje się w katalogu [srt](srt) w pliku o nazwie `StworzZadanie`. Stamtąd funkcja utworzy folder zadania oraz trzy pliki: `rozwiazanie.py`, `szablon.py`, `testy.py`. To, jak pliki te są generowane, zależy od przekazanej `strategii`, jednak domyślnie stosowana jest strategia `bazowa`, która...
+
+### `rozwiazanie.py` 
+1. przepisuje prototyp usuwajac tylko linijki ktore maja w sobie `stworz_zadanie`
+```python
+# ====================================================================================================>
+# Zadanie 0
+# Stworz 2 funkcje jedna dodaje 2 liczby druga mnoży dwie liczby
+# ====================================================================================================>
+
+def dodaj(a, b):
+    return a + b
+
+def mnoż(a, b):
+    return a * b
+
+if __name__ == "__main__":
+
+```
+### `szablon.py` 
+1. Przepisuje pierwsze linie, które są komentarzami, aby zostawić opis zadania wraz z ewentualnymi komentarzami twórcy zadania.
+2. Następnie usuwa wszystkie linijki poza linijką zaczynającą się od `def FunkcjaKtoraTestujemy(`. Tę linijkę pozostawia i dopisuje trzy kropki, aby użytkownik wiedział, że te funkcje są do napisania.
+3. Usuwa wszystkie linie do momentu napotkania bloku `if __name__ == "__main__":`.
+4. Zapisuje import funkcji `odpal_testy`.
+5. Zapisuje uruchomienie funkcji, które testujemy, wraz z dynamicznym wprowadzeniem nazw ich argumentów.
+6. Zakomentowana metoda `odpal_testy()`, która będzie uruchamiać testy.
+
+```python
+# ====================================================================================================>
+# Zadanie 0
+# Stworz 2 funkcje jedna dodaje 2 liczby druga mnoży dwie liczby
+# ====================================================================================================>
+
+def dodaj(a, b): ...
+
+def mnoż(a, b): ...
+
+if __name__ == "__main__":
+    from testy01 import odpal_testy
+
+    dodaj(input('Podaj a: '), input('Podaj b: '))
+    mnoż(input('Podaj a: '), input('Podaj b: '))
+
+    # odpal_testy()
 ```
 
 ### `testy.py` 
-1. Napisze potrzebne importy oraz stworzy gore (deklaracje) klasy Testy
-2. Nastepnie dla kazdej funkji przekazanej do testowania 
-3. Sprawdza liczbe argumetnow jaka funkcja przyjmuje
-4. Generuje `( 10*liczba argumentow +1 )` testow
-5. Jesli liczba argumentow nie wynosi zero prosi uzytkownika o wpisanie argumentów testowych
-6. Jesli argumenty wpisane prez uzytkonwika  nie beda sie zgadzły typem z arguemntami funkcji, poprosi o ponowne wpisanie.
-7. Odpala funkcje na argumentach testowych  i nasluchuje printa oraz przyjmuje wartosci jaka zwroci
-8. Jesli  zwroci None wynik bedzie tym co sie nasluchal jesli cos zwroci wynik bedzie tym co funkcja zwrocila a nasluchany (print) zostanie zignrowany
-9. Testy zwracania i nasluchiwnia sie roznia. Stosuje metode nasluchiwania gdy wynikiem jest string. (co bedzie prowadzic do blędu jak wynikiem zwracanym jest string ale mam nadzieje ze to niemozliwy problem xd)
-10. Z argumetnow i wyniku  tworzy metode testowa ktora bedzie znajdowac sie w klasie testy o nazwie `test_numerTestu_funkcjaTestowalna_argument`
-   ```python
-        def test_Nr1_Zadanie_21_argumenty_11(self):
-            # przyklad testu nasluchiwnia test zwracania bedzie odrau bral wynik
-            f = io.StringIO()
-            with redirect_stdout(f):
-                Zadanie_21(11)
-            wynik = f.getvalue().strip()
-            # wyniki sa  tablica by moc akceptowac kilka wariancji poprawnego wyniku 
-            oczekiwany_wynik = ['3 4 5\n6 8 10']
-            self.assertIn(wynik, oczekiwany_wynik)
+1. Napisze potrzebne importy
+2. napisze funkcje `odpal_testy` ktora bedzie odpalac testy
+3. napisze funkcje `komenda` do odpalania komend [Wiecej o komendach](#Komendy)
+4. Napisze nagłówek (deklaracje) klasy `Testy`.
+5. Następnie dla każdej funkcji przekazanej do testowania:
+6. Sprawdza liczbę argumentów, jaką funkcja przyjmuje.
+7. Generuje `(10 * liczba argumentów + 1)` testów.
+8. Jeśli liczba argumentów nie wynosi zero, prosi użytkownika o wpisanie argumentów testowych.
+9. Jeśli argumenty wpisane przez użytkownika nie będą się zgadzały typem z argumentami funkcji, poprosi o ponowne wpisanie.
+   <img width="930" alt="Zrzut ekranu 2024-10-25 o 15 05 53" src="https://github.com/user-attachments/assets/9d641167-62e8-4a80-b77e-80aed160cbe1">
+10. Uruchamia funkcję z argumentami testowymi, monitorując jednocześnie wartości wypisywane przez `print` oraz wartości zwracane przez funkcję.
+11. Jeśli funkcja nic nie zwróci, wynikiem zostanie to, co zostało przechwycone przez `print`. Jeśli funkcja zwróci inną wartość, to ona będzie wynikiem, a dane wypisane przez `print` zostaną zignorowane.
+12. Z argumentów i wyniku napisze metodę testową o nazwie `test_numerTestu_funkcjaTestowalna_argument`.
+```python
+    def test_Nr1_dodaj_argumenty_2_2(self):
+        wynik  = dodaj(2, 2)
 
+        oczekiwany_wynik = [4]
+        self.assertIn(wynik, oczekiwany_wynik)
 ```
 10. Po napisaniu `liczba funkcji*( 10*liczba argumentow +1 )` metod testowych zakonczy klase Testy
-11. napisze funkcje `odpal_testy` ktora bedzie odpalac testy
-12. napisze funkcje `komenda` do odpalania komend  [Wiecej o komendach](#Komendy)
 
-Po stworzeniu trzech plików funkcja utworzy plik `prototypBackup.py`, aby bezpiecznie móc usunąć prototyp. Plik prototypBackup.py jest ignorowany przez .gitignore, więc nie będzie dodawany do głównego repozytorium. Został stworzony, aby w przypadku błędnego stworzenia zadania z różnych powodów móc utworzyć zadanie na nowo (nie ma potrzeby usuwania folderu zadania, ponieważ funkcja nadpisze istniejące tam pliki). Funkcja `stworz_zadanie` dba o to, by nie usunąć pliku `prototypBackup`, dzięki czemu można tworzyć zadania do momentu zadowolenia z efektu końcowego.
+<details>
+   <summary>Pelny kod testy przykladu </summary>
+   
+```python 
+import unittest
+import io
+import os
+import sys
+from contextlib import redirect_stdout
+import importlib
+
+from szablon01 import dodaj, mnoż
+
+
+def odpal_testy():
+    suite = unittest.TestLoader().loadTestsFromTestCase(testy)
+    unittest.TextTestRunner(verbosity=2).run(suite)
+
+
+def komenda(k: str, *args, **kwargs):
+    """
+    Wykonuje zadaną komendę z przekazanymi argumentami.
+    Dodanie wlasnej komendy ogranicza sie do dodania pliku z funkcja o tej samej nazwie
+    w folderze glownym projektu src/Komendy
+    Wiecej informacji o dodaniu wlasnej komendy jak i lista komend w ReadMe projektu
+
+    Args:
+        k (str): Komenda do wykonania.
+        *args: Dodatkowe argumenty do komendy.
+        **kwargs: Dodatkowe argumenty kluczowe do komendy.
+    """
+    sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
+    srt_dir = os.path.join(
+        os.path.dirname(sciezka_pliku_wykonalnego), "../../srt"
+    )
+    sys.path.append(srt_dir)
+    nr_zadania = os.path.dirname(sciezka_pliku_wykonalnego)
+    return importlib.import_module("WykonajKomende").wykonaj_komende(
+        k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
+    )
+
+
+class testy(unittest.TestCase):
+
+    def test_Nr1_dodaj_argumenty_2_2(self):
+        wynik  = dodaj(2, 2)
+
+        oczekiwany_wynik = [4]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr2_dodaj_argumenty_14_123(self):
+        wynik  = dodaj(14, 123)
+
+        oczekiwany_wynik = [137]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr3_dodaj_argumenty_123_123(self):
+        wynik  = dodaj(123, 123)
+
+        oczekiwany_wynik = [246]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr4_dodaj_argumenty_123_1123(self):
+        wynik  = dodaj(123, 1123)
+
+        oczekiwany_wynik = [1246]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr5_dodaj_argumenty_12_3123(self):
+        wynik  = dodaj(12, 3123)
+
+        oczekiwany_wynik = [3135]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr6_dodaj_argumenty_12_3123(self):
+        wynik  = dodaj(12, 3123)
+
+        oczekiwany_wynik = [3135]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr7_dodaj_argumenty_-213_12312(self):
+        wynik  = dodaj(-213, 12312)
+
+        oczekiwany_wynik = [12099]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr8_dodaj_argumenty_2_2(self):
+        wynik  = dodaj(2, 2)
+
+        oczekiwany_wynik = [4]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr9_dodaj_argumenty_2_4(self):
+        wynik  = dodaj(2, 4)
+
+        oczekiwany_wynik = [6]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr10_dodaj_argumenty_2_-1(self):
+        wynik  = dodaj(2, -1)
+
+        oczekiwany_wynik = [1]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr11_dodaj_argumenty_2913_123(self):
+        wynik  = dodaj(2913, 123)
+
+        oczekiwany_wynik = [3036]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr12_dodaj_argumenty_324_56234(self):
+        wynik  = dodaj(324, 56234)
+
+        oczekiwany_wynik = [56558]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr13_dodaj_argumenty_21_35(self):
+        wynik  = dodaj(21, 35)
+
+        oczekiwany_wynik = [56]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr14_dodaj_argumenty_12_4(self):
+        wynik  = dodaj(12, 4)
+
+        oczekiwany_wynik = [16]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr15_dodaj_argumenty_0_0(self):
+        wynik  = dodaj(0, 0)
+
+        oczekiwany_wynik = [0]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr16_dodaj_argumenty_-1_-1(self):
+        wynik  = dodaj(-1, -1)
+
+        oczekiwany_wynik = [-2]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr17_dodaj_argumenty_1_1(self):
+        wynik  = dodaj(1, 1)
+
+        oczekiwany_wynik = [2]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr18_dodaj_argumenty_12_23(self):
+        wynik  = dodaj(12, 23)
+
+        oczekiwany_wynik = [35]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr19_dodaj_argumenty_2_1(self):
+        wynik  = dodaj(2, 1)
+
+        oczekiwany_wynik = [3]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr20_dodaj_argumenty_2_5(self):
+        wynik  = dodaj(2, 5)
+
+        oczekiwany_wynik = [7]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr21_dodaj_argumenty_21_1(self):
+        wynik  = dodaj(21, 1)
+
+        oczekiwany_wynik = [22]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr1_mnoż_argumenty_213_4512(self):
+        wynik  = mnoż(213, 4512)
+
+        oczekiwany_wynik = [961056]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr2_mnoż_argumenty_-4_12(self):
+        wynik  = mnoż(-4, 12)
+
+        oczekiwany_wynik = [-48]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr3_mnoż_argumenty_-3_-2(self):
+        wynik  = mnoż(-3, -2)
+
+        oczekiwany_wynik = [6]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr4_mnoż_argumenty_0_0(self):
+        wynik  = mnoż(0, 0)
+
+        oczekiwany_wynik = [0]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr5_mnoż_argumenty_-231_-2312(self):
+        wynik  = mnoż(-231, -2312)
+
+        oczekiwany_wynik = [534072]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr6_mnoż_argumenty_23_1(self):
+        wynik  = mnoż(23, 1)
+
+        oczekiwany_wynik = [23]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr7_mnoż_argumenty_231_213(self):
+        wynik  = mnoż(231, 213)
+
+        oczekiwany_wynik = [49203]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr8_mnoż_argumenty_21_-123(self):
+        wynik  = mnoż(21, -123)
+
+        oczekiwany_wynik = [-2583]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr9_mnoż_argumenty_52_1(self):
+        wynik  = mnoż(52, 1)
+
+        oczekiwany_wynik = [52]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr10_mnoż_argumenty_3213_-3212(self):
+        wynik  = mnoż(3213, -3212)
+
+        oczekiwany_wynik = [-10320156]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr11_mnoż_argumenty_-1_12(self):
+        wynik  = mnoż(-1, 12)
+
+        oczekiwany_wynik = [-12]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr12_mnoż_argumenty_3_212(self):
+        wynik  = mnoż(3, 212)
+
+        oczekiwany_wynik = [636]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr13_mnoż_argumenty_213_123(self):
+        wynik  = mnoż(213, 123)
+
+        oczekiwany_wynik = [26199]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr14_mnoż_argumenty_123_213(self):
+        wynik  = mnoż(123, 213)
+
+        oczekiwany_wynik = [26199]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr15_mnoż_argumenty_54_6435(self):
+        wynik  = mnoż(54, 6435)
+
+        oczekiwany_wynik = [347490]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr16_mnoż_argumenty_435_43(self):
+        wynik  = mnoż(435, 43)
+
+        oczekiwany_wynik = [18705]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr17_mnoż_argumenty_34_5345(self):
+        wynik  = mnoż(34, 5345)
+
+        oczekiwany_wynik = [181730]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr18_mnoż_argumenty_34_53(self):
+        wynik  = mnoż(34, 53)
+
+        oczekiwany_wynik = [1802]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr19_mnoż_argumenty_3_45(self):
+        wynik  = mnoż(3, 45)
+
+        oczekiwany_wynik = [135]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr20_mnoż_argumenty_3_3(self):
+        wynik  = mnoż(3, 3)
+
+        oczekiwany_wynik = [9]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr21_mnoż_argumenty_345_34(self):
+        wynik  = mnoż(345, 34)
+
+        oczekiwany_wynik = [11730]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+
+```
+
+</details>
+
+Po stworzeniu trzech plików funkcja utworzy plik `prototypBackup.py`, aby bezpiecznie móc usunąć prototyp. Plik prototypBackup.py jest ignorowany przez .gitignore, więc nie będzie dodawany do głównego repozytorium. Został stworzony, aby w przypadku błędnego stworzenia zadania z różnych powodów móc utworzyć zadanie na nowo. Funkcja `stworz_zadanie` dba o to, by nie usunąć pliku `prototypBackup`, dzięki czemu można tworzyć zadania do momentu zadowolenia z efektu końcowego.
 
 Na tym konczy sie funkcja `stworz_rozwiazanie` jesli jednak komus nie podoba sie sposob w jaki pliki `rozwiazanie.py`, `szablon.py`, `testy.py` sa tworzone chcialby dodac jakas funkcjonalnosci lub inaczej tworzyc testy  zawsze moze stworzyc wlasna Strategie!
 
@@ -207,15 +550,95 @@ Na tym konczy sie funkcja `stworz_rozwiazanie` jesli jednak komus nie podoba sie
   <summary>🧠 Strategie</summary>
 
 ## Strategie
-moja strategia jest kiedys to napisac teraz to mi sie nie chce ale w skrocie to 
-## strategia to taki swtich case 
-i definiuje w jaki spoosb bedziemy tworzyc zadanie narazie to jest swtich case 1 mozliwosci bo jest 1 strategia `'bazowa'` ale w przyszlosci moze byc jakas strategia np  ze 
-- `rozwiazania.py` jest  bez maina np bo kogos wkurza ze rozwiazanie jest dluzszym plikiem
--  `szablon` bez wywolania funkcji bo krocej
--  `testy.py` bez niepotrzebnych enterow bo i tak tam nikt nie zaglada po co marnowac pamiec
-  to ktos stworzy taka strategie nazwie ja tam `mala` i jak uzyjemy strategi `mala` to tak to zadanie zostanie stworzone
+Strategie definiują sposób, w jaki będziemy tworzyć nasze zadania w projekcie. umożliwiają  ulepszanie plików z rozwiązaniami, szablonami i testami. poprzez nowa logike ich tworzenia 
+Aby uzyc danej strategi wystarczy do `stworz_zadanie` w prototypie dodac argument `strategia=` i nazwa strategi. akutalna liste strategi znajdziesz w pliku [srt/Strategie](srt/Strategie) kazda z nich bedzie funkcja ktore definiuje jej nazwe i krotki komentarz na czym polega 
 
-no i kazda strategia to zbior 3 strategi jak zrobic dany plik wiec  w pliku skrypty sa StrategieTestow/ folder i tam trzeba stworzyc klase pochodna od bazowej o takiej samej nazwie jak nazwa pliku i mamy strategie testow teraz tylko w pliku strategieZestaw.py dodac jako funkcje nazwe naszej strategi i zeby zwracala jakie z 3 strategi chcemy z tych plikow mozna to laczyc jak sie chce.
+
+
+
+### Podstawy Pisania Strategi
+Dla przykladu zrobimy strategie w ktorej 
+- **`szablon`**  jest takie samo jak domyslnie ale z data rozwiazania na gorze
+- **`rozwiazania.py`**  nie zawiera opisu zadania ani sekcji `main`, skupiamy cale meritum rozwiazania 
+- **`testy.py`**  jest bazowe
+
+  
+Zaczniemy od szablonu w folderze [srt/Szablon](srt/Szablon), gdzie tworzymy nowy plik. W pliku klasa dziedziczy po jednej z klas w jej folderze albo po klasie bazowej. Klasa [srt/Bazowa.py](srt/Bazowa.py) jest abstrakcyjną klasą, z której będą pochodzić wszystkie klasy pochodne.
+
+Klasa bazowa ma abstrakcyjną metodę `__str__`, w której musimy zwrócić wynik w postaci stringa, który później znajdzie się w pliku szablonu. Dla naszego pomysłu ta klasa będzie wyglądać tak:
+
+```python
+# srt/StrategieSzablonow/data_rozwiazania.py
+
+from Bazowa import bazowa
+from datetime import date
+
+class Data(bazowa):
+    def __str__(self):
+        res = str(date.today().day)
+        res += "\n"
+        res += super().generuj()
+        return res
+```
+LSP może zgłaszać, że jest to błędny import. Jednak przez to, że używam `sys.path`, a nie pakietów, program dopiero po uruchomieniu i stworzeniu folderu `__pycache__` poprawi import.
+
+Dalej zajmiemy się `rozwiazanie.py`, gdzie dodam możliwe do użycia atrybuty klasy bazowej:
+
+- **`linie_prototypu`** – linie w liście stringów, które reprezentują linie prototypu.
+- **`nr_zadania`** – numer zadania, które zrealizowaliśmy.
+- **`funkcje`** – funkcje, które zostały przekazane do testów szablonu i inne.
+- **`sciezka`** – ścieżka folderu z zadaniem, które jest tworzone.
+- **`nazwa_pliku`** – nazwa pliku ktorego wygeneruje domyslnie pochodzi od nazwy folderu, w którym znajduje się klasa. Na przykład, w folderze *Rozwiazanie*, klasy dziedziczące mają ten atrybut ustawiony na "rozwiazanie{`nr_zadania`}.py".
+
+Wszystkich tych atrybutów można używać w klasach pochodnych od klasy bazowej, jednego z nich użyjemy co będzie widoczne w naszym przykładzie.
+
+```python
+# srt/StrategieRoziwazania/meritum.py
+
+from bazowa import bazowa
+import inspect
+
+class Meritum(bazowa):
+    def __str__(self):
+        res = ""
+        for funkcja in self.funkcje:
+            res += inspect.getsource(funkcja)
+        return res
+```
+
+Następnie z dwoma nowymi metodami mogę dodać swoją strategię w pliku [srt/Strategie.py](srt/Strategie.py). W pliku `Strategie.py` dodaję funkcję o nazwie, jaką chcę, aby miała moja strategia, a następnie w tej funkcji zwracam trzy klasy nazw metod, jakie chcę, by strategia użyła w kolejności: Szablony, Rozwiązania i Testy.
+Jako że nie zroblismy nowej klasy testow użyjemy strategii `testy_domyslne`, która zwraca nam na bieżąco aktualizowaną najlepszą strategię testów.
+
+``` python
+# rozwiazanie z sama funkcja a szablon z dniem
+def testowa():
+    from Szablony.data_rozwiazania import Data
+    from Rozwiazanie.meritum import meritum
+
+    return Data, meritum, testy_domyslne()
+
+```
+
+### Liczba plików tworzonych na podstawie strategii zależy od liczby zwracanych klas.
+
+Jeśli użyjemy strategii zwracającej jedną klasę, zostanie stworzony jeden plik. Na przykład, `testy_domyslne()` to sama w sobie strategia, której możemy użyć do stworzenia zadania z samymi testami, bez rozwiązania i szablonu. Możemy także opracować strategię zwracającą 10 klas, co w efekcie utworzy 10 plików zadania.
+
+Przykładowo, jeśli chcemy dodać plik zawierający wyjaśnienie autora zadania lub inne elementy, które nie są obecnie przewidziane, można to zrobić na dwa sposoby:
+1. **Ustawienie nazwy pliku wewnątrz klasy** – przez przypisanie np. `self.res = "wyjasnienie"` (metoda mniej zalecana).
+2. **Stworzenie dodatkowego folderu z odpowiednią nazwą** – wystarczy dodać folder o nazwie, którą chcemy nadać plikowi, oraz utworzyć w nim klasę dziedziczącą z klasy bazowej, która będzie zawierać odpowiednie treści. I powoli rozwijac kolejne typy plikow.
+
+Z nowym plikiem możemy stworzyć strategię zwracającą 4 klasy metod, co spowoduje utworzenie 4 plików.
+
+> **Należy pamiętać**, że strategie nie mogą być od siebie zależne; każda powinna być tworzona samodzielnie i działać logicznie niezależnie od innych.
+
+
+  
+Po zapisaniu można teraz uruchomić funkcję `stworz_zadanie` z argumentem strategii `testowa`, co pozwoli na stworzenie zadania na podstawie naszych klas. Przykładowe wywołanie funkcji wygląda następująco:
+```python
+stworz_zadanie([Zadanie_1], strategia="testowa")
+```
+
+Ograniczeniem strategii jest to, że nie przyjmuje argumentów innych niż `input` i jest to ustalenie stałe. Jednak, jeśli chcemy utworzyć zadanie, dodając pewne zmienne, możemy skorzystać z **komend**
 
 </details>
 
@@ -223,30 +646,75 @@ no i kazda strategia to zbior 3 strategi jak zrobic dany plik wiec  w pliku skry
   <summary> 💻 Komendy</summary>
 
 ## Komendy
-W folderze skrypty/Komendy katalogu glownego mamy pliki komend. kazdy plik musi zawierac funkcje o takiej samej nazwie. I z poziomu prototypow/szablonow/rozwiazan/testow mozna ta funkcje wykonac.
-Taka funkcjonalnosci pozwala w mega prosty sposob rozszerzac projekt o nowe komendy umozliwiajac coraz to fajniejsze funkcje pisania szablonow, prototypow czy ulepszanie testow
+
+<details>
+   <summary> Działanie </summary>
+   
+W folderze [srt/Komendy](srt/Komendy) znajdują się pliki Python z komendami. Każdy plik zawiera **funkcje** o takiej samej nazwie, które wykonują odpowiednią komendę.
+
+ przykładowa komenda wyglada tak. 
+ ```python
+# srt/Komendy/hello_name.py
+def hello_name(imie):
+    print("hello", imie)
+```
+
+Takiej komendy możemy użyć w `szablon.py`, importując z `testy` funkcję `komenda` i przekazując w pierwszym argumencie nazwę komendy, a następnie kolejne argumenty.
+```python
+# ====================================================================================================>
+# Zadanie 1
+# Wypisac swoje imie
+# ====================================================================================================>
+
+def Zadanie_1(): ...
+
+if __name__ == "__main__":
+    from testy01 import odpal_testy, komenda
+
+    komenda("hello_name", "kamil")
+
+    # Zadanie_1()
+    # odpal_testy()
+```
+- w pliku `prototyp.py` importujemy z `Develop` funkcje komenda
+
+Wynik odpalenia takiego programu będzie: `hello kamil`
+
+Taka funkcjonalność pozwala w prosty sposób rozszerzać projekt o nowe komendy, umożliwiając ulepszanie testów, na przykład poprzez dodawanie dodatkowych testów lub wariacji poprawnego wyniku , a także wprowadzanie własnych preferencji, takich jak dodatkowe zachowanie po przejsciu  testów na szablonie.
+
+</details>
 
 <details  >
-  <summary>Spis Komend</summary>
+  <summary><strong> SPIS KOMEND </strong> </summary>
+
+### Legenda 
+- `nazwaKomendy`, `mozliiwy do uzycia skrot`
+- w budowie oznacza ze nie chce mi sie jej robic
+- lokalna oznacza ze jej dzialanie nie moze wyjsci po za lokalne repozytorium. By uniknąć przypadkow ze ktos nie spodziwal ze mu poleci [najlepsza  domyslna piosenka zwycieska](https://www.youtube.com/watch?v=CpeJiGDVMGo) po napisaniu szablonu
+- Zapis `link_do_muzyki="https://www.youtube.com/watch?v=CpeJiGDVMGo` oznacza ze zmienna `link_do_muzyki` jest opcjonalna i domyslnie uzyjemy `https://www.youtube.com/watch?v=CpeJiGDVMGo`
+
+
+
+### Spis 
   
-  - `dodaj_testy` - w budowie
+  - `dodaj_testy`, `dt` - w budowie
     ```python
     # dodaje  dodatkowe testy 
     komenda("dodaj_testy", funkcja, ilosci_dodatkowych_testow)
      ```
      
-  - `dodaj_mozliwe_wyniki` - w budowie
+  - `dodaj_wariancje`, `dw` - w budowie
     ```python
     # Do istniejacych juz wynikow testow funkcji dodaje kolejne mozliwe warienty na podstawie funkcji przeslanej
     komenda("dodaj_testy", funkcja)
      ```
-  - `zwycieska_muzyka` - w budowie, lokalna
+  - `zwycieska_muzyka`,`zm` - w budowie, lokalna
     ```python
     # Do testow danego zadania dodaje muzyka po zaliczeniu testow w szablonie
     # imo must have 
     komenda("zwycieska_muzyka", link_do_muzyki="https://www.youtube.com/watch?v=CpeJiGDVMGo" )
      ```
- - `szybka_funkcja` - w budowie
+ - `funkcja_input`,`fi` - w budowie
     ```python
     # szybkie testowanie funkcji na parametrach
     # dopoki nie przerwiesz bedziesz wpisywac input a komenda uzyje jej na funkcji i wypisze output
@@ -255,20 +723,53 @@ Taka funkcjonalnosci pozwala w mega prosty sposob rozszerzac projekt o nowe kome
     
   - `StworzStruktureWDI`
     ```python
-    # Nie bedzie wiecej uzywana i nawet nie da sie jej odpalic z poziomu plikow zadan takie zabezpieczenie
+    # Nie bedzie wiecej uzywana i nawet nie da sie jej odpalic z poziomu plikow zadań - Takie zabezpieczenie
     # Ale dodaje jako taka ciekawostka oraz na przyszlosci do tworzenia struktur innych zadan
     komenda("StworzStruktureWDI")
      ```
 
 </details>
 
+<details  >
+  <summary> Ogólne </summary>
+   
+### Argumenty
+Funkcja `komenda` przyjmuje `"nazwaKomendy"`, `*args` oraz `**kwargs`, co pozwala na przesyłanie dowolnych argumentów zarówno w postaci argumentów pozycyjnych, jak i nazwanych. Aby ułatwić korzystanie, dodatkowo są dodawane dwa argumenty, jeśli komenda ich wymaga. Nie ma obowiązku ich podawania podczas wywołania komendy, są to: 
+  - `nr_zadania`
+  - `sciezka`
+Więc komenda
+ ```python
+# srt/Komendy/hello_zadanie.py
+def hello_zadanie(nr_zadania, sciezka):# trzeba pamietac by nazwac te argumenty dokladnie tak 
+    print("hello", nr_zadania, "from ", sciezka)
+```
+Może być wywołana w następujący sposób:
+ ```python
+# prototyp01.py
+komenda("hello_zadanie")
+```
+Wynik takiej komendy to:
 
-- Jesli komenda ma dopis lokalna oznacza ze jej dzialanie nie moze wyjsci po za lokalne repozytorium. By uniknoc przypadkow ze ktos nie spodziwal ze mu poleci [najlepsza  domyslna piosenka zwycieska](https://www.youtube.com/watch?v=CpeJiGDVMGo) po napisaniu szablonu
-- Zapis `link_do_muzyki="https://www.youtube.com/watch?v=CpeJiGDVMGo` oznacza ze zmienna `link_do_muzyki` jest opcjonalna i domyslnie uzyjemy `https://www.youtube.com/watch?v=CpeJiGDVMGo`
+`hello 01 from  /Users/user/Desktop/projekty/WDI-RST/Zestaw_1:_Proste_programy_z_pętlami/prototyp01.py`
+
+
+
+### skroty 
+
+   Jesli komenda jest czesto uzywana moze miec swój skrót w pliku `_skroty.py` ktory tylko importuje komende i ja odpala
+  ```python
+  def hz(nr_zadania, sciezka):
+    from hello_zadanie import hello_zadanie
+
+    hello_zadanie(nr_zadania, sciezka)
+   ```
+
+### Zasady komend
+
 - Kazda ma miec swoj plik i ograniczać sie tylko do niego nawet jakby plik mialby miec 20 linijek lub 100000 linijek.
 - Każda komenda musi być w pełni niezależna i działać poprawnie samodzielnie, ale może wywoływać inne komendy w ramach swoich działań [zgodnie z wzorcem łańcucha zobowiązań]( https://refactoring.guru/pl/design-patterns/chain-of-responsibility)
 
-  
+</details>
 </details>
 
 ---
