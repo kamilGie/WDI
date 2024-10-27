@@ -73,36 +73,47 @@ class Prime(Bazowa):
 
         print("\n")
 
+    def konwertuj_argument(self, arg):
+        """Konwertuje argument na odpowiedni typ (int, float lub pozostaje str)."""
+        if arg.isdigit():  # Sprawdza, czy to liczba całkowita
+            return int(arg)
+        try:
+            return float(arg)  # Próbuje skonwertować na float
+        except ValueError:
+            return arg  # Zwraca jako str, jeśli konwersja się nie powiedzie
+
     def przetwarzaj_tablice(self, argumenty, i):
         wynik = []
         i += 1
-        arg = argumenty[i]
-        while arg != "]":
-            if arg == "[":  # znaleziono nową tablicę
-                arg, i = self.przetwarzaj_tablice(argumenty, i)
-            wynik.append(arg)
+
+        while argumenty[i] != "]":
+            if argumenty[i] == "[":  # znaleziono nową tablicę
+                tablica, i = self.przetwarzaj_tablice(argumenty, i)
+                wynik.append(tablica)
+            else:
+                wynik.append(self.konwertuj_argument(argumenty[i]))
             i += 1
 
         return wynik, i
 
     def przetwarzaj_wejscie(self, wejscie):
-        wyniki = []
+        wejscie = (
+            wejscie.replace(",", " ")
+            .replace("]", " ] ")
+            .replace("[", " [ ")
+            .replace("\n", "")
+        )
         argumenty = wejscie.split()
 
+        wyniki = []
         i = 0
-
         while i < len(argumenty):
-            arg = argumenty[i]
-
-            if arg == "[":
+            if argumenty[i] == "[":
                 tablica, i = self.przetwarzaj_tablice(argumenty, i)
                 wyniki.append(tablica)
             else:
-                # jeśli to pojedyncza liczba, dodajemy ją jako int
-                wyniki.append(float(arg))
-
+                wyniki.append(self.konwertuj_argument(argumenty[i]))
             i += 1
-        print("wynik nawiasow to", wyniki)
 
         return wyniki
 

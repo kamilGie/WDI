@@ -34,23 +34,26 @@ def dynamiczny_import_funkcji(nr_zadania, funkcje):
     return f"from szablon{nr_zadania} import {funkcjeStr}\n"
 
 
+def nazwi_zmienne(zmienne):
+    def przetworz_zmienna(z):
+        nazwa = ""
+        if isinstance(z, (int, float)):
+            nazwa = f"minus_{abs(z)}" if z < 0 else str(z)
+            if isinstance(z, float):
+                nazwa = nazwa.replace(".", "_")
+                nazwa += "f"
+
+        elif isinstance(z, list):
+            # Sprawdzamy, czy to zagnieżdżona lista
+            nazwa = "tablica"
+        return nazwa
+
+    zmienne_nazwa = [przetworz_zmienna(z) for z in zmienne]
+    return zmienne_nazwa
+
+
 def metoda_zwracajaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
-    zmienne_nazwa = [
-        (
-            "minus_" + str(abs(z))
-            if isinstance(z, int) and z < 0
-            else (
-                str(z)
-                if isinstance(z, int)
-                else "t"
-                + "_".join(["minus_" + str(abs(i)) if i < 0 else str(i) for i in z])
-                + "t"
-            )
-        )
-        for z in zmienne
-    ]
-
-
+    zmienne_nazwa = nazwi_zmienne(zmienne)
     return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
 
@@ -59,20 +62,8 @@ def metoda_zwracajaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
 
 
 def metoda_nasluchujaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
-    zmienne_nazwa = [
-        (
-            "minus_" + str(abs(z))
-            if isinstance(z, int) and z < 0
-            else (
-                str(z)
-                if isinstance(z, int)
-                else "t"
-                + "_".join(["minus_" + str(abs(i)) if i < 0 else str(i) for i in z])
-                + "t"
-            )
-        )
-        for z in zmienne
-    ]
+    zmienne_nazwa = nazwi_zmienne(zmienne)
+
     return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
         with redirect_stdout(f):
