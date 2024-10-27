@@ -73,6 +73,50 @@ class Prime(Bazowa):
 
         print("\n")
 
+    def konwertuj_argument(self, arg):
+        """Konwertuje argument na odpowiedni typ (int, float lub pozostaje str)."""
+        if arg.isdigit():  # Sprawdza, czy to liczba całkowita
+            return int(arg)
+        try:
+            return float(arg)  # Próbuje skonwertować na float
+        except ValueError:
+            return arg  # Zwraca jako str, jeśli konwersja się nie powiedzie
+
+    def przetwarzaj_tablice(self, argumenty, i):
+        wynik = []
+        i += 1
+
+        while argumenty[i] != "]":
+            if argumenty[i] == "[":  # znaleziono nową tablicę
+                tablica, i = self.przetwarzaj_tablice(argumenty, i)
+                wynik.append(tablica)
+            else:
+                wynik.append(self.konwertuj_argument(argumenty[i]))
+            i += 1
+
+        return wynik, i
+
+    def przetwarzaj_wejscie(self, wejscie):
+        wejscie = (
+            wejscie.replace(",", " ")
+            .replace("]", " ] ")
+            .replace("[", " [ ")
+            .replace("\n", "")
+        )
+        argumenty = wejscie.split()
+
+        wyniki = []
+        i = 0
+        while i < len(argumenty):
+            if argumenty[i] == "[":
+                tablica, i = self.przetwarzaj_tablice(argumenty, i)
+                wyniki.append(tablica)
+            else:
+                wyniki.append(self.konwertuj_argument(argumenty[i]))
+            i += 1
+
+        return wyniki
+
     def pobierz_parametry(self, test_index: int, param_count: int) -> Tuple:
         """
         Pobiera parametry testowe od użytkownika.
@@ -93,34 +137,7 @@ class Prime(Bazowa):
                 f"\ntest nr {test_index} Podaj {param_count} argumenty testowe, oddzielone spacją: "
             )
         print(f"\033[F\033[K\033[F\033[K", end="")
-        wyniki = []
-        argumenty = (
-            wejscie.split()
-        )  # Dzieli wejście na pojedyncze elementy oddzielone spacją
-
-        i = 0
-        while i < len(argumenty):
-            arg = argumenty[i]
-
-            if arg.startswith(
-                "["
-            ):  # Jeśli argument zaczyna się od "[", traktujemy go jako początek tablicy
-                tablica = []
-
-                # Łączymy kolejne argumenty do zamknięcia nawiasu
-                while not arg.endswith("]"):
-                    tablica.append(int(arg.strip("[]")))
-                    i += 1
-                    arg = argumenty[i]
-                tablica.append(int(arg.strip("[]")))  # Dodaj ostatni element w nawiasie
-                wyniki.append(tablica)  # Dodajemy całą tablicę do wyników
-            else:
-                # Jeśli to pojedyncza liczba, dodajemy ją jako int
-                wyniki.append(int(arg))
-
-            i += 1
-
-        return tuple(wyniki)  # Zwraca wynik jako krotkę
+        return tuple(self.przetwarzaj_wejscie(wejscie))
 
     def wynik_funkcje(self, funkcja: Callable, parametry: Tuple) -> Any:
         """
