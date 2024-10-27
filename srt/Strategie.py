@@ -36,16 +36,16 @@ def rozwiazania_domyslne():
     return importless
 
 
-def stop():
-    """bedzie prosil o testy dopoki uzytkonik nie da parametry "stop". Przydaje sie na zadaniach kolowium"""
-    from Testy.Stop import Stop
-
-    return (szablon_domyslny(), rozwiazania_domyslne(), Stop)
-
-
 def domyslna():
     """Zwraca domyslna wartości dla strategii czyli akutalizowna najlepsza strategie szablonów,rozwiązań i testów."""
     return (szablon_domyslny(), rozwiazania_domyslne(), testy_domyslne())
+
+
+def stop():
+    "Testy beda sie generowac dopoki nie podasz argumentu `stop`"
+    from Testy.Stop import Stop
+
+    return szablon_domyslny(), rozwiazania_domyslne(), Stop
 
 
 def meritum():

@@ -5,17 +5,10 @@
 # ====================================================================================================>
 
 
-def Zadanie_5(n):
-    suma = 0
-    licznik = 0
-    while suma + (licznik + 1) * 2 - 1 <= n:
-        licznik += 1
-        suma += licznik * 2 - 1
-
-    return licznik
+def Zadanie_4(n): ...
 
 
 if __name__ == "__main__":
     from Develop import stworz_zadanie
 
-    stworz_zadanie([Zadanie_5])
+    stworz_zadanie([Zadanie_4])
