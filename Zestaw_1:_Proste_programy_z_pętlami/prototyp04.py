@@ -11,4 +11,5 @@ def Zadanie_4(n): ...
 if __name__ == "__main__":
     from Develop import stworz_zadanie
 
-    stworz_zadanie([Zadanie_4])
+    Zadanie_4()
+    # stworz_zadanie([Zadanie_4])
