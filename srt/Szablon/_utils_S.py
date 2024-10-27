@@ -8,7 +8,7 @@ def funkcja_input(funkcja):
     Wynikiem jest wywołanie np. 'mojafunkcja(input('Podaj parametr1: '), input('Podaj parametr2: '))'.
     """
     parameters = inspect.signature(funkcja).parameters
-    input_lines = [f"input('Podaj {name}: ')" for name in parameters.keys()]
+    input_lines = [f"int(input('Podaj {name}: '))" for name in parameters.keys()]
     return f"    {funkcja.__name__}({', '.join(input_lines)})\n"
 
 
