@@ -73,6 +73,58 @@ class Prime(Bazowa):
 
         print("\n")
 
+    def przetwarzaj_wejscie(self, wejscie):
+        wyniki = []
+        argumenty = (
+            wejscie.split()
+        )  # Dzieli wejście na pojedyncze elementy oddzielone spacją
+
+        i = 0
+
+        while i < len(argumenty):
+            arg = argumenty[i]
+
+            if arg.startswith(
+                "["
+            ):  # jeśli argument zaczyna się od "[", traktujemy go jako początek tablicy
+                tablica = []
+                zagniezdzona_tablica = (
+                    None  # zmienna do przechowywania zagnieżdżonej tablicy
+                )
+
+                # łączymy kolejne argumenty do zamknięcia nawiasu
+                while not arg.endswith("]"):
+                    if arg.startswith("["):  # znaleziono nową tablicę
+                        if (
+                            zagniezdzona_tablica is None
+                        ):  # jeśli to pierwsza zagnieżdżona tablica
+                            zagniezdzona_tablica = []
+                        else:  # dodajemy do istniejącej zagnieżdżonej tablicy
+                            zagniezdzona_tablica.append(int(arg.strip("[]")))
+                    else:
+                        if zagniezdzona_tablica is not None:
+                            zagniezdzona_tablica.append(int(arg.strip("[]")))
+                        else:
+                            tablica.append(int(arg.strip("[]")))
+                    i += 1
+                    arg = argumenty[i]
+
+                # dodaj ostatni element w nawiasie
+                if zagniezdzona_tablica is not None:
+                    zagniezdzona_tablica.append(int(arg.strip("[]")))
+                    tablica.append(zagniezdzona_tablica)
+                else:
+                    tablica.append(int(arg.strip("[]")))  # dodajemy do tablicy głównej
+
+                wyniki.append(tablica)  # dodajemy całą tablicę do wyników
+            else:
+                # jeśli to pojedyncza liczba, dodajemy ją jako int
+                wyniki.append(int(arg))
+
+            i += 1
+
+        return wyniki
+
     def pobierz_parametry(self, test_index: int, param_count: int) -> Tuple:
         """
         Pobiera parametry testowe od użytkownika.
@@ -93,34 +145,7 @@ class Prime(Bazowa):
                 f"\ntest nr {test_index} Podaj {param_count} argumenty testowe, oddzielone spacją: "
             )
         print(f"\033[F\033[K\033[F\033[K", end="")
-        wyniki = []
-        argumenty = (
-            wejscie.split()
-        )  # Dzieli wejście na pojedyncze elementy oddzielone spacją
-
-        i = 0
-        while i < len(argumenty):
-            arg = argumenty[i]
-
-            if arg.startswith(
-                "["
-            ):  # Jeśli argument zaczyna się od "[", traktujemy go jako początek tablicy
-                tablica = []
-
-                # Łączymy kolejne argumenty do zamknięcia nawiasu
-                while not arg.endswith("]"):
-                    tablica.append(int(arg.strip("[]")))
-                    i += 1
-                    arg = argumenty[i]
-                tablica.append(int(arg.strip("[]")))  # Dodaj ostatni element w nawiasie
-                wyniki.append(tablica)  # Dodajemy całą tablicę do wyników
-            else:
-                # Jeśli to pojedyncza liczba, dodajemy ją jako int
-                wyniki.append(int(arg))
-
-            i += 1
-
-        return tuple(wyniki)  # Zwraca wynik jako krotkę
+        return tuple(self.przetwarzaj_wejscie(wejscie))
 
     def wynik_funkcje(self, funkcja: Callable, parametry: Tuple) -> Any:
         """
