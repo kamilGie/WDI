@@ -32,10 +32,12 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest na
   <img src="https://contrib.rocks/image?repo=kamilGie/WDI" alt="Najwięksi współtwórcy" />
 </a>
 
-## 🤝 Jak pomóc i zostac współtwórcą?
 
-- Zalecam [***Utwórzyć fork***](https://github.com/kamilGie/WDI/fork) i zgłaszanie swoich zmian za pomocą pull requestów. Dzięki temu staniesz się widocznym współtwórcą projektu.
-- Można też wysłać mi kody bezpośrednio [kontakt tutaj](http://www.gieras.pl).
+## 🤝 Jak pomóc i zostać współtwórcą?
+
+- Zalecam [***utworzenie forka***](https://github.com/kamilGie/WDI/fork) oraz samodzielne stworzenie zadania i zgłaszanie swoich zmian za pomocą pull requestów.
+- Można również [dodać rozwiązanie zadania](https://github.com/kamilGie/WDI/new/solutions/bufor_rozwiązań), nie wychodząc z przeglądarki, korzystając z opcji "dodaj plik" w folderze bufor rozwiązań. W wolnym czasie będę z nich tworzył zadania. Szczegóły znajdziesz w [README folderu bufor rozwiązań](/bufor_rozwiązań).
+
 
 ### 💡 Możliwe Ulepszenia ### 
 - ✏️ Stworzenie Zadania
