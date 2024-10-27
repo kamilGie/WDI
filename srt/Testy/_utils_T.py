@@ -50,6 +50,7 @@ def metoda_zwracajaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
         for z in zmienne
     ]
 
+
     return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
 
@@ -72,7 +73,6 @@ def metoda_nasluchujaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
         )
         for z in zmienne
     ]
-
     return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
         with redirect_stdout(f):
