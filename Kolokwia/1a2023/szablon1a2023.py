@@ -20,6 +20,4 @@ def zgodne(T: list[int]): ...
 if __name__ == "__main__":
     from testy1a2023 import odpal_testy
 
-    zgodne([2, 3, 4, 5, 7, 6, 23, 24, 12, 13, 14, 15, 16, 45])
-
     # odpal_testy()

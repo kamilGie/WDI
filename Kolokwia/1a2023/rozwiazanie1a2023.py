@@ -66,5 +66,3 @@ def zgodne(T: list[int]):
 
 
 # rozwiązanie by Piotr Polański
-
-print(zgodne([2, 3, 4, 5, 7, 6, 23, 24, 12, 13, 14, 15, 16, 45]))  # 7

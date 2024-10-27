@@ -73,54 +73,46 @@ class Prime(Bazowa):
 
         print("\n")
 
-    def przetwarzaj_wejscie(self, wejscie):
-        wyniki = []
-        argumenty = (
-            wejscie.split()
-        )  # Dzieli wejście na pojedyncze elementy oddzielone spacją
+    def konwertuj_argument(self, arg):
+        """Konwertuje argument na odpowiedni typ (int, float lub pozostaje str)."""
+        if arg.isdigit():  # Sprawdza, czy to liczba całkowita
+            return int(arg)
+        try:
+            return float(arg)  # Próbuje skonwertować na float
+        except ValueError:
+            return arg  # Zwraca jako str, jeśli konwersja się nie powiedzie
 
-        i = 0
+    def przetwarzaj_tablice(self, argumenty, i):
+        wynik = []
+        i += 1
 
-        while i < len(argumenty):
-            arg = argumenty[i]
-
-            if arg.startswith(
-                "["
-            ):  # jeśli argument zaczyna się od "[", traktujemy go jako początek tablicy
-                tablica = []
-                zagniezdzona_tablica = (
-                    None  # zmienna do przechowywania zagnieżdżonej tablicy
-                )
-
-                # łączymy kolejne argumenty do zamknięcia nawiasu
-                while not arg.endswith("]"):
-                    if arg.startswith("["):  # znaleziono nową tablicę
-                        if (
-                            zagniezdzona_tablica is None
-                        ):  # jeśli to pierwsza zagnieżdżona tablica
-                            zagniezdzona_tablica = []
-                        else:  # dodajemy do istniejącej zagnieżdżonej tablicy
-                            zagniezdzona_tablica.append(int(arg.strip("[]")))
-                    else:
-                        if zagniezdzona_tablica is not None:
-                            zagniezdzona_tablica.append(int(arg.strip("[]")))
-                        else:
-                            tablica.append(int(arg.strip("[]")))
-                    i += 1
-                    arg = argumenty[i]
-
-                # dodaj ostatni element w nawiasie
-                if zagniezdzona_tablica is not None:
-                    zagniezdzona_tablica.append(int(arg.strip("[]")))
-                    tablica.append(zagniezdzona_tablica)
-                else:
-                    tablica.append(int(arg.strip("[]")))  # dodajemy do tablicy głównej
-
-                wyniki.append(tablica)  # dodajemy całą tablicę do wyników
+        while argumenty[i] != "]":
+            if argumenty[i] == "[":  # znaleziono nową tablicę
+                tablica, i = self.przetwarzaj_tablice(argumenty, i)
+                wynik.append(tablica)
             else:
-                # jeśli to pojedyncza liczba, dodajemy ją jako int
-                wyniki.append(int(arg))
+                wynik.append(self.konwertuj_argument(argumenty[i]))
+            i += 1
 
+        return wynik, i
+
+    def przetwarzaj_wejscie(self, wejscie):
+        wejscie = (
+            wejscie.replace(",", " ")
+            .replace("]", " ] ")
+            .replace("[", " [ ")
+            .replace("\n", "")
+        )
+        argumenty = wejscie.split()
+
+        wyniki = []
+        i = 0
+        while i < len(argumenty):
+            if argumenty[i] == "[":
+                tablica, i = self.przetwarzaj_tablice(argumenty, i)
+                wyniki.append(tablica)
+            else:
+                wyniki.append(self.konwertuj_argument(argumenty[i]))
             i += 1
 
         return wyniki
