@@ -570,10 +570,11 @@ Klasa bazowa ma abstrakcyjną metodę `__str__`, w której musimy zwrócić wyni
 ```python
 # srt/StrategieSzablonow/data_rozwiazania.py
 
-from Bazowa import bazowa
+#  Dziedzicze po klasie z pliku szablonów do której metody __str__  mógłbym coś dodać
+from input_main import input_main 
 from datetime import date
 
-class Data(bazowa):
+class Data(input_main): 
     def __str__(self):
         res = str(date.today().day)
         res += "\n"
