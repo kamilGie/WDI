@@ -5,11 +5,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_4(n): ...
+def is_in_fib(a): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy04 import odpal_testy
 
-    Zadanie_4()
-    # stworz_zadanie([Zadanie_4])
+    is_in_fib(int(input('Podaj a: ')))
+
+    # odpal_testy()
