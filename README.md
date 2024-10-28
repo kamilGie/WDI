@@ -32,10 +32,12 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest na
   <img src="https://contrib.rocks/image?repo=kamilGie/WDI" alt="Najwięksi współtwórcy" />
 </a>
 
-## 🤝 Jak pomóc i zostac współtwórcą?
 
-- Zalecam [***Utwórzyć fork***](https://github.com/kamilGie/WDI/fork) i zgłaszanie swoich zmian za pomocą pull requestów. Dzięki temu staniesz się widocznym współtwórcą projektu.
-- Można też wysłać mi kody bezpośrednio [kontakt tutaj](http://www.gieras.pl).
+## 🤝 Jak pomóc i zostać współtwórcą?
+
+- Zalecam [***utworzenie forka***](https://github.com/kamilGie/WDI/fork) oraz samodzielne stworzenie zadania i zgłaszanie swoich zmian za pomocą pull requestów.
+- Można również [dodać rozwiązanie zadania](https://github.com/kamilGie/WDI/new/solutions/bufor_rozwiązań), nie wychodząc z przeglądarki, korzystając z opcji "dodaj plik" w folderze bufor rozwiązań. W wolnym czasie będę z nich tworzył zadania. Szczegóły znajdziesz w [README folderu bufor rozwiązań](/bufor_rozwiązań).
+
 
 ### 💡 Możliwe Ulepszenia ### 
 - ✏️ Stworzenie Zadania
@@ -46,7 +48,7 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest na
 SRT opiera się na **rozszerzaniu funkcjonalności**. Dzięki temu możesz dodawać nowe funkcje i strategie bez modyfikacji istniejącego kodu, co ułatwia wdrożenie bez potrzeby wiedzy o całym systemie i unika konfliktów.
 ### 🐛 Zgłaszanie błędów
 
-- Błędy w rozwiązaniach, testach lub treściach  mozna zgłaszać <a href="https://github.com/kamilgie/wdi/issues/new?labels=bug"> ****tutaj**** </a>
+- Błędy w rozwiązaniach, testach lub treściach można zgłaszać <a href="https://github.com/kamilgie/wdi/issues/new?labels=bug"> ****tutaj**** </a>
 
 ### 💬 Feedback
 
@@ -61,7 +63,7 @@ SRT opiera się na **rozszerzaniu funkcjonalności**. Dzięki temu możesz dodaw
   <summary> 🧪 Testowanie Zadania </summary>
 
 ## Testowanie Zadania
-Przykladowy `szablon.py` wyglada tak 
+Przykładowy `szablon.py` wygląda tak: 
 ```python
 # ====================================================================================================>
 # Zadanie 1
@@ -114,7 +116,7 @@ if __name__ == "__main__":
   
 Wynik testu wskazuje na błąd: widzimy komunikat `AssertionError: '3 4 5' not found in [''].` Oznacza to, że test oczekiwał pustego stringa `''`, a otrzymał `'3 4 5'`, co sugeruje, że wynik dla c = 5 został niepotrzebnie wypisany.
 
-Po chwili namysłu i ponownym przeczytaniu treści zadania, można zauważyć, że warunek mówi o długości przekątnej mniejszej niż liczba **N**. Kod należy poprawić i ponownie uruchomić testy z nowa nadzieją
+Po chwili namysłu i ponownym przeczytaniu treści zadania, można zauważyć, że warunek mówi o długości przekątnej mniejszej, niż liczba **N**. Kod należy poprawić i ponownie uruchomić testy z nową nadzieją.
 
 ### Czasami można spotkać się z takim przypadkiem:
  <img width="1165" alt="Zrzut ekranu 2024-10-24 o 22 57 49" src="https://github.com/user-attachments/assets/4fe66d52-766c-417a-87ab-738a38271137">
@@ -136,7 +138,7 @@ Więcej o tym, jak działa cały projekt w
 
 ## Tworzenie Zadania
 ### `stworz_zadanie()` 
-Każdy prototyp zawiera funkcję `stworz_zadanie`, importowaną z pliku `Develop`. funkcja `stworz_zadanie` przesyla funkcje ktore chcemy by obejmowaly testy oraz wchodzily w sklad szablonu do wypelnienia. Wiec przykladowo wypelniony `prototyp` powinnien wygladac tak:
+Każdy prototyp zawiera funkcję `stworz_zadanie`, importowaną z pliku `Develop`. Funkcja `stworz_zadanie` przesyła funkcje, które chcemy by obejmowały testy oraz wchodziły w skład szablonu do wypelnienia. Wiec przykładowo wypełniony `prototyp` powinnien wygladać tak:
 ```python
 # ====================================================================================================>
 # Zadanie 0
@@ -159,20 +161,20 @@ Na tak wypełnionym prototypie możemy odkomentować `stworz_zadanie` i rozpocz�
 <details>
     <summary> Dzialanie Developa </summary>
    
-Plik `Develop` zbiera informacje o pliku, który importuje tę funkcję. Następnie zbiera  następujące dane:
-- `funkcje` ktore chcemy testowac.
-- `nr_zadania` ktore rozwiązaliśmy bierze to z nazwy prototypu.
-- `sciezke` do folderu w ktorym jest prototyp aby `stworz_zadanie` mogło w tym samym stworzyć folder zadania.
+Plik `Develop` zbiera informacje o pliku, który importuje tę funkcję. Następnie zbiera następujące dane:
+- `funkcje`, które chcemy testowac,
+- `nr_zadania`, które rozwiązaliśmy bierze to z nazwy prototypu,
+- `sciezke` do folderu w ktorym jest prototyp, aby `stworz_zadanie` mogło w tym samym stworzyć folder zadania,
 - `strategie` rodzaj w jaki chcemy by testy zostaly napisane domyslnie jest to strategia bazowa. [Wiecej o strategi](#Strategie)
 
-Nastepnie Develop do tego dodaje nowa sciezke importu ktora znajduje sie w [srt](srt) i tam wczesniej przygotowana zmienne przesyla na dalszy proces.
+Nastepnie Develop do tego dodaje nową scieżkę importu, która znajduje się w [srt](srt) i tam wcześniej przygotowane zmienne przesyła na dalszy proces.
 </details>
 
 
 Funkcja `stworz_zadanie` znajduje się w katalogu [srt](srt) w pliku o nazwie `StworzZadanie`. Stamtąd funkcja utworzy folder zadania oraz trzy pliki: `rozwiazanie.py`, `szablon.py`, `testy.py`. To, jak pliki te są generowane, zależy od przekazanej `strategii`, jednak domyślnie stosowana jest strategia `bazowa`, która...
 
 ### `rozwiazanie.py` 
-1. przepisuje prototyp usuwajac tylko linijki ktore maja w sobie `stworz_zadanie`
+1. przepisuje prototyp usuwając tylko linijki, które mają w sobie `stworz_zadanie`
 ```python
 # ====================================================================================================>
 # Zadanie 0
@@ -217,8 +219,8 @@ if __name__ == "__main__":
 
 ### `testy.py` 
 1. Napisze potrzebne importy
-2. napisze funkcje `odpal_testy` ktora bedzie odpalac testy
-3. napisze funkcje `komenda` do odpalania komend [Wiecej o komendach](#Komendy)
+2. Napisze funkcję `odpal_testy`, która będzie odpalać testy
+3. Napisze funkcję `komenda` do odpalania komend [Wiecej o komendach](#Komendy)
 4. Napisze nagłówek (deklaracje) klasy `Testy`.
 5. Następnie dla każdej funkcji przekazanej do testowania:
 6. Sprawdza liczbę argumentów, jaką funkcja przyjmuje.
@@ -260,8 +262,8 @@ def odpal_testy():
 def komenda(k: str, *args, **kwargs):
     """
     Wykonuje zadaną komendę z przekazanymi argumentami.
-    Dodanie wlasnej komendy ogranicza sie do dodania pliku z funkcja o tej samej nazwie
-    w folderze glownym projektu src/Komendy
+    Dodanie własnej komendy ogranicza sie do dodania pliku z funkcja o tej samej nazwie
+    w folderze glównym projektu src/Komendy
     Wiecej informacji o dodaniu wlasnej komendy jak i lista komend w ReadMe projektu
 
     Args:
@@ -541,7 +543,7 @@ class testy(unittest.TestCase):
 
 Po stworzeniu trzech plików funkcja utworzy plik `prototypBackup.py`, aby bezpiecznie móc usunąć prototyp. Plik prototypBackup.py jest ignorowany przez .gitignore, więc nie będzie dodawany do głównego repozytorium. Został stworzony, aby w przypadku błędnego stworzenia zadania z różnych powodów móc utworzyć zadanie na nowo. Funkcja `stworz_zadanie` dba o to, by nie usunąć pliku `prototypBackup`, dzięki czemu można tworzyć zadania do momentu zadowolenia z efektu końcowego.
 
-Na tym konczy sie funkcja `stworz_rozwiazanie` jesli jednak komus nie podoba sie sposob w jaki pliki `rozwiazanie.py`, `szablon.py`, `testy.py` sa tworzone chcialby dodac jakas funkcjonalnosci lub inaczej tworzyc testy  zawsze moze stworzyc wlasna Strategie!
+Na tym kończy się funkcja `stworz_rozwiazanie`. Jeśli jednak komuś nie podoba się sposób w jaki pliki `rozwiazanie.py`, `szablon.py`, `testy.py` są tworzone, chciałby dodać jakąś funkcjonalność lub inaczej tworzyć testy zawsze może stworzyć własną Strategię!
 
 ---
 </details>
@@ -550,16 +552,15 @@ Na tym konczy sie funkcja `stworz_rozwiazanie` jesli jednak komus nie podoba sie
   <summary>🧠 Strategie</summary>
 
 ## Strategie
-Strategie definiują sposób, w jaki będziemy tworzyć nasze zadania w projekcie. umożliwiają  ulepszanie plików z rozwiązaniami, szablonami i testami. poprzez nowa logike ich tworzenia 
-Aby uzyc danej strategi wystarczy do `stworz_zadanie` w prototypie dodac argument `strategia=` i nazwa strategi. akutalna liste strategi znajdziesz w pliku [srt/Strategie](srt/Strategie) kazda z nich bedzie funkcja ktore definiuje jej nazwe i krotki komentarz na czym polega 
+Strategie definiują sposób, w jaki będziemy tworzyć nasze zadania w projekcie. Umożliwiają ulepszanie plików z rozwiązaniami, szablonami i testami, poprzez nową logikę ich tworzenia. Aby użyc danej strategi, wystarczy do `stworz_zadanie` w prototypie dodać argument `strategia=` i nazwę strategi. Aktualną listę strategi znajdziesz w pliku [srt/Strategie](srt/Strategie). Każda z nich będzie funkcją, która definiuje jej nazwę i krótki komentarz na czym polega. 
 
 
 
 
 ### Podstawy Pisania Strategi
-Dla przykladu zrobimy strategie w ktorej 
-- **`szablon`**  jest takie samo jak domyslnie ale z data rozwiazania na gorze
-- **`rozwiazania.py`**  nie zawiera opisu zadania ani sekcji `main`, skupiamy cale meritum rozwiazania 
+Dla przykladu zrobimy strategie w której 
+- **`szablon`**  jest takie samo jak domyślnie, ale z datą rozwiazania na górze
+- **`rozwiazania.py`**  nie zawiera opisu zadania, ani sekcji `main`, skupiamy całe meritum rozwiązania 
 - **`testy.py`**  jest bazowe
 
   
@@ -570,10 +571,11 @@ Klasa bazowa ma abstrakcyjną metodę `__str__`, w której musimy zwrócić wyni
 ```python
 # srt/StrategieSzablonow/data_rozwiazania.py
 
-from Bazowa import bazowa
+#  Dziedzicze po klasie z pliku szablonów do której metody __str__  mógłbym coś dodać
+from input_main import input_main 
 from datetime import date
 
-class Data(bazowa):
+class Data(input_main): 
     def __str__(self):
         res = str(date.today().day)
         res += "\n"
@@ -607,7 +609,7 @@ class Meritum(bazowa):
 ```
 
 Następnie z dwoma nowymi metodami mogę dodać swoją strategię w pliku [srt/Strategie.py](srt/Strategie.py). W pliku `Strategie.py` dodaję funkcję o nazwie, jaką chcę, aby miała moja strategia, a następnie w tej funkcji zwracam trzy klasy nazw metod, jakie chcę, by strategia użyła w kolejności: Szablony, Rozwiązania i Testy.
-Jako że nie zroblismy nowej klasy testow użyjemy strategii `testy_domyslne`, która zwraca nam na bieżąco aktualizowaną najlepszą strategię testów.
+Jako, że nie zroblismy nowej klasy testów użyjemy strategii `testy_domyslne`, która zwraca nam na bieżąco aktualizowaną najlepszą strategię testów.
 
 ``` python
 # rozwiazanie z sama funkcja a szablon z dniem
@@ -680,7 +682,7 @@ if __name__ == "__main__":
 
 Wynik odpalenia takiego programu będzie: `hello kamil`
 
-Taka funkcjonalność pozwala w prosty sposób rozszerzać projekt o nowe komendy, umożliwiając ulepszanie testów, na przykład poprzez dodawanie dodatkowych testów lub wariacji poprawnego wyniku , a także wprowadzanie własnych preferencji, takich jak dodatkowe zachowanie po przejsciu  testów na szablonie.
+Taka funkcjonalność pozwala w prosty sposób rozszerzać projekt o nowe komendy, umożliwiając ulepszanie testów, na przykład poprzez dodawanie dodatkowych testów lub wariacji poprawnego wyniku, a także wprowadzanie własnych preferencji, takich jak dodatkowe zachowanie po przejsciu testów na szablonie.
 
 </details>
 
@@ -689,8 +691,8 @@ Taka funkcjonalność pozwala w prosty sposób rozszerzać projekt o nowe komend
 
 ### Legenda 
 - `nazwaKomendy`, `mozliiwy do uzycia skrot`
-- w budowie oznacza ze nie chce mi sie jej robic
-- lokalna oznacza ze jej dzialanie nie moze wyjsci po za lokalne repozytorium. By uniknąć przypadkow ze ktos nie spodziwal ze mu poleci [najlepsza  domyslna piosenka zwycieska](https://www.youtube.com/watch?v=CpeJiGDVMGo) po napisaniu szablonu
+- w budowie oznacza, że nie chce mi sie jej robić
+- lokalna oznacza, że jej działanie nie moze wyjść poza lokalne repozytorium. By uniknąć przypadkow, że ktos nie spodziwal ze mu poleci [najlepsza  domyslna piosenka zwycieska](https://www.youtube.com/watch?v=CpeJiGDVMGo) po napisaniu szablonu
 - Zapis `link_do_muzyki="https://www.youtube.com/watch?v=CpeJiGDVMGo` oznacza ze zmienna `link_do_muzyki` jest opcjonalna i domyslnie uzyjemy `https://www.youtube.com/watch?v=CpeJiGDVMGo`
 
 
@@ -737,7 +739,7 @@ Taka funkcjonalność pozwala w prosty sposób rozszerzać projekt o nowe komend
 Funkcja `komenda` przyjmuje `"nazwaKomendy"`, `*args` oraz `**kwargs`, co pozwala na przesyłanie dowolnych argumentów zarówno w postaci argumentów pozycyjnych, jak i nazwanych. Aby ułatwić korzystanie, dodatkowo są dodawane dwa argumenty, jeśli komenda ich wymaga. Nie ma obowiązku ich podawania podczas wywołania komendy, są to: 
   - `nr_zadania`
   - `sciezka`
-Więc komenda
+Więc komenda:
  ```python
 # srt/Komendy/hello_zadanie.py
 def hello_zadanie(nr_zadania, sciezka):# trzeba pamietac by nazwac te argumenty dokladnie tak 
@@ -756,7 +758,7 @@ Wynik takiej komendy to:
 
 ### skroty 
 
-   Jesli komenda jest czesto uzywana moze miec swój skrót w pliku `_skroty.py` ktory tylko importuje komende i ja odpala
+   Jesli komenda jest czesto używana może miec swój skrót w pliku `_skroty.py`, który tylko importuje komendę i ją odpala.
   ```python
   def hz(nr_zadania, sciezka):
     from hello_zadanie import hello_zadanie
@@ -766,7 +768,7 @@ Wynik takiej komendy to:
 
 ### Zasady komend
 
-- Kazda ma miec swoj plik i ograniczać sie tylko do niego nawet jakby plik mialby miec 20 linijek lub 100000 linijek.
+- Każda ma mieć swój plik i ograniczać sie tylko do niego nawet jakby plik miałby mieć 20 linijek lub 100000 linijek.
 - Każda komenda musi być w pełni niezależna i działać poprawnie samodzielnie, ale może wywoływać inne komendy w ramach swoich działań [zgodnie z wzorcem łańcucha zobowiązań]( https://refactoring.guru/pl/design-patterns/chain-of-responsibility)
 
 </details>
