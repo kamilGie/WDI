@@ -2,13 +2,15 @@
 # Zadanie 12
 # Proszę napisać program wypisujący rozkład liczby na czynniki pierwsze.
 # ====================================================================================================>
+# wypisac po spacji w jednej lini
 
 
-def Zadanie_12(): ...
+def Czynniki(liczba): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy12 import odpal_testy
 
-    Zadanie_12()
-    # stworz_zadanie([Zadanie_12])
+    Czynniki(int(input("Podaj liczba: ")))
+
+    # odpal_testy()

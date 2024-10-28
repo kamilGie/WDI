@@ -51,7 +51,7 @@ def rmain():
 
 def tfloat():
     "wynik float ,Testy beda zaaokraglac wynik"
-    from Testy.Zaokraglony import Zaokraglony
+    from Testy.zaokraglony import Zaokraglony
 
     return szablon_domyslny(), rozwiazania_domyslne(), Zaokraglony
 
