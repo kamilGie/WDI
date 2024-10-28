@@ -1,14 +1,15 @@
 # ====================================================================================================>
-# Zadanie 11
-# Proszę napisać program wypisujący podzielniki liczby.
+# Zadanie 8
+# Proszę napisać program rozwiązujący równanie xx =2024 metodą bisekcji.
 # ====================================================================================================>
 
 
-def Zadanie_11(): ...
+def Zadanie_8(): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy08 import odpal_testy
 
-    Zadanie_11()
-    # stworz_zadanie([Zadanie_11])
+    Zadanie_8()
+
+    # odpal_testy()

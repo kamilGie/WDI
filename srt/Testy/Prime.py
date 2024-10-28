@@ -52,7 +52,7 @@ class Prime(Bazowa):
         liczba_argumentow = len(inspect.signature(funkcja).parameters)
 
         nr_testu = 1
-        while nr_testu <= liczba_argumentow * 10 + 1:
+        while nr_testu <= liczba_argumentow * 20 + 1:
             try:
                 parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
                 wynik_funkcji = self.wynik_funkcje(funkcja, parametry)
@@ -74,13 +74,13 @@ class Prime(Bazowa):
         print("\n")
 
     def konwertuj_argument(self, arg):
-        """Konwertuje argument na odpowiedni typ (int, float lub pozostaje str)."""
-        if arg.isdigit():  # Sprawdza, czy to liczba całkowita
-            return int(arg)
-        try:
-            return float(arg)  # Próbuje skonwertować na float
-        except ValueError:
-            return arg  # Zwraca jako str, jeśli konwersja się nie powiedzie
+        """Konwertuje argument na odpowiedni typ: int, float lub pozostaje str bez apostrofów."""
+        for typ in (int, float):
+            try:
+                return typ(arg)
+            except ValueError:
+                continue
+        return arg.replace('"', "")  # Zwraca jako str, jeśli konwersje się nie powiodą
 
     def przetwarzaj_tablice(self, argumenty, i):
         wynik = []

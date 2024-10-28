@@ -13,6 +13,8 @@ Proszę napisać w języku Python program, który wyznacza ostatnia niezerową c
 działać dla N rzędu 3000.
 """
 
+# skrot notatki: rozwiazanie to jedna funkcja poprostu dodano tutaj 2 dodatkowe innym szybszym sposobem
+
 # Notatki gologo:
 # Zwróć uwagę na warunek 2.
 # Lekko zmodyfikowałem oryginalne rozwiązania by wszystkie zmieścić w jednym
@@ -25,7 +27,7 @@ działać dla N rzędu 3000.
 #   "Kod ma wyglądać, a nie działać"
 
 
-def zad0(n):
+def silnia(n):
     factorial = 1
     for i in range(2, n + 1):
         factorial *= i
@@ -37,6 +39,7 @@ def zad0(n):
 def zad0better(num):
     digits = [1, 1, 2, 6, 4, 2, 2, 4, 2, 8]
 
+    # xddd
     if num < 10:
         return digits[num]
 
@@ -45,7 +48,6 @@ def zad0better(num):
         return 4 * zad0better(num // 5) * digits[num % 10] % 10
     else:
         return 6 * zad0better(num // 5) * digits[num % 10] % 10
-    return 0
 
 
 def zad0iter(n):
@@ -68,9 +70,3 @@ def zad0iter(n):
         # print(i)
         last_digit = (last_digit * i) % 10
     return last_digit
-
-
-n = int(input())
-print(zad0(n))
-print(zad0better(n))
-print(zad0iter(n))

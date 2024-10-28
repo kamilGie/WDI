@@ -1,14 +1,16 @@
 # ====================================================================================================>
-# Zadanie 15
-# Proszę napisać program wyznaczający największy wspólny dzielnik 3 zadanych liczb naturalnych.
+# Zadanie 11
+# Proszę napisać program wypisujący podzielniki liczby.
 # ====================================================================================================>
+# wypisujacy wiec testy sprawdzaja print
 
 
-def Zadanie_15(): ...
+def divisors(n): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy11 import odpal_testy
 
-    Zadanie_15()
-    # stworz_zadanie([Zadanie_15])
+    divisors(int(input("Podaj n: ")))
+
+    odpal_testy()

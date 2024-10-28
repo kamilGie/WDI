@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 # Dodaj wszystkie podfoldery po za komendy do sys.path
 for root, dirs, files in os.walk(os.path.dirname(os.path.abspath(__file__))):
     if "Komendy" != root:
@@ -48,11 +49,18 @@ def rmain():
     return (szablon_domyslny(), importless, testy_domyslne())
 
 
-def wfloat():
+def tfloat():
     "wynik float ,Testy beda zaaokraglac wynik"
-    from Testy.Zaokraglony import Zaokraglony
+    from Testy.zaokraglony import Zaokraglony
 
     return szablon_domyslny(), rozwiazania_domyslne(), Zaokraglony
+
+
+def tbez_kolejnosci():
+    "Aktualizowana najlepsza strategia rozwiazania"
+    from Testy.bez_kolejnosci import bez_kolejnosci
+
+    return szablon_domyslny(), rozwiazania_domyslne(), bez_kolejnosci
 
 
 def stop():
