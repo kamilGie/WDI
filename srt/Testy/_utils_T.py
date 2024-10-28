@@ -52,6 +52,32 @@ def nazwi_zmienne(zmienne):
     return zmienne_nazwa
 
 
+def metoda_zwracajaca_testow_zaokraglona(
+    NazwaTestu, numerTestu, zmienne, wynikWywolania
+):
+    zmienne_nazwa = nazwi_zmienne(zmienne)
+    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+        wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
+
+        oczekiwany_wynik = { wynikWywolania }
+        self.assertAlmostEqual(wynik, oczekiwany_wynik, places=4)\n"""
+
+
+def metoda_nasluchujaca_testow_zaokraglona(
+    NazwaTestu, numerTestu, zmienne, wynikWywolania
+):
+    zmienne_nazwa = nazwi_zmienne(zmienne)
+
+    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+        f = io.StringIO()
+        with redirect_stdout(f):
+            {NazwaTestu}({', '.join(map(str, zmienne))})
+        wynik = f.getvalue().strip()
+
+        oczekiwany_wynik = { wynikWywolania }
+        self.assertAlmostEqual(wynik, oczekiwany_wynik, places=4)\n"""
+
+
 def metoda_zwracajaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
     zmienne_nazwa = nazwi_zmienne(zmienne)
     return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):

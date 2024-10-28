@@ -42,10 +42,17 @@ def domyslna():
 
 
 def rmain():
-    "roziwazanie bedzie zawierac maina"
+    "rozwiązanie main, rozwiazanie bedzie zawierac maina"
     from Rozwiazanie.importless import importless
 
     return (szablon_domyslny(), importless, testy_domyslne())
+
+
+def wfloat():
+    "wynik float ,Testy beda zaaokraglac wynik"
+    from Testy.Zaokraglony import Zaokraglony
+
+    return szablon_domyslny(), rozwiazania_domyslne(), Zaokraglony
 
 
 def stop():
