@@ -1,15 +1,15 @@
 # ====================================================================================================>
-# Zadanie 10
-# Proszę napisać program sprawdzający czy zadana liczba jest pierwszą.
+# Zadanie 6
+# Proszę napisać program wyznaczający pierwiastek kwadratowy ze wzoru Newtona.
 # ====================================================================================================>
 
 
-def Zadanie_10(liczba: int): ...
+def Zadanie_6(s): ...
 
 
 if __name__ == "__main__":
-    from testy10 import odpal_testy
+    from testy06 import odpal_testy
 
-    print(Zadanie_10(int(input("Podaj liczba: "))))
+    Zadanie_6(int(input("Podaj s: ")))
 
     # odpal_testy()

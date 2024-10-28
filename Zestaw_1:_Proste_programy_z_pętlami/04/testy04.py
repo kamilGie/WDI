@@ -3,7 +3,7 @@ import os
 import sys
 import importlib
 
-from szablon10 import Zadanie_10
+from szablon04 import is_in_fib
 
 
 def odpal_testy():
@@ -34,80 +34,68 @@ def komenda(k: str, *args, **kwargs):
 
 class testy(unittest.TestCase):
 
-    def test_Nr1_Zadanie_10_argumenty_13(self):
-        wynik = Zadanie_10(13)
+    def test_Nr1_is_in_fib_argumenty_1(self):
+        wynik = is_in_fib(1)
 
         oczekiwany_wynik = [True]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr2_Zadanie_10_argumenty_2(self):
-        wynik = Zadanie_10(2)
+    def test_Nr2_is_in_fib_argumenty_2(self):
+        wynik = is_in_fib(2)
 
         oczekiwany_wynik = [True]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr3_Zadanie_10_argumenty_1(self):
-        wynik = Zadanie_10(1)
-
-        oczekiwany_wynik = [False]
-        self.assertIn(wynik, oczekiwany_wynik)
-
-    def test_Nr4_Zadanie_10_argumenty_73(self):
-        wynik = Zadanie_10(73)
+    def test_Nr3_is_in_fib_argumenty_4(self):
+        wynik = is_in_fib(4)
 
         oczekiwany_wynik = [True]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr5_Zadanie_10_argumenty_317(self):
-        wynik = Zadanie_10(317)
+    def test_Nr4_is_in_fib_argumenty_0(self):
+        wynik = is_in_fib(0)
 
         oczekiwany_wynik = [True]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr6_Zadanie_10_argumenty_129(self):
-        wynik = Zadanie_10(129)
+    def test_Nr5_is_in_fib_argumenty_100(self):
+        wynik = is_in_fib(100)
 
         oczekiwany_wynik = [False]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr7_Zadanie_10_argumenty_577(self):
-        wynik = Zadanie_10(577)
+    def test_Nr6_is_in_fib_argumenty_1000(self):
+        wynik = is_in_fib(1000)
+
+        oczekiwany_wynik = [False]
+        self.assertIn(wynik, oczekiwany_wynik)
+
+    def test_Nr7_is_in_fib_argumenty_10(self):
+        wynik = is_in_fib(10)
 
         oczekiwany_wynik = [True]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr8_Zadanie_10_argumenty_279(self):
-        wynik = Zadanie_10(279)
+    def test_Nr8_is_in_fib_argumenty_14(self):
+        wynik = is_in_fib(14)
 
         oczekiwany_wynik = [False]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr9_Zadanie_10_argumenty_157(self):
-        wynik = Zadanie_10(157)
+    def test_Nr9_is_in_fib_argumenty_143(self):
+        wynik = is_in_fib(143)
 
         oczekiwany_wynik = [True]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr13_Zadanie_10_argumenty_9(self):
-        wynik = Zadanie_10(9)
+    def test_Nr10_is_in_fib_argumenty_376(self):
+        wynik = is_in_fib(376)
 
-        oczekiwany_wynik = [False]
+        oczekiwany_wynik = [True]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr12_Zadanie_10_argumenty_4(self):
-        wynik = Zadanie_10(4)
+    def test_Nr11_is_in_fib_argumenty_1597(self):
+        wynik = is_in_fib(1597)
 
-        oczekiwany_wynik = [False]
-        self.assertIn(wynik, oczekiwany_wynik)
-
-    def test_Nr10_Zadanie_10_argumenty_779(self):
-        wynik = Zadanie_10(779)
-
-        oczekiwany_wynik = [False]
-        self.assertIn(wynik, oczekiwany_wynik)
-
-    def test_Nr11_Zadanie_10_argumenty_minus_6_0f(self):
-        wynik = Zadanie_10(-6)
-
-        oczekiwany_wynik = [False]
+        oczekiwany_wynik = [True]
         self.assertIn(wynik, oczekiwany_wynik)

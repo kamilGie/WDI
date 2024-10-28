@@ -31,14 +31,28 @@ def szablon_domyslny():
 
 def rozwiazania_domyslne():
     "Aktualizowana najlepsza strategia rozwiazania"
-    from Rozwiazanie.importless import importless
+    from Rozwiazanie.mainless import mainless
 
-    return importless
+    return mainless
 
 
 def domyslna():
     """Zwraca domyslna wartości dla strategii czyli akutalizowna najlepsza strategie szablonów,rozwiązań i testów."""
     return (szablon_domyslny(), rozwiazania_domyslne(), testy_domyslne())
+
+
+def rmain():
+    "rozwiązanie main, rozwiazanie bedzie zawierac maina"
+    from Rozwiazanie.importless import importless
+
+    return (szablon_domyslny(), importless, testy_domyslne())
+
+
+def wfloat():
+    "wynik float ,Testy beda zaaokraglac wynik"
+    from Testy.Zaokraglony import Zaokraglony
+
+    return szablon_domyslny(), rozwiazania_domyslne(), Zaokraglony
 
 
 def stop():

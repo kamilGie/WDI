@@ -3,7 +3,7 @@ import os
 import sys
 import importlib
 
-from szablon10 import Zadanie_10
+from szablon05 import Zadanie_5
 
 
 def odpal_testy():
@@ -34,80 +34,68 @@ def komenda(k: str, *args, **kwargs):
 
 class testy(unittest.TestCase):
 
-    def test_Nr1_Zadanie_10_argumenty_13(self):
-        wynik = Zadanie_10(13)
+    def test_Nr1_Zadanie_5_argumenty_0(self):
+        wynik = Zadanie_5(0)
 
-        oczekiwany_wynik = [True]
+        oczekiwany_wynik = [0]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr2_Zadanie_10_argumenty_2(self):
-        wynik = Zadanie_10(2)
+    def test_Nr2_Zadanie_5_argumenty_1(self):
+        wynik = Zadanie_5(1)
 
-        oczekiwany_wynik = [True]
+        oczekiwany_wynik = [1]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr3_Zadanie_10_argumenty_1(self):
-        wynik = Zadanie_10(1)
+    def test_Nr3_Zadanie_5_argumenty_3(self):
+        wynik = Zadanie_5(3)
 
-        oczekiwany_wynik = [False]
+        oczekiwany_wynik = [1]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr4_Zadanie_10_argumenty_73(self):
-        wynik = Zadanie_10(73)
+    def test_Nr4_Zadanie_5_argumenty_4(self):
+        wynik = Zadanie_5(4)
 
-        oczekiwany_wynik = [True]
+        oczekiwany_wynik = [2]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr5_Zadanie_10_argumenty_317(self):
-        wynik = Zadanie_10(317)
+    def test_Nr5_Zadanie_5_argumenty_8(self):
+        wynik = Zadanie_5(8)
 
-        oczekiwany_wynik = [True]
+        oczekiwany_wynik = [2]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr6_Zadanie_10_argumenty_129(self):
-        wynik = Zadanie_10(129)
+    def test_Nr6_Zadanie_5_argumenty_9(self):
+        wynik = Zadanie_5(9)
 
-        oczekiwany_wynik = [False]
+        oczekiwany_wynik = [3]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr7_Zadanie_10_argumenty_577(self):
-        wynik = Zadanie_10(577)
+    def test_Nr7_Zadanie_5_argumenty_12345(self):
+        wynik = Zadanie_5(12345)
 
-        oczekiwany_wynik = [True]
+        oczekiwany_wynik = [111]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr8_Zadanie_10_argumenty_279(self):
-        wynik = Zadanie_10(279)
+    def test_Nr8_Zadanie_5_argumenty_4473225(self):
+        wynik = Zadanie_5(4473225)
 
-        oczekiwany_wynik = [False]
+        oczekiwany_wynik = [2115]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr9_Zadanie_10_argumenty_157(self):
-        wynik = Zadanie_10(157)
+    def test_Nr9_Zadanie_5_argumenty_4473224(self):
+        wynik = Zadanie_5(4473224)
 
-        oczekiwany_wynik = [True]
+        oczekiwany_wynik = [2114]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr13_Zadanie_10_argumenty_9(self):
-        wynik = Zadanie_10(9)
+    def test_Nr10_Zadanie_5_argumenty_3000(self):
+        wynik = Zadanie_5(3000)
 
-        oczekiwany_wynik = [False]
+        oczekiwany_wynik = [54]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr12_Zadanie_10_argumenty_4(self):
-        wynik = Zadanie_10(4)
+    def test_Nr11_Zadanie_5_argumenty_17(self):
+        wynik = Zadanie_5(17)
 
-        oczekiwany_wynik = [False]
-        self.assertIn(wynik, oczekiwany_wynik)
-
-    def test_Nr10_Zadanie_10_argumenty_779(self):
-        wynik = Zadanie_10(779)
-
-        oczekiwany_wynik = [False]
-        self.assertIn(wynik, oczekiwany_wynik)
-
-    def test_Nr11_Zadanie_10_argumenty_minus_6_0f(self):
-        wynik = Zadanie_10(-6)
-
-        oczekiwany_wynik = [False]
+        oczekiwany_wynik = [4]
         self.assertIn(wynik, oczekiwany_wynik)
