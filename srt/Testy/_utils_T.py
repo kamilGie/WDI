@@ -4,7 +4,7 @@ NAGLOWEK = "class testy(unittest.TestCase):\n"
 
 IMPORTY = "import unittest\nimport io\nimport os\nimport sys\nfrom contextlib import redirect_stdout\nimport importlib\n"
 
-ODPAL_TESTY = "def odpal_testy():\n    suite = unittest.TestLoader().loadTestsFromTestCase(testy)\n    unittest.TextTestRunner(verbosity=2).run(suite)\n"
+ODPAL_TESTY = "def odpal_testy():\n    suite = unittest.TestLoader().loadTestsFromTestCase(testy)\n    unittest.TextTestRunner(verbosity=2,failfast=True).run(suite)\n"
 
 KOMENDA = f"""
 def komenda(k: str, *args, **kwargs):
@@ -22,7 +22,7 @@ def komenda(k: str, *args, **kwargs):
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
     srt_dir = os.path.join( os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
     sys.path.append(srt_dir)
-    nr_zadania = os.path.dirname(sciezka_pliku_wykonalnego)
+    nr_zadania = os.path.basename(os.path.dirname(sciezka_pliku_wykonalnego))
     return importlib.import_module("WykonajKomende").wykonaj_komende(
         k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
     )
@@ -56,7 +56,7 @@ def metoda_zwracajaca_testow_zaokraglona(
     NazwaTestu, numerTestu, zmienne, wynikWywolania
 ):
     zmienne_nazwa = nazwi_zmienne(zmienne)
-    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+    return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
 
         oczekiwany_wynik = { wynikWywolania }
@@ -68,7 +68,7 @@ def metoda_nasluchujaca_testow_zaokraglona(
 ):
     zmienne_nazwa = nazwi_zmienne(zmienne)
 
-    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+    return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
         with redirect_stdout(f):
             {NazwaTestu}({', '.join(map(str, zmienne))})
@@ -82,7 +82,7 @@ def metoda_zwracajaca_testow_bez_kolejnosci(
     NazwaTestu, numerTestu, zmienne, wynikWywolania
 ):
     zmienne_nazwa = nazwi_zmienne(zmienne)
-    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+    return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
         with redirect_stdout(f):
             {NazwaTestu}({', '.join(map(str, zmienne))})
@@ -101,7 +101,7 @@ def metoda_nasluchujaca_testow_bez_kolejnosci(
         wynikWywolania.replace("'", "").split()
     )  # Zakładamy, że wynikWywolania to string
 
-    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+    return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
         with redirect_stdout(f):
             {NazwaTestu}({', '.join(map(str, zmienne))})
@@ -114,21 +114,21 @@ def metoda_nasluchujaca_testow_bez_kolejnosci(
 
 def metoda_zwracajaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
     zmienne_nazwa = nazwi_zmienne(zmienne)
-    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+    return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
 
-        oczekiwany_wynik = [{ wynikWywolania }]
-        self.assertIn(wynik, oczekiwany_wynik)\n"""
+        oczekiwany_wynik = { wynikWywolania }
+        self.assertEqual(wynik, oczekiwany_wynik)\n"""
 
 
 def metoda_nasluchujaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
     zmienne_nazwa = nazwi_zmienne(zmienne)
 
-    return f"""    def test_Nr{numerTestu}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+    return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
         with redirect_stdout(f):
             {NazwaTestu}({', '.join(map(str, zmienne))})
         wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = [{ wynikWywolania }]
-        self.assertIn(wynik, oczekiwany_wynik)\n"""
+        oczekiwany_wynik = { wynikWywolania }
+        self.assertEqual(wynik, oczekiwany_wynik)\n"""

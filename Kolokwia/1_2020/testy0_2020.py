@@ -26,7 +26,7 @@ def komenda(k: str, *args, **kwargs):
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
     srt_dir = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
     sys.path.append(srt_dir)
-    nr_zadania = os.path.dirname(sciezka_pliku_wykonalnego)
+    nr_zadania = os.path.basename(os.path.dirname(sciezka_pliku_wykonalnego))
     return importlib.import_module("WykonajKomende").wykonaj_komende(
         k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
     )
@@ -34,55 +34,55 @@ def komenda(k: str, *args, **kwargs):
 
 class testy(unittest.TestCase):
 
-    def test_Nr1_multi_argumenty_tablica(self):
+    def test_Nr01_multi_argumenty_tablica(self):
         wynik = multi(["ABCABCABC", "AAAA", "ABAABA", "DEF"])
 
         oczekiwany_wynik = [9]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr2_multi_argumenty_tablica(self):
+    def test_Nr02_multi_argumenty_tablica(self):
         wynik = multi(["AB", "CD", "EFG", "HIJK"])
 
         oczekiwany_wynik = [0]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr3_multi_argumenty_tablica(self):
+    def test_Nr03_multi_argumenty_tablica(self):
         wynik = multi(["AAAAA", "BB", "CCC", "D", "EEEEE"])
 
         oczekiwany_wynik = [5]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr4_multi_argumenty_tablica(self):
+    def test_Nr04_multi_argumenty_tablica(self):
         wynik = multi(["XYZXYZ", "LLL", "MNMNMNMN", "OOO"])
 
         oczekiwany_wynik = [8]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr5_multi_argumenty_tablica(self):
+    def test_Nr05_multi_argumenty_tablica(self):
         wynik = multi(["A", "B", "C", "D"])
 
         oczekiwany_wynik = [0]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr6_multi_argumenty_tablica(self):
+    def test_Nr06_multi_argumenty_tablica(self):
         wynik = multi(["ABABABAB", "CDCDCDCDCDCD", "EFEFEF"])
 
         oczekiwany_wynik = [12]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr7_multi_argumenty_tablica(self):
+    def test_Nr07_multi_argumenty_tablica(self):
         wynik = multi([""])
 
         oczekiwany_wynik = [0]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr8_multi_argumenty_tablica(self):
+    def test_Nr08_multi_argumenty_tablica(self):
         wynik = multi(["ZZZZZZZZZ"])
 
         oczekiwany_wynik = [9]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr9_multi_argumenty_tablica(self):
+    def test_Nr09_multi_argumenty_tablica(self):
         wynik = multi(["HELLO", "WORLD", "AAA", "AAA", "ABCABC", "XYZXYZXYZ"])
 
         oczekiwany_wynik = [9]

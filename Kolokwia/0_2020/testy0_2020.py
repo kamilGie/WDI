@@ -9,7 +9,7 @@ from szablon0_2020 import silnia
 
 def odpal_testy():
     suite = unittest.TestLoader().loadTestsFromTestCase(testy)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    unittest.TextTestRunner(verbosity=2, failfast=True).run(suite)
 
 
 def komenda(k: str, *args, **kwargs):
@@ -27,7 +27,7 @@ def komenda(k: str, *args, **kwargs):
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
     srt_dir = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
     sys.path.append(srt_dir)
-    nr_zadania = os.path.dirname(sciezka_pliku_wykonalnego)
+    nr_zadania = os.path.basename(os.path.dirname(sciezka_pliku_wykonalnego))
     return importlib.import_module("WykonajKomende").wykonaj_komende(
         k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
     )
@@ -35,55 +35,55 @@ def komenda(k: str, *args, **kwargs):
 
 class testy(unittest.TestCase):
 
-    def test_Nr1_silnia_argumenty_1(self):
+    def test_Nr01_silnia_argumenty_1(self):
         wynik = silnia(1)
 
         oczekiwany_wynik = [1]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr2_silnia_argumenty_2(self):
+    def test_Nr02_silnia_argumenty_2(self):
         wynik = silnia(2)
 
         oczekiwany_wynik = [2]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr3_silnia_argumenty_4(self):
+    def test_Nr03_silnia_argumenty_4(self):
         wynik = silnia(4)
 
         oczekiwany_wynik = [4]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr4_silnia_argumenty_5(self):
+    def test_Nr04_silnia_argumenty_5(self):
         wynik = silnia(5)
 
         oczekiwany_wynik = [2]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr5_silnia_argumenty_3(self):
+    def test_Nr05_silnia_argumenty_3(self):
         wynik = silnia(3)
 
         oczekiwany_wynik = [6]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr6_silnia_argumenty_6(self):
+    def test_Nr06_silnia_argumenty_6(self):
         wynik = silnia(6)
 
         oczekiwany_wynik = [2]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr7_silnia_argumenty_7(self):
+    def test_Nr07_silnia_argumenty_7(self):
         wynik = silnia(7)
 
         oczekiwany_wynik = [4]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr8_silnia_argumenty_8(self):
+    def test_Nr08_silnia_argumenty_8(self):
         wynik = silnia(8)
 
         oczekiwany_wynik = [2]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr9_silnia_argumenty_9(self):
+    def test_Nr09_silnia_argumenty_9(self):
         wynik = silnia(9)
 
         oczekiwany_wynik = [8]

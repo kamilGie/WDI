@@ -8,7 +8,7 @@ from szablon1a2023 import zgodne
 
 def odpal_testy():
     suite = unittest.TestLoader().loadTestsFromTestCase(testy)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    unittest.TextTestRunner(verbosity=2, failfast=True).run(suite)
 
 
 def komenda(k: str, *args, **kwargs):
@@ -26,7 +26,7 @@ def komenda(k: str, *args, **kwargs):
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
     srt_dir = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
     sys.path.append(srt_dir)
-    nr_zadania = os.path.dirname(sciezka_pliku_wykonalnego)
+    nr_zadania = os.path.basename(os.path.dirname(sciezka_pliku_wykonalnego))
     return importlib.import_module("WykonajKomende").wykonaj_komende(
         k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
     )
@@ -34,55 +34,55 @@ def komenda(k: str, *args, **kwargs):
 
 class testy(unittest.TestCase):
 
-    def test_Nr1_zgodne_argumenty_tablica(self):
+    def test_Nr01_zgodne_argumenty_tablica(self):
         wynik = zgodne([0])
 
         oczekiwany_wynik = [0]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr2_zgodne_argumenty_tablica(self):
+    def test_Nr02_zgodne_argumenty_tablica(self):
         wynik = zgodne([6, 24])
 
         oczekiwany_wynik = [2]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr3_zgodne_argumenty_tablica(self):
+    def test_Nr03_zgodne_argumenty_tablica(self):
         wynik = zgodne([4, 6, 7, 9])
 
         oczekiwany_wynik = [0]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr4_zgodne_argumenty_tablica(self):
+    def test_Nr04_zgodne_argumenty_tablica(self):
         wynik = zgodne([6, 12, 18, 24])
 
         oczekiwany_wynik = [4]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr5_zgodne_argumenty_tablica(self):
+    def test_Nr05_zgodne_argumenty_tablica(self):
         wynik = zgodne([3, 5, 7, 11, 13])
 
         oczekiwany_wynik = [0]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr6_zgodne_argumenty_tablica(self):
+    def test_Nr06_zgodne_argumenty_tablica(self):
         wynik = zgodne([6, 6, 12, 12])
 
         oczekiwany_wynik = [4]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr7_zgodne_argumenty_tablica(self):
+    def test_Nr07_zgodne_argumenty_tablica(self):
         wynik = zgodne([999, 996, 1000])
 
         oczekiwany_wynik = [0]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr8_zgodne_argumenty_tablica(self):
+    def test_Nr08_zgodne_argumenty_tablica(self):
         wynik = zgodne([2, 4, 8, 16, 32])
 
         oczekiwany_wynik = [5]
         self.assertIn(wynik, oczekiwany_wynik)
 
-    def test_Nr9_zgodne_argumenty_tablica(self):
+    def test_Nr09_zgodne_argumenty_tablica(self):
         wynik = zgodne(
             [
                 6,
