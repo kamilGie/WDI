@@ -4,12 +4,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_10(liczba):  ...
+def Zadanie_10(liczba: int): ...
 
 
 if __name__ == "__main__":
     from testy10 import odpal_testy
 
-    Zadanie_10(int(input('Podaj liczba: ')))
+    print(Zadanie_10(int(input("Podaj liczba: "))))
 
     # odpal_testy()
