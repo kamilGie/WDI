@@ -1,6 +1,6 @@
 # ====================================================================================================>
 # Zadanie 7
-# ProszęzmodyfikowaćwzórNewtonaabyprogramzpoprzedniegozadaniaobliczałpierwiastek
+# Proszę z modyfikować wzór Newtona aby program z poprzedniego zadania obliczał pierwiastek
 # stopnia 3.
 # ====================================================================================================>
 

@@ -5,11 +5,11 @@
 # ====================================================================================================>
 
 
-def Zadanie_9(): ...
+def iloczyn(liczba):
+    a, b = 1, 1
+    while a * b < liczba:
+        a, b = b, a + b
+
+    return a * b == liczba
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    Zadanie_9()
-    # stworz_zadanie([Zadanie_9])
