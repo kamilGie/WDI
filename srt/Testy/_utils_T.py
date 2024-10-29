@@ -88,8 +88,8 @@ def metoda_zwracajaca_testow_bez_kolejnosci(
             {NazwaTestu}({', '.join(map(str, zmienne))})
         wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = set([{ wynikWywolania }])  # Użycie set dla oczekiwanego wyniku
-        self.assertTrue(set(wynik.split()) == oczekiwany_wynik)  # Porównanie z użyciem set
+        oczekiwany_wynik = set([{ wynikWywolania }]) 
+        self.assertTrue(set(wynik.split()) == oczekiwany_wynik)
         \n"""
 
 
@@ -97,9 +97,7 @@ def metoda_nasluchujaca_testow_bez_kolejnosci(
     NazwaTestu, numerTestu, zmienne, wynikWywolania
 ):
     zmienne_nazwa = nazwi_zmienne(zmienne)
-    oczekiwany_wynik = set(
-        wynikWywolania.replace("'", "").split()
-    )  # Zakładamy, że wynikWywolania to string
+    oczekiwany_wynik = set(wynikWywolania.replace("'", "").split())
 
     return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
@@ -107,8 +105,8 @@ def metoda_nasluchujaca_testow_bez_kolejnosci(
             {NazwaTestu}({', '.join(map(str, zmienne))})
         wynik = f.getvalue().strip()
 
-        # Podziel wynik na elementy i utwórz zbiór
-        self.assertTrue(set(wynik.split()) == {oczekiwany_wynik})  # Porównanie z użyciem set
+        oczekiwany_wynik = {oczekiwany_wynik}
+        self.assertTrue(set(wynik.split()) == oczekiwany_wynik)  # Porównanie z użyciem set
         \n"""
 
 

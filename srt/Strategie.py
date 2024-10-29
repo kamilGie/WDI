@@ -63,13 +63,6 @@ def tbez_kolejnosci():
     return szablon_domyslny(), rozwiazania_domyslne(), bez_kolejnosci
 
 
-def stop():
-    "Testy beda sie generowac dopoki nie podasz argumentu `stop`"
-    from Testy.Stop import Stop
-
-    return szablon_domyslny(), rozwiazania_domyslne(), Stop
-
-
 def meritum():
     "sama funkcja w rozwiązaniu"
     from Rozwiazanie.meritum import meritum

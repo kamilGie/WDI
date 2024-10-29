@@ -52,15 +52,16 @@ class Prime(Bazowa):
         liczba_argumentow = len(inspect.signature(funkcja).parameters)
 
         nr_testu = 1
-        while nr_testu <= liczba_argumentow * 10 + 1:
+        while True:
             try:
                 parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
+                if parametry == tuple("stop"):
+                    break
                 wynik_funkcji = self.wynik_funkcje(funkcja, parametry)
             except Exception as e:
                 print(f"{str(e)} Wprowadz Ponownie!")
                 continue
 
-            print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
             if isinstance(wynik_funkcji, str):
                 self.res += metoda_nasluchujaca_testow(
                     funkcja.__name__, nr_testu, parametry, wynik_funkcji
@@ -69,9 +70,39 @@ class Prime(Bazowa):
                 self.res += metoda_zwracajaca_testow(
                     funkcja.__name__, nr_testu, parametry, wynik_funkcji
                 )
+
+            if liczba_argumentow == 0:
+                print(f"Wynik to {wynik_funkcji}")
+                break
+
+            print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
             nr_testu += 1
 
         print("\n")
+
+    def pobierz_parametry(self, test_index: int, param_count: int) -> Tuple:
+        """
+        Pobiera parametry testowe od użytkownika.
+
+        Args:
+            test_index (int): Indeks aktualnego testu.
+            param_count (int): Liczba argumentów, które mają być pobrane.
+
+        Returns:
+            Tuple: Krotka z parametrami podanymi przez użytkownika.
+        """
+        if param_count == 0:
+            return ()
+        else:
+            koncowka_argumetnow = "" if 1 == param_count else "y"
+            wyjscie = ", lub 'stop' by zakonczyc testy" if test_index > 3 else ""
+            wejscie = input(
+                f"\nTest nr {test_index}\nPodaj {param_count} argument{koncowka_argumetnow} testowe{wyjscie}: "
+            )
+            if wejscie == "stop":
+                return tuple("stop")
+        print(f"\033[F\033[K\033[F\033[K\033[F\033[K", end="")
+        return tuple(self.przetwarzaj_wejscie(wejscie))
 
     def konwertuj_argument(self, arg):
         """Konwertuje argument na odpowiedni typ: int, float lub pozostaje str bez apostrofów."""
@@ -116,28 +147,6 @@ class Prime(Bazowa):
             i += 1
 
         return wyniki
-
-    def pobierz_parametry(self, test_index: int, param_count: int) -> Tuple:
-        """
-        Pobiera parametry testowe od użytkownika.
-
-        Args:
-            test_index (int): Indeks aktualnego testu.
-            param_count (int): Liczba argumentów, które mają być pobrane.
-
-        Returns:
-            Tuple: Krotka z parametrami podanymi przez użytkownika.
-        """
-        if param_count == 0:
-            return ()  # Zwróć pustą krotkę, gdy nie ma argumentów
-        elif param_count == 1:
-            wejscie = input(f"\ntest nr {test_index} Podaj argument testowy: ")
-        else:
-            wejscie = input(
-                f"\ntest nr {test_index} Podaj {param_count} argumenty testowe, oddzielone spacją: "
-            )
-        print(f"\033[F\033[K\033[F\033[K", end="")
-        return tuple(self.przetwarzaj_wejscie(wejscie))
 
     def wynik_funkcje(self, funkcja: Callable, parametry: Tuple) -> Any:
         """
