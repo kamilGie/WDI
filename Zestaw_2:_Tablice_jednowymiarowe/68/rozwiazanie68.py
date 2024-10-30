@@ -19,5 +19,3 @@ def Zadanie_68(T: list):
             akutalna_dlugosci = 1
         ostatnia_wartosic = liczba
     return max_dlugosci
-
-

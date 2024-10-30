@@ -87,3 +87,7 @@ class testy(unittest.TestCase):
 
         oczekiwany_wynik = 1
         self.assertEqual(wynik, oczekiwany_wynik)
+
+
+if __name__ == "__main__":
+    unittest.main()

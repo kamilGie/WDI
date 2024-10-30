@@ -5,11 +5,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_82(): ...
+def n_liczba_z_pierwiastka_z_2(n): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy82 import odpal_testy
 
-    Zadanie_82()
-    # stworz_zadanie([Zadanie_82])
+    n_liczba_z_pierwiastka_z_2(int(input("Podaj n: ")))
+
+    # odpal_testy()

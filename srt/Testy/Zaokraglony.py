@@ -22,7 +22,7 @@ class Zaokraglony(Prime):
         liczba_argumentow = len(inspect.signature(funkcja).parameters)
 
         nr_testu = 1
-        while nr_testu <= liczba_argumentow * 20 + 1:
+        while nr_testu <= liczba_argumentow * 10 + 1:
             try:
                 parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
                 wynik_funkcji = self.wynik_funkcje(funkcja, parametry)

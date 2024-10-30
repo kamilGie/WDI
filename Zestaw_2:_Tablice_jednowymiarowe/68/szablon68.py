@@ -12,6 +12,6 @@ def Zadanie_68(T: list): ...
 if __name__ == "__main__":
     from testy68 import odpal_testy
 
-    # Zadanie_68(list((input())))
+    Zadanie_68(list((input())))
 
-    odpal_testy()
+    # odpal_testy()
