@@ -1,8 +1,8 @@
 # ====================================================================================================>
-# Zadanie 1
-# Proszę napisać program poszukujący trójkątów Pitagorejskich w których długość przekątnej
-# jest mniejsza od liczby N wprowadzonej z klawiatury.
+# Zadanie 2
+# Proszę napisać program wypisujący elementy ciągu Fibonacciego mniejsze od miliona.
 # ====================================================================================================>
+# print(a b c)
 
 
 def Zadanie_1(n): ...
@@ -11,6 +11,6 @@ def Zadanie_1(n): ...
 if __name__ == "__main__":
     from testy01 import odpal_testy
 
-    Zadanie_1(input('Podaj n: '))
+    Zadanie_1(int(input("Podaj n: ")))
 
     # odpal_testy()

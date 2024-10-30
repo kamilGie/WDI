@@ -5,13 +5,15 @@
 # z liczb nieparzystych. Do funkcji należy przekazać tablicę, funkcja powinna zwrócić długość znalezionego
 # podciągu lub wartość 0 jeżeli taki podciąg nie istnieje.
 # ====================================================================================================>
+# zwroc dlugosci
 
 
-def Zadanie_77(): ...
+def Zadanie_77(T: list): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy77 import odpal_testy
 
-    Zadanie_77()
-    # stworz_zadanie([Zadanie_77])
+    Zadanie_77(list(input("Podaj T: ")))
+
+    # odpal_testy()

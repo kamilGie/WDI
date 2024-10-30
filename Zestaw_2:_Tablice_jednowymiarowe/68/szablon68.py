@@ -3,13 +3,15 @@
 # Napisać funkcję, która dla N-elementowej tablicy T wypełnionej liczbami naturalnym wy-
 # znacza długość najdłuższego, spójnego podciągu rosnącego.
 # ====================================================================================================>
+# zwroc dlugiosci
 
 
-def Zadanie_68(): ...
+def Zadanie_68(T: list): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy68 import odpal_testy
 
-    Zadanie_68()
-    # stworz_zadanie([Zadanie_68])
+    Zadanie_68(list((input())))
+
+    # odpal_testy()

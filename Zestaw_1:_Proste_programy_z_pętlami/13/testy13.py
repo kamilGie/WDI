@@ -10,7 +10,7 @@ from szablon13 import Zadanie_13
 
 def odpal_testy():
     suite = unittest.TestLoader().loadTestsFromTestCase(testy)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    unittest.TextTestRunner(verbosity=2, failfast=True).run(suite)
 
 
 def komenda(k: str, *args, **kwargs):
@@ -26,9 +26,9 @@ def komenda(k: str, *args, **kwargs):
         **kwargs: Dodatkowe argumenty kluczowe do komendy.
     """
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
-    srt_dir = os.path.join( os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
+    srt_dir = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
     sys.path.append(srt_dir)
-    nr_zadania = os.path.dirname(sciezka_pliku_wykonalnego)
+    nr_zadania = os.path.basename(os.path.dirname(sciezka_pliku_wykonalnego))
     return importlib.import_module("WykonajKomende").wykonaj_komende(
         k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
     )
@@ -42,6 +42,5 @@ class testy(unittest.TestCase):
             Zadanie_13()
         wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = ['1 6 28 496 8128']
+        oczekiwany_wynik = "1 6 28 496 8128"
         self.assertIn(wynik, oczekiwany_wynik)
-

@@ -4,11 +4,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_15(): ...
+def nwd3(a, b, c): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy15 import odpal_testy
 
-    Zadanie_15()
-    # stworz_zadanie([Zadanie_15])
+    nwd3(int(input('Podaj a: ')), int(input('Podaj b: ')), int(input('Podaj c: ')))
+
+    # odpal_testy()

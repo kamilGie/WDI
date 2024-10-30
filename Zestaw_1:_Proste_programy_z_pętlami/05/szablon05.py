@@ -1,6 +1,6 @@
 # ====================================================================================================>
 # Zadanie 5
-# Pierwiastekcałkowitoliczbowyzliczbynaturalnejtoczęśćcałkowitazpierwiastkaztejliczby.
+# Pierwiastek całkowito liczbowy z liczby naturalnej to część całkowita z pierwiastka z tej liczby.
 # Proszę napisać program obliczający taki pierwiastek korzystając z zależności 1+3+5+...=n2.
 # ====================================================================================================>
 # return (pierwiastek)

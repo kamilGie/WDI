@@ -8,7 +8,7 @@ from szablon06 import Zadanie_6
 
 def odpal_testy():
     suite = unittest.TestLoader().loadTestsFromTestCase(testy)
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    unittest.TextTestRunner(verbosity=2, failfast=True).run(suite)
 
 
 def komenda(k: str, *args, **kwargs):
