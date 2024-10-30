@@ -10,7 +10,7 @@ from szablon82 import n_liczba_z_pierwiastka_z_2
 
 def odpal_testy():
     suite = unittest.TestLoader().loadTestsFromTestCase(testy)
-    unittest.TextTestRunner(verbosity=2,failfast=True).run(suite)
+    unittest.TextTestRunner(verbosity=2, failfast=True).run(suite)
 
 
 def komenda(k: str, *args, **kwargs):
@@ -26,7 +26,7 @@ def komenda(k: str, *args, **kwargs):
         **kwargs: Dodatkowe argumenty kluczowe do komendy.
     """
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
-    srt_dir = os.path.join( os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
+    srt_dir = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
     sys.path.append(srt_dir)
     nr_zadania = os.path.basename(os.path.dirname(sciezka_pliku_wykonalnego))
     return importlib.import_module("WykonajKomende").wykonaj_komende(
@@ -37,123 +37,103 @@ def komenda(k: str, *args, **kwargs):
 class testy(unittest.TestCase):
 
     def test_Nr01_n_liczba_z_pierwiastka_z_2_argumenty_1(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(1)
-        wynik = f.getvalue().strip()
+        wynik = n_liczba_z_pierwiastka_z_2(1)
 
         oczekiwany_wynik = 4
         self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr02_n_liczba_z_pierwiastka_z_2_argumenty_5(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(5)
-        wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = 1
+    def test_Nr02_n_liczba_z_pierwiastka_z_2_argumenty_4(self):
+        wynik = n_liczba_z_pierwiastka_z_2(4)
+
+        oczekiwany_wynik = 2
         self.assertEqual(wynik, oczekiwany_wynik)
+
     def test_Nr03_n_liczba_z_pierwiastka_z_2_argumenty_10(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(10)
-        wynik = f.getvalue().strip()
+        wynik = n_liczba_z_pierwiastka_z_2(10)
 
-        oczekiwany_wynik = 0
+        oczekiwany_wynik = 3
         self.assertEqual(wynik, oczekiwany_wynik)
+
     def test_Nr04_n_liczba_z_pierwiastka_z_2_argumenty_12(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(12)
-        wynik = f.getvalue().strip()
+        wynik = n_liczba_z_pierwiastka_z_2(12)
 
         oczekiwany_wynik = 3
         self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr05_n_liczba_z_pierwiastka_z_2_argumenty_20(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(20)
-        wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = 9
-        self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr06_n_liczba_z_pierwiastka_z_2_argumenty_32(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(32)
-        wynik = f.getvalue().strip()
+    def test_Nr05_n_liczba_z_pierwiastka_z_2_argumenty_19(self):
+        wynik = n_liczba_z_pierwiastka_z_2(19)
 
-        oczekiwany_wynik = 9
+        oczekiwany_wynik = 8
         self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr07_n_liczba_z_pierwiastka_z_2_argumenty_39(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(39)
-        wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = 9
-        self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr08_n_liczba_z_pierwiastka_z_2_argumenty_50(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(50)
-        wynik = f.getvalue().strip()
-
-        oczekiwany_wynik = 9
-        self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr09_n_liczba_z_pierwiastka_z_2_argumenty_59(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(59)
-        wynik = f.getvalue().strip()
-
-        oczekiwany_wynik = 7
-        self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr10_n_liczba_z_pierwiastka_z_2_argumenty_69(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(69)
-        wynik = f.getvalue().strip()
-
-        oczekiwany_wynik = 2
-        self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr11_n_liczba_z_pierwiastka_z_2_argumenty_79(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(79)
-        wynik = f.getvalue().strip()
+    def test_Nr06_n_liczba_z_pierwiastka_z_2_argumenty_20(self):
+        wynik = n_liczba_z_pierwiastka_z_2(20)
 
         oczekiwany_wynik = 0
         self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr12_n_liczba_z_pierwiastka_z_2_argumenty_89(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(89)
-        wynik = f.getvalue().strip()
+
+    def test_Nr07_n_liczba_z_pierwiastka_z_2_argumenty_30(self):
+        wynik = n_liczba_z_pierwiastka_z_2(30)
+
+        oczekiwany_wynik = 9
+        self.assertEqual(wynik, oczekiwany_wynik)
+
+    def test_Nr08_n_liczba_z_pierwiastka_z_2_argumenty_40(self):
+        wynik = n_liczba_z_pierwiastka_z_2(40)
+
+        oczekiwany_wynik = 6
+        self.assertEqual(wynik, oczekiwany_wynik)
+
+    def test_Nr09_n_liczba_z_pierwiastka_z_2_argumenty_50(self):
+        wynik = n_liczba_z_pierwiastka_z_2(50)
+
+        oczekiwany_wynik = 4
+        self.assertEqual(wynik, oczekiwany_wynik)
+
+    def test_Nr10_n_liczba_z_pierwiastka_z_2_argumenty_60(self):
+        wynik = n_liczba_z_pierwiastka_z_2(60)
+
+        oczekiwany_wynik = 9
+        self.assertEqual(wynik, oczekiwany_wynik)
+
+    def test_Nr11_n_liczba_z_pierwiastka_z_2_argumenty_70(self):
+        wynik = n_liczba_z_pierwiastka_z_2(70)
+
+        oczekiwany_wynik = 4
+        self.assertEqual(wynik, oczekiwany_wynik)
+
+    def test_Nr12_n_liczba_z_pierwiastka_z_2_argumenty_80(self):
+        wynik = n_liczba_z_pierwiastka_z_2(80)
 
         oczekiwany_wynik = 3
         self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr13_n_liczba_z_pierwiastka_z_2_argumenty_91(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(91)
-        wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = 3
-        self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr14_n_liczba_z_pierwiastka_z_2_argumenty_96(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(96)
-        wynik = f.getvalue().strip()
+    def test_Nr13_n_liczba_z_pierwiastka_z_2_argumenty_88(self):
+        wynik = n_liczba_z_pierwiastka_z_2(88)
 
-        oczekiwany_wynik = 1
+        oczekiwany_wynik = 5
         self.assertEqual(wynik, oczekiwany_wynik)
-    def test_Nr15_n_liczba_z_pierwiastka_z_2_argumenty_99(self):
-        f = io.StringIO()
-        with redirect_stdout(f):
-            n_liczba_z_pierwiastka_z_2(99)
-        wynik = f.getvalue().strip()
+
+    def test_Nr14_n_liczba_z_pierwiastka_z_2_argumenty_90(self):
+        wynik = n_liczba_z_pierwiastka_z_2(90)
+
+        oczekiwany_wynik = 4
+        self.assertEqual(wynik, oczekiwany_wynik)
+
+    def test_Nr15_n_liczba_z_pierwiastka_z_2_argumenty_92(self):
+        wynik = n_liczba_z_pierwiastka_z_2(92)
 
         oczekiwany_wynik = 2
         self.assertEqual(wynik, oczekiwany_wynik)
 
+    def test_Nr16_n_liczba_z_pierwiastka_z_2_argumenty_95(self):
+        wynik = n_liczba_z_pierwiastka_z_2(95)
+
+        oczekiwany_wynik = 4
+        self.assertEqual(wynik, oczekiwany_wynik)
+
+    def test_Nr17_n_liczba_z_pierwiastka_z_2_argumenty_99(self):
+        wynik = n_liczba_z_pierwiastka_z_2(99)
+
+        oczekiwany_wynik = 2
+        self.assertEqual(wynik, oczekiwany_wynik)
