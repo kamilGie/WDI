@@ -1,0 +1,256 @@
+# ====================================================================================================>
+# Zadanie 59
+# Tylko 7 liczb pierwszych spełnia warunek z poprzedniego zadania. Proszę napisać program
+# znajdujący wszystkie te liczby.
+# ====================================================================================================>
+# zwrocic print(liczba) wiec 7 takich printow
+
+# napisanie tego bez tablic bedzie bardziej bardzo drobiazgowe kiedys zrobie
+# te liczby to 2, 3, 5, 7, 28116440335967, 449177399146038697307, 35452590104031691935943,
+
+from itertools import combinations_with_replacement
+import time
+
+
+import random
+
+
+def pow_mod(base, exp, mod):
+    result = 1
+    base = base % mod
+    while exp > 0:
+        if (exp % 2) == 1:  # Jeśli exp jest nieparzyste
+            result = (result * base) % mod
+        exp //= 2
+        base = (base * base) % mod
+    return result
+
+
+def is_prime(n, k=10):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0:
+        return False
+
+    # Znajdź d i r, takie że n - 1 = 2^r * d
+    d = n - 1
+    r = 0
+    while d % 2 == 0:
+        d //= 2
+        r += 1
+
+    # Wykonaj k prób
+    for _ in range(k):
+        # Wybierz losową podstawę a
+        a = random.randint(2, n - 2)
+        x = pow_mod(a, d, n)  # x = a^d % n
+        if x == 1 or x == n - 1:
+            continue
+        for _ in range(r - 1):
+            x = pow_mod(x, 2, n)  # x = x^2 % n
+            if x == n - 1:
+                break
+        else:
+            return False  # Znaleziono dowód, że n nie jest pierwsza
+
+    return True  # Prawdopodobnie pierwsza
+
+
+def dzieleniePrzez10():
+    print("2", "3", "5", "7")
+    znalezione = 4
+    length = 2
+    potegi = [d for d in range(10)]
+    while znalezione != 7:
+        potegi = [d * potegi[d] for d in range(10)]
+
+        for digits in combinations_with_replacement(range(10), length):
+
+            suma_cyfr = sum(digits)
+            if suma_cyfr % 2 == 0 or suma_cyfr % 3 == 0:
+                continue
+
+            # robimy sume cyfer razy potega dlugosci liczb kombinacji ktora liczymy
+            s = sum(potegi[d] for d in digits)
+
+            # jesli jest podzielne przez 2,5,7,11,13 to nie  jest liczba pierwsza
+            if s % 2 == 0 or s % 5 == 0 or s % 7 == 0 or s % 11 == 0 or s % 13 == 0:
+                continue
+
+            temp = s
+            sumdigits = []
+            while temp:
+                temp, d = divmod(temp, 10)
+                sumdigits.append(d)
+
+            if list(digits) == sorted(sumdigits) and isprime(s):
+                print(s)
+                znalezione += 1
+                if znalezione == 7:
+                    break
+
+        length += 1
+
+
+def porownywanie_stringiem():
+    print("2", "3", "5", "7", sep="\n")
+    znalezione = 4
+    dlugosci = 2
+    potegi = [d for d in range(10)]
+
+    while True:
+        potegi = [d * potegi[d] for d in range(10)]
+
+        for kombinacje in combinations_with_replacement(range(10), dlugosci):
+
+            suma_cyfr = sum(kombinacje)
+            if suma_cyfr % 2 == 0 or suma_cyfr % 3 == 0:
+                continue
+
+            s = sum(potegi[d] for d in kombinacje)
+            if s % 2 == 0 or s % 5 == 0 or s % 7 == 0 or s % 11 == 0 or s % 13 == 0:
+                continue
+
+            cyfry_sumy = sorted((map(int, str(s))))
+            for kom, c_sum in zip(kombinacje, cyfry_sumy):
+                if kom != c_sum:
+                    break
+            else:
+                if isprime(s):
+                    print(s)
+                    znalezione += 1
+                    if znalezione == 7:
+                        return
+
+        dlugosci += 1
+
+
+def bez_nawiasow_kwadratowych():
+    print("2", "3", "5", "7", sep="\n")
+    znalezione = 4
+    dlugosci = 2
+    potegi = list(range(0, 10))
+    mnoznik = range(0, 10)
+
+    while True:
+        potegi = list(map(lambda p, m: p * m, potegi, mnoznik))
+
+        for kombinacje in combinations_with_replacement(range(10), dlugosci):
+            suma_cyfr = sum(kombinacje)
+            if suma_cyfr % 2 == 0 or suma_cyfr % 3 == 0:
+                continue
+
+            s = 0
+            iterator = iter(potegi)
+            potega = next(iterator)
+            wartosci_iteratora = 0
+            for d in kombinacje:
+                if wartosci_iteratora != d:
+                    for _ in range(d - wartosci_iteratora):
+                        wartosci_iteratora += 1
+                        potega = next(iterator)
+                s += potega
+
+            if s % 2 == 0 or s % 5 == 0 or s % 7 == 0 or s % 11 == 0 or s % 13 == 0:
+                continue
+
+            cyfry_sumy = sorted((map(int, str(s))))
+            for kom, c_sum in zip(kombinacje, cyfry_sumy):
+                if kom != c_sum:
+                    break
+            else:
+                if isprime(s):
+                    print(s)
+                    znalezione += 1
+                    if znalezione == 7:
+                        return
+
+        dlugosci += 1
+
+
+def liczenie_liczb():
+    def count_digits(sorted_numbers):
+        count = [0] * 10
+        current_digit = -1
+        digit_count = 0
+
+        for number in sorted_numbers:
+            if number != current_digit:
+                if current_digit != -1:
+                    count[current_digit] = digit_count
+                current_digit = number
+                digit_count = 1
+            else:
+                digit_count += 1
+
+        if current_digit != -1:
+            count[current_digit] = digit_count
+
+        return count
+
+    print("2", "3", "5", "7", sep="\n")
+    znalezione = 4
+    dlugosci = 2
+    potegi = [d for d in range(10)]
+
+    while True:
+
+        potegi = [d * potegi[d] for d in range(10)]
+
+        for kombinacje in combinations_with_replacement(range(10), dlugosci):
+
+            suma_cyfr = sum(kombinacje)
+            if suma_cyfr % 2 == 0 or suma_cyfr % 3 == 0:
+                continue
+
+            s = sum(potegi[d] for d in kombinacje)
+            if s % 2 == 0 or s % 5 == 0 or s % 7 == 0 or s % 11 == 0 or s % 13 == 0:
+                continue
+
+            lista_wystapien = count_digits((kombinacje))
+            tmp = s
+            while tmp:
+                tmp, d = divmod(tmp, 10)
+                if lista_wystapien[d] == 0:
+                    break
+                lista_wystapien[d] -= 1
+            else:
+                if not any(lista_wystapien) and isprime(s):
+                    print(s)
+                    znalezione += 1
+                    if znalezione == 7:
+                        return
+
+        dlugosci += 1
+
+
+if __name__ == "__main__":
+    from Develop import stworz_zadanie
+
+    start_time = time.time()
+    porownywanie_stringiem()
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print(f"Czas wykonania porowynywnia stringa: {execution_time} sekund")
+
+    start_time = time.time()
+    bez_nawiasow_kwadratowych()
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print(f"Czas wykonania bez kwadratowych nawiasow: {execution_time} sekund")
+
+    start_time = time.time()
+    liczenie_liczb()
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print(f"Czas wykonania liczenia liczb: {execution_time} sekund")
+
+    start_time = time.time()
+    dzieleniePrzez10()
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print(f"Czas wykonania dzielenia przez 10: {execution_time} sekund")
+
+    # stworz_zadanie([Zadanie_59])

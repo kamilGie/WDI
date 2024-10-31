@@ -37,9 +37,7 @@ def n_liczba_z_pierwiastka_z_2(n):
         gora = 9999999999
         dol = 0
         while gora - dol > 1:
-            domniemane_mniej_niz_2 = kwadrat_liczby_tablicowej(
-                [(gora + dol) // 2] + wynik
-            )
+            domniemane_mniej_niz_2 = kwadrat_liczby_tablicowej( [(gora + dol) // 2] + wynik)
             cyfra_dziesietna = domniemane_mniej_niz_2[len(domniemane_mniej_niz_2) - 2]
             if cyfra_dziesietna == 1:
                 dol = (gora + dol) // 2
