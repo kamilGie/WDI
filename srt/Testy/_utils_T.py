@@ -97,7 +97,7 @@ def metoda_nasluchujaca_testow_bez_kolejnosci(
     NazwaTestu, numerTestu, zmienne, wynikWywolania
 ):
     zmienne_nazwa = nazwi_zmienne(zmienne)
-    oczekiwany_wynik = set(wynikWywolania.replace("'", "").split())
+    oczekiwany_wynik = set(wynikWywolania.replace("'", "").replace("\\n", " ").split())
 
     return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()

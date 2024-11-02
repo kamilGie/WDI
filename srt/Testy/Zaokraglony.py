@@ -32,7 +32,6 @@ class Zaokraglony(Prime):
                 print(f"{str(e)} Wprowadz Ponownie!")
                 continue
 
-            print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
             if isinstance(wynik_funkcji, str):
                 self.res += metoda_nasluchujaca_testow_zaokraglona(
                     funkcja.__name__, nr_testu, parametry, wynik_funkcji
@@ -41,6 +40,12 @@ class Zaokraglony(Prime):
                 self.res += metoda_zwracajaca_testow_zaokraglona(
                     funkcja.__name__, nr_testu, parametry, wynik_funkcji
                 )
+
+            if liczba_argumentow == 0:
+                print(f"Wynik to {wynik_funkcji}")
+                break
+
             nr_testu += 1
+            print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
 
         print("\n")
