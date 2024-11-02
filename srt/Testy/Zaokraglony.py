@@ -22,9 +22,11 @@ class Zaokraglony(Prime):
         liczba_argumentow = len(inspect.signature(funkcja).parameters)
 
         nr_testu = 1
-        while nr_testu <= liczba_argumentow * 10 + 1:
+        while True:
             try:
                 parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
+                if parametry == tuple("stop"):
+                    break
                 wynik_funkcji = self.wynik_funkcje(funkcja, parametry)
             except Exception as e:
                 print(f"{str(e)} Wprowadz Ponownie!")
