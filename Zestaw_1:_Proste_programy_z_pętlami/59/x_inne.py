@@ -219,7 +219,7 @@ def liczenie_liczb():
                 lista_wystapien[d] -= 1
             else:
                 if not any(lista_wystapien) and isprime(s):
-                    print(s, end="")
+                    print(s, end=" ")
                     znalezione += 1
                     if znalezione == 7:
                         print()
