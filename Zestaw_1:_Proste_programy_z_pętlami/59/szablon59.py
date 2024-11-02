@@ -1,17 +1,17 @@
-# ====================================================================================================>
+# ===================================================================================================>
 # Zadanie 59
 # Tylko 7 liczb pierwszych spełnia warunek z poprzedniego zadania. Proszę napisać program
 # znajdujący wszystkie te liczby.
 # ====================================================================================================>
-# zwrocic print(liczba) wiec 7 takich printow
+# zwrocic od spacji te liczby 2 3 5 7 28116440335967 449177399146038697307 35452590104031691935943
 
 
-def Zadanie_59(): ...
+def narcystyczne_pierwsze(): ...
 
 
 if __name__ == "__main__":
     from testy59 import odpal_testy
 
-    Zadanie_59()
+    narcystyczne_pierwsze()
 
     # odpal_testy()
