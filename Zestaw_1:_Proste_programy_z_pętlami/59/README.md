@@ -1,4 +1,4 @@
-## Rozwiązanie ponizej 100 sekund 
+## Rozwiązanie poniżej 100 sekund 
 `rozwiazanie59.py` Spelnia zasady zestawu 1 i  **nie korzysta**  z tablic, krotek ani żadnych ułatwiających metod.
 Użyłem jedynie:
 - działań na liczbach,
