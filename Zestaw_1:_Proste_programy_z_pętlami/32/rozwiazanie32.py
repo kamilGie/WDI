@@ -5,11 +5,13 @@
 # ====================================================================================================>
 
 
-def Zadanie_32(): ...
+def Zadanie_32(n):
+    ostatnie_d = 10
+    while n > 0:
+        n, d = divmod(n, 10)
+        if ostatnie_d <= d:
+            return False
+        ostatnie_d = d
+    return True
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    Zadanie_32()
-    # stworz_zadanie([Zadanie_32])

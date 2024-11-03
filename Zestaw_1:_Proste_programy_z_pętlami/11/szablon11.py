@@ -5,7 +5,7 @@
 # wypisujacy wiec testy sprawdzaja print
 
 
-def divisors(n):
+def divisors(n): ...
 
 
 if __name__ == "__main__":
