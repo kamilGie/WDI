@@ -59,8 +59,7 @@ def metoda_zwracajaca_testow_zaokraglona(
     return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
 
-        oczekiwany_wynik = { wynikWywolania }
-        self.assertAlmostEqual(wynik, oczekiwany_wynik, places=4)\n"""
+        self.assertAlmostEqual(wynik, { wynikWywolania }, places=4)\n"""
 
 
 def metoda_nasluchujaca_testow_zaokraglona(
@@ -74,8 +73,7 @@ def metoda_nasluchujaca_testow_zaokraglona(
             {NazwaTestu}({', '.join(map(str, zmienne))})
         wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = { wynikWywolania }
-        self.assertAlmostEqual(wynik, oczekiwany_wynik, places=4)\n"""
+        self.assertAlmostEqual(wynik, { wynikWywolania }, places=4)\n"""
 
 
 def metoda_zwracajaca_testow_bez_kolejnosci(
@@ -88,8 +86,7 @@ def metoda_zwracajaca_testow_bez_kolejnosci(
             {NazwaTestu}({', '.join(map(str, zmienne))})
         wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = set([{ wynikWywolania }]) 
-        self.assertTrue(set(wynik.split()) == oczekiwany_wynik)
+        self.assertTrue(set(wynik.split()) == set([{ wynikWywolania }]))
         \n"""
 
 
@@ -97,7 +94,7 @@ def metoda_nasluchujaca_testow_bez_kolejnosci(
     NazwaTestu, numerTestu, zmienne, wynikWywolania
 ):
     zmienne_nazwa = nazwi_zmienne(zmienne)
-    oczekiwany_wynik = set(wynikWywolania.replace("'", "").split())
+    oczekiwany_wynik = set(wynikWywolania.replace("'", "").replace("\\n", " ").split())
 
     return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
         f = io.StringIO()
@@ -105,18 +102,14 @@ def metoda_nasluchujaca_testow_bez_kolejnosci(
             {NazwaTestu}({', '.join(map(str, zmienne))})
         wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = {oczekiwany_wynik}
-        self.assertTrue(set(wynik.split()) == oczekiwany_wynik)  # Porównanie z użyciem set
+        self.assertTrue(set(wynik.split()) == {oczekiwany_wynik})  # Porównanie z użyciem set
         \n"""
 
 
 def metoda_zwracajaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
     zmienne_nazwa = nazwi_zmienne(zmienne)
     return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
-        wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
-
-        oczekiwany_wynik = { wynikWywolania }
-        self.assertEqual(wynik, oczekiwany_wynik)\n"""
+        self.assertEqual({NazwaTestu}({', '.join(map(str, zmienne))}), { wynikWywolania })\n"""
 
 
 def metoda_nasluchujaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
@@ -128,5 +121,4 @@ def metoda_nasluchujaca_testow(NazwaTestu, numerTestu, zmienne, wynikWywolania):
             {NazwaTestu}({', '.join(map(str, zmienne))})
         wynik = f.getvalue().strip()
 
-        oczekiwany_wynik = { wynikWywolania }
-        self.assertEqual(wynik, oczekiwany_wynik)\n"""
+        self.assertEqual(wynik, { wynikWywolania })\n"""

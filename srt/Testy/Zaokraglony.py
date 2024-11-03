@@ -22,15 +22,16 @@ class Zaokraglony(Prime):
         liczba_argumentow = len(inspect.signature(funkcja).parameters)
 
         nr_testu = 1
-        while nr_testu <= liczba_argumentow * 10 + 1:
+        while True:
             try:
                 parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
+                if parametry == tuple("stop"):
+                    break
                 wynik_funkcji = self.wynik_funkcje(funkcja, parametry)
             except Exception as e:
                 print(f"{str(e)} Wprowadz Ponownie!")
                 continue
 
-            print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
             if isinstance(wynik_funkcji, str):
                 self.res += metoda_nasluchujaca_testow_zaokraglona(
                     funkcja.__name__, nr_testu, parametry, wynik_funkcji
@@ -39,6 +40,12 @@ class Zaokraglony(Prime):
                 self.res += metoda_zwracajaca_testow_zaokraglona(
                     funkcja.__name__, nr_testu, parametry, wynik_funkcji
                 )
+
+            if liczba_argumentow == 0:
+                print(f"Wynik to {wynik_funkcji}")
+                break
+
             nr_testu += 1
+            print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
 
         print("\n")
