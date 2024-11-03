@@ -6,11 +6,14 @@
 # ====================================================================================================>
 
 
-def Zadanie_41(): ...
+from math import factorial
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
+def Zadanie_41(N):
+    silnia, d = divmod(factorial(N), 10)
+    while d == 0:
+        silnia, d = divmod(silnia, 10)
 
-    Zadanie_41()
-    # stworz_zadanie([Zadanie_41])
+    return d
+
+

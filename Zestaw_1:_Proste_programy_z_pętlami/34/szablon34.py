@@ -1,15 +1,16 @@
 # ====================================================================================================>
 # Zadanie 34
-# Proszęnapisaćprogramwczytującyliczbęnaturalnąiodpowiadającynapytanie,czyliczba
+# Proszę napisać programw czytujący liczbę naturalną i odpowiadający na pytanie, czy liczba
 # ta zawiera cyfrę równą liczbie swoich cyfr.
 # ====================================================================================================>
 
 
-def Zadanie_34(): ...
+def Zadanie_34(n): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy34 import odpal_testy
 
-    Zadanie_34()
-    # stworz_zadanie([Zadanie_34])
+    Zadanie_34(int(input('Podaj n: ')))
+
+    # odpal_testy()

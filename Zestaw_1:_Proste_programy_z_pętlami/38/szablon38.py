@@ -6,13 +6,11 @@
 # 2,3,2,7,1,2,4,8,5,2,2,5,7,9,3,1,0 powinny zostać wypisane liczby: 4,5. Można założyć, że w ciągu znajduje się
 # co najmniej 5 elementów.
 # ====================================================================================================>
+# Zadanie nie posiada testow bo SRT jeszcze nie obsluguje funkcji z wejsciem dynamicznym
 
 
 def Zadanie_38(): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
     Zadanie_38()
-    # stworz_zadanie([Zadanie_38])

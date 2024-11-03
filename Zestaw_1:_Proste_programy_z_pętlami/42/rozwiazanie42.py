@@ -5,11 +5,17 @@
 # ====================================================================================================>
 
 
-def Zadanie_42(): ...
+def policz_wystapienia_cyfry(liczba, cyfra):
+    wystapienia = 0
+    while liczba > 0:
+        liczba, d = divmod(liczba, 10)
+        if d == cyfra:
+            wystapienia += 1
+    return wystapienia
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    Zadanie_42()
-    # stworz_zadanie([Zadanie_42])
+def Zadanie_42(a, b):
+    for i in range(10):
+        if policz_wystapienia_cyfry(a, i) != policz_wystapienia_cyfry(b, i):
+            return False
+    return True

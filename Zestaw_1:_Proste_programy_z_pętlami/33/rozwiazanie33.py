@@ -4,7 +4,6 @@
 # cyfry stanowią ciąg geometryczny.
 # ====================================================================================================>
 # zadanie_33(124) --> return True
-# nie wychodzi
 
 
 def Zadanie_33(n):
@@ -26,7 +25,3 @@ def Zadanie_33(n):
     return True
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([Zadanie_33])

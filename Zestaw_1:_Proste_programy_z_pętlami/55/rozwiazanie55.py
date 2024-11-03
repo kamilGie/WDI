@@ -8,6 +8,8 @@
 # ====================================================================================================>
 # print(podstawa) lub print("brak")
 
+# rozwiazanie z wiki ale posiada tablice
+
 
 def common_digit(a, b, s):
     tab = [False for _ in range(s)]
@@ -34,7 +36,3 @@ def Zadanie_55(a, b):
         print("brak")
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([Zadanie_55])

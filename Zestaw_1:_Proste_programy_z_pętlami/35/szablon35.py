@@ -1,15 +1,17 @@
 # ====================================================================================================>
 # Zadanie 35
-# Proszęnapisaćprogramwczytującyliczbęnaturalnąiodpowiadającynapytanie,czyliczba
+# Proszę napisać program wczytujący liczbę naturalną i odpowiadający na pytanie, czy liczba
 # ta zakończona jest unikalną cyfrą.
 # ====================================================================================================>
+# Zadanie_35(123) --> return True
 
 
-def Zadanie_35(): ...
+def Zadanie_35(n): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy35 import odpal_testy
 
-    Zadanie_35()
-    # stworz_zadanie([Zadanie_35])
+    Zadanie_35(int(input('Podaj n: ')))
+
+    # odpal_testy()

@@ -25,8 +25,3 @@ def solve():
     return x
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    solve()
-    # stworz_zadanie([solve], strategia="tfloat")

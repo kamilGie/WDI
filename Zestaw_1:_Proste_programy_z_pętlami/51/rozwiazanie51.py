@@ -8,7 +8,6 @@
 # ====================================================================================================>
 # return int( ilosci znalezionych tych liczb w)
 
-# rozwiazanie z wiki ale liczy duplikacje wiec nie jest poprawne
 
 from math import sqrt
 
@@ -72,7 +71,3 @@ def Zadanie_51(a, b):
     return ilosci
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([Zadanie_51])

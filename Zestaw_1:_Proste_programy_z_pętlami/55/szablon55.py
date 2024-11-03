@@ -9,32 +9,12 @@
 # print(podstawa) lub print("brak")
 
 
-def common_digit(a, b, s):
-    tab = [False for _ in range(s)]
-
-    while a != 0:
-        tab[a % s] = True
-        a = a // s
-    # end while
-
-    while b != 0:
-        if tab[b % s]:
-            return False
-        b = b // s
-    # end while
-    return True
-
-
-def Zadanie_55(a, b):
-    for s in range(2, 17):
-        if common_digit(a, b, s):
-            print(s)
-            break
-    else:
-        print("brak")
+def Zadanie_55(a, b): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy55 import odpal_testy
 
-    stworz_zadanie([Zadanie_55])
+    Zadanie_55(int(input('Podaj a: ')), int(input('Podaj b: ')))
+
+    # odpal_testy()

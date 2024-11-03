@@ -1,7 +1,7 @@
 # ====================================================================================================>
 # Zadanie 43
-# DlapewnejN-cyfrowejliczbynaturalnejobliczonosumęN-tychpotęgcyfrtejliczbyotrzymu-
-# jąckolejnąliczbęN-cyfrową.Naprzykładdlaliczb:354,543,600,...sumatawynosi216.Niestetypierwotna
+# Dla pewnej N-cyfrowej liczby naturalnej obliczono sumę N-tych potęg cyfr tej liczby otrzymu-
+# jąc kolejną liczbę N-cyfrową. Naprzykład dla liczb :354,543,600,...suma ta wynosi 216. Niestety pierwotna
 # liczba zaginęła ale wiadomo, że była to największa z możliwych takich liczb. Proszę napisać program, który
 # na podstawie zachowanej sumy wyznaczy pierwotną liczbę
 # ====================================================================================================>
