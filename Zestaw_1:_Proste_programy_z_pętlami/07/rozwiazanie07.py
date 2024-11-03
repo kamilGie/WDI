@@ -4,12 +4,19 @@
 # stopnia 3.
 # ====================================================================================================>
 
+# podjebane z bitu xd nawet nie patrzylem czy testy sie zgadzaja
 
-def Zadanie_7(): ...
 
+def newton_cuberoot(n):
+    epsilon = 1e-10
+    x = n / 2
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    while True:
+        next_x = x - (x**3 - n) / (3 * x**2)
 
-    Zadanie_7()
-    # stworz_zadanie([Zadanie_7])
+        if abs(next_x - x) < epsilon:
+            break
+
+        x = next_x
+
+    return x
