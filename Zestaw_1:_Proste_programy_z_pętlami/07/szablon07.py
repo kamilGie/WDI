@@ -4,7 +4,6 @@
 # stopnia 3.
 # ====================================================================================================>
 # return pierwiastek
-# podjebane z bitu xd nawet nie patrzylem czy testy sie zgadzaja
 
 
 def newton_cuberoot(n): ...

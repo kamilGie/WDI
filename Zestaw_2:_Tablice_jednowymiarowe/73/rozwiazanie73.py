@@ -6,8 +6,6 @@
 # ====================================================================================================>
 from random import randint
 
-# rozwiazanie z wiki ale bledne bo dla n>30 daje szane ponizej 100%
-
 
 def SzansaUrodziny(n):
     if n < 2:
@@ -39,7 +37,3 @@ def probability_birth(n):
     return counter / 100
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([probability_birth])

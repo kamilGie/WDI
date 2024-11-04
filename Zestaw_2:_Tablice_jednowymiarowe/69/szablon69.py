@@ -1,15 +1,16 @@
 # ====================================================================================================>
-# Zadanie 70
+# Zadanie 69
 # Napisać funkcję, która dla N-elementowej tablicy T wypełnionej liczbami naturalnym wy-
-# znacza długość najdłuższego, spójnego podciągu geometrycznego.
+# znacza długość najdłuższego, spójnego podciągu arytmetycznego.
 # ====================================================================================================>
 
 
-def Zadanie_70(): ...
+def longest_increasing_series(tab): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy69 import odpal_testy
 
-    Zadanie_70()
-    # stworz_zadanie([Zadanie_70])
+    longest_increasing_series(int(input('Podaj tab: ')))
+
+    # odpal_testy()
