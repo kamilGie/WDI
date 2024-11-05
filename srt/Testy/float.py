@@ -1,4 +1,4 @@
-from Prime import Prime
+from prime import prime
 
 from typing import Callable
 import inspect
@@ -8,7 +8,7 @@ from _utils_T import (
 )
 
 
-class Zaokraglony(Prime):
+class float(prime):
     def generuj_testy_dla_funkcji(self, funkcja: Callable):
         """
         Generuje testy dla konkretnej funkcji.

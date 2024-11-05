@@ -1,8 +1,7 @@
 import os
+import sys
 from typing import List, Callable
-from Bazowa import Bazowa as bb
-from typing import Type
-import Strategie
+import importlib
 
 
 class Zadanie:
@@ -28,7 +27,18 @@ class Zadanie:
         self.funkcje = funkcje
         os.makedirs(sciezka_zadania, exist_ok=True)
 
-    def stworz_plik(self, generator_dokumentu: Type[bb]):
+    def stworz_plik(self, nazwa: str, folder: str):
+        if nazwa == "brak":
+            return
+        try:
+            sciezka_szablonu = os.path.join(
+                os.path.dirname(os.path.abspath(__file__)), folder
+            )
+            sys.path.append(sciezka_szablonu)
+            modul = importlib.import_module(nazwa)
+            generator_dokumentu = getattr(modul, nazwa)
+        except (ImportError, AttributeError) as e:
+            raise ImportError(f"Nie można zaimportować szablonu '{nazwa}': {e}")
         Generator_dokumentu = generator_dokumentu(
             self.linie_prototypu, self.nr_zadania, self.funkcje, self.sciezka_zadania
         )
@@ -40,7 +50,12 @@ class Zadanie:
 
 
 def stworz_zadanie(
-    sciezka_prototypu: str, nr_zadania: str, funkcje: List[Callable], strategia: str
+    sciezka_prototypu: str,
+    nr_zadania: str,
+    funkcje: List[Callable],
+    szablon: str,
+    rozwiazanie: str,
+    testy: str,
 ):
     """
     Tworzy zadanie na podstawie prototypu oraz strategii.
@@ -49,27 +64,23 @@ def stworz_zadanie(
         sciezka_prototypu (str): Ścieżka do pliku prototypu.
         nr_zadania (str): Numer zadania (np. 'prototyp01').
         funkcje (List[Callable]): Lista funkcji do wykorzystania w zadaniu.
-        strategia (str): Nazwa strategii do zastosowania.
+        szablon (str): Nazwa klasy która ma tworzyc plik szablonu
+        rozwiazanie (str): nazwa klasy która ma tworzyc plik rozwiazanie
+        testy (str): nazwa klasy która  ma tworzyc plik testow
 
     Raises:
-        ImportError: Jeśli strategia nie może być zaimportowana.
+        ImportError: Jeśli klasy nie może być zaimportowana.
     """
-    try:
-        funkcja_ze_strategiami = getattr(Strategie, strategia)
-        nowe_pliki = funkcja_ze_strategiami()
-    except (ImportError, AttributeError) as e:
-        raise ImportError(f"Nie można zaimportować strategii '{strategia}': {e}")
 
     sciezka_zadania = os.path.dirname(sciezka_prototypu)
     sciezka_zadania = os.path.join(sciezka_zadania, nr_zadania)
-
     with open(sciezka_prototypu, "r") as file:
         linie_prototypu = file.readlines()
-
     zadanie = Zadanie(linie_prototypu, sciezka_zadania, nr_zadania, funkcje)
 
-    for plik in nowe_pliki:
-        zadanie.stworz_plik(plik)
+    zadanie.stworz_plik(szablon, "Szablon")
+    zadanie.stworz_plik(rozwiazanie, "Rozwiazanie")
+    zadanie.stworz_plik(testy, "Testy")
 
     # Jeśli piszemy na prototypie, który nie jest backupem, stwórz z niego backup i usuń
     # zmiana nazwy nie dzialala zawsze z gitem wiec lepiej usunac i stworzyc nowe

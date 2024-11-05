@@ -2,7 +2,7 @@ from _utils_S import main, parsuj_prototyp
 from Bazowa import Bazowa
 
 
-class normalna(Bazowa):
+class zwykle(Bazowa):
     def __str__(self) -> str:
         """
         Generuje kod na podstawie prototypu oraz dostarczonych funkcji.

@@ -16,7 +16,7 @@ from _utils_T import (
 )
 
 
-class Prime(Bazowa):
+class prime(Bazowa):
     def __str__(self) -> str:
         """
         Generuje testy dla zadania, wywołując odpowiednie metody w celu utworzenia
