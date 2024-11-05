@@ -1,51 +1,26 @@
 from prime import prime
 
-from typing import Callable
-import inspect
-from _utils_T import (
-    metoda_zwracajaca_testow_zaokraglona,
-    metoda_nasluchujaca_testow_zaokraglona,
-)
+DOKLADNOSCI = int(input("podaj dokładność, z jaką testy mogą zaokrąglać: "))
 
 
 class float(prime):
-    def generuj_testy_dla_funkcji(self, funkcja: Callable):
-        """
-        Generuje testy dla konkretnej funkcji.
+    """Testy będą zaokrąglać oczekiwany wynik"""
 
-        Args:
-            funkcja (Callable): Funkcja, dla której mają być generowane testy.
-        """
-        if len(self.funkcje) > 1:
-            print(f"\ttesty dla funkcji {funkcja.__name__}\n")
+    def metoda_zwracajaca_testow_bez_kolejnosci(
+        self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
+    ):
+        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+            wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
 
-        liczba_argumentow = len(inspect.signature(funkcja).parameters)
+            self.assertAlmostEqual(wynik, { wynikWywolania }, places={DOKLADNOSCI})\n"""
 
-        nr_testu = 1
-        while True:
-            try:
-                parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
-                if parametry == tuple("stop"):
-                    break
-                wynik_funkcji = self.wynik_funkcje(funkcja, parametry)
-            except Exception as e:
-                print(f"{str(e)} Wprowadz Ponownie!")
-                continue
+    def metoda_nasluchujaca_testow_bez_kolejnosci(
+        self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
+    ):
+        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+            f = io.StringIO()
+            with redirect_stdout(f):
+                {NazwaTestu}({', '.join(map(str, zmienne))})
+            wynik = f.getvalue().strip()
 
-            if isinstance(wynik_funkcji, str):
-                self.res += metoda_nasluchujaca_testow_zaokraglona(
-                    funkcja.__name__, nr_testu, parametry, wynik_funkcji
-                )
-            else:
-                self.res += metoda_zwracajaca_testow_zaokraglona(
-                    funkcja.__name__, nr_testu, parametry, wynik_funkcji
-                )
-
-            if liczba_argumentow == 0:
-                print(f"Wynik to {wynik_funkcji}")
-                break
-
-            nr_testu += 1
-            print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
-
-        print("\n")
+            self.assertAlmostEqual(wynik, { wynikWywolania }, places={DOKLADNOSCI})\n"""
