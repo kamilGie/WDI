@@ -1,7 +1,7 @@
 from Bazowa import Bazowa
 
 
-class importless(Bazowa):
+class main(Bazowa):
     """Wszystko z prototypu po za linijami zawierajacymi `stworz_zadanie` oraz `komenda(`"""
 
     def __str__(self) -> str:

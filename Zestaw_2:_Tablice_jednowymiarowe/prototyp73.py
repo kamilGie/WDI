@@ -6,7 +6,7 @@
 # ====================================================================================================>
 from random import randint
 
-# rozwiazanie z wiki ale bledne bo dla n>30 daje szane ponizej 100%
+# rozwiazanie z wiki ale nie rozumiem tego zadania wiec nie wiem jak testy stworzyc
 
 
 def SzansaUrodziny(n):

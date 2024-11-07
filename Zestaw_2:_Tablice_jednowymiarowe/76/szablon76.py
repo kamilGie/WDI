@@ -3,17 +3,19 @@
 # Dane są dwie N-elementowe tablice t1 i t2 zawierające liczby naturalne. Z wartości w
 # obu tablicach możemy tworzyć sumy. „Poprawna” suma to taka, która zawiera co najmniej jeden element
 # (z tablicy t1 lub t2) o każdym indeksie. Na przykład dla tablic: t1 = [1,3,2,4] i t2 = [9,7,4,8] poprawnymi
-# sumamisąnaprzykład1+3+2+4,9+7+4+8,1+7+3+8,1+9+7+2+4+8.Proszęnapisaćfunkcjegenerującą
+# sumami są na przykład 1+3+2+4, 9+7+4+8, 1+7+4+8, 1+9+7+2+4+8. Proszę napisać funkcje generującą
 # i wypisująca wszystkie poprawne sumy, które są liczbami pierwszymi. Do funkcji należy przekazać dwie
 # tablice, funkcja powinna zwrócić liczbę znalezionych i wypisanych sum.
 # ====================================================================================================>
+# return liczba znalezionych sum  dajacych liczbe pierwsza
 
 
-def Zadanie_76(): ...
+def maska_tritowa(t1, t2): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy76 import odpal_testy
 
-    Zadanie_76()
-    # stworz_zadanie([Zadanie_76])
+    maska_tritowa(int(input('Podaj t1: ')), int(input('Podaj t2: ')))
+
+    # odpal_testy()

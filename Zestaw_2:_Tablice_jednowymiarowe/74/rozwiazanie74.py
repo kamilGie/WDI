@@ -40,7 +40,7 @@ def fibonacci_check(tab):
     a, b = 1, 2
     if at_least_one_prime(tab):
         while a < len(tab):
-            if czy_pierwsza(tab[a]):
+            if tab[a] == 1 or czy_pierwsza(tab[a]):
                 return False
             a, b = b, a + b
 
@@ -50,7 +50,3 @@ def fibonacci_check(tab):
     return True
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([fibonacci_check])

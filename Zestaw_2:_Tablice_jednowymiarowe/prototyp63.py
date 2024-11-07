@@ -4,7 +4,6 @@
 # 1/1!+1/2!+1/3!+... z dokładnością N cyfr dziesiętnych (N jest rzędu 1000).
 # ====================================================================================================>
 
-
 # wziete z wiki ale nie poprawnie liczy
 
 
@@ -22,7 +21,7 @@ def long_div(a, b, t):
 
 
 def Zadanie_63(n):
-    n = n + 1
+    n = n + 2
     digits = [1] + [0] * (n)
     tab = [0] * (n + 1)
     fact = 1
@@ -40,7 +39,7 @@ def Zadanie_63(n):
         digits[i] %= 10
 
     print(digits[0], end=".")
-    for cyfra in digits[1:-1]:
+    for cyfra in digits[1:-2]:
         print(cyfra, end="")
 
 

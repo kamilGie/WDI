@@ -4,7 +4,7 @@ DOKLADNOSCI = int(input("podaj dokładność, z jaką testy mogą zaokrąglać: 
 
 
 class float(prime):
-    """Testy będą zaokrąglać oczekiwany wynik"""
+    """testy beda zaaokroglac oczekiwany wynik"""
 
     def metoda_zwracajaca_testow_bez_kolejnosci(
         self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
