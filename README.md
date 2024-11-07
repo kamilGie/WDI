@@ -156,25 +156,34 @@ if __name__ == "__main__":
 
     # stworz_zadanie([dodaj, mnoż])
 ```
-Na tak wypełnionym prototypie możemy odkomentować `stworz_zadanie` i rozpocząć proces tworzenia.
+
+Funkcja `stworz_zadanie` działa podobnie jak funkcja `print`. Można ją uruchomić bez dodatkowych parametrów, aby wygenerować domyślną strukturę plików: `rozwiazanie.py`, `testy.py` oraz `szablon.py`. 
+
+### Modyfikacje 
+
+Można modyfikować sposób, w jaki generowane są pliki, ustawiając argumenty nazw plików. Modyfikacje są podawane jako stringi, które określają  strategie, z jaką wygenerują się pliki. Dla podstawowego użycia projektu przydatne będą trzy modyfikacje:
+
+```python
+stworz_zadanie([dodaj, mnoż], testy="float")
+```
+- Stworzy testy, których wyniki będą zaokrąglone. Przydatne w zadaniach zwracających wartości typu `float`, gdzie wyniki mogą się różnić od ustawionego epsilonu.
+  
+```python
+stworz_zadanie([dodaj, mnoż], testy="bez_kolejnosci")
+```
+- Stworzy testy, których wyniki będą w typie `set`. Przydatne w zadaniach, w których kolejność lub częstotliwość występowania wyników nie ma znaczenia.
+```python
+stworz_zadanie([dodaj, mnoż], testy="brak", szablon="brak")
+```
+- Nie stworzy pliku. Przydatne w zadaniach abstrakcyjnych, które nie są możliwe do przetestowania.
+
+Dokładniej o modyfikacjach jest w sekcji [strategie](#Strategie)
 
 <details>
-    <summary> Dzialanie Developa </summary>
-   
-Plik `Develop` zbiera informacje o pliku, który importuje tę funkcję. Następnie zbiera następujące dane:
-- `funkcje`, które chcemy testowac,
-- `nr_zadania`, które rozwiązaliśmy bierze to z nazwy prototypu,
-- `sciezke` do folderu w ktorym jest prototyp, aby `stworz_zadanie` mogło w tym samym stworzyć folder zadania,
-- `strategie` rodzaj w jaki chcemy by testy zostaly napisane domyslnie jest to strategia bazowa. [Wiecej o strategi](#Strategie)
-
-Nastepnie Develop do tego dodaje nową scieżkę importu, która znajduje się w [srt](srt) i tam wcześniej przygotowane zmienne przesyła na dalszy proces.
-</details>
-
-
-Funkcja `stworz_zadanie` znajduje się w katalogu [srt](srt) w pliku o nazwie `StworzZadanie`. Stamtąd funkcja utworzy folder zadania oraz trzy pliki: `rozwiazanie.py`, `szablon.py`, `testy.py`. To, jak pliki te są generowane, zależy od przekazanej `strategii`, jednak domyślnie stosowana jest strategia `bazowa`, która...
+   <summary> Domyślna konfiguracja plików </summary>
 
 ### `rozwiazanie.py` 
-1. przepisuje prototyp usuwając tylko linijki, które mają w sobie `stworz_zadanie`
+1. przepisuje prototyp do napotkania linijki main
 ```python
 # ====================================================================================================>
 # Zadanie 0
@@ -186,8 +195,6 @@ def dodaj(a, b):
 
 def mnoż(a, b):
     return a * b
-
-if __name__ == "__main__":
 
 ```
 ### `szablon.py` 
@@ -218,19 +225,14 @@ if __name__ == "__main__":
 ```
 
 ### `testy.py` 
-1. Napisze potrzebne importy
-2. Napisze funkcję `odpal_testy`, która będzie odpalać testy
-3. Napisze funkcję `komenda` do odpalania komend [Wiecej o komendach](#Komendy)
-4. Napisze nagłówek (deklaracje) klasy `Testy`.
-5. Następnie dla każdej funkcji przekazanej do testowania:
-6. Sprawdza liczbę argumentów, jaką funkcja przyjmuje.
-7. Generuje `(10 * liczba argumentów + 1)` testów.
-8. Jeśli liczba argumentów nie wynosi zero, prosi użytkownika o wpisanie argumentów testowych.
-9. Jeśli argumenty wpisane przez użytkownika nie będą się zgadzały typem z argumentami funkcji, poprosi o ponowne wpisanie.
-   <img width="930" alt="Zrzut ekranu 2024-10-25 o 15 05 53" src="https://github.com/user-attachments/assets/9d641167-62e8-4a80-b77e-80aed160cbe1">
-10. Uruchamia funkcję z argumentami testowymi, monitorując jednocześnie wartości wypisywane przez `print` oraz wartości zwracane przez funkcję.
-11. Jeśli funkcja nic nie zwróci, wynikiem zostanie to, co zostało przechwycone przez `print`. Jeśli funkcja zwróci inną wartość, to ona będzie wynikiem, a dane wypisane przez `print` zostaną zignorowane.
-12. Z argumentów i wyniku napisze metodę testową o nazwie `test_numerTestu_funkcjaTestowalna_argument`.
+1. Napisze  importy, funkcje oraz  nagłówek klasy `Testy`
+2. Następnie dla każdej funkcji przekazanej do testowania:
+3. Sprawdza liczbę argumentów, jaką funkcja przyjmuje.
+4. Jeśli liczba argumentów nie wynosi zero, prosi użytkownika o wpisanie argumentów testowych.
+5. Przetwarza input użytkownika, zmieniając go na argumenty według algorytmów.
+6. Uruchamia funkcję z argumentami testowymi, monitorując jednocześnie wartości wypisywane przez `print` oraz wartości zwracane przez funkcję.
+7. Jeśli funkcja nic nie zwróci, wynikiem zostanie to, co zostało przechwycone przez `print`. Jeśli funkcja zwróci inną wartość, to ona będzie wynikiem, a dane wypisane przez `print` zostaną zignorowane.
+8. Z argumentów i wyniku napisze metodę testową o nazwie `test_numerTestu_funkcjaTestowalna_argument`.
 ```python
     def test_Nr1_dodaj_argumenty_2_2(self):
         wynik  = dodaj(2, 2)
@@ -238,7 +240,7 @@ if __name__ == "__main__":
         oczekiwany_wynik = [4]
         self.assertIn(wynik, oczekiwany_wynik)
 ```
-10. Po napisaniu `liczba funkcji*( 10*liczba argumentow +1 )` metod testowych zakonczy klase Testy
+9. Będzie powtarzać proces od punktów 3–8, aż do napotkania argumentu `stop` od użytkownika, który zakończy testy.
 
 <details>
    <summary>Pelny kod testy przykladu </summary>
@@ -541,9 +543,34 @@ class testy(unittest.TestCase):
 
 </details>
 
-Po stworzeniu trzech plików funkcja utworzy plik `prototypBackup.py`, aby bezpiecznie móc usunąć prototyp. Plik prototypBackup.py jest ignorowany przez .gitignore, więc nie będzie dodawany do głównego repozytorium. Został stworzony, aby w przypadku błędnego stworzenia zadania z różnych powodów móc utworzyć zadanie na nowo. Funkcja `stworz_zadanie` dba o to, by nie usunąć pliku `prototypBackup`, dzięki czemu można tworzyć zadania do momentu zadowolenia z efektu końcowego.
+</details>
 
-Na tym kończy się funkcja `stworz_rozwiazanie`. Jeśli jednak komuś nie podoba się sposób w jaki pliki `rozwiazanie.py`, `szablon.py`, `testy.py` są tworzone, chciałby dodać jakąś funkcjonalność lub inaczej tworzyć testy zawsze może stworzyć własną Strategię!
+---
+
+## Pisanie Testów
+
+
+Po uruchomieniu funkcji `stworz_testy`, jeśli liczba argumentów przekazanych do testowania funkcji nie wynosi zero, program poprosi użytkownika o wpisanie argumentów testowych.
+
+- Argumenty należy wpisywać, oddzielając je spacjami lub przecinkami.
+  <img width="723" alt="Zrzut ekranu 2024-11-7 o 00 47 45" src="https://github.com/user-attachments/assets/ab503d2a-321c-494b-be07-0fe6a90e959c">
+
+- Tablice wpisuje się, używając nawiasów kwadratowych, przy czym dozwolone jest zagnieżdżanie tablic dowolną ilość razy.
+  <img width="724" alt="Zrzut ekranu 2024-11-7 o 00 02 27" src="https://github.com/user-attachments/assets/763ca1e4-913b-4f47-8a17-1abff1997f7e">
+
+- Stringi należy podać w cudzysłowach, a także możliwe jest zagnieżdżanie cudzysłowów.
+  <img width="724" alt="Zrzut ekranu 2024-11-7 o 00 07 02" src="https://github.com/user-attachments/assets/bb138ead-76c4-46c3-a529-2309042c9fa1">
+
+- Jeśli argumenty wpisane będą się nie zgadzać, program poprosi o ponowne ich wprowadzenie.
+  <img width="724" alt="Zrzut ekranu 2024-11-7 o 00 40 42" src="https://github.com/user-attachments/assets/61400923-4454-4aba-95c4-656b6eebc3e7">
+
+Po stworzeniu odpowiedniej ilości testów, można zakończyć proces tworzenia testów, podając argument `stop`, co zakończy Twój wkład w tworzenie testów.
+
+###  Finalizacja
+
+Po stworzeniu trzech plików funkcja utworzy plik `prototypBackup.py`, aby bezpiecznie móc usunąć prototyp. Plik `prototypBackup.py` jest ignorowany przez `.gitignore`, więc nie będzie dodawany do głównego repozytorium. Został stworzony, aby w przypadku błędnego stworzenia zadania z różnych powodów móc utworzyć zadanie na nowo. Funkcja `stworz_zadanie` dba o to, by nie usunąć pliku `prototypBackup`, dzięki czemu można tworzyć zadania do momentu zadowolenia z efektu końcowego.
+
+Na tym kończy się funkcja `stworz_zadanie`. Jeśli jednak komuś nie podoba się sposób w jaki pliki `rozwiazanie.py`, `szablon.py`, `testy.py` są tworzone, chciałby dodać jakąś funkcjonalność lub inaczej tworzyć testy zawsze może stworzyć własną Strategię!
 
 ---
 </details>
@@ -552,55 +579,61 @@ Na tym kończy się funkcja `stworz_rozwiazanie`. Jeśli jednak komuś nie podob
   <summary>🧠 Strategie</summary>
 
 ## Strategie
-Strategie definiują sposób, w jaki będziemy tworzyć nasze zadania w projekcie. Umożliwiają ulepszanie plików z rozwiązaniami, szablonami i testami, poprzez nową logikę ich tworzenia. Aby użyc danej strategi, wystarczy do `stworz_zadanie` w prototypie dodać argument `strategia=` i nazwę strategi. Aktualną listę strategi znajdziesz w pliku [srt/Strategie](srt/Strategie). Każda z nich będzie funkcją, która definiuje jej nazwę i krótki komentarz na czym polega. 
+Strategie definiują sposób, w jaki będziemy tworzyć nasze pliki w projekcie. Aktualna lista strategii znajduje się w folderach o odpowiednich nazwach: [srt/Szablon](srt/Szablon), [srt/Rozwiazania](srt/Rozwiazania), [srt/Testy](srt/Testy). Każda z nich jest klasą z krótkim komentarzem opisującym jej przeznaczenie i jest dostępna do użycia przez każdego twórcę zadania. 
+
+Taki układ projektu pozwala na prosty rozwój i umożliwia rozwijanie go przez każdego, bez potrzeby znajomości całego systemu. Każdy może napisać własną klasę domyślną, która będzie następnie testowana w użyciu. Po tym, jak stanie się powszechniejsza, szybsza lub lepsza, zostanie ustawiona jako domyślna. Można również dodać klasę dodatkową, która obsługuje testy dla określonej puli zadań, dla których domyślne tworzenie zadania nie jest wystarczające.
 
 
+### Podstawy Pisania Strategii
 
+Stworzymy kilka przykładowych klas strategii:
 
-### Podstawy Pisania Strategi
-Dla przykladu zrobimy strategie w której 
-- **`szablon`**  jest takie samo jak domyślnie, ale z datą rozwiazania na górze
-- **`rozwiazania.py`**  nie zawiera opisu zadania, ani sekcji `main`, skupiamy całe meritum rozwiązania 
-- **`testy.py`**  jest bazowe
-
+- **`Data`** – Jest to strategia szablonu, która działa jak domyślna, z tą różnicą, że na górze pliku zostanie dodana data rozwiązania.
   
-Zaczniemy od szablonu w folderze [srt/Szablon](srt/Szablon), gdzie tworzymy nowy plik. W pliku klasa dziedziczy po jednej z klas w jej folderze albo po klasie bazowej. Klasa [srt/Bazowa.py](srt/Bazowa.py) jest abstrakcyjną klasą, z której będą pochodzić wszystkie klasy pochodne.
+W folderze [srt/Szablon](srt/Szablon), tworzymy nowy plik z klasa o takiej samej nazwie. Klasa dziedziczy po jednej z klas w jej folderze albo po klasie bazowej. Klasa [srt/Bazowa.py](srt/Bazowa.py) jest abstrakcyjną klasą, z której będą pochodzić wszystkie klasy pochodne.
 
 Klasa bazowa ma abstrakcyjną metodę `__str__`, w której musimy zwrócić wynik w postaci stringa, który później znajdzie się w pliku szablonu. Dla naszego pomysłu ta klasa będzie wyglądać tak:
 
 ```python
-# srt/StrategieSzablonow/data_rozwiazania.py
+# srt/Szablon/data.py
 
 #  Dziedzicze po klasie z pliku szablonów do której metody __str__  mógłbym coś dodać
-from input_main import input_main 
+from domyslne_s import domyslne_s 
 from datetime import date
 
-class Data(input_main): 
+class data(domyslne_s):
+""" na górze pliku zostanie dodana data rozwiązania. """
     def __str__(self):
         res = str(date.today().day)
         res += "\n"
         res += super().generuj()
         return res
 ```
-LSP może zgłaszać, że jest to błędny import. Jednak przez to, że używam `sys.path`, a nie pakietów, program dopiero po uruchomieniu i stworzeniu folderu `__pycache__` poprawi import.
+Tak stworzoną klasę możemy już używać w funkcji `stworz_zadanie`, podając argument `szablon="data"`.
 
-Dalej zajmiemy się `rozwiazanie.py`, gdzie dodam możliwe do użycia atrybuty klasy bazowej:
+---
 
-- **`linie_prototypu`** – linie w liście stringów, które reprezentują linie prototypu.
-- **`nr_zadania`** – numer zadania, które zrealizowaliśmy.
-- **`funkcje`** – funkcje, które zostały przekazane do testów szablonu i inne.
-- **`sciezka`** – ścieżka folderu z zadaniem, które jest tworzone.
-- **`nazwa_pliku`** – nazwa pliku ktorego wygeneruje domyslnie pochodzi od nazwy folderu, w którym znajduje się klasa. Na przykład, w folderze *Rozwiazanie*, klasy dziedziczące mają ten atrybut ustawiony na "rozwiazanie{`nr_zadania`}.py".
+- **`meritum`** strategia rozwiazania  która koncentruje się wyłącznie na samym rozwiązaniu, pomijając opis zadania oraz sekcję `main`
 
-Wszystkich tych atrybutów można używać w klasach pochodnych od klasy bazowej, jednego z nich użyjemy co będzie widoczne w naszym przykładzie.
+ Aby dostosować sposób generowania pliku, można skorzystać z atrybutów klasy bazowej, które są dostępne w klasach pochodnych:
+
+- **`linie_prototypu`** – lista stringów reprezentujących linie prototypu.
+- **`nr_zadania`** – numer zadania, które rozwiązujemy.
+- **`funkcje`** – funkcje przekazane do testów szablonu oraz inne pomocnicze funkcje.
+- **`sciezka`** – ścieżka folderu, w którym znajduje się tworzone zadanie.
+- **`nazwa_pliku`** – domyślna nazwa pliku, która pochodzi od nazwy folderu zawierającego klasę. Na przykład, w folderze *Rozwiazanie*, klasy dziedziczące mają atrybut ustawiony na "rozwiazanie{`nr_zadania`}.py".
+
+Te atrybuty mogą być wykorzystywane w klasach pochodnych od klasy bazowej, a poniżej przedstawiamy przykład użycia jednego z nich.
 
 ```python
-# srt/StrategieRoziwazania/meritum.py
+# srt/Rozwiazanie/meritum.py
 
 from bazowa import bazowa
 import inspect
 
-class Meritum(bazowa):
+class meritum(bazowa):
+    """rozwiazania  która koncentruje się wyłącznie na samym rozwiązaniu, pomijając opis zadania oraz sekcję `main`"""
+
     def __str__(self):
         res = ""
         for funkcja in self.funkcje:
@@ -608,37 +641,50 @@ class Meritum(bazowa):
         return res
 ```
 
-Następnie z dwoma nowymi metodami mogę dodać swoją strategię w pliku [srt/Strategie.py](srt/Strategie.py). W pliku `Strategie.py` dodaję funkcję o nazwie, jaką chcę, aby miała moja strategia, a następnie w tej funkcji zwracam trzy klasy nazw metod, jakie chcę, by strategia użyła w kolejności: Szablony, Rozwiązania i Testy.
-Jako, że nie zroblismy nowej klasy testów użyjemy strategii `testy_domyslne`, która zwraca nam na bieżąco aktualizowaną najlepszą strategię testów.
+Tak stworzoną klasę możemy już używać w funkcji `stworz_zadanie`, podając argument `rozwiazanie="meritum"`.
 
-``` python
-# rozwiazanie z sama funkcja a szablon z dniem
-def testowa():
-    from Szablony.data_rozwiazania import Data
-    from Rozwiazanie.meritum import meritum
+---
 
-    return Data, meritum, testy_domyslne()
+- **`float`**  strategia testów, która będzie zaokrąglać wyniki.
 
-```
+Strategie testów będą najtrudniejszych do napisania. Najczęściej będą nadpisywały metody już istniejących strategii i modyfikować sposób sprawdzania wyników testów.
 
-### Liczba plików tworzonych na podstawie strategii zależy od liczby zwracanych klas.
+Aby skutecznie zaimplementować taką strategię, będziemy musieli nadpisać dwie specjalnie wyodrębnione metody klasy `prime`:
 
-Jeśli użyjemy strategii zwracającej jedną klasę, zostanie stworzony jeden plik. Na przykład, `testy_domyslne()` to sama w sobie strategia, której możemy użyć do stworzenia zadania z samymi testami, bez rozwiązania i szablonu. Możemy także opracować strategię zwracającą 10 klas, co w efekcie utworzy 10 plików zadania.
-
-Przykładowo, jeśli chcemy dodać plik zawierający wyjaśnienie autora zadania lub inne elementy, które nie są obecnie przewidziane, można to zrobić na dwa sposoby:
-1. **Ustawienie nazwy pliku wewnątrz klasy** – przez przypisanie np. `self.res = "wyjasnienie"` (metoda mniej zalecana).
-2. **Stworzenie dodatkowego folderu z odpowiednią nazwą** – wystarczy dodać folder o nazwie, którą chcemy nadać plikowi, oraz utworzyć w nim klasę dziedziczącą z klasy bazowej, która będzie zawierać odpowiednie treści. I powoli rozwijac kolejne typy plikow.
-
-Z nowym plikiem możemy stworzyć strategię zwracającą 4 klasy metod, co spowoduje utworzenie 4 plików.
-
-> **Należy pamiętać**, że strategie nie mogą być od siebie zależne; każda powinna być tworzona samodzielnie i działać logicznie niezależnie od innych.
-
-
-  
-Po zapisaniu można teraz uruchomić funkcję `stworz_zadanie` z argumentem strategii `testowa`, co pozwoli na stworzenie zadania na podstawie naszych klas. Przykładowe wywołanie funkcji wygląda następująco:
 ```python
-stworz_zadanie([Zadanie_1], strategia="testowa")
+from prime import prime
+
+DOKLADNOSCI = int(input("podaj dokładność, z jaką testy mogą zaokrąglać: "))
+
+
+class float(prime):
+    """testy beda zaaokroglac oczekiwany wynik"""
+
+    def metoda_zwracajaca_testow_bez_kolejnosci(
+        self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
+    ):
+        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+            wynik  = {NazwaTestu}({', '.join(map(str, zmienne))})
+
+            self.assertAlmostEqual(wynik, { wynikWywolania }, places={DOKLADNOSCI})\n"""
+
+    def metoda_nasluchujaca_testow_bez_kolejnosci(
+        self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
+    ):
+        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+            f = io.StringIO()
+            with redirect_stdout(f):
+                {NazwaTestu}({', '.join(map(str, zmienne))})
+            wynik = f.getvalue().strip()
+
+            self.assertAlmostEqual(wynik, { wynikWywolania }, places={DOKLADNOSCI})\n"""
 ```
+Klasa `prime` ma wiele metod specjalnie wyodrębnionych do nadpisywania.
+
+---
+
+> Strategie nie mogą od siebie zależeć i muszą być niezależne. Można je odpalić w dowolnej konfiguracji.
+
 
 Ograniczeniem strategii jest to, że nie przyjmuje argumentów innych niż `input` i jest to ustalenie stałe. Jednak, jeśli chcemy utworzyć zadanie, dodając pewne zmienne, możemy skorzystać z **komend**
 
