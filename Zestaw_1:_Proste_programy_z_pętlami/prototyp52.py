@@ -8,6 +8,7 @@
 # i tak dla wszystkich do miliona
 
 # rozwiazanie z wiki ale za malo optymalne
+
 from math import sqrt
 
 

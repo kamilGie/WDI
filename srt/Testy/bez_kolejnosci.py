@@ -1,51 +1,33 @@
-from Prime import Prime
-
-from typing import Callable
-import inspect
-from _utils_T import (
-    metoda_zwracajaca_testow_bez_kolejnosci,
-    metoda_nasluchujaca_testow_bez_kolejnosci,
-)
+from prime import prime
 
 
-class bez_kolejnosci(Prime):
-    def generuj_testy_dla_funkcji(self, funkcja: Callable):
-        """
-        Generuje testy dla konkretnej funkcji.
+class bez_kolejnosci(prime):
+    """testy beda porownywac set wiec ani kolejnosci ani liczba wystapien nie bedzie miala znaczenia"""
 
-        Args:
-            funkcja (Callable): Funkcja, dla której mają być generowane testy.
-        """
-        if len(self.funkcje) > 1:
-            print(f"\ttesty dla funkcji {funkcja.__name__}\n")
+    def metoda_zwracajaca_testow_bez_kolejnosci(
+        self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
+    ):
+        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+            f = io.StringIO()
+            with redirect_stdout(f):
+                {NazwaTestu}({', '.join(map(str, zmienne))})
+            wynik = f.getvalue().strip()
 
-        liczba_argumentow = len(inspect.signature(funkcja).parameters)
+            self.assertTrue(set(wynik.split()) == set([{ wynikWywolania }]))
+            \n"""
 
-        nr_testu = 1
-        while True:
-            try:
-                parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
-                if parametry == tuple("stop"):
-                    break
-                wynik_funkcji = self.wynik_funkcje(funkcja, parametry)
-            except Exception as e:
-                print(f"{str(e)} Wprowadz Ponownie!")
-                continue
+    def metoda_nasluchujaca_testow_bez_kolejnosci(
+        self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
+    ):
+        oczekiwany_wynik = set(
+            wynikWywolania.replace("'", "").replace("\\n", " ").split()
+        )
 
-            if isinstance(wynik_funkcji, str):
-                self.res += metoda_nasluchujaca_testow_bez_kolejnosci(
-                    funkcja.__name__, nr_testu, parametry, wynik_funkcji
-                )
-            else:
-                self.res += metoda_zwracajaca_testow_bez_kolejnosci(
-                    funkcja.__name__, nr_testu, parametry, wynik_funkcji
-                )
+        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+            f = io.StringIO()
+            with redirect_stdout(f):
+                {NazwaTestu}({', '.join(map(str, zmienne))})
+            wynik = f.getvalue().strip()
 
-            if liczba_argumentow == 0:
-                print(f"Wynik to {wynik_funkcji}")
-                break
-
-            nr_testu += 1
-            print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
-
-        print("\n")
+            self.assertTrue(set(wynik.split()) == {oczekiwany_wynik})  # Porównanie z użyciem set
+            \n"""

@@ -29,4 +29,4 @@ def Zadanie_33(n):
 if __name__ == "__main__":
     from Develop import stworz_zadanie
 
-    stworz_zadanie([Zadanie_33])
+    # stworz_zadanie([Zadanie_33])
