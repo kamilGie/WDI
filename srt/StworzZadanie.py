@@ -31,10 +31,10 @@ class Zadanie:
         if nazwa == "brak":
             return
         try:
-            sciezka_szablonu = os.path.join(
+            sciezka_klasy = os.path.join(
                 os.path.dirname(os.path.abspath(__file__)), folder
             )
-            sys.path.append(sciezka_szablonu)
+            sys.path.append(sciezka_klasy)
             modul = importlib.import_module(nazwa)
             generator_dokumentu = getattr(modul, nazwa)
         except (ImportError, AttributeError) as e:

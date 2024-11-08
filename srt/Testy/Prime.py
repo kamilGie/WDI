@@ -4,17 +4,18 @@ from contextlib import redirect_stdout
 from Bazowa import Bazowa
 from typing import Callable, Tuple, Any
 
-from _utils_T import (
+from _utils_t import (
+    RAMKA,
+    ODPAL_TESTY,
+    NAGLOWEK,
     IMPORTY,
     KOMENDA,
-    NAGLOWEK,
-    ODPAL_TESTY,
     dynamiczny_import_funkcji,
-    RAMKA,
 )
 
 
 class prime(Bazowa):
+
     def __str__(self) -> str:
         """
         Generuje testy dla zadania, wywołując odpowiednie metody w celu utworzenia
