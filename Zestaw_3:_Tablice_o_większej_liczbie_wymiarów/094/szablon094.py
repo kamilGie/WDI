@@ -1,16 +1,18 @@
 # ====================================================================================================>
-# Zadanie 93
+# Zadanie 94
 # Dana jest tablica T[N][N] wypełniona liczbami naturalnymi. Proszę napisać funkcję, która
-# odpowiada na pytanie, czy w każdym wierszu tablicy występuje co najmniej jedna liczba złożona wyłącznie
-# z nieparzystych cyfr.
+# odpowiada na pytanie, czy istnieje wierszw tablicy w którym każda z liczb zawiera przynajmniej jedna cyfrę
+# parzystą.
 # ====================================================================================================>
+# return bool
 
 
-def Zadanie_93(): ...
+def check_tab_for_even_verses(tab): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy094 import odpal_testy
 
-    Zadanie_93()
-    # stworz_zadanie([Zadanie_93])
+    check_tab_for_even_verses(int(input("Podaj tab: ")))
+
+    # odpal_testy()

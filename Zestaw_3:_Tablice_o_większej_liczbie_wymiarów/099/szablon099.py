@@ -5,13 +5,17 @@
 # co najmniej 3 elementy. Do funkcji należy przekazać tablicę. Funkcja powinna zwrócić informacje czy udało
 # się znaleźć taki ciąg oraz długość tego ciągu.
 # ====================================================================================================>
+# return false jak nie ma
+# return dlugosci jak istnieje
+# geometric_series([[1, 3, 9], [2, 6, 18], [4, 12, 36]]) -> return  3
 
 
-def Zadanie_99(): ...
+def geometric_series(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy099 import odpal_testy
 
-    Zadanie_99()
-    # stworz_zadanie([Zadanie_99])
+    geometric_series(int(input("Podaj T: ")))
+
+    # odpal_testy()

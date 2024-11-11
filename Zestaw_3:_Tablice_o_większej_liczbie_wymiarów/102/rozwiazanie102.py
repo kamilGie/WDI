@@ -6,8 +6,6 @@
 # przyjaciółkami
 # ====================================================================================================>
 
-# z wiki testy wymysle potem
-
 
 def same_digits(a, b):
     T1 = [0] * 10
@@ -16,19 +14,28 @@ def same_digits(a, b):
     while a > 0:
         T1[a % 10] = 1
         a = a // 10
+    # end while
 
     while b > 0:
         T2[b % 10] = 1
         b = b // 10
+    # end while
 
     return T1 == T2
+
+
+# end def
 
 
 def is_on_board(T, y, x):
     if 0 <= y < len(T):
         if 0 <= x < len(T):
             return True
+    # end if
     return False
+
+
+# end def is_on_board
 
 
 def Zadanie_102(T):
@@ -53,15 +60,16 @@ def Zadanie_102(T):
                     if not same_digits(T[y][x], T[y + ele[0]][x + ele[1]]):
                         flag = False
                         break
+                    # end if 2
+                # end if 1
+            # end for x
             if flag == True:
                 cnt += 1
+    # end for y
+
     return cnt
 
 
 # end def zad11
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([Zadanie_102])

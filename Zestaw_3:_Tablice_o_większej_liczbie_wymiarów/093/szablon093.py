@@ -1,16 +1,18 @@
 # ====================================================================================================>
-# Zadanie 94
+# Zadanie 93
 # Dana jest tablica T[N][N] wypełniona liczbami naturalnymi. Proszę napisać funkcję, która
-# odpowiadanapytanie,czyistniejewierszwtablicywktórymkażdazliczbzawieraprzynajmniejjednacyfrę
-# parzystą.
+# odpowiada na pytanie, czy w każdym wierszu tablicy występuje co najmniej jedna liczba złożona wyłącznie
+# z nieparzystych cyfr.
 # ====================================================================================================>
+# return bool
 
 
-def Zadanie_94(): ...
+def only_odd_in_verses(tab): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy093 import odpal_testy
 
-    Zadanie_94()
-    # stworz_zadanie([Zadanie_94])
+    only_odd_in_verses(int(input('Podaj tab: ')))
+
+    # odpal_testy()
