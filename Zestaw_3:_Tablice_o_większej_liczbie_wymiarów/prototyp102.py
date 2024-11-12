@@ -6,7 +6,7 @@
 # przyjaciółkami
 # ====================================================================================================>
 
-# z wiki testy wymysle potem
+# z wiki  ale testy wygladaja nie legitnie
 
 
 def same_digits(a, b):
@@ -56,9 +56,6 @@ def Zadanie_102(T):
             if flag == True:
                 cnt += 1
     return cnt
-
-
-# end def zad11
 
 
 if __name__ == "__main__":

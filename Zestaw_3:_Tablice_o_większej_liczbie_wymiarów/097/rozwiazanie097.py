@@ -42,7 +42,3 @@ def Zadanie_97(T1, T2):
     return T2
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([Zadanie_97])

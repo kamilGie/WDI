@@ -4,13 +4,15 @@
 # tablica T[N][N] wypełniona liczbami naturalnymi. Proszę napisać funkcję, która zeruje elementy nie posia-
 # dające liczby komplementarnej.
 # ====================================================================================================>
+# return T po przeksztalceniach
 
 
-def Zadanie_104(): ...
+def Zadanie_104(tab): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy104 import odpal_testy
 
-    Zadanie_104()
-    # stworz_zadanie([Zadanie_104])
+    Zadanie_104(int(input('Podaj tab: ')))
+
+    # odpal_testy()
