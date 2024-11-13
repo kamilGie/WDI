@@ -5,8 +5,7 @@
 # narożnych wynosi k. Do funkcji należy przekazać tablicę i wartość k. Funkcja powinna zwrócić informacje
 # czy udało się znaleźć kwadrat oraz współrzędne (wiersz, kolumna) środka kwadratu.
 # ====================================================================================================>
-
-# z wiki ale nie moge jeszcez wymyslec do tego testow
+# return False jak nie ma return tuple(wiersz,kolumna) jak istnieje
 
 
 def Zadanie_100(T, k):
@@ -21,14 +20,7 @@ def Zadanie_100(T, k):
 
                 if iloczyn == k:
                     return (y + y + bok) // 2, (x + x + bok) // 2
-                # end if
                 bok += 2
-            # end while
-    # end for y
     return False
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([Zadanie_100])

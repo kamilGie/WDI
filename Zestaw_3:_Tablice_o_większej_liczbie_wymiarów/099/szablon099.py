@@ -16,6 +16,6 @@ def geometric_series(T): ...
 if __name__ == "__main__":
     from testy099 import odpal_testy
 
-    geometric_series(int(input("Podaj T: ")))
+    geometric_series(list(input("Podaj T: ")))
 
     # odpal_testy()

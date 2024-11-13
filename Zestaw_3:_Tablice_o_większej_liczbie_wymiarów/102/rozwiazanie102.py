@@ -5,8 +5,8 @@
 # naturalnymi. Proszę napisać funkcję, która dla tablicy T zwraca ile elementów tablicy sąsiaduje wyłącznie z
 # przyjaciółkami
 # ====================================================================================================>
-
-# z wiki  ale testy wygladaja nie legitnie
+# return ilosci
+# Zadanie_102([1,1,1][1,1,1][1,1,1]) --> return 9
 
 
 def same_digits(a, b):
@@ -58,7 +58,3 @@ def Zadanie_102(T):
     return cnt
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([Zadanie_102])

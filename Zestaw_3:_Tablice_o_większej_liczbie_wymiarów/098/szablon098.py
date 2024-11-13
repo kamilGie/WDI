@@ -5,31 +5,15 @@
 # naturalne. Proszę napisać funkcję przepisującą wszystkie liczby z tablicy T1 do T2, tak aby liczby w tablicy
 # T2 były uporządkowane niemalejąco.
 # ====================================================================================================>
+# return T2 uporzadkowane
 
-# z wiki ale nie wymysle narazie testow
 
-
-def singletony(T1, T2):
-    n = len(T1)
-    for v in range(n):  # wiersze w tablicy T1
-        for element in T1[v]:  # elementy wiersza i-tego tablicy
-            flag = True
-            i = 0
-            while i < n * n:
-                if T2[i] <= element:
-                    flag = False
-                    break
-                # end if
-                i += 1
-            # end while
-            if flag:
-                T2.append(element)
-        # end for 2
-    # end for 1
-    return T2
+def Zadanie_98(T1, T2): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy098 import odpal_testy
 
-    stworz_zadanie([singletony])
+    Zadanie_98(int(input('Podaj T1: ')), int(input('Podaj T2: ')))
+
+    # odpal_testy()

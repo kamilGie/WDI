@@ -8,9 +8,6 @@
 # return max_dlugosci
 
 
-# nie obsluguje minusowych wartosci
-
-
 def Zadanie_109(tab):
     n = len(tab)
     res = suma = 0
@@ -30,13 +27,6 @@ def Zadanie_109(tab):
                     for j in range(x, i + x + 1):
                         suma += tab[y][j]
                     res = max(res, suma)
-            # end for 3
-        # end for 2
-    # end for 1
     return res
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([Zadanie_109])
