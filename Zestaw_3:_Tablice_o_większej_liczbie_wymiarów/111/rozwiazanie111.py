@@ -7,8 +7,6 @@
 # ====================================================================================================>
 # return tuple(wiersz1,kolumna1, wiersz2,kolumna2)
 
-# z wiki bledne bo liczy pola  dwurkotnie gdy wieze sa w tym samym wierzu/kolumnie
-
 
 def sum_of_table(tab):
     n = len(tab)
@@ -61,7 +59,3 @@ def Zadanie_111(tab):
     return best_positions
 
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    stworz_zadanie([Zadanie_111])
