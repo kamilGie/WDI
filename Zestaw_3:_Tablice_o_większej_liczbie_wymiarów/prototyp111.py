@@ -5,7 +5,9 @@
 # przez wieże polach była największa. Do funkcji należy przekazać tablicę, funkcja powinna zwrócić położenie
 # wież. Uwaga- zakładamy, że wieża szachuje cały wiersz i kolumnę z wyłączeniem pola na którym stoi
 # ====================================================================================================>
-# return tuple(wieza1[wierz,kolumna], wieza2[wierz,kolumna])
+# return tuple(wiersz1,kolumna1, wiersz2,kolumna2)
+
+# z wiki bledne bo liczy pola  dwurkotnie gdy wieze sa w tym samym wierzu/kolumnie
 
 
 def sum_of_table(tab):
@@ -57,3 +59,9 @@ def Zadanie_111(tab):
                         best_positions = ([y, x], [a, b])
 
     return best_positions
+
+
+if __name__ == "__main__":
+    from Develop import stworz_zadanie
+
+    stworz_zadanie([Zadanie_111])
