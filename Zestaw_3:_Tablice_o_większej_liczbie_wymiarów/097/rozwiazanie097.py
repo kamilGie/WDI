@@ -8,37 +8,40 @@
 # ====================================================================================================>
 # return tablica T2
 
-# to cos psuje testy bede sprawdzal czemu nie dzialaja testy z 2 tablicami
-from math import inf
+# rozwiazanie z od sigma Marcin Serafin
+# https://github.com/MarcinSerafin03/bit-algo-start-24-25-WDI/tree/main
 
 
-def find_row(T, ixs):
-    result = 0
-    for i in range(1, len(T)):
-        if T[i][ixs[i]] < T[result][ixs[result]]:
-            result = i
-    # end for
-    return result
+def Zadanie_97(T1):
+    N = len(T1)
+    Indexes_Table = [0 for _ in range(N)]
+    T2_index = 0
+    T2 = [0 for _ in range(N * N)]
 
+    while True:
+        smallest = float("inf")
+        is_singleton = False
+        for i in range(N):
+            if Indexes_Table[i] >= N:
+                continue
+            if smallest == T1[i][Indexes_Table[i]]:
+                is_singleton = False
+            elif smallest > T1[i][Indexes_Table[i]]:
+                smallest = T1[i][Indexes_Table[i]]
+                is_singleton = True
 
-def Zadanie_97(T1, T2):
-    n = len(T1)
-    ixs = [0 for _ in range(n)]
-    prev = -1
-    T2_ix = 0
-    i = 0
+        if is_singleton:
+            print(f"found singleton {smallest}")  # debuging purposes
+            T2[T2_index] = smallest
+            T2_index += 1
 
-    while i < n * n:
-        row = find_row(T1, ixs)
-        if T1[row][ixs[row]] != prev:
-            prev = T2[T2_ix] = T1[row][ixs[row]]
-            T2_ix += 1
-        if ixs[row] == n - 1:
-            T1[row][ixs[row]] = inf
-        else:
-            ixs[row] += 1
-        i += 1
-    # end while
+        if smallest == float("inf"):
+            break
+
+        for i in range(N):
+            if Indexes_Table[i] >= N:
+                continue
+            if smallest == T1[i][Indexes_Table[i]]:
+                Indexes_Table[i] += 1
+
     return T2
-
-

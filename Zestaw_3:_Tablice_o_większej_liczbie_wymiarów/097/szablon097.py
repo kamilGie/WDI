@@ -9,12 +9,12 @@
 # return tablica T2
 
 
-def Zadanie_97(T1, T2): ...
+def Zadanie_97(T1): ...
 
 
 if __name__ == "__main__":
     from testy097 import odpal_testy
 
-    Zadanie_97(list(input("Podaj T1: ")), list(input("Podaj T2: ")))
+    Zadanie_97(list(input("Podaj T1: ")))
 
     # odpal_testy()

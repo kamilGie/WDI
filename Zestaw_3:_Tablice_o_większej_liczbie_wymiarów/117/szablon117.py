@@ -1,17 +1,18 @@
 # ====================================================================================================>
 # Zadanie 117
-# WtablicyorozmiarzeNxNwypełnionejliczbaminaturalnymiumieszczonodokładniejeden
+# W tablicy o rozmiarze NxN wypełnionej liczbami naturalnymi umieszczono dokładnie jeden
 # fragment ciągu Fiboacciego o długości co najmniej 3 elementów. Ciąg ten może leżeć w tablicy pionowo lub
-# poziomowkierunkurosnącymlubmalejącym.Proszęnapisaćfunkcje,któradlazadanejtablicyodszukaten
+# poziomo w kierunku rosnącym lub malejącym. Proszę napisać funkcje, która dla zadanej tablicy od szuka ten
 # fragment i zwróci jego długość.
 # ====================================================================================================>
 
 
-def Zadanie_117(): ...
+def Zadanie_117(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy117 import odpal_testy
 
-    Zadanie_117()
-    # stworz_zadanie([Zadanie_117])
+    Zadanie_117(list(input("Podaj T: ")))
+
+    # odpal_testy()

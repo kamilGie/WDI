@@ -1,19 +1,20 @@
 # ====================================================================================================>
 # Zadanie 113
 # Dana jest tablica T[N][N] wypełniona wartościami 0,1. Każdy wiersz tablicy traktujemy
-# jakoliczbęzapisanąwsystemiedwójkowymodługościN bitów.StałaN jestrzędu1000.Proszęzaimplemen-
-# tować funkcję distance(T), która dla takiej tablicy wyznaczy dwa wiersze, dla których różnica zawartych
+# jako liczbę zapisaną w systemie dwójkowy m o długości N bitów. Stała N jest rzędu 1000.
+# Proszę zaimplementować funkcję distance(T), która dla takiej tablicy wyznaczy dwa wiersze, dla których różnica zawartych
 # w wierszach liczb jest największa. Do funkcji należy przekazać tablicę, funkcja powinna zwrócić odległość
 # pomiędzy znalezionymi wierszami. Można założyć, że żadne dwa wiersze nie zawierają identycznego ciągu
 # cyfr.
 # ====================================================================================================>
 
 
-def Zadanie_113(): ...
+def distance(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy113 import odpal_testy
 
-    Zadanie_113()
-    # stworz_zadanie([Zadanie_113])
+    distance(int(input('Podaj T: ')))
+
+    # odpal_testy()
