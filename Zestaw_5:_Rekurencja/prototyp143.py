@@ -3,6 +3,8 @@
 # Rekurencyjne obliczanie wyznacznika z macierzy (treść oczywista)
 # ====================================================================================================>
 
+# nie oczywista
+
 
 def Zadanie_143(): ...
 
