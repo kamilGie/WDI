@@ -1,12 +1,12 @@
 # ====================================================================================================>
 # Zadanie 123
 # Dana jest tablica zawierająca liczby wymierne. Proszę napisać funkcję, która policzy wy-
-# stępującewtablicyciągiarytmetyczne(LA)igeometryczne(LG)odługościwiększejniż2.Funkcjapowinna
-# zwrócić wartość 1 gdy LA>LG, wartość -1 gdy LA<LG oraz 0 gdy LA=LG.
+# stępujące w tablicy ciągi arytmetyczne(LA) i geometryczne (LG) o długości większej niż 2.
+# Funkcja powinna zwrócić wartość 1 gdy LA>LG, wartość -1 gdy LA<LG oraz 0 gdy LA=LG.
 # ====================================================================================================>
 
 
-def Zadanie_123(): ...
+def Zadanie_123(tab): ...
 
 
 if __name__ == "__main__":

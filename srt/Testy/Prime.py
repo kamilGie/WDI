@@ -263,6 +263,8 @@ class prime(Bazowa):
             .replace("[", " [ ")
             .replace("'", " ' ")
             .replace('"', ' " ')
+            .replace("(", " [ ")
+            .replace(")", " ] ")
             .replace("\n", " ")
         )
         argumenty = wejscie.split()
