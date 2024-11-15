@@ -76,16 +76,16 @@ def Zadanie_1(n): ...
 
 
 if __name__ == "__main__":
-    from testy01 import Testy01
+    from testy01 import odpal_testy
 
     Zadanie_1(input('Podaj n: '))
 
-    # Testy01.Uruchom()
+    # odpal_testy()
 ```
 ### Na górze znajduje się opis zadania, funkcja do wypełnienia i przygotowany main.
-Wypełniasz funkcję kodem, o który prosi opis zadania. Wyniki można zwracać lub wypisywać, choć zazwyczaj wypisujesz wynik za pomocą `print()`. Jeśli to nie będzie oczywiste, pod opisem zadania powinna być wskazówka od autora testów, jakiego sposobu zwracania wyników oczekuje. W tym przypadku widać, że boki trójkąta powinny być wypisywane kolejno, bez żadnych dodatkowych napisów.
+Wypełniasz funkcję kodem, o który prosi opis zadania. Wyniki można zwracać lub wypisywać. Jeśli to nie będzie oczywiste, pod opisem zadania powinna być wskazówka od autora testów, jakiego sposobu zwracania wyników oczekuje. W tym przypadku widać, że boki trójkąta powinny być wypisywane kolejno, bez żadnych dodatkowych napisów.
 
-Po tym, jak zrobisz zadanie i będziesz pewny jego poprawności, możesz odkomentować funkcję `Testy01.Uruchom()` i uruchomić program normalnie:
+Po tym, jak zrobisz zadanie i będziesz pewny jego poprawności, możesz odkomentować funkcję `odpal_testy()` i uruchomić program normalnie:
 ```python
 # ====================================================================================================>
 # Zadanie 1
@@ -102,9 +102,9 @@ def Zadanie_1(n):
                 print(a, b, c)
 
 if __name__ == "__main__":
-    from testy01 import Testy01
+     from testy01 import odpal_testy
 
-    Testy01.Uruchom()
+     odpal_testy()
 ```
 ### wynik takiego programu dalby taki wynik
 <img width="1504" alt="Zrzut ekranu 2024-10-24 o 22 26 09" src="https://github.com/user-attachments/assets/666313c3-15ec-4697-955c-1e5de81e23d7">
