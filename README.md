@@ -744,6 +744,12 @@ Taka funkcjonalność pozwala w prosty sposób rozszerzać projekt o nowe komend
 
 
 ### Spis 
+  - `zmien_testy`
+    ```python
+    # tworzy na nowo zadanie na bazie szablonu jako prototyp
+    komenda("zmien_testy", [funkcje], testy="domyslna", rozwiazanie="domyslna", szablon="domyslna")
+     ```
+
   
   - `dodaj_testy`, `dt` - w budowie
     ```python
@@ -754,7 +760,7 @@ Taka funkcjonalność pozwala w prosty sposób rozszerzać projekt o nowe komend
   - `dodaj_wariancje`, `dw` - w budowie
     ```python
     # Do istniejacych juz wynikow testow funkcji dodaje kolejne mozliwe warienty na podstawie funkcji przeslanej
-    komenda("dodaj_testy", funkcja)
+    komenda("dodaj_wariancje", funkcja)
      ```
   - `zwycieska_muzyka`,`zm` - w budowie, lokalna
     ```python
