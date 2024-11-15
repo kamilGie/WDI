@@ -3,6 +3,7 @@ import io
 from contextlib import redirect_stdout
 from Bazowa import Bazowa
 from typing import Callable, Tuple, Any
+from copy import deepcopy
 
 from _utils_T import (
     IMPORTY,
@@ -135,6 +136,7 @@ class prime(Bazowa):
             self.assertEqual(wynik, {wynikWywolania})\n"""
 
     def nazwi_zmienne(self, zmienne):
+
         def przetworz_zmienna(z):
             nazwa = ""
             if isinstance(z, (int, float)):
@@ -261,6 +263,8 @@ class prime(Bazowa):
             .replace("[", " [ ")
             .replace("'", " ' ")
             .replace('"', ' " ')
+            .replace("(", " [ ")
+            .replace(")", " ] ")
             .replace("\n", " ")
         )
         argumenty = wejscie.split()
@@ -298,10 +302,12 @@ class prime(Bazowa):
             bool: Flaga wskazująca, czy wynik został zwrócony przez funkcję (False),
                   czy był wyprintowany na standardowe wyjście (True).
         """
+        parametry_kopia = deepcopy(parametry)
+
         f = io.StringIO()
         with redirect_stdout(f):
-            wynik = funkcja(*parametry)
-        if wynik == None:
+            wynik = funkcja(*parametry_kopia)
+        if wynik is None:
             return repr(f.getvalue().strip()), True
 
         return wynik, False

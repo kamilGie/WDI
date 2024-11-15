@@ -6,12 +6,43 @@
 # podzbioru. Na przykład dla tablicy: [ 1,7,3,5,11,2 ] rozwiązaniem jest liczba 10.
 # ====================================================================================================>
 
+# z wiki ale no rozwiazania to to nie daje
 
-def Zadanie_138(): ...
+sum_i = 0
+min_quantity = float("inf")
+tab = []
+
+
+def Zadanie_138(T):
+
+    def rek(T, sum_index, sum_elements, i=0, pom=0):
+
+        global sum_i
+        global min_quantity
+        global tab
+
+        if sum_index == sum_elements and sum_index != 0:
+
+            if pom <= min_quantity and pom != 0:
+                min_quantity = pom
+                sum_i = sum_elements
+                tab.append(sum_elements)
+            # end def
+
+            return True
+
+        if i >= len(T):
+            return False
+
+        rek(T, sum_index + i, sum_elements + T[i], i + 1, pom + 1)
+        rek(T, sum_index, sum_elements, i + 1, pom)
+
+    # end def
+
+    rek(T, 0, 0)
 
 
 if __name__ == "__main__":
     from Develop import stworz_zadanie
 
-    Zadanie_138()
-    # stworz_zadanie([Zadanie_138])
+    stworz_zadanie([Zadanie_138])
