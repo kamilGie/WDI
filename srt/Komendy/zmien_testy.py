@@ -2,7 +2,14 @@ from StworzZadanie import stworz_zadanie
 import os
 
 
-def zmien_testy(sciezka, nr_zadania, funkcje, strategia="domyslna"):
+def zmien_testy(
+    sciezka,
+    nr_zadania,
+    funkcje,
+    testy="domyslna",
+    rozwiazanie="domyslna",
+    szablon="domyslna",
+):
     """
     Zeby nie modyfikowac funkcji stworz_zadanie to zmien test tworzy nowy plik na bazie
     pliku z ktorego powstala komenda o nazwie prototyp i z niej udaje ze tworzy testy xdd
@@ -24,4 +31,11 @@ def zmien_testy(sciezka, nr_zadania, funkcje, strategia="domyslna"):
                 continue
             file.write(linia)
 
-    stworz_zadanie(sciezka_prototypu_stworzonego, nr_zadania, funkcje, strategia)
+    stworz_zadanie(
+        sciezka_prototypu_stworzonego,
+        nr_zadania,
+        funkcje,
+        testy=testy,
+        rozwiazanie=rozwiazanie,
+        szablon=szablon,
+    )
