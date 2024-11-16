@@ -8,8 +8,11 @@ class bez_kolejnosci(prime):
         self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
     ):
         return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
-            self.assertTrue(set({NazwaTestu}({', '.join(map(str, zmienne))}).split()) == set([{ wynikWywolania }]))
-            \n"""
+                wynik = {NazwaTestu}({', '.join(map(str, zmienne))})
+                wynik = set(tuple(x) if isinstance(x, list) else x for x in wynik)
+                oczekiwany_wynik = set(tuple(x) if isinstance(x, list) else x for x in { wynikWywolania })
+                self.assertTrue(wynik == oczekiwany_wynik)
+                \n"""
 
     def metoda_nasluchujaca_testow(
         self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
