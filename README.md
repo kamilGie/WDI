@@ -35,7 +35,7 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest na
 ## 🤝 Jak pomóc i zostać współtwórcą?
 
 - Zalecam [***utworzenie forka***](https://github.com/kamilGie/WDI/fork) oraz samodzielne stworzenie zadania i zgłaszanie swoich zmian za pomocą pull requestów.
-- Można również [dodać rozwiązanie zadania](https://github.com/kamilGie/ASRT-WDI/new/solutions/bufor_rozwiązań), nie wychodząc z przeglądarki, korzystając z opcji "dodaj plik" w folderze bufor rozwiązań. W wolnym czasie będę z nich tworzył zadania. Szczegóły znajdziesz w [README folderu bufor rozwiązań](/bufor_rozwiązań).
+- Można również [dodać rozwiązanie zadania](https://github.com/kamilGie/ASRT-WDI/new/main/bufor_rozwi%C4%85za%C5%84), nie wychodząc z przeglądarki, korzystając z opcji "dodaj plik" w folderze bufor rozwiązań. W wolnym czasie będę z nich tworzył zadania. Szczegóły znajdziesz w [README folderu bufor rozwiązań](/bufor_rozwiązań).
 
 
 ### 💡 Możliwe Ulepszenia ### 
