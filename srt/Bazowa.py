@@ -18,7 +18,7 @@ class Bazowa:
 
     def __init__(
         self,
-        linie_prototypu: list[str],
+        linie_prototypu: List[str],
         nr_zadania: str,
         funkcje: List[Callable],
         sciezka_zadania: str,
