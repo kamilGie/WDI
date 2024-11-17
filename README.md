@@ -8,14 +8,34 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 2. `szablon.py` – plik zawierający szablon do wypełnienia własnym rozwiązaniem.
 3. `testy.py` – plik zawierający testy jednostkowe, które sprawdzają poprawność funkcji napisanych w pliku `szablon.py`.
 
+
+
+
 ### 🧪 Jak testować swoje rozwiązania?
 
-1. Otwórz plik `szablon.py` w folderze zadania i wypełnij rozwiazaniem zadania.
-2. Odkomentuj funkcję `odpal_testy()`.
-3. Uruchom plik `szablon.py`, a funkcja `odpal_testy()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
+<details>
+  <summary>Film demonstrujący</summary>
+  
+  [Zobacz nagranie](https://github.com/user-attachments/assets/17b4a697-6db3-4fe1-9c67-c50fd1ca520b)
+</details>
+
+1. Ściągnij repozytorium.
+2. Otwórz plik `szablon.py` w folderze zadania i wypełnij rozwiazaniem zadania.
+3. Odkomentuj funkcję `odpal_testy()`.
+4. Uruchom plik `szablon.py`, a funkcja `odpal_testy()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
 
 ### 🧱 Prototypy
+
 Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest nazwane `prototyp.py`.
+
+<details>
+   
+   <summary> Film demonstrujący </summary>
+   
+   [https://github.com/user-attachments/assets/17b4a697-6db3-4fe1-9c67-c50fd1ca520b](https://github.com/user-attachments/assets/4f056381-d23a-489c-a659-516d49616b2f)
+
+</details>
+
 1. Po rozwiązaniu zadania na `prototyp.py` można stworzyć pełne zadanie, odkomentowując funkcję `stworz_zadanie` i przekazując w tablicy funkcje, które mają być objęte testami.
 2. Funkcja `stworz_zadanie` automatycznie przygotuje testy na podstawie przekazanych funkcji. Poprosi również o podanie argumentów testowych, które Twoim zdaniem mogą być interesujące lub problematyczne.
 3. Następnie utworzy folder zadania zawierający pliki: `rozwiazanie.py` oraz `szablon.py` na podstawie `prototyp.py`, a także `testy.py` na podstawie wcześniej wygenerowanych testów.
