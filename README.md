@@ -13,7 +13,9 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 
 ### 🧪 Jak testować swoje rozwiązania?
 
-[Zobacz nagranie](https://github.com/user-attachments/assets/17b4a697-6db3-4fe1-9c67-c50fd1ca520b)
+
+https://github.com/user-attachments/assets/ad6d166e-bda7-4eca-a8cc-86d984913e0f
+
 
 1. Ściągnij repozytorium.
 2. Otwórz plik `szablon.py` w folderze zadania i wypełnij rozwiazaniem zadania.
