@@ -1,8 +1,9 @@
 # ====================================================================================================>
-# Zadanie 2
-# Proszę napisać program wypisujący elementy ciągu Fibonacciego mniejsze od miliona.
+# Zadanie 1
+# Proszę napisać program poszukujący trójkątów Pitagorejskich w których długość przekątnej
+# jest mniejsza od liczby N wprowadzonej z klawiatury.
 # ====================================================================================================>
-# print(a b c)
+# print(a b float(c))
 
 
 def Zadanie_1(n): ...
