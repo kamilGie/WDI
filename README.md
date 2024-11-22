@@ -1,6 +1,5 @@
-
-# SRT-WDI 
-## Szablony Startowe, Rozwiązania i Automatycznie Generujące się Testy do WDI na AGH
+# ASRT-WDI 
+## Automatyczne Szablony, Rozwiązania i Testy do WDI na AGH
 ### 🔧 Używanie Projektu
 
 Każdy folder z zadaniem składa się z trzech kluczowych plików:
@@ -9,14 +8,32 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 2. `szablon.py` – plik zawierający szablon do wypełnienia własnym rozwiązaniem.
 3. `testy.py` – plik zawierający testy jednostkowe, które sprawdzają poprawność funkcji napisanych w pliku `szablon.py`.
 
+
+
+
 ### 🧪 Jak testować swoje rozwiązania?
 
-1. Otwórz plik `szablon.py` w folderze zadania i wypełnij rozwiazaniem zadania.
-2. Odkomentuj funkcję `odpal_testy()`.
-3. Uruchom plik `szablon.py`, a funkcja `odpal_testy()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
+
+https://github.com/user-attachments/assets/ad6d166e-bda7-4eca-a8cc-86d984913e0f
+
+
+1. Ściągnij repozytorium.
+2. Otwórz plik `szablon.py` w folderze zadania i wypełnij rozwiazaniem zadania.
+3. Odkomentuj funkcję `odpal_testy()`.
+4. Uruchom plik `szablon.py`, a funkcja `odpal_testy()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
 
 ### 🧱 Prototypy
+
 Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest nazwane `prototyp.py`.
+
+<details>
+   
+   <summary> Film demonstrujący </summary>
+   
+   [https://github.com/user-attachments/assets/17b4a697-6db3-4fe1-9c67-c50fd1ca520b](https://github.com/user-attachments/assets/4f056381-d23a-489c-a659-516d49616b2f)
+
+</details>
+
 1. Po rozwiązaniu zadania na `prototyp.py` można stworzyć pełne zadanie, odkomentowując funkcję `stworz_zadanie` i przekazując w tablicy funkcje, które mają być objęte testami.
 2. Funkcja `stworz_zadanie` automatycznie przygotuje testy na podstawie przekazanych funkcji. Poprosi również o podanie argumentów testowych, które Twoim zdaniem mogą być interesujące lub problematyczne.
 3. Następnie utworzy folder zadania zawierający pliki: `rozwiazanie.py` oraz `szablon.py` na podstawie `prototyp.py`, a także `testy.py` na podstawie wcześniej wygenerowanych testów.
@@ -28,15 +45,15 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest na
 ---
 ### 🗿 Najwięksi współtwórcy:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/kamilGie/WDI/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=kamilGie/WDI" alt="Najwięksi współtwórcy" />
+<a href="https://github.com/kamilGie/ASRT-WDI/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=kamilGie/ASRT-WDI" alt="Najwięksi współtwórcy" />
 </a>
 
 
 ## 🤝 Jak pomóc i zostać współtwórcą?
 
 - Zalecam [***utworzenie forka***](https://github.com/kamilGie/WDI/fork) oraz samodzielne stworzenie zadania i zgłaszanie swoich zmian za pomocą pull requestów.
-- Można również [dodać rozwiązanie zadania](https://github.com/kamilGie/WDI/new/solutions/bufor_rozwiązań), nie wychodząc z przeglądarki, korzystając z opcji "dodaj plik" w folderze bufor rozwiązań. W wolnym czasie będę z nich tworzył zadania. Szczegóły znajdziesz w [README folderu bufor rozwiązań](/bufor_rozwiązań).
+- Można również [dodać rozwiązanie zadania](https://github.com/kamilGie/ASRT-WDI/new/main/bufor_rozwi%C4%85za%C5%84), nie wychodząc z przeglądarki, korzystając z opcji "dodaj plik" w folderze bufor rozwiązań. W wolnym czasie będę z nich tworzył zadania. Szczegóły znajdziesz w [README folderu bufor rozwiązań](/bufor_rozwiązań).
 
 
 ### 💡 Możliwe Ulepszenia ### 
@@ -48,7 +65,7 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest na
 SRT opiera się na **rozszerzaniu funkcjonalności**. Dzięki temu możesz dodawać nowe funkcje i strategie bez modyfikacji istniejącego kodu, co ułatwia wdrożenie bez potrzeby wiedzy o całym systemie i unika konfliktów.
 ### 🐛 Zgłaszanie błędów
 
-- Błędy w rozwiązaniach, testach lub treściach można zgłaszać <a href="https://github.com/kamilgie/wdi/issues/new?labels=bug"> ****tutaj**** </a>
+- Błędy w rozwiązaniach, testach lub treściach można zgłaszać <a href="https://github.com/kamilgie/ASRT-WDI/issues/new?labels=bug"> ****tutaj**** </a>
 
 ### 💬 Feedback
 
@@ -744,6 +761,12 @@ Taka funkcjonalność pozwala w prosty sposób rozszerzać projekt o nowe komend
 
 
 ### Spis 
+  - `zmien_testy`
+    ```python
+    # tworzy na nowo zadanie na bazie szablonu jako prototyp
+    komenda("zmien_testy", [funkcje], testy="domyslna", rozwiazanie="domyslna", szablon="domyslna")
+     ```
+
   
   - `dodaj_testy`, `dt` - w budowie
     ```python
@@ -754,7 +777,7 @@ Taka funkcjonalność pozwala w prosty sposób rozszerzać projekt o nowe komend
   - `dodaj_wariancje`, `dw` - w budowie
     ```python
     # Do istniejacych juz wynikow testow funkcji dodaje kolejne mozliwe warienty na podstawie funkcji przeslanej
-    komenda("dodaj_testy", funkcja)
+    komenda("dodaj_wariancje", funkcja)
      ```
   - `zwycieska_muzyka`,`zm` - w budowie, lokalna
     ```python
@@ -824,8 +847,8 @@ Wynik takiej komendy to:
 
 ## 🤓 Kilka slów od Autora
 Projekt wydaje się być znacznie ambitniejszy, niż sugeruje problem, jakim jest WDI, oraz forma, w jakiej jest realizowany — czyli pisanie na kartce a program nie ma dzialac ma byc ladny. Powstał jednak z myślą o tym, że raczej nikt nie wykona wszystkich 200 zadań. By uniknac repozytoriów po 40 zadan i wspólnie stworzyć jakies większe.
-Na początku nie sądziłem, że projekt rozwinie się do takiego stopnia. Uważam, że stał się bardziej systemem rozwiązań, szablonów i testów RST (stad nazwa), które planuje wykorzystać w innych zbiorach zadań lub przedmiotach. Tworzenie go dało mi fajny projekt w cv, fun i wiele doswiadczenia wiec nie istotne co sie dalej z nim stanie i tak bede z niego bardzo zadowolony. I tak wgl, projekt SRT nie tylko dlatego ze to skrot 
-ale tez czytajac to  mozna poczuc podobienstwo do slowa asSeRT xddd co za legenda dajcie gwiazdke chce tego achigmenta za gwiazdki  plz ⭐⭐⭐
+Na początku nie sądziłem, że projekt rozwinie się do takiego stopnia. Uważam, że stał się bardziej systemem rozwiązań, szablonów i testów , które planuje wykorzystać w innych zbiorach zadań lub przedmiotach. Tworzenie go dało mi fajny projekt w cv, fun i wiele doswiadczenia wiec nie istotne co sie dalej z nim stanie i tak bede z niego bardzo zadowolony. I tak wgl, projekt ASRT nie tylko dlatego ze to skrot 
+ale tez mozna poczuc podobienstwo do slowa ASseRT xddd co za legenda dajcie gwiazdke chce tego achigmenta za gwiazdki  plz ⭐⭐⭐
 
 
 
