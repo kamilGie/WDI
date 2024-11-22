@@ -6,11 +6,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_123(tab): ...
+def leng_of_longest_geometric_subsequence(sequence): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy123 import odpal_testy
 
-    Zadanie_123()
-    # stworz_zadanie([Zadanie_123])
+    leng_of_longest_geometric_subsequence(int(input('Podaj sequence: ')))
+
+    # odpal_testy()

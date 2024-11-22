@@ -4,11 +4,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_145(): ...
+def Zadanie_145(tablica, okreslony_iloczyn, liczba_elementow): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy145 import odpal_testy
 
-    Zadanie_145()
-    # stworz_zadanie([Zadanie_145])
+    Zadanie_145(int(input('Podaj tablica: ')), int(input('Podaj okreslony_iloczyn: ')), int(input('Podaj liczba_elementow: ')))
+
+    # odpal_testy()

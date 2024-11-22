@@ -3,26 +3,29 @@
 # Dana jest tablica T[N]. Proszę napisać program zliczający liczbę “enek” o określonym
 # iloczynie.
 # ====================================================================================================>
-
-# z wiki ale zmienilem zmienna globalna wiec moze cos tutaj
-
-licznik = 0
+# return liczba enek
 
 
-def zliczanie(T, s, n, p):
-    global licznik
-    if n == 1:
-        for i in range(p, len(T)):
-            if T[i] == s:
-                licznik += 1
+def rek(t, il, left, i=0, n=None, already_choosen=False, history=None, counter=0):
+    history = history or []
+    n = n or len(t)
 
-    else:
-        for i in range(p, len(T)):
-            if s % T[i] == 0:
-                zliczanie(T, s // T[i], n - 1, i + 1)
+    if left == 0 or i == n:
+        if left == 0 and il == 1 and already_choosen:
+            return counter + 1
+        return counter
+
+    counter = rek(t, il, left, i + 1, n, already_choosen, [*history], counter)
+
+    if il % t[i] == 0:
+        counter = rek(
+            t, il // t[i], left - 1, i + 1, n, True, [*history, t[i]], counter
+        )
+
+    return counter
 
 
-def Zadanie_144(T, okreslony_iloczyn, liczba_enek):
-    return zliczanie(T, okreslony_iloczyn, liczba_enek, 0)
+def Zadanie_144(tablica, okreslony_iloczyn, liczba_elementow):
+    return rek(tablica, okreslony_iloczyn, liczba_elementow)
 
 
