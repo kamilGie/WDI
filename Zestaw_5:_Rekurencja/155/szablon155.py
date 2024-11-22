@@ -8,11 +8,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_155(): ...
+def Zadanie_155(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy155 import odpal_testy
 
-    Zadanie_155()
-    # stworz_zadanie([Zadanie_155])
+    Zadanie_155(int(input('Podaj T: ')))
+
+    # odpal_testy()

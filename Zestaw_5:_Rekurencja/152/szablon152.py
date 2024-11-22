@@ -5,11 +5,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_152(): ...
+def Zadanie_152(board: list, x, y): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy152 import odpal_testy
 
-    Zadanie_152()
-    # stworz_zadanie([Zadanie_152])
+    Zadanie_152(int(input('Podaj board: ')), int(input('Podaj x: ')), int(input('Podaj y: ')))
+
+    # odpal_testy()

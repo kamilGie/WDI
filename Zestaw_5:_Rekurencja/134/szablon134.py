@@ -7,39 +7,12 @@
 # ====================================================================================================>
 
 
-from math import sqrt
-
-# cos jest zlego w tej funkcji
-
-
-def diff_div(n):
-    k = n
-    i = 2
-    pom = 0
-    cnt = 0
-    while i <= sqrt(k) + 1:
-        while n % i == 0:
-            pom += 1
-            n = n // i
-        if pom > 0:
-            cnt += 1
-        pom = 0
-        i += 1
-    return cnt
-
-
-def wagi(t, a=0, b=0, c=0, n=0):
-    if n == len(t) - 1:
-        return a == b == c
-    else:
-        return (
-            wagi(t, a + diff_div(t[n]), b, c, n + 1)
-            or wagi(t, a, b + diff_div(t[n]), c, n + 1)
-            or wagi(t, a, b, c + diff_div(t[n]), n + 1)
-        )
+def Zadanie_134(t): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy134 import odpal_testy
 
-    stworz_zadanie([wagi])
+    Zadanie_134(int(input('Podaj t: ')))
+
+    # odpal_testy()

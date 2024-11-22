@@ -1,18 +1,19 @@
 # ====================================================================================================>
 # Zadanie 150
 # Dane są dwie liczby naturalne z których budujemy trzecią liczbę. W budowanej liczbie
-# musząwystąpićwszystkiecyfrywystępującewliczbachwejściowych.Wzajemnakolejnośćcyfrkażdejzliczb
-# wejściowychmusibyćzachowana.Naprzykładmającliczby123i75możemyzbudowaćliczby12375,17523,
+# muszą wystąpić wszystkie cyfry występujące w liczbach wejściowych. Wzajemna kolejność cyfr każdej z liczb
+# wejściowych musi być zachowana. Na przykład mając liczby 123 i 75 możemy zbudować liczby 12375,17523,
 # 75123, 17253, itd. Proszę napisać funkcję która wyznaczy ile liczb pierwszych można zbudować z dwóch
 # zadanych liczb.
 # ====================================================================================================>
 
 
-def Zadanie_150(): ...
+def new_number_prime(a, b): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy150 import odpal_testy
 
-    Zadanie_150()
-    # stworz_zadanie([Zadanie_150])
+    new_number_prime(int(input('Podaj a: ')), int(input('Podaj b: ')))
+
+    # odpal_testy()
