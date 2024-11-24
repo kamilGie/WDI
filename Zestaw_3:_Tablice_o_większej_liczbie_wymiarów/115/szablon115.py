@@ -8,11 +8,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_115(): ...
+def four(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy115 import odpal_testy
 
-    Zadanie_115()
-    # stworz_zadanie([Zadanie_115])
+    four(int(input('Podaj T: ')))
+
+    # odpal_testy()

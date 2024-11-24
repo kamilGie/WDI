@@ -1,3 +1,4 @@
+# vglorm
 # ====================================================================================================>
 # Zadanie 161
 # Dany jest zbiór N liczb naturalnych umieszczony w tablicy T[N]. Proszę napisać funkcję,
@@ -8,11 +9,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_161(): ...
+def Zadanie_161(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy161 import odpal_testy
 
-    Zadanie_161()
-    # stworz_zadanie([Zadanie_161])
+    Zadanie_161(int(input('Podaj T: ')))
+
+    # odpal_testy()

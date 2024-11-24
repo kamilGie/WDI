@@ -6,7 +6,6 @@
 # fragment i zwróci jego długość.
 # ====================================================================================================>
 
-# rozwiazanie z od sigma Marcin Serafin
 # https://github.com/MarcinSerafin03/bit-algo-start-24-25-WDI/tree/main
 
 
