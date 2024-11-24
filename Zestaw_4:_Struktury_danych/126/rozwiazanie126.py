@@ -1,9 +1,7 @@
 # ====================================================================================================>
-# Zadanie 125
-# Liczby zespolone są reprezentowane przez krotkę(re,im).
-# Gdzie:re-część rzeczywista liczby,im-częśćurojonaliczby.
-# Proszę napisać podstawowe operacje na liczbach zespolonych ,m.in.dodawanie,
-# odejmowanie, mnożenie, dzielenie, potęgowanie, wypisywanie i wczytywanie.
+# Zadanie 126
+# Używając funkcji z poprzedniego zadania proszę napisać funkcję rozwiązującą równanie
+# kwadratowe o współczynnikach zespolonych.
 # ====================================================================================================>
 
 
@@ -37,13 +35,28 @@ def potegowanie(c1, n):
     return wynik_re, wynik_im
 
 
-def wypisywanie(c1):
-    print(f"{c1[0]} + {c1[1]}i")
+import cmath
 
 
-def wczytywanie():
-    re = int(input("Re >: "))
-    im = int(input("Im >: "))
-    return re, im
+def pierwiastek(c1):
+    z = complex(c1[0], c1[1])
+    pierwiastek_z = cmath.sqrt(z)
+    pierwiastek1 = (pierwiastek_z.real, pierwiastek_z.imag)
+    return pierwiastek1
+
+
+def Zadanie_126(a, b, c):
+    delta = odejmowanie(potegowanie(b, 2), mnozenie((4, 0), mnozenie(a, c)))
+    sqrt_delta1 = pierwiastek(delta)
+    print(sqrt_delta1)
+    denominator = mnozenie((2, 0), a)
+    minus_b = mnozenie((-1, 0), b)
+
+    licznik = odejmowanie(minus_b, sqrt_delta1)
+    z1_re, z1_im = dzielenie(licznik, denominator)
+    licznik = dodawanie(minus_b, sqrt_delta1)
+    z2_re, z2_im = dzielenie(licznik, denominator)
+
+    return (z1_re, z1_im), (z2_re, z2_im)
 
 

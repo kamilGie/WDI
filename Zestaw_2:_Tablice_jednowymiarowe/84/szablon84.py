@@ -1,17 +1,18 @@
 # ====================================================================================================>
-# Zadanie 127
+# Zadanie 84
 # Napis nazywamy wielokrotnym, jeżeli powstał przez n-krotne (n>1) powtórzenie innego
-# napisuodługościconajmniej1.Przykładynapisówwielokrotnych:ABCABCABC,AAAA,ABAABA.Da-
-# najesttablicaT[N]zawierającanapisy.Proszęnapisaćfunkcjęmulti(T),którazwracadługośćnajdłuższego
+# napisu o długości conajmniej 1. Przykłady napisów wielokrotnych: ABCABCABC, AAAA, ABAABA.
+# Dana jest tablica T[N] zawierająca napisy. Proszę napisać funkcję multi(T), która zwraca długość najdłuższego
 # napisu wielokrotnego występującego w tablicy T lub wartość 0, jeżeli takiego napisu nie ma w tablicy.
 # ====================================================================================================>
 
 
-def Zadanie_127(): ...
+def multi(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy84 import odpal_testy
 
-    Zadanie_127()
-    # stworz_zadanie([Zadanie_127])
+    multi(list(input("Podaj T: ")))
+
+    # odpal_testy()

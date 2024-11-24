@@ -1,5 +1,5 @@
 # ====================================================================================================>
-# Zadanie 113
+# Zadanie 128
 # Dana jest tablica T[N][N] wypełniona wartościami 0,1. Każdy wiersz tablicy traktujemy
 # jako liczbę zapisaną w systemie dwójkowy m o długości N bitów. Stała N jest rzędu 1000.
 # Proszę zaimplementować funkcję distance(T), która dla takiej tablicy wyznaczy dwa wiersze, dla których różnica zawartych
