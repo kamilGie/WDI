@@ -1,7 +1,7 @@
 # ====================================================================================================>
 # Zadanie 131
-# Liczbyrzeczywistesąreprezentowanewpostacikrotek(c,u),gdziecjestczęściącałkowitą
-# liczby,aujestliczbącałkowitąutworzonązcyfrpoprzecinku.Naprzykładkrotka(6,23)reprezentujeliczbę
+# Liczby rzeczywiste są reprezentowane w postaci krotek(c,u), gdzie c jest częścią całkowitą
+# liczby, a u jest liczbą całkowitą utworzoną z cyfr po przecinku. Na przykład krotka(6,23)reprezentuje liczbę
 # 6.23. Proszę napisać następujące funkcje:
 # • Dodającą dwie liczby,
 # • Odejmującą dwie liczby,

@@ -9,11 +9,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_124(): ...
-
-
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    Zadanie_124()
-    # stworz_zadanie([Zadanie_124])
+def Zadanie_124(Struktura):
+    najblizszy_osi = min(max(abs(x), abs(y)) for x, y in Struktura)
+    return (
+        najblizszy_osi != 0
+        and (najblizszy_osi, najblizszy_osi) in Struktura
+        and (najblizszy_osi, -najblizszy_osi) in Struktura
+        and (-najblizszy_osi, najblizszy_osi) in Struktura
+        and (-najblizszy_osi, -najblizszy_osi) in Struktura
+    )

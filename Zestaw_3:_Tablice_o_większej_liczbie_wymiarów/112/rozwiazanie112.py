@@ -7,7 +7,6 @@
 # return dlugosci najkroszedj drogi  - jak sie da
 # return False - jak sie nie da
 
-# rozwiazanie z od sigma Marcin Serafin
 # https://github.com/MarcinSerafin03/bit-algo-start-24-25-WDI/tree/main
 
 
