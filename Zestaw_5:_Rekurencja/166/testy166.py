@@ -38,7 +38,7 @@ class testy(unittest.TestCase):
         self.assertEqual( Zadanie_166(["ab", "cde", "cfed", "fab"], ["abc", "abc", "def", "fed"]), "abcdefabcfed",)
 
     def test_Nr02_Zadanie_166_argumenty_tablica_tablica(self):
-        self.assertEqual( Zadanie_166(["abc", "defghijk"], ["abcdefg", "h", "i", "jk"]), "abcdefghijkhi",)
+        self.assertEqual( Zadanie_166(["abc", "defghijk"], ["abcdefg", "h", "i", "jk"]), "abcdefghijk",)
 
     def test_Nr03_Zadanie_166_argumenty_tablica_tablica(self):
         self.assertEqual(Zadanie_166(["ab", "abc"], ["ab", "abc"]), False)
@@ -47,7 +47,7 @@ class testy(unittest.TestCase):
         self.assertEqual(Zadanie_166(["ab", "c", "def"], ["gh", "ij", "kl"]), False)
 
     def test_Nr05_Zadanie_166_argumenty_tablica_tablica(self):
-        self.assertEqual( Zadanie_166(["start", "middle", "end"], ["startmi", "dd", "leend"]), "startmiddleddend",)
+        self.assertEqual( Zadanie_166(["start", "middle", "end"], ["startmi", "dd", "leend"]), "startmiddleend",)
 
     def test_Nr06_Zadanie_166_argumenty_tablica_tablica(self):
         self.assertEqual(Zadanie_166(["abc", "de", "fg"], ["abcd", "ef", "gh"]), False)
@@ -69,3 +69,6 @@ class testy(unittest.TestCase):
 
     def test_Nr12_Zadanie_166_argumenty_tablica_tablica(self):
         self.assertEqual( Zadanie_166(["abcd", "efghij", "klmn"], ["abcdefghij", "klmn"]), False)
+
+    def test_Nr13_Zadanie_166_argumenty_tablica_tablica(self):
+        self.assertEqual( Zadanie_166(["abc","deca","bcwel"], ["ab","cwel","cde","cab"]), "abcdecabcwel",)
