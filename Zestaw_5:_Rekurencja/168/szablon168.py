@@ -1,8 +1,8 @@
 # ====================================================================================================>
 # Zadanie 168
-# DanajestliczbanaturalnaN.Proszęzaimplementowaćfunkcjędivide(N),którasprawdza
-# czyjestmożliwepocięcieliczbyN nakawałki,takabykażdyzkawałkówbyłliczbapierwsząorazliczbakawał-
-# kówteżbyłaliczbąpierwszą.Funkcjapowinnazwracaćwartośćlogiczną.Naprzykład:divide(2347)=True,
+# Dana jest liczba naturalna N. Proszę zaimplementować funkcję divide(N), która sprawdza
+# czy jest możliwe pocięcie liczby N na kawałki, tak aby każdy z kawałków był liczba pierwszą oraz liczba kawał-
+# ków też była liczbą pierwszą. Funkcja powinna zwracać wartość logiczną. Naprzykład: divide(2347)=True,
 # podział na 23 i 47, natomiast divide(2255)=False.
 # Przykładowe wywołania funkcji:
 # print(divide(273)) # True, podział 2|7|3
@@ -13,11 +13,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_168(): ...
+def divide(N): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy168 import odpal_testy
 
-    Zadanie_168()
-    # stworz_zadanie([Zadanie_168])
+    divide(int(input('Podaj N: ')))
+
+    # odpal_testy()

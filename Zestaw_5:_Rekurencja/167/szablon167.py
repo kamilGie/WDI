@@ -6,11 +6,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_167(): ...
+def Zadanie_167(slowo): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy167 import odpal_testy
 
-    Zadanie_167()
-    # stworz_zadanie([Zadanie_167])
+    Zadanie_167(int(input("Podaj slowo: ")))
+
+    # odpal_testy()
