@@ -1,5 +1,4 @@
 # ====================================================================================================>
-
 # Zadanie 169
 # Dwie liczby naturalne są ”wspólno-czynnikowe” jeżeli w swoich rozkładach na czynniki
 # pierwsze mają dokładnie jeden wspólny czynnik. Na przykład: 24 i 21 albo 32i 34.Dana jest tablicaT[N][N]

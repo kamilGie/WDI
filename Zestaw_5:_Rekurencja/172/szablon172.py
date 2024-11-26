@@ -1,15 +1,16 @@
 # ====================================================================================================>
 # Zadanie 172
-# Proszęnapisaćrekurencyjnąfunkcjęobliczającąn-tywyrazciąguFibonacciegoaletakaby
+# Proszęn apisać rekurencyjną funkcję obliczającą n-ty wyraz ciągu Fibonacciego ale tak aby
 # wewnątrz funkcji było tylko jedno odwołanie rekurencyjne.
 # ====================================================================================================>
 
 
-def Zadanie_172(): ...
+def fibonacci(n): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy172 import odpal_testy
 
-    Zadanie_172()
-    # stworz_zadanie([Zadanie_172])
+    fibonacci(int(input("Podaj n: ")))
+
+    # odpal_testy()
