@@ -302,7 +302,10 @@ class prime(Bazowa):
             bool: Flaga wskazująca, czy wynik został zwrócony przez funkcję (False),
                   czy był wyprintowany na standardowe wyjście (True).
         """
-        parametry_kopia = deepcopy(parametry)
+        parametry_kopia = [
+            p[1:-1] if isinstance(p, str) and p[1] == "'" or p[0] == '"' else p
+            for p in parametry
+        ]
 
         f = io.StringIO()
         with redirect_stdout(f):

@@ -7,13 +7,25 @@
 # • Odejmującą dwie liczby,
 # • Mnożącą dwie liczby.
 # ====================================================================================================>
+# c,u sa stringami aby moc zapisac np 0.05
+# -1.2 to bedzie np ("-1","2")
+# -0.3 to bedzie ("-0","3")
 
 
-def Zadanie_131(): ...
+def odejmij(liczba1, liczba2): ...
+
+
+def dodaj(liczba1, liczba2): ...
+
+
+def pomnoz(liczba1, liczba2): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy131 import odpal_testy
 
-    Zadanie_131()
-    # stworz_zadanie([Zadanie_131])
+    dodaj(int(input("Podaj liczba1: ")), int(input("Podaj liczba2: ")))
+    odejmij(int(input("Podaj liczba1: ")), int(input("Podaj liczba2: ")))
+    pomnoz(int(input("Podaj liczba1: ")), int(input("Podaj liczba2: ")))
+
+    # odpal_testy()
