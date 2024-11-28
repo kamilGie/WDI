@@ -231,10 +231,11 @@ class prime(Bazowa):
                 - i (int): Zaktualizowany indeks po przetworzeniu tablicy.
         """
         wynik = []
+        koniec = "]" if argumenty[i] == "[" else ")"
         i += 1
 
-        while argumenty[i] != "]":
-            if argumenty[i] == "[":  # znaleziono nową tablicę
+        while argumenty[i] != koniec:
+            if argumenty[i] == "[" or argumenty[i] == "(":
                 tablica, i = self.przetwarzaj_tablice(argumenty, i)
                 wynik.append(tablica)
             elif argumenty[i] == '"' or argumenty[i] == "'":
@@ -263,14 +264,15 @@ class prime(Bazowa):
             .replace("[", " [ ")
             .replace("'", " ' ")
             .replace('"', ' " ')
-            .replace("(", " [ ")
-            .replace(")", " ] ")
+            .replace("(", " ( ")
+            .replace(")", " ) ")
             .replace("\n", " ")
         )
         argumenty = wejscie.split()
 
         przetwarzaj = {
             "[": self.przetwarzaj_tablice,
+            "(": self.przetwarzaj_tablice,
             '"': self.przetwarzaj_stringa,
             "'": self.przetwarzaj_stringa,
         }
@@ -278,6 +280,7 @@ class prime(Bazowa):
         wyniki = []
         i = 0
         while i < len(argumenty):
+            print(argumenty[i])
             if argumenty[i] in przetwarzaj:
                 element, i = przetwarzaj[argumenty[i]](argumenty, i)
                 wyniki.append(element)

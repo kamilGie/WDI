@@ -1,8 +1,8 @@
 # ====================================================================================================>
-# Zadanie 130
-# Proszę napisać funkcję która dodaje dwie liczby wymierne reprezentowane jako rozwinięcia
-# dziesiętne w postaci napisów na tak samo reprezentowaną liczbę wymierną. Na przykład suma ”0.25” i
-# ”0.1(6)” daje ”0.41(6)”
+# Zadanie 129
+# Proszę napisać funkcję która zamienia liczby wymierne reprezentowane jako rozwinię-
+# cia dziesiętne w postaci napisów na liczbę wymierną w postaci nieskracalnego ułamka jako pary licznik-
+# mianownik. Na przykład: ”0.25” na (1,4), ”0.(6)” na (2,3), ”0.(142857)” na (1,7)
 # ====================================================================================================>
 
 
@@ -51,19 +51,3 @@ def Zadanie_129(liczba: str):
     return skroc(licznik, mianownik)
 
 
-def Zadanie_130(liczba1: str, liczba2: str) -> str:
-    l1, m1 = Zadanie_129(liczba1)
-    l2, m2 = Zadanie_129(liczba2)
-    mw = m1 * m2
-    l1 = l1 * m2
-    l2 = l2 * m1
-    lw = l1 + l2
-    licznik_wynik, mianownik_wynik = skroc(lw, mw)
-
-
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    # ”0.1(6)” daje ”0.41(6)”
-    print(Zadanie_130("0.1(6)", "0.41(6)"))
-    # stworz_zadanie([Zadanie_130])

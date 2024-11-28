@@ -6,11 +6,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_129(): ...
+def Zadanie_129(liczba: str): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy129 import odpal_testy
 
-    Zadanie_129()
-    # stworz_zadanie([Zadanie_129])
+    Zadanie_129(str(input("Podaj liczba: ")))
+
+    # odpal_testy()
