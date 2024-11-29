@@ -6,11 +6,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_157(): ...
+def Zadanie_157(tablica) -> float: ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy157 import odpal_testy
 
-    Zadanie_157()
-    # stworz_zadanie([Zadanie_157])
+    Zadanie_157(list(input("Podaj tablica: ")))
+
+    # odpal_testy()

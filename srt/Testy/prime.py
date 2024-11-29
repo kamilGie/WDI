@@ -168,7 +168,7 @@ class prime(Bazowa):
 
         f = io.StringIO()
         with redirect_stdout(f):
-            wynik = funkcja(*eval(parametry))
+            wynik = funkcja(eval(parametry))
         if wynik is None:
             return repr(f.getvalue().strip()), True
         elif isinstance(wynik, str):
