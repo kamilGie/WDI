@@ -18,17 +18,9 @@ def skroc(licznik, mianownik):
 
 def Zadanie_129(liczba: str):
     """
-    1. Funkcja dzieli liczbę na część całkowitą i część dziesiętną (po przecinku).
-    2. Jeśli część dziesiętna nie zawiera okresu (czyli nie ma nawiasu `()`), obliczamy odpowiedni licznik i mianownik na podstawie liczby po przecinku.
-    3. Jeśli część dziesiętna zawiera okres (np. "0.(3)"), dzielimy ją na część przed okresem i okres.
-       - Mianownik dla części okresowej obliczamy jako liczbę składającą się z dziewiątek (np. dla okresu o długości 1 to "9", dla okresu o długości 2 to "99").
-       - Licznik dla okresu to wartość tego okresu pomnożona przez odpowiedni mianownik.
-       - Licznik dla części przed okresem jest liczony podobnie jak w przypadku liczby bez okresu, ale musi być pomnożony przez odpowiedni mianownik uwzględniający obecność okresu.
-    4. Licznik końcowy obliczamy jako sumę trzech składników:
-       - Liczba całkowita pomnożona przez odpowiedni mianownik.
-       - Licznik dla części przed okresem.
-       - Licznik dla części okresowej.
-    5. Wynik zwracany jest w postaci skróconego ułamka
+    Funkcję która zamienia liczby wymierne reprezentowane jako rozwinięcia dziesiętne w postaci
+    napisów na liczbę wymierną w postaci nieskracalnego ułamka jako pary licznik-mianownik.
+    Na przykład: ”0.25” na (1,4), ”0.(6)” na (2,3), ”0.(142857)” na (1,7)
     """
     calkowite, po_przecinku = liczba.split(".")
 
@@ -52,18 +44,34 @@ def Zadanie_129(liczba: str):
 
 
 def Zadanie_130(liczba1: str, liczba2: str) -> str:
+    """
+    Konwertuje obie liczby na postać ułamkową, sumuje i skracam.
+    Z tego ułamka obliczam część całkowitą.
+    Następnie, dopóki część ułamkowa ma resztę lub reszta się nie powtórzy:
+    - zapisuję w słowniku wystąpienie każdej reszty na określonej pozycji
+    - tworzę nową resztę, mnożąc ją przez 10 i dzieląc przez mianownik.
+    Jeśli reszta się powtarza, oznacza to, że mamy okres. Zwracam wynik z częścią całkowitą,
+    częścią ułamkową przed okresem oraz samym okresem w nawiasach.
+    Jeśli reszta się wyzeruje, zwracam część całkowitą z ułamkiem.
+    """
+
     l1, m1 = Zadanie_129(liczba1)
     l2, m2 = Zadanie_129(liczba2)
-    mw = m1 * m2
-    l1 = l1 * m2
-    l2 = l2 * m1
-    lw = l1 + l2
-    licznik_wynik, mianownik_wynik = skroc(lw, mw)
+    licznik, mianownik = skroc(l1 * m2 + l2 * m1, m1 * m2)
 
+    calkowite = str(licznik // mianownik)
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    reszta = licznik % mianownik
+    reszty = {}
+    ulamek = ""
+    while reszta:
+        reszty[reszta] = len(ulamek)
 
-    # ”0.1(6)” daje ”0.41(6)”
-    print(Zadanie_130("0.1(6)", "0.41(6)"))
-    # stworz_zadanie([Zadanie_130])
+        ulamek += str(reszta * 10 // mianownik)
+        reszta = reszta * 10 % mianownik
+        if reszta in reszty:
+            przed_okresem = ulamek[: reszty[reszta]]
+            okres = ulamek[reszty[reszta] :]
+            return f"{calkowite}.{przed_okresem}({okres})"
+
+    return calkowite + "." + (ulamek or "0")
