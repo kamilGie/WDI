@@ -24,13 +24,16 @@ https://github.com/user-attachments/assets/ad6d166e-bda7-4eca-a8cc-86d984913e0f
 
 ### 🧱 Prototypy
 
-Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest nazwane `prototyp.py`.
+Jeśli zadanie nie zostało jeszcze rozwiązane, jest nazwane `prototyp.py`.
 
 <details>
    
    <summary> Film demonstrujący </summary>
    
-   [https://github.com/user-attachments/assets/17b4a697-6db3-4fe1-9c67-c50fd1ca520b](https://github.com/user-attachments/assets/4f056381-d23a-489c-a659-516d49616b2f)
+
+https://github.com/user-attachments/assets/f3316918-a5e9-457f-8c2e-b4a5e5f0f27c
+
+
 
 </details>
 
@@ -43,6 +46,19 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest na
  [Szczegóły dotyczące używania projektu, prototypów i działania tutaj](#szczegóły-projektu)
  
 ---
+
+## Źródła rozwiązań 📚
+
+Część rozwiązań została zaczerpnięta (*bezczelnie podkradziona*) z poniższych repozytoriów.  
+Jestem ogromnie wdzięczny ich autorom za świetne prace, które bardzo pomogły! 
+
+- 🌟 [WDI-2023](https://github.com/pawlowiczf/WDI-2023) - [Filip Pawłowicz](https://github.com/pawlowiczf)
+- 🌟 [bit-algo-start-24-25-WDI](https://github.com/MarcinSerafin03/bit-algo-start-24-25-WDI) - [Marcin Serafin](https://github.com/MarcinSerafin03) ,[Ernest Szlamczyk](https://github.com/eszlamczyk) 
+- 🌟 [WDI2020](https://github.com/Wisien999/WDI2020) - [Wisien999](https://github.com/Wisien999)  
+
+
+
+
 ### 🗿 Najwięksi współtwórcy:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://github.com/kamilGie/ASRT-WDI/graphs/contributors">
@@ -125,11 +141,6 @@ if __name__ == "__main__":
 ```
 ### wynik takiego programu dalby taki wynik
 <img width="1504" alt="Zrzut ekranu 2024-10-24 o 22 26 09" src="https://github.com/user-attachments/assets/666313c3-15ec-4697-955c-1e5de81e23d7">
-
-### `test_Nr5_Zadanie_1_argumenty_20` oznacza:
-- **5**. test
-- Testuje funkcję **Zadanie_1**, czyli funkcję, która jest sprawdzana (to rozróżnienie jest przydatne w przyszłych zadaniach, gdzie testowanych będzie więcej funkcji).
-- Test został uruchomiony z argumentem **20** (czyli Zadanie_1(20)).
   
 Wynik testu wskazuje na błąd: widzimy komunikat `AssertionError: '3 4 5' not found in [''].` Oznacza to, że test oczekiwał pustego stringa `''`, a otrzymał `'3 4 5'`, co sugeruje, że wynik dla c = 5 został niepotrzebnie wypisany.
 
@@ -843,14 +854,22 @@ Wynik takiej komendy to:
 </details>
 </details>
 
----
+<details>  
+  <summary> 🎯 Cel projektu </summary>
 
-## 🤓 Kilka slów od Autora
-Projekt wydaje się być znacznie ambitniejszy, niż sugeruje problem, jakim jest WDI, oraz forma, w jakiej jest realizowany — czyli pisanie na kartce a program nie ma dzialac ma byc ladny. Powstał jednak z myślą o tym, że raczej nikt nie wykona wszystkich 200 zadań. By uniknac repozytoriów po 40 zadan i wspólnie stworzyć jakies większe.
-Na początku nie sądziłem, że projekt rozwinie się do takiego stopnia. Uważam, że stał się bardziej systemem rozwiązań, szablonów i testów , które planuje wykorzystać w innych zbiorach zadań lub przedmiotach. Tworzenie go dało mi fajny projekt w cv, fun i wiele doswiadczenia wiec nie istotne co sie dalej z nim stanie i tak bede z niego bardzo zadowolony. I tak wgl, projekt ASRT nie tylko dlatego ze to skrot 
-ale tez mozna poczuc podobienstwo do slowa ASseRT xddd co za legenda dajcie gwiazdke chce tego achigmenta za gwiazdki  plz ⭐⭐⭐
+## 🎯 Cel projektu
+**Najważniejsze jest skompletowanie jak największej liczby zadań z rozwiązaniami.**
 
+Docelowo dążę do tego, aby to repozytorium stało się backendem strony internetowej całego projektu **ASRT**. Strona będzie swojego rodzaju grywalizacją, gdzie:  
+- **Anonimowi studenci** pod nickami będą mogli dodawać swoje rozwiązania i sprawdzać ich poprawność.  
+- **Ranking** będzie publicznie dostępny i uwzględni **długość** oraz **szybkość** kodów, które przeszły testy (widoczne będą jedynie wyniki, nie sam kod).  
+- **Punkty** będą przyznawane za dodanie poprawnego rozwiązania i za zajęcie podium w kategoriach **najszybszego** lub **najkrótszego** kodu z czego będzie **faworyzować tworzenie najkrótszych lub najszybszych rozwiązań** ponad liczbę wykonanych zadań. Dzięki temu bycie najlepszym nie będzie wymagało poświęcenia największej ilości czasu na rozwiązywanie, ale skupienia się na jakości kodu.  
 
-
-  
+Po kolokwium z danego zestawu strona zrobi:  
+1. **Rewind zadań** – zaprezentowanie najlepszych rozwiązań z każdej kategorii:  
+   - **Najszybsze**,  
+   - **Najkrótsze**,  
+   - **Najciekawsze technicznie**.  
+2. **Otwarcie nowych zadań**, które będą dostępne do rozwiązywania przed kolejnym kolokwium.
+</details>
    
