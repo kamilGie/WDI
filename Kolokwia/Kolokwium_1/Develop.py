@@ -26,7 +26,7 @@ def stworz_zadanie(
     # Numer zadania na podstawie nazwy pliku
     nr_zadania = ( os.path.basename(sciezka_pliku_wykonalnego) .replace("prototyp", "") .replace(".py", "") .replace("Backup", ""))
     # importjemy stworz zadanie z folderu rodzica
-    srt_folder = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../srt")
+    srt_folder = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
     sys.path.append(srt_folder)
 
     # To lsp moze zaznaczac jako blad ale program bedzie dzialac . lsp nie ogarnia sys.path join
@@ -56,7 +56,7 @@ def komenda(k: str, *args: List[str], **kwargs: dict):
 
     # Ustalamy ścieżkę do pliku wykonywalnego
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
-    srt_folder = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../srt")
+    srt_folder = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
     sys.path.append(srt_folder)
 
     # Numer zadania na podstawie nazwy pliku

@@ -3,6 +3,7 @@ import io
 from contextlib import redirect_stdout
 from Bazowa import Bazowa
 from typing import Callable, Tuple, Any
+import ast
 
 from _utils_T import (
     IMPORTY,
@@ -168,7 +169,7 @@ class prime(Bazowa):
 
         f = io.StringIO()
         with redirect_stdout(f):
-            wynik = funkcja(eval(parametry))
+            wynik = funkcja(*eval(f"[{parametry}]"))
         if wynik is None:
             return repr(f.getvalue().strip()), True
         elif isinstance(wynik, str):
