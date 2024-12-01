@@ -8,9 +8,6 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 2. `szablon.py` – plik zawierający szablon do wypełnienia własnym rozwiązaniem.
 3. `testy.py` – plik zawierający testy jednostkowe, które sprawdzają poprawność funkcji napisanych w pliku `szablon.py`.
 
-
-
-
 ### 🧪 Jak testować swoje rozwiązania?
 
 
@@ -22,14 +19,22 @@ https://github.com/user-attachments/assets/ad6d166e-bda7-4eca-a8cc-86d984913e0f
 3. Odkomentuj funkcję `odpal_testy()`.
 4. Uruchom plik `szablon.py`, a funkcja `odpal_testy()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
 
+
+### 🐛 Zgłaszanie błędów
+Błędy w rozwiązaniach, testach lub treściach zgłaszać na <a href="https://github.com/kamilgie/ASRT-WDI/issues/new?labels=bug"> ****Issues**** </a> lub <a href="https://gieras.pl/"> ****prywatnie**** </a> 
+
 ### 🧱 Prototypy
 
-Jeśli zadanie nie zostało jeszcze rozwiązane, jest nazwane `prototyp.py`.
+Nierozwiązane zadania znajdują się w plikach `prototyp.py` i czekają na rozwiązanie. 
+
 
 <details>
    
-   <summary> Film demonstrujący </summary>
-   
+   <summary> Tworzenie Zadań na prototypie </summary>
+
+1. Po rozwiązaniu zadania na `prototyp.py` można stworzyć pełne zadanie, odkomentowując funkcję `stworz_zadanie` i przekazując w tablicy funkcje, które mają być objęte testami.
+2. Funkcja `stworz_zadanie` automatycznie przygotuje testy na podstawie przekazanych funkcji. Poprosi również o podanie argumentów testowych, które Twoim zdaniem mogą być interesujące lub problematyczne.
+3. Następnie utworzy folder zadania zawierający pliki: `rozwiazanie.py` oraz `szablon.py` na podstawie `prototyp.py`, a także `testy.py` na podstawie wcześniej wygenerowanych testów.
 
 https://github.com/user-attachments/assets/f3316918-a5e9-457f-8c2e-b4a5e5f0f27c
 
@@ -37,13 +42,7 @@ https://github.com/user-attachments/assets/f3316918-a5e9-457f-8c2e-b4a5e5f0f27c
 
 </details>
 
-1. Po rozwiązaniu zadania na `prototyp.py` można stworzyć pełne zadanie, odkomentowując funkcję `stworz_zadanie` i przekazując w tablicy funkcje, które mają być objęte testami.
-2. Funkcja `stworz_zadanie` automatycznie przygotuje testy na podstawie przekazanych funkcji. Poprosi również o podanie argumentów testowych, które Twoim zdaniem mogą być interesujące lub problematyczne.
-3. Następnie utworzy folder zadania zawierający pliki: `rozwiazanie.py` oraz `szablon.py` na podstawie `prototyp.py`, a także `testy.py` na podstawie wcześniej wygenerowanych testów.
 
-   
-
- [Szczegóły dotyczące używania projektu, prototypów i działania tutaj](#szczegóły-projektu)
  
 ---
 
@@ -66,7 +65,15 @@ Jestem ogromnie wdzięczny ich autorom za świetne prace, które bardzo pomogły
 </a>
 
 
+
+
+# Szczegóły Projektu
+
+<details>
+  <summary> 🤝 Jak pomóc i zostać współtwórcą? </summary>
+
 ## 🤝 Jak pomóc i zostać współtwórcą?
+
 
 - Zalecam [***utworzenie forka***](https://github.com/kamilGie/WDI/fork) oraz samodzielne stworzenie zadania i zgłaszanie swoich zmian za pomocą pull requestów.
 - Można również [dodać rozwiązanie zadania](https://github.com/kamilGie/ASRT-WDI/new/main/bufor_rozwi%C4%85za%C5%84), nie wychodząc z przeglądarki, korzystając z opcji "dodaj plik" w folderze bufor rozwiązań. W wolnym czasie będę z nich tworzył zadania. Szczegóły znajdziesz w [README folderu bufor rozwiązań](/bufor_rozwiązań).
@@ -87,10 +94,10 @@ SRT opiera się na **rozszerzaniu funkcjonalności**. Dzięki temu możesz dodaw
 
 - Sam feedback na temat tego, jak się pracuje, w jakim kierunku można pójść oraz czego brakuje, również będzie mile widziany. [kontakt](http://www.gieras.pl).
 
----
+
+</details>
 
 
-# Szczegóły Projektu
 
 <details>
   <summary> 🧪 Testowanie Zadania </summary>
@@ -634,7 +641,7 @@ class data(domyslne_s):
     def __str__(self):
         res = str(date.today().day)
         res += "\n"
-        res += super().generuj()
+        res += super().__str__()
         return res
 ```
 Tak stworzoną klasę możemy już używać w funkcji `stworz_zadanie`, podając argument `szablon="data"`.
@@ -853,23 +860,3 @@ Wynik takiej komendy to:
 
 </details>
 </details>
-
-<details>  
-  <summary> 🎯 Cel projektu </summary>
-
-## 🎯 Cel projektu
-**Najważniejsze jest skompletowanie jak największej liczby zadań z rozwiązaniami.**
-
-Docelowo dążę do tego, aby to repozytorium stało się backendem strony internetowej całego projektu **ASRT**. Strona będzie swojego rodzaju grywalizacją, gdzie:  
-- **Anonimowi studenci** pod nickami będą mogli dodawać swoje rozwiązania i sprawdzać ich poprawność.  
-- **Ranking** będzie publicznie dostępny i uwzględni **długość** oraz **szybkość** kodów, które przeszły testy (widoczne będą jedynie wyniki, nie sam kod).  
-- **Punkty** będą przyznawane za dodanie poprawnego rozwiązania i za zajęcie podium w kategoriach **najszybszego** lub **najkrótszego** kodu z czego będzie **faworyzować tworzenie najkrótszych lub najszybszych rozwiązań** ponad liczbę wykonanych zadań. Dzięki temu bycie najlepszym nie będzie wymagało poświęcenia największej ilości czasu na rozwiązywanie, ale skupienia się na jakości kodu.  
-
-Po kolokwium z danego zestawu strona zrobi:  
-1. **Rewind zadań** – zaprezentowanie najlepszych rozwiązań z każdej kategorii:  
-   - **Najszybsze**,  
-   - **Najkrótsze**,  
-   - **Najciekawsze technicznie**.  
-2. **Otwarcie nowych zadań**, które będą dostępne do rozwiązywania przed kolejnym kolokwium.
-</details>
-   
