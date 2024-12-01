@@ -7,7 +7,7 @@ Użyłem jedynie:
 - importu `random`,
 - funkcji `print`.
 
-W folderze `x_inne` znajdują się cztery inne rozwiązania, które nie ograniczają się wyłącznie do działań z zestawu 1. Zostały stworzone na szybko i nie skupiałem sie na nich  wiec najszybsza funkcja z tych rozwiązań działa w 43 sekund i na luzie można je dalej ulepszać
+W folderze `więcej` znajdują się cztery inne rozwiązania, które nie ograniczają się wyłącznie do działań z zestawu 1. Zostały stworzone na szybko i nie skupiałem sie na nich  wiec najszybsza funkcja z tych rozwiązań działa w 43 sekund i na luzie można je dalej ulepszać
 
 ### Czasy rozwiązań:
 - `reguly zestawu pierwszego` to rozwiązanie z pliku `rozwiazanie59.py`.

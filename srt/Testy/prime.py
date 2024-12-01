@@ -3,7 +3,7 @@ import io
 from contextlib import redirect_stdout
 from Bazowa import Bazowa
 from typing import Callable, Tuple, Any
-from copy import deepcopy
+import ast
 
 from _utils_T import (
     IMPORTY,
@@ -56,7 +56,7 @@ class prime(Bazowa):
         while True:
             try:
                 parametry = self.pobierz_parametry(nr_testu, liczba_argumentow)
-                if parametry == tuple("stop"):
+                if parametry == "stop":
                     break
                 wynik_funkcji, czy_wynik_w_print = self.wynik_wykonania_funkcji(
                     funkcja, parametry
@@ -67,11 +67,7 @@ class prime(Bazowa):
 
             metoda_testowa = self._wybierz_metode_testowa(czy_wynik_w_print, funkcja)
             self.res += metoda_testowa(
-                funkcja.__name__,
-                nr_testu,
-                parametry,
-                wynik_funkcji,
-                self.nazwi_zmienne(parametry),
+                funkcja.__name__, nr_testu, parametry, wynik_funkcji
             )
             self.res += "\n"
 
@@ -79,7 +75,7 @@ class prime(Bazowa):
                 print(f"Wynik to {wynik_funkcji}")
                 break
 
-            print(f"Dla {', '.join(map(str, parametry))} wynik to {wynik_funkcji}")
+            print(f"Dla {parametry} wynik to {wynik_funkcji}")
             nr_testu += 1
 
         print("\n")
@@ -92,9 +88,7 @@ class prime(Bazowa):
             else self.metoda_zwracajaca_testow
         )
 
-    def metoda_zwracajaca_testow(
-        self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
-    ):
+    def metoda_zwracajaca_testow(self, NazwaTestu, numerTestu, zmienne, wynikWywolania):
         """
         Generuje kod testu jednostkowego dla metody zwracającej wynik.
 
@@ -108,11 +102,11 @@ class prime(Bazowa):
         Returns:
             str: Kod testu jednostkowego w formacie tekstowym.
         """
-        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
-            self.assertEqual({NazwaTestu}({', '.join(map(str, zmienne))}), {wynikWywolania})\n"""
+        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}(self):
+            self.assertEqual({NazwaTestu}({zmienne}), {wynikWywolania})\n"""
 
     def metoda_nasluchujaca_testow(
-        self, NazwaTestu, numerTestu, zmienne, wynikWywolania, zmienne_nazwa
+        self, NazwaTestu, numerTestu, zmienne, wynikWywolania
     ):
         """
         Generuje kod testu jednostkowego dla metody, która nasłuchuje wyników na standardowym wyjściu.
@@ -127,33 +121,15 @@ class prime(Bazowa):
         Returns:
             str: Kod testu jednostkowego w formacie tekstowym, który sprawdza standardowe wyjście funkcji.
         """
-        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}_argumenty_{'_'.join(zmienne_nazwa)}(self):
+        return f"""    def test_Nr{numerTestu:02}_{NazwaTestu}(self):
             f = io.StringIO()
             with redirect_stdout(f):
-                {NazwaTestu}({', '.join(map(str, zmienne))})
+                {NazwaTestu}({zmienne})
             wynik = f.getvalue().strip()
 
             self.assertEqual(wynik, {wynikWywolania})\n"""
 
-    def nazwi_zmienne(self, zmienne):
-
-        def przetworz_zmienna(z):
-            nazwa = ""
-            if isinstance(z, (int, float)):
-                nazwa = f"minus_{abs(z)}" if z < 0 else str(z)
-                if isinstance(z, float):
-                    nazwa = nazwa.replace(".", "_")
-                    nazwa += "f"
-
-            elif isinstance(z, list):
-                # Sprawdzamy, czy to zagnieżdżona lista
-                nazwa = "tablica"
-            return nazwa
-
-        zmienne_nazwa = [przetworz_zmienna(z) for z in zmienne]
-        return zmienne_nazwa
-
-    def pobierz_parametry(self, test_index: int, param_count: int) -> Tuple:
+    def pobierz_parametry(self, test_index: int, param_count: int) -> str:
         """
         Pobiera parametry testowe od użytkownika.
 
@@ -165,130 +141,18 @@ class prime(Bazowa):
             Tuple: Krotka z parametrami podanymi przez użytkownika.
         """
         if param_count == 0:
-            return ()
-        else:
-            koncowka_argumetnow = "" if 1 == param_count else "y"
-            wyjscie = ", lub 'stop' by zakonczyc testy" if test_index > 3 else ""
-            wejscie = input(
-                f"\nTest nr {test_index}\nPodaj {param_count} argument{koncowka_argumetnow} testowe{wyjscie}: "
-            )
-            if wejscie == "stop":
-                return tuple("stop")
-        print(f"\033[F\033[K\033[F\033[K\033[F\033[K", end="")
-        return tuple(self.przetwarzaj_wejscie(wejscie))
+            return ""
 
-    def konwertuj_argument(self, arg):
-        """Konwertuje argument na odpowiedni typ: int, float,str lub pozostaje czysty"""
-        for typ in (int, float):
-            try:
-                return typ(arg)
-            except ValueError:
-                continue
-        return arg
-
-    def przetwarzaj_stringa(self, argumenty, i, dodaj_cudzyslow=True):
-        """
-        Przetwarza napis z argumentów w formie tekstowej, obsługując spacje.
-
-        Args:
-            argumenty (list): Lista argumentów w formie tekstowej.
-            i (int): Indeks aktualnego argumentu do przetworzenia.
-
-        Returns:
-            tuple: Krotka zawierająca:
-                - wynik (str): Przetworzony napis.
-                - i (int): Zaktualizowany indeks po przetworzeniu napisu.
-        """
-        typ_cudzyslowu = argumenty[i]
-        i += 1
-        fragmenty = []
-
-        try:
-            while argumenty[i] != typ_cudzyslowu:
-                fragmenty.append(argumenty[i])
-                i += 1
-        except IndexError:
-            raise ValueError(
-                f"Nie zamknięty znak stringa dla cudzysłowu: {typ_cudzyslowu}"
-            )
-
-        wynik = " ".join(fragmenty)
-        if dodaj_cudzyslow:
-            wynik = typ_cudzyslowu + wynik + typ_cudzyslowu
-        return wynik, i
-
-    def przetwarzaj_tablice(self, argumenty, i):
-        """
-        Przetwarza tablicę z argumentów w formie tekstowej, obsługując zagnieżdżone tablice.
-
-        Args:
-            argumenty (list): Lista argumentów w formie tekstowej, w której mogą występować zagnieżdżone tablice.
-            i (int): Indeks aktualnego argumentu do przetworzenia.
-
-        Returns:
-            tuple: Krotka zawierająca:
-                - wynik (list): Przetworzona tablica, która może zawierać inne tablice jako elementy.
-                - i (int): Zaktualizowany indeks po przetworzeniu tablicy.
-        """
-        wynik = []
-        i += 1
-
-        while argumenty[i] != "]":
-            if argumenty[i] == "[":  # znaleziono nową tablicę
-                tablica, i = self.przetwarzaj_tablice(argumenty, i)
-                wynik.append(tablica)
-            elif argumenty[i] == '"' or argumenty[i] == "'":
-                napis, i = self.przetwarzaj_stringa(argumenty, i, dodaj_cudzyslow=False)
-                wynik.append(napis)
-            else:
-                wynik.append(self.konwertuj_argument(argumenty[i]))
-            i += 1
-
-        return wynik, i
-
-    def przetwarzaj_wejscie(self, wejscie):
-        """
-        Przetwarza wejście w formie tekstowej na strukturę danych (listę), obsługując zagnieżdżone tablice.
-
-        Args:
-            wejscie (str): Tekstowe wejście do przetworzenia, zawierające argumenty i tablice.
-
-        Returns:
-            list: Lista przetworzonych argumentów, gdzie tablice są reprezentowane jako zagnieżdżone listy.
-        """
-        # W przyszlosci mozliwe ze projekt przejdzie  na wyrazenia regularne ale narazie dla czytelnosci zostawiam to
-        wejscie = (
-            wejscie.replace(",", " ")
-            .replace("]", " ] ")
-            .replace("[", " [ ")
-            .replace("'", " ' ")
-            .replace('"', ' " ')
-            .replace("(", " [ ")
-            .replace(")", " ] ")
-            .replace("\n", " ")
+        koncowka_argumetnow = "" if 1 == param_count else "y"
+        wyjscie = ", lub 'stop' by zakonczyc testy" if test_index > 3 else ""
+        wejscie = input(
+            f"\nTest nr {test_index}\nPodaj {param_count} argument{koncowka_argumetnow} testowe{wyjscie}: "
         )
-        argumenty = wejscie.split()
-
-        przetwarzaj = {
-            "[": self.przetwarzaj_tablice,
-            '"': self.przetwarzaj_stringa,
-            "'": self.przetwarzaj_stringa,
-        }
-
-        wyniki = []
-        i = 0
-        while i < len(argumenty):
-            if argumenty[i] in przetwarzaj:
-                element, i = przetwarzaj[argumenty[i]](argumenty, i)
-                wyniki.append(element)
-            else:
-                wyniki.append(self.konwertuj_argument(argumenty[i]))
-            i += 1
-
-        return wyniki
+        print(f"\033[F\033[K\033[F\033[K\033[F\033[K", end="")
+        return wejscie
 
     def wynik_wykonania_funkcji(
-        self, funkcja: Callable, parametry: Tuple
+        self, funkcja: Callable, parametry: str
     ) -> Tuple[Any, bool]:
         """
         Uruchamia podaną funkcję z przekazanymi parametrami i przechwycuje jej wynik.
@@ -302,13 +166,14 @@ class prime(Bazowa):
             bool: Flaga wskazująca, czy wynik został zwrócony przez funkcję (False),
                   czy był wyprintowany na standardowe wyjście (True).
         """
-        parametry_kopia = deepcopy(parametry)
 
         f = io.StringIO()
         with redirect_stdout(f):
-            wynik = funkcja(*parametry_kopia)
+            wynik = funkcja(*eval(f"[{parametry}]"))
         if wynik is None:
             return repr(f.getvalue().strip()), True
+        elif isinstance(wynik, str):
+            wynik = f'"{wynik}"'
 
         return wynik, False
 

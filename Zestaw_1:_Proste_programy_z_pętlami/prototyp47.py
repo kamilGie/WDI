@@ -10,11 +10,11 @@
 # ====================================================================================================>
 
 
-def Zadanie_47(S): ...
+def Zadanie_47(): ...
 
 
 if __name__ == "__main__":
     from Develop import stworz_zadanie
 
-    Zadanie_47(1370)
+    Zadanie_47()
     # stworz_zadanie([Zadanie_47])

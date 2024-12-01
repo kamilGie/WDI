@@ -8,9 +8,6 @@ Każdy folder z zadaniem składa się z trzech kluczowych plików:
 2. `szablon.py` – plik zawierający szablon do wypełnienia własnym rozwiązaniem.
 3. `testy.py` – plik zawierający testy jednostkowe, które sprawdzają poprawność funkcji napisanych w pliku `szablon.py`.
 
-
-
-
 ### 🧪 Jak testować swoje rozwiązania?
 
 
@@ -22,27 +19,45 @@ https://github.com/user-attachments/assets/ad6d166e-bda7-4eca-a8cc-86d984913e0f
 3. Odkomentuj funkcję `odpal_testy()`.
 4. Uruchom plik `szablon.py`, a funkcja `odpal_testy()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
 
+
+### 🐛 Zgłaszanie błędów
+Błędy w rozwiązaniach, testach lub treściach zgłaszać na <a href="https://github.com/kamilgie/ASRT-WDI/issues/new?labels=bug"> ****Issues**** </a> lub <a href="https://gieras.pl/"> ****prywatnie**** </a> 
+
 ### 🧱 Prototypy
 
-Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest nazwane `prototyp.py`.
+Nierozwiązane zadania znajdują się w plikach `prototyp.py` i czekają na rozwiązanie. 
+
 
 <details>
    
-   <summary> Film demonstrujący </summary>
-   
-   [https://github.com/user-attachments/assets/17b4a697-6db3-4fe1-9c67-c50fd1ca520b](https://github.com/user-attachments/assets/4f056381-d23a-489c-a659-516d49616b2f)
-
-</details>
+   <summary> Tworzenie Zadań na prototypie </summary>
 
 1. Po rozwiązaniu zadania na `prototyp.py` można stworzyć pełne zadanie, odkomentowując funkcję `stworz_zadanie` i przekazując w tablicy funkcje, które mają być objęte testami.
 2. Funkcja `stworz_zadanie` automatycznie przygotuje testy na podstawie przekazanych funkcji. Poprosi również o podanie argumentów testowych, które Twoim zdaniem mogą być interesujące lub problematyczne.
 3. Następnie utworzy folder zadania zawierający pliki: `rozwiazanie.py` oraz `szablon.py` na podstawie `prototyp.py`, a także `testy.py` na podstawie wcześniej wygenerowanych testów.
 
-   
+https://github.com/user-attachments/assets/f3316918-a5e9-457f-8c2e-b4a5e5f0f27c
 
- [Szczegóły dotyczące używania projektu, prototypów i działania tutaj](#szczegóły-projektu)
+
+
+</details>
+
+
  
 ---
+
+## Źródła rozwiązań 📚
+
+Część rozwiązań została zaczerpnięta (*bezczelnie podkradziona*) z poniższych repozytoriów.  
+Jestem ogromnie wdzięczny ich autorom za świetne prace, które bardzo pomogły! 
+
+- 🌟 [WDI-2023](https://github.com/pawlowiczf/WDI-2023) - [Filip Pawłowicz](https://github.com/pawlowiczf)
+- 🌟 [bit-algo-start-24-25-WDI](https://github.com/MarcinSerafin03/bit-algo-start-24-25-WDI) - [Marcin Serafin](https://github.com/MarcinSerafin03) ,[Ernest Szlamczyk](https://github.com/eszlamczyk) 
+- 🌟 [WDI2020](https://github.com/Wisien999/WDI2020) - [Wisien999](https://github.com/Wisien999)  
+
+
+
+
 ### 🗿 Najwięksi współtwórcy:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://github.com/kamilGie/ASRT-WDI/graphs/contributors">
@@ -50,7 +65,15 @@ Jeśli zadanie nie zostało jeszcze rozwiązane przez nikogo wcześniej, jest na
 </a>
 
 
+
+
+# Szczegóły Projektu
+
+<details>
+  <summary> 🤝 Jak pomóc i zostać współtwórcą? </summary>
+
 ## 🤝 Jak pomóc i zostać współtwórcą?
+
 
 - Zalecam [***utworzenie forka***](https://github.com/kamilGie/WDI/fork) oraz samodzielne stworzenie zadania i zgłaszanie swoich zmian za pomocą pull requestów.
 - Można również [dodać rozwiązanie zadania](https://github.com/kamilGie/ASRT-WDI/new/main/bufor_rozwi%C4%85za%C5%84), nie wychodząc z przeglądarki, korzystając z opcji "dodaj plik" w folderze bufor rozwiązań. W wolnym czasie będę z nich tworzył zadania. Szczegóły znajdziesz w [README folderu bufor rozwiązań](/bufor_rozwiązań).
@@ -71,10 +94,10 @@ SRT opiera się na **rozszerzaniu funkcjonalności**. Dzięki temu możesz dodaw
 
 - Sam feedback na temat tego, jak się pracuje, w jakim kierunku można pójść oraz czego brakuje, również będzie mile widziany. [kontakt](http://www.gieras.pl).
 
----
+
+</details>
 
 
-# Szczegóły Projektu
 
 <details>
   <summary> 🧪 Testowanie Zadania </summary>
@@ -125,11 +148,6 @@ if __name__ == "__main__":
 ```
 ### wynik takiego programu dalby taki wynik
 <img width="1504" alt="Zrzut ekranu 2024-10-24 o 22 26 09" src="https://github.com/user-attachments/assets/666313c3-15ec-4697-955c-1e5de81e23d7">
-
-### `test_Nr5_Zadanie_1_argumenty_20` oznacza:
-- **5**. test
-- Testuje funkcję **Zadanie_1**, czyli funkcję, która jest sprawdzana (to rozróżnienie jest przydatne w przyszłych zadaniach, gdzie testowanych będzie więcej funkcji).
-- Test został uruchomiony z argumentem **20** (czyli Zadanie_1(20)).
   
 Wynik testu wskazuje na błąd: widzimy komunikat `AssertionError: '3 4 5' not found in [''].` Oznacza to, że test oczekiwał pustego stringa `''`, a otrzymał `'3 4 5'`, co sugeruje, że wynik dla c = 5 został niepotrzebnie wypisany.
 
@@ -623,7 +641,7 @@ class data(domyslne_s):
     def __str__(self):
         res = str(date.today().day)
         res += "\n"
-        res += super().generuj()
+        res += super().__str__()
         return res
 ```
 Tak stworzoną klasę możemy już używać w funkcji `stworz_zadanie`, podając argument `szablon="data"`.
@@ -842,15 +860,3 @@ Wynik takiej komendy to:
 
 </details>
 </details>
-
----
-
-## 🤓 Kilka slów od Autora
-Projekt wydaje się być znacznie ambitniejszy, niż sugeruje problem, jakim jest WDI, oraz forma, w jakiej jest realizowany — czyli pisanie na kartce a program nie ma dzialac ma byc ladny. Powstał jednak z myślą o tym, że raczej nikt nie wykona wszystkich 200 zadań. By uniknac repozytoriów po 40 zadan i wspólnie stworzyć jakies większe.
-Na początku nie sądziłem, że projekt rozwinie się do takiego stopnia. Uważam, że stał się bardziej systemem rozwiązań, szablonów i testów , które planuje wykorzystać w innych zbiorach zadań lub przedmiotach. Tworzenie go dało mi fajny projekt w cv, fun i wiele doswiadczenia wiec nie istotne co sie dalej z nim stanie i tak bede z niego bardzo zadowolony. I tak wgl, projekt ASRT nie tylko dlatego ze to skrot 
-ale tez mozna poczuc podobienstwo do slowa ASseRT xddd co za legenda dajcie gwiazdke chce tego achigmenta za gwiazdki  plz ⭐⭐⭐
-
-
-
-  
-   
