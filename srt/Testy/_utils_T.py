@@ -2,7 +2,7 @@ RAMKA = "# =====================================================================
 
 NAGLOWEK = "class testy(unittest.TestCase):\n"
 
-IMPORTY = "import unittest\nimport io\nimport os\nimport sys\nfrom contextlib import redirect_stdout\nimport importlib\n"
+IMPORTY = "import unittest\nfrom contextlib import redirect_stdout\nimport io\n"
 
 ODPAL_TESTY = "def odpal_testy():\n    suite = unittest.TestLoader().loadTestsFromTestCase(testy)\n    unittest.TextTestRunner(verbosity=2,failfast=True).run(suite)\n"
 
@@ -14,11 +14,15 @@ def komenda(k: str, *args, **kwargs):
     w folderze glownym projektu src/Komendy
     Wiecej informacji o dodaniu wlasnej komendy jak i lista komend w ReadMe projektu
 
+
     Args:
         k (str): Komenda do wykonania.
         *args: Dodatkowe argumenty do komendy.
         **kwargs: Dodatkowe argumenty kluczowe do komendy.
     \"\"\"
+    import os
+    import sys
+    import importlib
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
     srt_dir = os.path.join( os.path.dirname(sciezka_pliku_wykonalnego), "../../srt")
     sys.path.append(srt_dir)

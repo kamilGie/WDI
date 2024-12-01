@@ -9,15 +9,23 @@
 # Do ogrodu przyszedł zły człowiek i przekręcił dwa lustra, każde o 90°. Proszę napisać funkcję
 # napraw(ogrod) poprawiającą położenie luster, tak aby przywrócić widoczność pomiędzy oboma
 # wejściami. Ogród jest reprezentowany jako dwuwymiarowa tablica wypełniona spacjami. Lustra
-# feprezentowane sa odpowiednio jako znaki: /i\\ .
+# feprezentowane sa odpowiednio jako znaki: / i \\ .
 # ====================================================================================================>
 
 
-def Zadanie_2A(): ...
+def Zadanie_2A(ogrod): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy2023_2A import odpal_testy
 
-    Zadanie_2A()
-    # stworz_zadanie([Zadanie_2A])
+    ogrod = [
+        ["/", "\\", ""],
+        ["", "/", "\\"],
+        ["", "", ""],
+    ]
+
+    Zadanie_2A(ogrod) # return -> [ ["\\", "\\", ""], ["", "\\", "\\"], ["", "", ""] ],
+
+
+    # odpal_testy()

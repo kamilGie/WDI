@@ -12,6 +12,6 @@ def Zadanie_167(slowo): ...
 if __name__ == "__main__":
     from testy167 import odpal_testy
 
-    # print(Zadanie_167(str(input("Podaj slowo: "))))
+    # Zadanie_167(str(input("Podaj slowo: ")))
 
     odpal_testy()
