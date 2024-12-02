@@ -1,0 +1,1 @@
+![Zadanie 05](../../srt/zbior_zadan/05)
