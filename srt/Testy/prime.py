@@ -3,7 +3,6 @@ import io
 from contextlib import redirect_stdout
 from Bazowa import Bazowa
 from typing import Callable, Tuple, Any
-import ast
 
 from _utils_T import (
     IMPORTY,
