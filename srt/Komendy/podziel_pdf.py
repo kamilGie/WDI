@@ -3,6 +3,8 @@ import pytesseract
 import os
 from PIL import Image
 
+# napisalem to w 15 minut i nie refaktorozowalem plz nie oceniac tego
+
 
 def sklej_zdjecia(image1_path, image2_path, output_path):
     image1, image2 = Image.open(image1_path), Image.open(image2_path)
@@ -56,7 +58,9 @@ def podziel_pdf():
             poprzednia_wysokosci = y
 
         if pozycje:
-            zdjecie = image.crop( (0, poprzednia_wysokosci, image.width, image.height - 250))
+            zdjecie = image.crop(
+                (0, poprzednia_wysokosci, image.width, image.height - 250)
+            )
             cropped_path = os.path.join(output_folder, f"{int(nr_zadan[-1])}.png")
             zdjecie.save(cropped_path, "PNG")
 
