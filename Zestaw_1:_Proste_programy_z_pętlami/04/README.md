@@ -1,1 +1,1 @@
-![Zadanie 04](../../srt/zbior_zadan/04)
+![Zadanie 04](../../srt/zbior_zadan/04.png)
