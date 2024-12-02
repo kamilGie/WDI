@@ -1,0 +1,1 @@
+![Zadanie 69](../../srt/zbior_zadan/69.png)
