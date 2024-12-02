@@ -2,26 +2,25 @@
 # Zadanie 145
 # Proszę zmodyfikować poprzedni program aby wypisywał znalezione n-ki.
 # ====================================================================================================>
+# Dla [1, 2, 3, 4, 5, 6], 6 wynik to '[1, 2, 3]\n[1, 6]\n[2, 3]' kolejnosci printowania nie ma znaczenia
 
 
-def rek(t, il, left, i=0, n=None, already_choosen=False, history=None):
-    history = history or []
-    n = n or len(t)
+# Juliusz Wasieleski
+def Zadanie_145(A, x):
+    res = []
+    rek(A, x, [], res)
+    for r in res:
+        print(r)
 
-    if left == 0 or i == n:
-        if left == 0 and il == 1 and already_choosen:
-            print(history)
+
+def rek(A, x, tmp_tab, final_tab, i=0, curr=1, dig_mult=0):
+    if curr == x and i == len(A) and dig_mult > 1:
+        final_tab.append(tmp_tab)
         return
-
-    rek(t, il, left, i + 1, n, already_choosen, [*history])
-
-    if il % t[i] == 0:
-        rek(t, il // t[i], left - 1, i + 1, n, True, [*history, t[i]])
-
+    if curr > x or curr == 0 or i == len(A):
+        return
+    rek(A, x, [*tmp_tab, A[i]], final_tab, i + 1, curr * A[i], dig_mult + 1)
+    rek(A, x, tmp_tab, final_tab, i + 1, curr, dig_mult)
     return
-
-
-def Zadanie_145(tablica, okreslony_iloczyn, liczba_elementow):
-    rek(tablica, okreslony_iloczyn, liczba_elementow)
 
 

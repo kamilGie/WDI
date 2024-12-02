@@ -5,13 +5,15 @@
 # tablicy liczba elementów sąsiadujących (w obrębia poziomu) z co najmniej 6 liczbami złożonymi jest jednakowa
 # albo wartość False w przeciwnym przypadku.
 # ====================================================================================================>
+# Maciej Sieniek
 
 
-def Zadanie_103(): ...
+def Zadanie_103(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy103 import odpal_testy
 
-    Zadanie_103()
-    # stworz_zadanie([Zadanie_103])
+    Zadanie_103(int(input('Podaj T: ')))
+
+    # odpal_testy()

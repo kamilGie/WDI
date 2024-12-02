@@ -1,5 +1,5 @@
 # ====================================================================================================>
-# Zadanie 168
+# Zadanie 4 2020
 # Dana jest liczba naturalna N. Proszę zaimplementować funkcję divide(N), która sprawdza
 # czy jest możliwe pocięcie liczby N na kawałki, tak aby każdy z kawałków był liczba pierwszą oraz liczba kawał-
 # ków też była liczbą pierwszą. Funkcja powinna zwracać wartość logiczną. Naprzykład: divide(2347)=True,
@@ -13,12 +13,36 @@
 # ====================================================================================================>
 
 
-def divide(N): ...
+def is_prime(num):
+    if num <= 1:
+        return False
+    if num == 2 or num == 3:
+        return True
+    if num % 2 == 0 or num % 3 == 0:
+        return False
+
+    for i in range(6, int(num**0.5) + 3, 6):
+        if num % (i + 1) == 0 or num % (i - 1) == 0:
+            return False
+
+    return True
 
 
-if __name__ == "__main__":
-    from testy168 import odpal_testy
+def rek(num, nums, i, parts):
+    # print(num, nums, i, parts)
 
-    # divide(int(input('Podaj N: ')))
+    if is_prime(num) and is_prime(parts):
+        return True
 
-    odpal_testy()
+    if i > num:
+        return False
+
+    if is_prime(num % i):
+        if rek(num // i, [num % i] + nums, 10, parts + 1):
+            return True
+
+    return rek(num, [*nums], i * 10, parts)
+
+
+def divide(N):
+    return rek(N, [], 10, 1)

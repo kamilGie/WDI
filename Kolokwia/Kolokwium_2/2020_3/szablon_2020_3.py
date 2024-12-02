@@ -9,14 +9,14 @@
 # print(chess([[4,0,2],[3,0,0],[6,5,3]])) # (0,1,1,0) suma=17
 # print(chess([[1,1,2,3],[-1,3,-1,4], [4,1,5,4], [5,0,3,6]] # (2,3,3,1) suma=35
 # ====================================================================================================>
-# chess(([[4,0,2],[3,0,0],[6,5,3]])) --> return(0,1,1,0)
 
 
 def chess(tab): ...
 
+
 if __name__ == "__main__":
-    from testy114 import odpal_testy
+    from testy_2020_3 import odpal_testy
 
-    # chess(list(input("Podaj tab: ")))
+    chess(([[4,0,2],[3,0,0],[6,5,3]])) # return(0,1,1,0)
 
-    odpal_testy()
+    # odpal_testy()

@@ -3,7 +3,7 @@ import os
 import sys
 import importlib
 
-from szablon117 import Zadanie_117
+from szablon_2021_4 import Zadanie_4
 
 
 def odpal_testy():
@@ -35,17 +35,19 @@ def komenda(k: str, *args, **kwargs):
 class testy(unittest.TestCase):
 
     def test_Nr01_Zadanie_117_argumenty_tablica(self):
-        self.assertEqual(Zadanie_117([[1, 1, 2], [3, 5, 8], [5, 8, 13]]), 3)
+        self.assertEqual(Zadanie_4([[1, 1, 2], [3, 5, 8], [5, 8, 13]]), 3)
 
     def test_Nr02_Zadanie_117_argumenty_tablica(self):
-        self.assertEqual( Zadanie_117([[1, 1, 2, 3, 5], [2, 3, 5, 8, 13], [1, 1, 2, 3, 5]]), 3)
+        self.assertEqual(
+            Zadanie_4([[1, 1, 2, 3, 5], [2, 3, 5, 8, 13], [1, 1, 2, 3, 5]]), 3
+        )
 
     def test_Nr03_Zadanie_117_argumenty_tablica(self):
-        self.assertEqual(Zadanie_117([[1, 1, 2, 3], [2, 3, 5, 8], [5, 8, 13, 21]]), 3)
+        self.assertEqual(Zadanie_4([[1, 1, 2, 3], [2, 3, 5, 8], [5, 8, 13, 21]]), 3)
 
     def test_Nr04_Zadanie_117_argumenty_tablica(self):
         self.assertEqual(
-            Zadanie_117(
+            Zadanie_4(
                 [
                     [1, 2, 3, 5, 8, 13],
                     [4, 6, 7, 2, 9, 10],
@@ -58,11 +60,13 @@ class testy(unittest.TestCase):
         )
 
     def test_Nr05_Zadanie_117_argumenty_tablica(self):
-        self.assertEqual( Zadanie_117([[1, 3, 5, 7], [2, 4, 6, 8], [3, 5, 7, 9], [5, 8, 10, 15]]), 4)
+        self.assertEqual(
+            Zadanie_4([[1, 3, 5, 7], [2, 4, 6, 8], [3, 5, 7, 9], [5, 8, 10, 15]]), 4
+        )
 
     def test_Nr06_Zadanie_117_argumenty_tablica(self):
         self.assertEqual(
-            Zadanie_117(
+            Zadanie_4(
                 [
                     [13, 8, 5, 3, 2, 1],
                     [4, 6, 7, 2, 9, 10],
@@ -75,12 +79,12 @@ class testy(unittest.TestCase):
 
     def test_Nr07_Zadanie_117_argumenty_tablica(self):
         self.assertEqual(
-            Zadanie_117([[5, 3, 2, 1], [8, 5, 3, 2], [13, 8, 5, 3], [21, 13, 8, 5]]), 4
+            Zadanie_4([[5, 3, 2, 1], [8, 5, 3, 2], [13, 8, 5, 3], [21, 13, 8, 5]]), 4
         )
 
     def test_Nr08_Zadanie_117_argumenty_tablica(self):
         self.assertEqual(
-            Zadanie_117(
+            Zadanie_4(
                 [
                     [2, 3, 5, 8, 13],
                     [10, 7, 15, 12, 21],
@@ -93,7 +97,7 @@ class testy(unittest.TestCase):
 
     def test_Nr09_Zadanie_117_argumenty_tablica(self):
         self.assertEqual(
-            Zadanie_117(
+            Zadanie_4(
                 [
                     [34, 55, 89, 144, 233, 377, 610, 987, 1597],
                     [55, 89, 144, 233, 377, 610, 987, 1597, 2584],
@@ -111,7 +115,7 @@ class testy(unittest.TestCase):
 
     def test_Nr10_Zadanie_117_argumenty_tablica(self):
         self.assertEqual(
-            Zadanie_117(
+            Zadanie_4(
                 [
                     [13, 8, 5, 3, 2, 1],
                     [4, 6, 7, 2, 9, 10],
@@ -124,7 +128,7 @@ class testy(unittest.TestCase):
 
     def test_Nr11_Zadanie_117_argumenty_tablica(self):
         self.assertEqual(
-            Zadanie_117(
+            Zadanie_4(
                 [
                     [1, 2, 4, 6, 10],
                     [2, 4, 6, 9, 14],
@@ -137,7 +141,7 @@ class testy(unittest.TestCase):
 
     def test_Nr12_Zadanie_117_argumenty_tablica(self):
         self.assertEqual(
-            Zadanie_117(
+            Zadanie_4(
                 [
                     [1, 1, 2, 3, 5, 8, 13],
                     [4, 6, 10, 16, 26, 42, 68],

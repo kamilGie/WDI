@@ -3,7 +3,7 @@ import os
 import sys
 import importlib
 
-from szablon114 import chess
+from szablon_2020_3 import chess
 
 
 def odpal_testy():
