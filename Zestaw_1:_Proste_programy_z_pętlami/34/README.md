@@ -1,0 +1,1 @@
+![Zadanie 34](../../srt/zbior_zadan/34.png)

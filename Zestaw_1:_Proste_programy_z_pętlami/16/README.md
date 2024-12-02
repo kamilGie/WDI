@@ -1,0 +1,1 @@
+![Zadanie 16](../../srt/zbior_zadan/16.png)

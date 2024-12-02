@@ -4,28 +4,20 @@
 # iloczynie.
 # ====================================================================================================>
 # return liczba enek
+# Bartłomiej Kozera
 
 
-def rek(t, il, left, i=0, n=None, already_choosen=False, history=None, counter=0):
-    history = history or []
-    n = n or len(t)
-
-    if left == 0 or i == n:
-        if left == 0 and il == 1 and already_choosen:
-            return counter + 1
-        return counter
-
-    counter = rek(t, il, left, i + 1, n, already_choosen, [*history], counter)
-
-    if il % t[i] == 0:
-        counter = rek(
-            t, il // t[i], left - 1, i + 1, n, True, [*history, t[i]], counter
-        )
-
+def Zadanie_144(A, x):
+    counter = rek(A, x)
     return counter
 
 
-def Zadanie_144(tablica, okreslony_iloczyn, liczba_elementow):
-    return rek(tablica, okreslony_iloczyn, liczba_elementow)
-
-
+def rek(A, x, i=0, curr=1, dig_mult=0):
+    if curr == x and i == len(A) and dig_mult > 1:
+        return 1
+    if curr > x or curr == 0 or i == len(A):
+        return 0
+    counter = 0
+    counter += rek(A, x, i + 1, curr * A[i], dig_mult + 1)
+    counter += rek(A, x, i + 1, curr, dig_mult)
+    return counter

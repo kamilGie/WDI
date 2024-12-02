@@ -6,12 +6,12 @@
 # return liczba enek
 
 
-def Zadanie_144(tablica, okreslony_iloczyn, liczba_elementow): ...
+def Zadanie_144(A, x): ...
 
 
 if __name__ == "__main__":
     from testy144 import odpal_testy
 
-    Zadanie_144(int(input('Podaj tablica: ')), int(input('Podaj okreslony_iloczyn: ')), int(input('Podaj liczba_elementow: ')))
+    Zadanie_144(list(input("Podaj A: ")), int(input("Podaj x: ")))
 
     # odpal_testy()

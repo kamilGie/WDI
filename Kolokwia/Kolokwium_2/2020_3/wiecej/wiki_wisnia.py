@@ -7,8 +7,6 @@ położenie wież w postaci krotki (row1, col1, row2, col2).
 Uwaga: zakładamy, że pola na których znajdują się wieże nie są szachowane.
 """
 
-# jak cos to nie dziala poprawnie
-
 # Bartłomiej Wiśniewski
 # Sumuję całe kolumny i wersze i odejmuję komórki nadmiernie zsumowane
 
@@ -84,4 +82,5 @@ print(chess(arr))  # (0,1,1,0) suma=17
 
 arr = [[1, 1, 2, 3], [-1, 3, -1, 4], [4, 1, 5, 4], [5, 0, 3, 6]]
 pt(arr)
+# jak cos to nie dziala poprawnie
 print(chess(arr))  # (2,3,3,1) suma=35
