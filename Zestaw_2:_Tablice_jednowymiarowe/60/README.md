@@ -1,10 +1,7 @@
 <picture>
-  <!-- Obraz dla ciemnego motywu -->
+  <source srcset="../../srt/zbior_zadan/60.png" media="(prefers-color-scheme: light)">
   <source srcset="../../srt/zbior_zadan/black_60.png" media="(prefers-color-scheme: dark)">
-  <!-- Obraz dla jasnego motywu -->
-  <source srcset="../../srt/zbior_zadan/black_60.png" media="(prefers-color-scheme: light)">
-  <!-- Obraz domyślny (na wypadek braku wsparcia dla <picture>) -->
-  <img src="../../srt/zbior_zadan/60.png" alt="Opis obrazu">
+  <img src="./srt/zbior_zadan/black_60.png" alt="zdjecie z plocka">
 </picture>
 
 ```python
