@@ -54,5 +54,5 @@ apply_custom_color_mapping(
     input_folder,
     output_folder,
     white_replacement=(38, 44, 54, 255),
-    black_replacement=(205, 217, 229, 26),
+    black_replacement=(205, 217, 229, 255),
 )
