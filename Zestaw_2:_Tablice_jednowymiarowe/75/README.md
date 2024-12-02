@@ -1,4 +1,9 @@
-![Zadanie 75](../../srt/zbior_zadan/75.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/75.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_75.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_75.png" alt="zadanie 75">
+</picture>
+
 ```python
 def Zadanie_75(T):
     if len(T) < 1:

@@ -1,4 +1,9 @@
-![Zadanie 119](../../srt/zbior_zadan/119.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/119.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_119.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_119.png" alt="zadanie 119">
+</picture>
+
 ```python
 def Zadanie_119(t):
     max_len = 0

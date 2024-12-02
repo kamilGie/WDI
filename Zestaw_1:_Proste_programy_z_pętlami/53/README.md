@@ -1,4 +1,9 @@
-![Zadanie 53](../../srt/zbior_zadan/53.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/53.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_53.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_53.png" alt="zadanie 53">
+</picture>
+
 ```python
 def is_two_three_five(num):
     for div in {2, 3, 5}:

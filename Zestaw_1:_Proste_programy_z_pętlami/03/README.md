@@ -1,4 +1,9 @@
-![Zadanie 03](../../srt/zbior_zadan/03.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/03.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_03.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_03.png" alt="zadanie 03">
+</picture>
+
 ```python
 def Zadanie_3():
     rok = 2024

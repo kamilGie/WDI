@@ -1,4 +1,9 @@
-![Zadanie 148](../../srt/zbior_zadan/148.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/148.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_148.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_148.png" alt="zadanie 148">
+</picture>
+
 ```python
 opcje = 0
 

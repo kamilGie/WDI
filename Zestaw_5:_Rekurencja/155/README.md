@@ -1,4 +1,9 @@
-![Zadanie 155](../../srt/zbior_zadan/155.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/155.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_155.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_155.png" alt="zadanie 155">
+</picture>
+
 ```python
 from math import sqrt
 

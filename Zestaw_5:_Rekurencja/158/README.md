@@ -1,4 +1,9 @@
-![Zadanie 158](../../srt/zbior_zadan/158.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/158.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_158.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_158.png" alt="zadanie 158">
+</picture>
+
 ```python
 def div(num):
     i = 2

@@ -1,4 +1,9 @@
-![Zadanie 82](../../srt/zbior_zadan/82.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/82.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_82.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_82.png" alt="zadanie 82">
+</picture>
+
 ```python
 PREZYCJA = 100
 

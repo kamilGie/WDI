@@ -1,4 +1,9 @@
-![Zadanie 50](../../srt/zbior_zadan/50.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/50.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_50.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_50.png" alt="zadanie 50">
+</picture>
+
 ```python
 # Julia Smerdel
 def fib_exists(num):

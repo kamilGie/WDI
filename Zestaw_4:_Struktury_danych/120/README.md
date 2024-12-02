@@ -1,4 +1,9 @@
-![Zadanie 120](../../srt/zbior_zadan/120.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/120.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_120.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_120.png" alt="zadanie 120">
+</picture>
+
 ```python
 def skr(num):
     x, y = num

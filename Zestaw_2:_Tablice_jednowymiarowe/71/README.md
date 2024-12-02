@@ -1,4 +1,9 @@
-![Zadanie 71](../../srt/zbior_zadan/71.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/71.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_71.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_71.png" alt="zadanie 71">
+</picture>
+
 ```python
 def Zadanie_71(sequence):
     if len(sequence) <= 2:

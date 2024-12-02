@@ -1,4 +1,9 @@
-![Zadanie 36](../../srt/zbior_zadan/36.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/36.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_36.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_36.png" alt="zadanie 36">
+</picture>
+
 ```python
 import math
 

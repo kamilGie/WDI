@@ -1,4 +1,9 @@
-![Zadanie 164](../../srt/zbior_zadan/164.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/164.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_164.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_164.png" alt="zadanie 164">
+</picture>
+
 ```python
 def Zadanie_164(num):
     def divisiors(num):

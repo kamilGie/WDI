@@ -1,4 +1,9 @@
-![Zadanie 169](../../srt/zbior_zadan/169.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/169.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_169.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_169.png" alt="zadanie 169">
+</picture>
+
 ```python
 def czy_wspolno_czynikowe(a, b):
     """

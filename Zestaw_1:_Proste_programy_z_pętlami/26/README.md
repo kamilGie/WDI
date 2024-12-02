@@ -1,4 +1,9 @@
-![Zadanie 26](../../srt/zbior_zadan/26.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/26.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_26.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_26.png" alt="zadanie 26">
+</picture>
+
 ```python
 def ulamek(a, b, n):
     print(a // b, end="")

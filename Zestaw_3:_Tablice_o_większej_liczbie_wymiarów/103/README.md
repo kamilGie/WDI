@@ -1,4 +1,9 @@
-![Zadanie 102](../../srt/zbior_zadan/103.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/103.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_103.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_103.png" alt="zadanie 103">
+</picture>
+
 ![poziom](https://github.com/user-attachments/assets/5ebd78fb-a2f3-48e9-899b-9e7b52557e2a)
 
 ```python

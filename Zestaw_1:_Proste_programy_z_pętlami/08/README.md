@@ -1,4 +1,9 @@
-![Zadanie 08](../../srt/zbior_zadan/08.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/08.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_08.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_08.png" alt="zadanie 08">
+</picture>
+
 ```python
 def Zadanie_8():
     eps = 10**-6

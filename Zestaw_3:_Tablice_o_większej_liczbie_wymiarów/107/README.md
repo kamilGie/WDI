@@ -1,4 +1,9 @@
-![Zadanie 107](../../srt/zbior_zadan/107.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/107.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_107.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_107.png" alt="zadanie 107">
+</picture>
+
 ```python
 def same_cyfry_pierwsze(n):
     k = n

@@ -1,4 +1,9 @@
-![Zadanie 156](../../srt/zbior_zadan/156.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/156.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_156.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_156.png" alt="zadanie 156">
+</picture>
+
 ```python
 def poss(t, idx, target):
     if abs(t[idx[0]] + t[idx[1]] + t[idx[2]] - target) < 0.00001:

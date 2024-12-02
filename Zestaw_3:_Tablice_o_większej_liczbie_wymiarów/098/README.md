@@ -1,4 +1,9 @@
-![Zadanie 098](../../srt/zbior_zadan/098.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/098.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_098.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_098.png" alt="zadanie 098">
+</picture>
+
 ```python
 def Zadanie_98(T1, T2):
     indeks_T2 = 0  # Początkowy indeks dla T2

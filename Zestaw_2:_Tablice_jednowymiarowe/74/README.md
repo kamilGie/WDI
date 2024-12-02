@@ -1,4 +1,9 @@
-![Zadanie 74](../../srt/zbior_zadan/74.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/74.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_74.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_74.png" alt="zadanie 74">
+</picture>
+
 ```python
 # blednie uznaje 1 za liczbe zlozona
 

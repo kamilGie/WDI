@@ -1,4 +1,9 @@
-![Zadanie 141](../../srt/zbior_zadan/141.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/141.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_141.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_141.png" alt="zadanie 141">
+</picture>
+
 ```python
 def waga2(li, n, res=[], p=0):
     if n == 0:

@@ -1,4 +1,9 @@
-![Zadanie 77](../../srt/zbior_zadan/77.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/77.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_77.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_77.png" alt="zadanie 77">
+</picture>
+
 ```python
 def czy_palindrom(T, poczatek, koniec):
     while poczatek < koniec:

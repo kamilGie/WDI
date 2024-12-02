@@ -1,4 +1,9 @@
-![Zadanie 112](../../srt/zbior_zadan/112.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/112.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_112.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_112.png" alt="zadanie 112">
+</picture>
+
 ```python
 # https://github.com/MarcinSerafin03/bit-algo-start-24-25-WDI/tree/main
 

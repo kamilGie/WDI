@@ -1,4 +1,9 @@
-![Zadanie 151](../../srt/zbior_zadan/151.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/151.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_151.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_151.png" alt="zadanie 151">
+</picture>
+
 ```python
 def is_on_board(y, x, n):
     return x < n and y < n

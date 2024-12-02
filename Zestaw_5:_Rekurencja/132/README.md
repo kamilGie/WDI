@@ -1,4 +1,9 @@
-![Zadanie 132](../../srt/zbior_zadan/132.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/132.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_132.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_132.png" alt="zadanie 132">
+</picture>
+
 ```python
 def symbol_newtona(n, k):
     if k == 0 or k == n:

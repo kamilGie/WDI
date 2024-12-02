@@ -1,4 +1,9 @@
-![Zadanie 40](../../srt/zbior_zadan/40.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/40.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_40.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_40.png" alt="zadanie 40">
+</picture>
+
 ```python
 def operator_lub_otwierajacy_nawias(znak):
     return znak == "+" or znak == "*" or znak == "("

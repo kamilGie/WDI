@@ -1,4 +1,9 @@
-![Zadanie 61](../../srt/zbior_zadan/61.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/61.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_61.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_61.png" alt="zadanie 61">
+</picture>
+
 ```python
 def same_digits(a, b):
     tab = [0 for _ in range(0, 10)]

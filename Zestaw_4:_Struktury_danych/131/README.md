@@ -1,4 +1,9 @@
-![Zadanie 131](../../srt/zbior_zadan/131.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/131.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_131.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_131.png" alt="zadanie 131">
+</picture>
+
 ```python
 def dodaj(liczba1, liczba2):
     """

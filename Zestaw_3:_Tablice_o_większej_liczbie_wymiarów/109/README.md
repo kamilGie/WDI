@@ -1,4 +1,9 @@
-![Zadanie 109](../../srt/zbior_zadan/109.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/109.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_109.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_109.png" alt="zadanie 109">
+</picture>
+
 ```python
 def Zadanie_109(tab):
     n = len(tab)

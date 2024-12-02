@@ -1,4 +1,9 @@
-![Zadanie 66](../../srt/zbior_zadan/66.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/66.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_66.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_66.png" alt="zadanie 66">
+</picture>
+
 ```python
 from random import randint
 

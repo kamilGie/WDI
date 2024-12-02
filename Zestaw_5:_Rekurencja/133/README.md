@@ -1,4 +1,9 @@
-![Zadanie 133](../../srt/zbior_zadan/133.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/133.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_133.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_133.png" alt="zadanie 133">
+</picture>
+
 ```python
 from math import log10, floor, sqrt
 

@@ -1,4 +1,9 @@
-![Zadanie 149](../../srt/zbior_zadan/149.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/149.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_149.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_149.png" alt="zadanie 149">
+</picture>
+
 ```python
 def suma_asci(napis):
     return sum(ord(ch) for ch in napis)

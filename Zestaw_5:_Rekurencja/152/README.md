@@ -1,4 +1,9 @@
-![Zadanie 152](../../srt/zbior_zadan/152.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/152.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_152.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_152.png" alt="zadanie 152">
+</picture>
+
 ```python
 def get_first_digit(num):
     while num > 9:

@@ -1,4 +1,9 @@
-![Zadanie 094](../../srt/zbior_zadan/094.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/094.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_094.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_094.png" alt="zadanie 094">
+</picture>
+
 ```python
 def at_least_one_even(n):
     temp = n

@@ -1,4 +1,9 @@
-![Zadanie 102](../../srt/zbior_zadan/102.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/102.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_102.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_102.png" alt="zadanie 102">
+</picture>
+
 ```python
 def same_digits(a, b):
     T1 = [0] * 10

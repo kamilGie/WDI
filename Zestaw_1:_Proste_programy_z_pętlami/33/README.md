@@ -1,4 +1,9 @@
-![Zadanie 33](../../srt/zbior_zadan/33.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/33.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_33.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_33.png" alt="zadanie 33">
+</picture>
+
 ```python
 def Zadanie_33(n):
     if n < 10:

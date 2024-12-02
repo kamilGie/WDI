@@ -1,4 +1,9 @@
-![Zadanie 135](../../srt/zbior_zadan/135.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/135.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_135.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_135.png" alt="zadanie 135">
+</picture>
+
 ```python
 def f(T, w, k):
 

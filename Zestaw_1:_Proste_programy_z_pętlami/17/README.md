@@ -1,4 +1,9 @@
-![Zadanie 17](../../srt/zbior_zadan/17.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/17.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_17.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_17.png" alt="zadanie 17">
+</picture>
+
 ```python
 # z bit ale nie wiem jak to ma niby dzialac xdd
 

@@ -1,4 +1,9 @@
-![Zadanie 122](../../srt/zbior_zadan/122.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/122.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_122.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_122.png" alt="zadanie 122">
+</picture>
+
 ```python
 def Zadanie_122(tab):
     for y in range(len(tab)):

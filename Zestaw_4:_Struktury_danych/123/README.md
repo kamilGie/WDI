@@ -1,4 +1,9 @@
-![Zadanie 123](../../srt/zbior_zadan/123.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/123.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_123.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_123.png" alt="zadanie 123">
+</picture>
+
 ```python
 def leng_of_longest_geometric_subsequence(sequence):
     if len(sequence) <= 2:

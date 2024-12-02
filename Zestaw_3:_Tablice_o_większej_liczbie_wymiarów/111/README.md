@@ -1,4 +1,9 @@
-![Zadanie 111](../../srt/zbior_zadan/111.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/111.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_111.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_111.png" alt="zadanie 111">
+</picture>
+
 ```python
 def sum_of_table(tab):
     n = len(tab)

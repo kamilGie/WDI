@@ -1,4 +1,9 @@
-![Zadanie 168](../../srt/zbior_zadan/168.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/168.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_168.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_168.png" alt="zadanie 168">
+</picture>
+
 ```python
 def is_prime(num):
     if num <= 1:

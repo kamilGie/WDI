@@ -1,4 +1,9 @@
-![Zadanie 130](../../srt/zbior_zadan/130.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/130.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_130.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_130.png" alt="zadanie 130">
+</picture>
+
 ```python
 def skroc(licznik, mianownik):
     """szukanie nwd i skracanie przez niego"""

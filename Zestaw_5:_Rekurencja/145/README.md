@@ -1,4 +1,9 @@
-![Zadanie 145](../../srt/zbior_zadan/145.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/145.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_145.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_145.png" alt="zadanie 145">
+</picture>
+
 ```python
 # Juliusz Wasieleski
 def Zadanie_145(A, x):

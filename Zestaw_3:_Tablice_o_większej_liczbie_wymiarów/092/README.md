@@ -1,4 +1,9 @@
-![Zadanie 092](../../srt/zbior_zadan/092.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/092.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_092.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_092.png" alt="zadanie 092">
+</picture>
+
 ```python
 def spirala(n):
 

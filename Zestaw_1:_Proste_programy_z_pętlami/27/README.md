@@ -1,4 +1,9 @@
-![Zadanie 27](../../srt/zbior_zadan/27.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/27.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_27.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_27.png" alt="zadanie 27">
+</picture>
+
 ```python
 def palindron_dziesietny(n):
     temp = n

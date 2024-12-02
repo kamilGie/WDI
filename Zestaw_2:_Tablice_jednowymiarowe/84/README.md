@@ -1,4 +1,9 @@
-![Zadanie 84](../../srt/zbior_zadan/84.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/84.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_84.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_84.png" alt="zadanie 84">
+</picture>
+
 ```python
 def multi(T):
     """

@@ -1,4 +1,9 @@
-![Zadanie 161](../../srt/zbior_zadan/161.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/161.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_161.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_161.png" alt="zadanie 161">
+</picture>
+
 ```python
 def policz_jedynki_binarnie(liczba):
     licznik = 0

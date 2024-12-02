@@ -1,4 +1,9 @@
-![Zadanie 116](../../srt/zbior_zadan/116.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/116.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_116.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_116.png" alt="zadanie 116">
+</picture>
+
 ```python
 def czy_wzglednie_pierwsze(a, b):
     def nwd(a, b):

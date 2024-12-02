@@ -1,4 +1,9 @@
-![Zadanie 146](../../srt/zbior_zadan/146.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/146.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_146.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_146.png" alt="zadanie 146">
+</picture>
+
 ```python
 def wypisz_dzialanie(split):
     res = ""

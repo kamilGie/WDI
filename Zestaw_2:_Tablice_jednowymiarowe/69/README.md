@@ -1,4 +1,9 @@
-![Zadanie 69](../../srt/zbior_zadan/69.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/69.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_69.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_69.png" alt="zadanie 69">
+</picture>
+
 ```python
 def longest_increasing_series(tab):
     counter = 1

@@ -1,4 +1,9 @@
-## Rozwiązanie poniżej 100 sekund 
+<picture>
+  <source srcset="../../srt/zbior_zadan/59.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_59.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_59.png" alt="zadanie 59">
+</picture>
+
 `rozwiazanie59.py` Spelnia zasady zestawu 1 i  **nie korzysta**  z tablic, krotek ani żadnych ułatwiających metod.
 Użyłem jedynie:
 - działań na liczbach,

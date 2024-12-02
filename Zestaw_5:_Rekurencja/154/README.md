@@ -1,4 +1,9 @@
-![Zadanie 154](../../srt/zbior_zadan/154.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/154.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_154.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_154.png" alt="zadanie 154">
+</picture>
+
 ```python
 # cos czesto psuje sie ta funkcja bedzie jeszcze poprawiana
 

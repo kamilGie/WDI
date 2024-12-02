@@ -1,4 +1,9 @@
-![Zadanie 105](../../srt/zbior_zadan/105.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/105.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_105.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_105.png" alt="zadanie 105">
+</picture>
+
 ```python
 def compare(a, b):
     cnt = 0

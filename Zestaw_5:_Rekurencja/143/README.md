@@ -1,4 +1,9 @@
-![Zadanie 143](../../srt/zbior_zadan/143.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/143.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_143.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_143.png" alt="zadanie 143">
+</picture>
+
 ```python
 def Zadanie_143(matrix):
     def calc_det_recur(matrix, y, il, poss, perm, inv):

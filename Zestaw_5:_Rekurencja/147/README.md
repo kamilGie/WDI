@@ -1,4 +1,9 @@
-![Zadanie 147](../../srt/zbior_zadan/147.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/147.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_147.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_147.png" alt="zadanie 147">
+</picture>
+
 ```python
 def move(from_start, to_end):
     print("Move", from_start, "to", to_end)

@@ -1,4 +1,9 @@
-![Zadanie 11](../../srt/zbior_zadan/11.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/11.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_11.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_11.png" alt="zadanie 11">
+</picture>
+
 ```python
 def divisors(n):
     if n == 0:

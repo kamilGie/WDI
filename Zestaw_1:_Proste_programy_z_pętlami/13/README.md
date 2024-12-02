@@ -1,4 +1,9 @@
-![Zadanie 13](../../srt/zbior_zadan/13.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/13.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_13.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_13.png" alt="zadanie 13">
+</picture>
+
 ```python
 def dzielniki(n):
     i = 2

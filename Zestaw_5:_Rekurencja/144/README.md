@@ -1,4 +1,9 @@
-![Zadanie 144](../../srt/zbior_zadan/144.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/144.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_144.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_144.png" alt="zadanie 144">
+</picture>
+
 ```python
 def Zadanie_144(A, x):
     counter = rek(A, x)

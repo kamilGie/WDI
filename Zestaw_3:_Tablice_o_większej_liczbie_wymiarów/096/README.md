@@ -1,4 +1,9 @@
-![Zadanie 096](../../srt/zbior_zadan/096.png)
+<picture>
+  <source srcset="../../srt/zbior_zadan/096.png" media="(prefers-color-scheme: light)">
+  <source srcset="../../srt/zbior_zadan/black_096.png" media="(prefers-color-scheme: dark)">
+  <img src="../../srt/zbior_zadan/black_096.png" alt="zadanie 096">
+</picture>
+
 ```python
 def sumowanie_wierszy(tab):
     suma = 0
