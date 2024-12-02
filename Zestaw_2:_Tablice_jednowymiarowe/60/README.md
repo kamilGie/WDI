@@ -1,4 +1,12 @@
-![Zadanie 60](../../srt/zbior_zadan/60.png)
+<picture>
+  <!-- Obraz dla ciemnego motywu -->
+  <source srcset="../../srt/zbior_zadan/black_60.png" media="(prefers-color-scheme: dark)">
+  <!-- Obraz dla jasnego motywu -->
+  <source srcset="../../srt/zbior_zadan/black_60.png" media="(prefers-color-scheme: light)">
+  <!-- Obraz domyślny (na wypadek braku wsparcia dla <picture>) -->
+  <img src="../../srt/zbior_zadan/60.png" alt="Opis obrazu">
+</picture>
+
 ```python
 def zamien_na_system(liczba, podstawa):
     znaki = "0123456789ABCDEF"
