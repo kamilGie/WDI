@@ -20,15 +20,14 @@ def apply_custom_color_mapping(
             output_path = os.path.join(output_folder, f"{prefix}{filename}")
 
             with Image.open(input_path).convert("RGBA") as img:
-
                 width, height = img.size
                 pixels = img.load()
+
                 for x in range(width):
                     for y in range(height):
                         r, g, b, a = pixels[x, y]
 
                         brightness = (r + g + b) / 3
-
                         t = brightness / 255
 
                         new_r = int(
@@ -46,15 +45,17 @@ def apply_custom_color_mapping(
 
                         pixels[x, y] = (new_r, new_g, new_b, new_a)
 
-                img.save(output_path)
+                # Konwersja na tryb RGB przed zapisem
+                img_rgb = img.convert("RGB")
+                img_rgb.save(output_path, "JPEG")
+                print(f"Zapisano: {output_path}")
 
 
 # Użycie
-input_folder = "."
-output_folder = "."
+inputOutput_folder = "../zbior_zadan/zestawy/"
 apply_custom_color_mapping(
-    input_folder,
-    output_folder,
+    inputOutput_folder,
+    inputOutput_folder,
     white_replacement=(38, 44, 54, 255),
     black_replacement=(205, 217, 229, 255),
 )
