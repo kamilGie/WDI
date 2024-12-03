@@ -35,7 +35,7 @@ class minimalizm(Bazowa):
             res += linia
 
         res = res.rstrip("\n")
-        res += "```"
+        res += "\n```"
         return res
 
     def __str__(self) -> str:
