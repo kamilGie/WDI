@@ -1,5 +1,5 @@
-<img width="793" alt="Zrzut ekranu 2024-12-2 o 01 23 03" src="https://github.com/user-attachments/assets/da72dab8-3084-4219-9789-9861a484b776">
-<img width="792" alt="Zrzut ekranu 2024-12-2 o 01 23 11" src="https://github.com/user-attachments/assets/91af08e6-fbff-48b5-b533-1a1856fffc38">
+
+![black_Zrzut ekranu 2024-12-3 o 23 20 49](https://github.com/user-attachments/assets/43af6693-e1a5-4548-9568-0f1cab084b41)
 
 ```python
 import copy
