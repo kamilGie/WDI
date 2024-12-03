@@ -1,3 +1,5 @@
+# nie refaktoryzowalme to tylko napisalem w 15 m prosze nie oceniac plz
+
 import os
 import glob
 import shutil

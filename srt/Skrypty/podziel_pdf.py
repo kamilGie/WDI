@@ -1,3 +1,5 @@
+# nie refaktoryzowalme to tylko napisalem w 15 m prosze nie oceniac plz
+
 from pdf2image import convert_from_path
 import pytesseract
 import os

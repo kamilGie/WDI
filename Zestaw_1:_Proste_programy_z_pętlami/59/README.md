@@ -4,7 +4,7 @@
   <img src="../../srt/zbior_zadan/black_59.png" alt="zadanie 59">
 </picture>
 
-`rozwiazanie59.py` Spelnia zasady zestawu 1 i  **nie korzysta**  z tablic, krotek ani żadnych ułatwiających metod.
+`rozwiazanie` **nie korzysta**  z tablic, krotek ani żadnych ułatwiających metod.
 Użyłem jedynie:
 - działań na liczbach,
 - rekurencji,
@@ -12,14 +12,14 @@ Użyłem jedynie:
 - importu `random`,
 - funkcji `print`.
 
-W folderze `więcej` znajdują się cztery inne rozwiązania, które nie ograniczają się wyłącznie do działań z zestawu 1. Zostały stworzone na szybko i nie skupiałem sie na nich  wiec najszybsza funkcja z tych rozwiązań działa w 43 sekund i na luzie można je dalej ulepszać
+W folderze `Rozwiązania` znajdują się cztery inne rozwiązania, które nie ograniczają się wyłącznie do działań z zestawu 1. Zostały stworzone na szybko i nie skupiałem sie na nich  wiec najszybsza funkcja z tych rozwiązań działa w 43 sekund i na luzie można je dalej ulepszać
 
 ### Czasy rozwiązań:
-- `reguly zestawu pierwszego` to rozwiązanie z pliku `rozwiazanie59.py`.
 
 <img width="1508" alt="Zrzut ekranu 2024-11-2 o 14 10 17" src="https://github.com/user-attachments/assets/9864293c-bc25-4a51-adb2-472cec0a5567">
 
 ```python
+
 # test Millera-Rabina sprawdzajacy czy liczba jest pierwsza.
 # Mozna tez napisac jakis deterministyczny test.
 # lecz dla liczb narcystycznych test Millera-Rabina dziala z wielkim prawdopodobeistwiem

@@ -1,6 +1,8 @@
 from PIL import Image
 import os
 
+# nie refaktoryzowalme to tylko napisalem w 15 m prosze nie oceniac plz
+
 
 def apply_custom_color_mapping(
     input_folder,
