@@ -1,4 +1,5 @@
-<img width="790" alt="Zrzut ekranu 2024-12-2 o 01 26 31" src="https://github.com/user-attachments/assets/68206c96-8bb8-425b-91ce-22c6fd3117d1">
+
+![black_Zrzut ekranu 2024-12-3 o 23 21 05](https://github.com/user-attachments/assets/21cd3999-c339-45a0-a0ad-32ef3f5bce3c)
 
 ```python
 def czy_wzglednie_pierwsze(a, b):
