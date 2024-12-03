@@ -1,5 +1,5 @@
-<img width="795" alt="Zrzut ekranu 2024-12-1 o 14 22 37" src="https://github.com/user-attachments/assets/42ae33cd-3f14-4afe-a832-b9162852b862">
 
+![black_Zrzut ekranu 2024-12-3 o 23 21 18](https://github.com/user-attachments/assets/fb7d1dfb-17f5-4e70-a3bf-12d5552a4bef)
 ```python
 # OPIS METODY
 # funkcja obraca każde 2 możliwe lustra.
