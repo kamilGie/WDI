@@ -1,4 +1,5 @@
-![black_Zrzut ekranu 2024-12-3 o 23 21 26](https://github.com/user-attachments/assets/a8c85af2-80d8-4c72-9d76-e2609c18e139)
+
+![black_Zrzut ekranu 2024-12-3 o 23 21 26](https://github.com/user-attachments/assets/a3a00dd6-7a9c-4010-8711-eeff35d3b53c)
 
 ```python
 def f_a(x):  # A(n), zwraca wynik > 0 dla x >= 2
