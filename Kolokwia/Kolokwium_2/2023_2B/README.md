@@ -1,4 +1,4 @@
-<img width="792" alt="Zrzut ekranu 2024-12-1 o 14 24 28" src="https://github.com/user-attachments/assets/ebbc4f9e-6ee4-4f50-ad51-bb2f11de9b30">
+![black_Zrzut ekranu 2024-12-3 o 23 21 26](https://github.com/user-attachments/assets/a8c85af2-80d8-4c72-9d76-e2609c18e139)
 
 ```python
 def f_a(x):  # A(n), zwraca wynik > 0 dla x >= 2
