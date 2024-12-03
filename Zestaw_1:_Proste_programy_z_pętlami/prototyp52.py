@@ -8,11 +8,11 @@
 # i tak dla wszystkich do miliona
 
 
-def Zadanie_52(): ...
+def Zadanie_52(a):
+    return a
 
 
 if __name__ == "__main__":
     from Develop import stworz_zadanie
 
-    Zadanie_52()
-    # stworz_zadanie([Zadanie_52])
+    stworz_zadanie([Zadanie_52])
