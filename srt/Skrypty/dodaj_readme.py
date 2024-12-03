@@ -1,3 +1,6 @@
+# nie refaktoryzowalme to tylko napisalem w 15 m prosze nie oceniac plz
+
+
 def dodaj_readme():
     """skrypt tworzacy zdjecia zadan w folderach o tych samych nazwach"""
     import os
@@ -35,9 +38,15 @@ def dodaj_readme():
         nazwa_zdjecia, _ = element.split(".")
         for i, z in enumerate(zadania):
             if nazwa_zdjecia in z:
-                if "README.md" not in os.listdir( os.path.join(sciezki[i], nazwa_zdjecia)):
-                    with open( os.path.join(sciezki[i], nazwa_zdjecia, "README.md"), "w") as file:
-                        file.write( f"![Zadanie {nazwa_zdjecia}](../../srt/zbior_zadan/{nazwa_zdjecia}.png)")
+                if "README.md" not in os.listdir(
+                    os.path.join(sciezki[i], nazwa_zdjecia)
+                ):
+                    with open(
+                        os.path.join(sciezki[i], nazwa_zdjecia, "README.md"), "w"
+                    ) as file:
+                        file.write(
+                            f"![Zadanie {nazwa_zdjecia}](../../srt/zbior_zadan/{nazwa_zdjecia}.png)"
+                        )
 
                     print("dodano readme do ", nazwa_zdjecia)
 

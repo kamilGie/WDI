@@ -5,11 +5,12 @@
 # ====================================================================================================>
 
 
-def Zadanie_48(): ...
+def Zadanie_48(N): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy48 import odpal_testy
 
-    Zadanie_48()
-    # stworz_zadanie([Zadanie_48])
+    Zadanie_48(int(input('Podaj N: ')))
+
+    # odpal_testy()

@@ -6,6 +6,7 @@ def stworz_zadanie(
     testy="domyslne_t",
     rozwiazanie="domyslne_r",
     szablon="domyslne_s",
+    README="domyslne_rm",
 ) -> None:
     """
     Tworzy folder z rozwiązaniem na podstawie przekazanych funkcji.
@@ -24,17 +25,29 @@ def stworz_zadanie(
     sciezka_pliku_wykonalnego = os.path.abspath(sys.argv[0])
 
     # Numer zadania na podstawie nazwy pliku
-    nr_zadania = ( os.path.basename(sciezka_pliku_wykonalnego) .replace("prototyp", "") .replace(".py", "") .replace("Backup", ""))
+    nr_zadania = (
+        os.path.basename(sciezka_pliku_wykonalnego)
+        .replace("prototyp", "")
+        .replace(".py", "")
+        .replace("Backup", "")
+    )
     # importjemy stworz zadanie z folderu rodzica
     srt_folder = os.path.join(os.path.dirname(sciezka_pliku_wykonalnego), "../srt")
     sys.path.append(srt_folder)
 
     # To lsp moze zaznaczac jako blad ale program bedzie dzialac . lsp nie ogarnia sys.path join
     from StworzZadanie import stworz_zadanie
+
     # w przyszlosci jak projekt przejdzie na pakiety nie bedzie takiego problemu
 
     stworz_zadanie(
-        sciezka_pliku_wykonalnego, nr_zadania, funkcje, szablon, rozwiazanie, testy
+        sciezka_pliku_wykonalnego,
+        nr_zadania,
+        funkcje,
+        szablon,
+        rozwiazanie,
+        testy,
+        README,
     )
 
 
