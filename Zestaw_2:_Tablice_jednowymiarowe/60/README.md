@@ -1,12 +1,7 @@
 <picture>
   <source srcset="../../srt/zbior_zadan/60.png" media="(prefers-color-scheme: light)">
   <source srcset="../../srt/zbior_zadan/black_60.png" media="(prefers-color-scheme: dark)">
-  <img src="../../srt/zbior_zadan/black_60.png" alt="zadanie 60">
-</picture>
-
-  <source srcset="../../srt/zbior_zadan/60.png" media="(prefers-color-scheme: light)">
-  <source srcset="../../srt/zbior_zadan/black_60.png" media="(prefers-color-scheme: dark)">
-  <img src="./srt/zbior_zadan/black_60.png" alt="zdjecie z plocka">
+  <img src="../../srt/zbior_zadan/black_60.png" alt="Zadanie z Płocka, pozdro jak to czytasz ">
 </picture>
 
 ```python
