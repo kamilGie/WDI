@@ -6,11 +6,6 @@
 
 ```python
 def Zadanie_118(T, w):
-    """
-    Wystarczy tylko sprawdzać przecięcia wież. Są to jedyne pola, które po usunięciu wież przestaną być szachowane.
-    Należy więc znaleźć maksymalną sumę tych dwóch przecięć.
-    """
-
     n = len(w)
     res = (0, 0)
     max_nie_szachowanych = 0
@@ -22,5 +17,12 @@ def Zadanie_118(T, w):
                 res = (w1, w2)
 
     return res
-
 ```
+# Opis Rozwiązania:
+
+Po usunięciu dwóch wież cztery pola stają się nieschowane, ale na dwóch z nich wcześniej stały wieże, więc i tak nie były szachowane. Jedynymi polami, które przestają być szachowane, są przecięcia, więc należy znaleźć maksymalne z tych przecięć.
+
+<div style="display: flex; gap: 10px;">
+    <img src="https://github.com/user-attachments/assets/5061a29d-f6b5-4b29-a7f4-3c56a153266e" style="width: 45%; height: auto;">
+    <img src="https://github.com/user-attachments/assets/68d3df5a-5610-4fc9-9e45-b79141295649" style="width: 45%; height: auto;">
+</div>
