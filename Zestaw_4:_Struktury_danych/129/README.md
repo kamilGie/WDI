@@ -16,19 +16,6 @@ def skroc(licznik, mianownik):
 
 
 def Zadanie_129(liczba: str):
-    """
-    1. Funkcja dzieli liczbę na część całkowitą i część dziesiętną (po przecinku).
-    2. Jeśli część dziesiętna nie zawiera okresu (czyli nie ma nawiasu `()`), obliczamy odpowiedni licznik i mianownik na podstawie liczby po przecinku.
-    3. Jeśli część dziesiętna zawiera okres (np. "0.(3)"), dzielimy ją na część przed okresem i okres.
-       - Mianownik dla części okresowej obliczamy jako liczbę składającą się z dziewiątek (np. dla okresu o długości 1 to "9", dla okresu o długości 2 to "99").
-       - Licznik dla okresu to wartość tego okresu pomnożona przez odpowiedni mianownik.
-       - Licznik dla części przed okresem jest liczony podobnie jak w przypadku liczby bez okresu, ale musi być pomnożony przez odpowiedni mianownik uwzględniający obecność okresu.
-    4. Licznik końcowy obliczamy jako sumę trzech składników:
-       - Liczba całkowita pomnożona przez odpowiedni mianownik.
-       - Licznik dla części przed okresem.
-       - Licznik dla części okresowej.
-    5. Wynik zwracany jest w postaci skróconego ułamka
-    """
     calkowite, po_przecinku = liczba.split(".")
 
     if "(" not in po_przecinku:
@@ -43,12 +30,20 @@ def Zadanie_129(liczba: str):
         mianownik_przed = 10 ** len(przed_okresem)
 
         mianownik = mianownik_przed * mianownik_okres
-        licznik = (
-            int(calkowite) * mianownik + licznik_przed * mianownik_okres + int(okres)
-        )
+        licznik += int(calkowite) * mianownik
+        licznik = licznik_przed * mianownik_okres + int(okres)        
 
     return skroc(licznik, mianownik)
-
-
-
 ```
+# Opis Rozwiązania
+## Zadanie_129
+1. Funkcja dzieli liczbę na część całkowitą i część dziesiętną (po przecinku).
+2. Jeśli część dziesiętna nie zawiera okresu (czyli nie ma nawiasu `()`), obliczamy odpowiedni licznik i mianownik na podstawie liczby po przecinku.
+3. Jeśli część dziesiętna zawiera okres np. `"0.(3)"`, dzielimy ją na część przed okresem i okres.
+ - Mianownik dla części okresowej obliczamy jako liczbę składającą się z dziewiątek np. dla okresu o `długości 1` to `9`, dla okresu o `długości 2` to `99`.
+ - Licznik dla części przed okresem jest liczony podobnie jak w przypadku liczby bez okresu, ale musi być pomnożony przez odpowiedni mianownik uwzględniający obecność okresu.
+4. Licznik końcowy obliczamy jako sumę trzech składników:
+ - Liczba całkowita pomnożona przez odpowiedni mianownik.
+ - Licznik dla części przed okresem.
+ - Licznik dla części okresowej.
+5. Wynik zwracany jest w postaci skróconego ułamka
