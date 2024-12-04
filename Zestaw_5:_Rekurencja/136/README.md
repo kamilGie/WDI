@@ -5,9 +5,6 @@
 </picture>
 
 ```python
-# tbh to nie wiem na czym polega to zadanie xddd
-
-
 def if_jump_possible(T, y, x):
     if 0 <= y < len(T):
         if 0 <= x < len(T):
