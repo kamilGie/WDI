@@ -6,15 +6,6 @@
 
 ```python
 def Zadanie_139(N):
-    """
-    Mnożymy przez 2, 3 i 5, a w ten sposób otrzymujemy wszystkie liczby dwu-trzy-piątkowe.
-
-    Dla optymalizacji i usunięcia powtórzeń:
-    Jeśli liczba powstała z pomnożenia przez 2, to możemy pomnożyć ją przez 2, 3 lub 5.
-    Jeśli liczba powstała z pomnożenia przez 3, aby uniknąć powtórzeń, mnożymy ją tylko przez 3 i 5.
-    Jeśli liczba powstała z pomnożenia przez 5, aby uniknąć powtórzeń, mnożymy ją tylko przez 5.
-    """
-
     def mnozenie(liczba, ostatnie_mnozenie):
         if liczba > N:
             return
@@ -28,5 +19,14 @@ def Zadanie_139(N):
             mnozenie(liczba * 2, 2)
 
     mnozenie(1, 1)
-
 ```
+# Opis Rozwiązania:
+## `Zadanie_139`
+Mnożymy  przez 2, 3 i 5, a w ten sposób otrzymujemy wszystkie liczby dwu-trzy-piątkowe.
+
+Dla optymalizacji i usunięcia powtórzeń:
+- Jeśli liczba powstała z pomnożenia przez 2, to możemy pomnożyć ją przez 2, 3 lub 5.
+- Jeśli liczba powstała z pomnożenia przez 3, aby uniknąć powtórzeń, mnożymy ją tylko przez 3 i 5.
+- Jeśli liczba powstała z pomnożenia przez 5, aby uniknąć powtórzeń, mnożymy ją tylko przez 5.
+
+![WDI RST](https://github.com/user-attachments/assets/3f2bb7c2-f5ac-4926-b2f7-432ce72d7d36)
