@@ -11,11 +11,16 @@
 # ====================================================================================================>
 
 
-def Zadanie_171(): ...
+def hanoi_stos(n, a="a", b="b", c="c"): ...
+
+
+def hanoi_wikipedia(n, a="a", b="b", c="c"): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy171 import odpal_testy
 
-    Zadanie_171()
-    # stworz_zadanie([Zadanie_171])
+    hanoi_stos(int(input("Podaj n: ")))
+    hanoi_wikipedia(int(input("Podaj n: ")))
+
+    # odpal_testy()
