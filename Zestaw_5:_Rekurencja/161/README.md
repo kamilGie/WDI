@@ -14,27 +14,14 @@ def policz_jedynki_binarnie(liczba):
 
 
 def Zadanie_161(T):
-    """
-    Tworzę `tablicę_jedynek`, która przechowuje sume jedynek w zapisie binarnym wszystkich liczb z T.
-
-    Jeśli podzbiór ma istnieć, suma całej `tablicy_jedynek` musi być podzielna przez 3, a wynik
-    dzielenia tej sumy przez 3 będzie docelową sumą dla każdego podzbioru.
-
-    Następnie rekurencyjnie tworzę 3 sumy: `A`, `B`, `C`. Dodając do każdej z nich wartości z `tablicy_jedynek` sprawdzam,
-    czy jakaś kombinacja pozwoli rozdzielić liczby tak, aby suma w żadnym z podzbiorów nie przekroczyła docelowej wartości.
-    Jeśli uda się rozdzielić wszystkie elementy z tablicy jedynek i nie przekroczyć docelowej sumy, to podział jest możliwy.
-
-    Dodatkowo `tablica_jedynek` jest posortowana malejąco w celu optymalizacji.
-    """
-
+    # Przechowuje liczbe jedynek w zapisie binarnym każdej liczby z T.
     tablica_jedynek = [policz_jedynki_binarnie(x) for x in T]
-    suma_jedynek = sum(tablica_jedynek)
 
+    suma_jedynek = sum(tablica_jedynek)
     if suma_jedynek % 3 != 0:
         return False
 
     cel = suma_jedynek // 3
-    tablica_jedynek = sorted(tablica_jedynek, reverse=True)
 
     def czy_mozna_podzielic(A, B, C, indeks):
         if indeks == len(T):
@@ -52,7 +39,22 @@ def Zadanie_161(T):
         return False
 
     return czy_mozna_podzielic(0, 0, 0, 0)
-
-
-
 ```
+
+# Opis Rozwiązania:
+## `Zadanie_161`
+
+### `tablica_jedynek`
+Przechowuje liczbe jedynek w zapisie binarnym każdej z liczby z T. np:
+- `T=[3, 5, 7, 10, 15]`
+- `tablica_jedynek=[2,2,3,2,4]`
+        
+
+Jeśli podzbiór ma istnieć, suma całej `tablicy_jedynek` musi być podzielna przez 3, a wynik
+dzielenia tej sumy przez 3 będzie docelową sumą dla każdego podzbioru.
+
+### `czy_mozna_podzielic`
+Rekurencyjnie tworzę 3 sumy: `A`, `B`, `C`. Dodając do każdej z nich wartości z `tablicy_jedynek` sprawdzam,
+czy jakaś kombinacja pozwoli rozdzielić liczby tak, aby suma w żadnym z podzbiorów nie przekroczyła docelowej wartości.
+Jeśli uda się rozdzielić wszystkie elementy z tablicy jedynek i nie przekroczyć docelowej sumy, to podział jest możliwy.
+
