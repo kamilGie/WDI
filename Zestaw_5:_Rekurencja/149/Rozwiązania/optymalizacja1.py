@@ -16,25 +16,18 @@ def suma_asci(napis):
 
 def kombinacje(litery, k):
     if k == 0:
-        return [""]
+        yield ""
+        return
     if len(litery) < k:
-        return []
+        return
 
-    z_pierwsza_litera = [litery[0] + comb for comb in kombinacje(litery[1:], k - 1)]
-    bez_pierwszej_litery = kombinacje(litery[1:], k)
+    for comb in kombinacje(litery[1:], k - 1):
+        yield litery[0] + comb
 
-    return z_pierwsza_litera + bez_pierwszej_litery
+    yield from kombinacje(litery[1:], k)
 
 
 def wyraz(s1, s2):
-    """
-    dlugosci napisu spolglosek jest obliczana przed
-
-    napisy sa set by ograniczyc powtorzenia
-
-    suma asci liczona przed by nie obliczac kila razy to samo
-    """
-
     samogloski = {"a", "e", "i", "o", "u", "y"}
     samogloski_s2 = [ch for ch in s2 if ch in samogloski]
     spolgloski_s2 = [ch for ch in s2 if ch not in samogloski]
@@ -42,7 +35,7 @@ def wyraz(s1, s2):
     asci_s1 = suma_asci(s1)
     liczba_samoglosek_s1 = sum(1 for ch in s1 if ch in samogloski)
 
-    for samogloskowy_napis in set(kombinacje(samogloski_s2, liczba_samoglosek_s1)):
+    for samogloskowy_napis in kombinacje(samogloski_s2, liczba_samoglosek_s1):
         wymagana_suma = asci_s1 - suma_asci(samogloskowy_napis)
         min_ilosci_spolglosek = max(wymagana_suma // ord("z"), 1)
         max_ilosci_spolglosek = max(wymagana_suma // ord("a"), 1)

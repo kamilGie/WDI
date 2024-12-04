@@ -5,56 +5,50 @@
 </picture>
 
 ```python
+
 def suma_asci(napis):
     return sum(ord(ch) for ch in napis)
 
 
 def kombinacje(litery, k):
-    """
-    Rekurencyjna funkcja zwracająca wszystkie kombinacje liter (napisy) o długości k.
-
-    Funkcja bierze pierwszą literę ze zbioru, a następnie wywołuje się
-    rekurencyjnie z pozostałą częścią zbioru (bez tej litery) oraz z k-1.
-
-    Następnie funkcja wywołuje się również na zbiorze bez pierwszej litery,
-    ale z zachowaniem tej samej długości k. Dzięki temu otrzymujemy wszystkie
-    możliwe kombinacje, które są zwracane w postaci listy napisów.
-
-    Oryginalnie ta funkcja powinna być generatorem,ale może to być zbyt zaawansowane
-    narzędzie więc zostało zmienione aby zwracało listę wyników.
-    """
     if k == 0:
-        return [""]
+        yield ""
+        return
     if len(litery) < k:
-        return []
+        return
 
-    z_pierwsza_litera = [litery[0] + comb for comb in kombinacje(litery[1:], k - 1)]
-    bez_pierwszej_litery = kombinacje(litery[1:], k)
+    # Kombinacje z pierwszą literą
+    for comb in kombinacje(litery[1:], k - 1):
+        yield litery[0] + comb
 
-    return z_pierwsza_litera + bez_pierwszej_litery
+    # Kombinacje bez pierwszej litery
+    yield from kombinacje(litery[1:], k)
 
 
 def wyraz(s1, s2):
-    """
-    Zbiór `s2` dzielę na dwa podzbiory: spółgłoski i samogłoski. Następnie z podzbioru samogłosek generuję
-    napisy, które mają długość równą liczbie samogłosek w `s1`. Dla tych napisów obliczam wymaganą sumę,
-    która jest potrzebna, aby osiągnąć sumę ASCII `s1`. Następnie ze zbioru spółgłosek generuję napisy,
-    które w sumie ASCII dają wymaganą wartość.
-    """
-
     samogloski = {"a", "e", "i", "o", "u", "y"}
-    samogloski_s2 = [ch for ch in s2 if ch in samogloski]
-    spolgloski_s2 = [ch for ch in s2 if ch not in samogloski]
 
-    asci_s1 = suma_asci(s1)
-    liczba_samoglosek_s1 = sum(1 for ch in s1 if ch in samogloski)
+    # Zbiór `s2` dzielę na dwa podzbiory: spółgłoski i samogłoski.
+    samogloski_s2 = []
+    spolgloski_s2 = []
+    for ch in s2:
+        if ch in samogloski:
+            samogloski_s2.append(ch)
+        else:
+            spolgloski_s2.append(ch)
 
+    # licze samogloski w s1
+    liczba_samoglosek_s1 = 0
+    for ch in s1:
+        if ch in samogloski:
+            liczba_samoglosek_s1 += 1
+
+    # Z podzbioru samogłosek generuję napisy, które mają długość równą liczbie samogłosek w `s1`.
     for samogloskowy_napis in kombinacje(samogloski_s2, liczba_samoglosek_s1):
-        wymagana_suma = asci_s1 - suma_asci(samogloskowy_napis)
-        min_ilosci_spolglosek = max(wymagana_suma // ord("z"), 1)
-        max_ilosci_spolglosek = max(wymagana_suma // ord("a"), 1)
+        wymagana_suma = suma_asci(s1) - suma_asci(samogloskowy_napis)
 
-        for k in range(min_ilosci_spolglosek, max_ilosci_spolglosek + 1):
+        # Następnie ze zbioru spółgłosek generuję napisy, i sprawdzam czy w sumie ASCII dają wymaganą wartość.
+        for k in range(len(spolgloski_s2) + 1):
             for spolgloskowy_napis in kombinacje(spolgloski_s2, k):
                 if suma_asci(spolgloskowy_napis) == wymagana_suma:
                     print(samogloskowy_napis + spolgloskowy_napis)

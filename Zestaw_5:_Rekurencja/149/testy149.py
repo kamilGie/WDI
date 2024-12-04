@@ -1,8 +1,6 @@
 import unittest
-import io
 import os
 import sys
-from contextlib import redirect_stdout
 import importlib
 
 from szablon149 import wyraz
