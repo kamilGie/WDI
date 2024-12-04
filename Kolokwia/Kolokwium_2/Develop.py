@@ -6,6 +6,7 @@ def stworz_zadanie(
     testy="domyslne_t",
     rozwiazanie="domyslne_r",
     szablon="domyslne_s",
+    README="domyslne_rm",
 ) -> None:
     """
     Tworzy folder z rozwiązaniem na podstawie przekazanych funkcji.
@@ -34,7 +35,7 @@ def stworz_zadanie(
     # w przyszlosci jak projekt przejdzie na pakiety nie bedzie takiego problemu
 
     stworz_zadanie(
-        sciezka_pliku_wykonalnego, nr_zadania, funkcje, szablon, rozwiazanie, testy
+        sciezka_pliku_wykonalnego, nr_zadania, funkcje, szablon, rozwiazanie, testy,README
     )
 
 

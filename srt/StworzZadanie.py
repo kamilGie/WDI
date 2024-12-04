@@ -45,6 +45,7 @@ class Zadanie:
         sciezka_rozwiazania = os.path.join(
             self.sciezka_zadania, Generator_dokumentu.nazwa_pliku
         )
+
         with open(sciezka_rozwiazania, "w") as file:
             file.write(str(Generator_dokumentu))
 
@@ -56,6 +57,7 @@ def stworz_zadanie(
     szablon: str,
     rozwiazanie: str,
     testy: str,
+    README: str,
 ):
     """
     Tworzy zadanie na podstawie prototypu oraz strategii.
@@ -67,6 +69,7 @@ def stworz_zadanie(
         szablon (str): Nazwa klasy która ma tworzyc plik szablonu
         rozwiazanie (str): nazwa klasy która ma tworzyc plik rozwiazanie
         testy (str): nazwa klasy która  ma tworzyc plik testow
+        README (str): Nazwa klasy która ma tworzyc plik szablonu
 
     Raises:
         ImportError: Jeśli klasy nie może być zaimportowana.
@@ -78,9 +81,10 @@ def stworz_zadanie(
         linie_prototypu = file.readlines()
     zadanie = Zadanie(linie_prototypu, sciezka_zadania, nr_zadania, funkcje)
 
-    zadanie.stworz_plik(szablon, "Szablon")
-    zadanie.stworz_plik(rozwiazanie, "Rozwiazanie")
     zadanie.stworz_plik(testy, "Testy")
+    zadanie.stworz_plik(README, "README")
+    zadanie.stworz_plik(rozwiazanie, "Rozwiazanie")
+    zadanie.stworz_plik(szablon, "Szablon")
 
     # Jeśli piszemy na prototypie, który nie jest backupem, stwórz z niego backup i usuń
     # zmiana nazwy nie dzialala zawsze z gitem wiec lepiej usunac i stworzyc nowe
