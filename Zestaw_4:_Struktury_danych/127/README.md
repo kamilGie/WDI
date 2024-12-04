@@ -6,33 +6,19 @@
 
 ```python
 def multi(T):
-    res = 0 
+    najdluzszy_cykl = 0
     for napis in T:
         n = len(napis)
 
         # Przeszukiwanie od połowy długości napisu w dół
-        for i in range(n // 2, 0, -1):
-            # Sprawdzenie, czy długość napisu jest podzielna przez i
-            if n % i == 0:
-                # Sprawdzenie, czy podnapis powtarzany (n // i) razy jest równy oryginalnemu napisowi
-                if napis[:i] * (n // i) == napis:
-                    res = max(res, i)
+        for dlugosc_cyklu in range(n // 2, 0, -1):
+            # Sprawdzenie, czy długość napisu jest podzielna przez dlugosci_cyklu
+            if n % dlugosc_cyklu == 0:
+                # Sprawdzenie, czy podnapis o długości `dlugosc_cyklu` powtarzany `liczba_powtorzen` razy tworzy oryginalny napis
+                fragment = napis[:dlugosc_cyklu]
+                liczba_powtorzen = n // dlugosc_cyklu
+                if fragment * liczba_powtorzen == napis:
+                    najdluzszy_cykl = max(najdluzszy_cykl, dlugosc_cyklu)
                     break
-    return res
+    return najdluzszy_cykl
 ```
-
-# Opis Rozwiązania:
-## `mulit`
-Dla kazdego napisu iterujemy od połowy długości napisu w dół.
-
-W każdej iteracji tworzę podnapis od 0 do bieżącej pozycji iteracji, sprawdzam, czy powtarzając podnapis , otrzymam oryginalny napis.
-
-np dla:
-1. `napis == "xyzxyzxyz"`
-2. `n == 9`
-3. `i == 4` bo jest polowa n zaokregolona w dol 
-4. n nie jest podzielne przez i ide dalej
-5. `i == 3`
-6. `napis[:i] == "xyz"`
-7. `napis[:i] * (n // i) == "xyzxyzxyz"`
-8. powtorzenie podnapisu daje orginalny napis mam napis wielokrotny dlugosci

@@ -67,8 +67,9 @@ def hanoi_wikipedia(n, a="a", b="b", c="c"):
                 wieza_b.append(wieza_c.pop())
                 print(c, "->", b)
 ```
+# Opis Rozwiązania
 
-## Opis `hanoi_wikipedia`:
+## `hanoi_wikipedia`:
 [Link do Wikipedi](https://en.wikipedia.org/wiki/Tower_of_Hanoi#Iterative_solution)
 
 Dokładnie ten algorytm tłumaczył Scifun w filmie w [tym momencie](https://youtu.be/iG4lHkfuu8I?t=354)

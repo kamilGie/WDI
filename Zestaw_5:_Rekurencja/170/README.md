@@ -24,8 +24,11 @@ def Zadanie_170(a, b):
     return stos[0]
 
 ```
-# Opis `Zadanie_170`
-### Funkcja_Ackermanna
+# Opis Rozwiązania
+
+## `Zadanie_170`
+
+### Funkcja Ackermana 
 [Wikipedia](https://pl.wikipedia.org/wiki/Funkcja_Ackermanna)
 
 [The Most Difficult Program to Compute? - Computerphile](https://www.youtube.com/watch?v=i7sm9dzFtEI&t)
