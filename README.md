@@ -2,30 +2,32 @@
 ## Automatyczne Szablony, Rozwiązania i Testy do WDI na AGH
 ### 🔧 Używanie Projektu
 
-Każdy folder z zadaniem składa się z trzech kluczowych plików:
+Każdy folder z zadaniem składa się z czterech składników:
 
-1. `rozwiazanie.py` – plik z gotowym rozwiązaniem zadania.
-2. `szablon.py` – plik zawierający szablon do wypełnienia własnym rozwiązaniem.
-3. `testy.py` – plik zawierający testy jednostkowe, które sprawdzają poprawność funkcji napisanych w pliku `szablon.py`.
+1. **`README.md`** – zawiera treść zadania, **główne rozwiązanie** oraz, okazjonalnie, opis rozwiązania.
+2. **`Rozwiązania`** – folder zawierający gotowe rozwiązania zadania.
+3. **`szablon.py`** – plik zawierający szablon do wypełnienia własnym rozwiązaniem.
+4. **`testy.py`** – plik z testami jednostkowymi.
+
 
 ### 🧪 Jak testować swoje rozwiązania?
 
+Wypełnij plik `szablon.py` i uruchom go, odkomentowując funkcję `odpal_testy()`
 
 https://github.com/user-attachments/assets/ad6d166e-bda7-4eca-a8cc-86d984913e0f
 
 
-1. Ściągnij repozytorium.
-2. Otwórz plik `szablon.py` w folderze zadania i wypełnij rozwiazaniem zadania.
-3. Odkomentuj funkcję `odpal_testy()`.
-4. Uruchom plik `szablon.py`, a funkcja `odpal_testy()` przeprowadzi testy jednostkowe na Twoim kodzie i wyświetli wyniki.
+### 🌑 Czarny Motyw Zestawu
+Każdy zestaw oraz każde zadanie zawiera plik README z opisem zadań. Jeśli masz ustawiony czarny motyw na GitHubie, zestaw ten będzie wyświetlany w ciemnej wersji.
 
+### 🐍 Wizualizacje Rozwiązań w Pygame
+Niektóre zadania zawierają wizualne wyjaśnienia algorytmów stworzone w Pygame, na przykład [160](https://github.com/kamilGie/ASRT-WDI/tree/main/Zestaw_5%3A_Rekurencja/160), [124](https://github.com/kamilGie/ASRT-WDI/tree/main/Zestaw_4%3A_Struktury_danych/124) czy [Kolokwium 2023 2A](https://github.com/kamilGie/ASRT-WDI/tree/main/Kolokwia/Kolokwium_2/2023_2A).
 
-### 🐛 Zgłaszanie błędów
-Błędy w rozwiązaniach, testach lub treściach zgłaszać na <a href="https://github.com/kamilgie/ASRT-WDI/issues/new?labels=bug"> ****Issues**** </a> lub <a href="https://gieras.pl/"> ****prywatnie**** </a> 
+### 🐛 Zgłaszanie Błędów
+Błędy w rozwiązaniach, testach lub treściach zgłaszaj na <a href="https://github.com/kamilgie/ASRT-WDI/issues/new?labels=bug">****Issues****</a> lub <a href="https://gieras.pl/">****prywatnie****</a>.
 
 ### 🧱 Prototypy
-
-Nierozwiązane zadania znajdują się w plikach `prototyp.py` i czekają na rozwiązanie. 
+Nierozwiązane zadania znajdują się w plikach `prototyp.py` i czekają na rozwiązanie. Po rozwiązaniu zadania można stworzyć pełne zadanie, automatycznie generując wszystkie pliki.
 
 
 <details>
