@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/ad6d166e-bda7-4eca-a8cc-86d984913e0f
 
 
 ### 🌑 Czarny Motyw Zestawu
-Każdy zestaw oraz każde zadanie zawiera plik README z opisem zadań. Jeśli masz ustawiony czarny motyw na GitHubie, zestaw ten będzie wyświetlany w ciemnej wersji.
+Każdy zestaw oraz każde zadanie zawiera plik `README` z opisem zadań. Jeśli masz ustawiony czarny motyw na GitHubie, zestaw ten będzie wyświetlany w ciemnej wersji.
 
 ### 🐍 Wizualizacje Rozwiązań w Pygame
 Niektóre zadania zawierają wizualne wyjaśnienia algorytmów stworzone w Pygame, na przykład [160](https://github.com/kamilGie/ASRT-WDI/tree/main/Zestaw_5%3A_Rekurencja/160), [124](https://github.com/kamilGie/ASRT-WDI/tree/main/Zestaw_4%3A_Struktury_danych/124) czy [Kolokwium 2023 2A](https://github.com/kamilGie/ASRT-WDI/tree/main/Kolokwia/Kolokwium_2/2023_2A).
