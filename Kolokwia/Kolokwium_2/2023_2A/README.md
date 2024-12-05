@@ -1,6 +1,24 @@
 
 ![black_Zrzut ekranu 2024-12-3 o 23 21 18](https://github.com/user-attachments/assets/fb7d1dfb-17f5-4e70-a3bf-12d5552a4bef)
 
+# Wizualizacja Rozwiązania
+
+### algorytm szukania:
+
+Przechodzimy przez oba lustra i sprawdzamy, czy ich obrót wyśle laser do końca.
+
+<div align="center"> 
+    <video src="https://github.com/user-attachments/assets/bdd8c0d3-ea93-4d61-8bf2-59e2d0e163e5" width="400" />
+</div>
+
+
+
+
+Kod do wizualizacji znajduje się w folderze "rozwiązania". Można zmieniać ogród, ale jego wymiary muszą wynosić 6x6.
+
+
+# Rozwiązanie
+
 ```python
 
 def check(T):
@@ -54,11 +72,3 @@ def Zadanie_2A(ogrod):  # i//n == wsp. y; i%n == wsp. x; y - wiersz; x - kolumna
 # Autor rozwiązania Piotr Polański
 
 ```
-
-# Opis Rozwiązania
-
-### algorytm szukania:
-
-https://github.com/user-attachments/assets/d6cd925a-45a8-4ff9-97d3-62b1dc77b6f8
-
-Kod do wizualizacji znajduje się w folderze "rozwiązania". Można zmieniać ogród, ale jego wymiary muszą wynosić 6x6.
