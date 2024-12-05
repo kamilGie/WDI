@@ -6,19 +6,27 @@
 
 ```python
 def Zadanie_167(slowo):
-    """
-    Tworzę tablicę pozycji samogłosek w napisie.
-    Dla dwóch kolejnych pozycji mnożę ich odległość przez odległości następnych par.
-    """
-
     samogloski = {"a", "e", "i", "o", "u"}
-    pozycje = [i for i, char in enumerate(slowo) if char in samogloski]
+
+    # tablica pozycji samoglosek w slowo
+    pozycje = []
+    for i in range(len(slowo)):
+        if slowo[i] in samogloski:
+            pozycje.append(i)
+
     if len(pozycje) < 2: return 0
 
+    # liczba możliwych kombinacji to odległości między samogloskami
     res = 1
     for i in range(1, len(pozycje)):
         res *= pozycje[i] - pozycje[i - 1]
 
     return res
-
 ```
+# Opis Rozwiązania
+
+### Przykładowe wywołanie
+
+Dla słowa `bbbabbabb` pozycje samogłosek to 3 i 6. Ich odległość wynosi 3, co oznacza, że mamy 3 kombinacje,
+ponieważ możemy zawsze przenieść jedną z liter między lewym a prawym przecięciem, a taka operacja będzie
+możliwa dla każdej odległości.

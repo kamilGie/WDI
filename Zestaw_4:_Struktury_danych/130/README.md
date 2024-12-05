@@ -16,11 +16,6 @@ def skroc(licznik, mianownik):
 
 
 def Zadanie_129(liczba: str):
-    """
-    Funkcję która zamienia liczby wymierne reprezentowane jako rozwinięcia dziesiętne w postaci
-    napisów na liczbę wymierną w postaci nieskracalnego ułamka jako pary licznik-mianownik.
-    Na przykład: ”0.25” na (1,4), ”0.(6)” na (2,3), ”0.(142857)” na (1,7)
-    """
     calkowite, po_przecinku = liczba.split(".")
 
     if "(" not in po_przecinku:
@@ -43,36 +38,32 @@ def Zadanie_129(liczba: str):
 
 
 def Zadanie_130(liczba1: str, liczba2: str) -> str:
-    """
-    Konwertuje obie liczby na postać ułamkową, sumuje i skracam.
-    Z tego ułamka obliczam część całkowitą.
-    Następnie, dopóki część ułamkowa ma resztę lub reszta się nie powtórzy:
-    - zapisuję w słowniku wystąpienie każdej reszty na określonej pozycji
-    - tworzę nową resztę, mnożąc ją przez 10 i dzieląc przez mianownik.
-    Jeśli reszta się powtarza, oznacza to, że mamy okres. Zwracam wynik z częścią całkowitą,
-    częścią ułamkową przed okresem oraz samym okresem w nawiasach.
-    Jeśli reszta się wyzeruje, zwracam część całkowitą z ułamkiem.
-    """
-
+    # Konwertuje obie liczby na postać ułamkową, sumuje i skracam.
     l1, m1 = Zadanie_129(liczba1)
     l2, m2 = Zadanie_129(liczba2)
     licznik, mianownik = skroc(l1 * m2 + l2 * m1, m1 * m2)
 
+    # Z ułamka obliczam część całkowitą jako
     calkowite = str(licznik // mianownik)
 
     reszta = licznik % mianownik
+    # slownik z pozycja wystapieniem reszt
     reszty = {}
     ulamek = ""
+
     while reszta:
+        # zapisuję w słowniku `reszty` wystąpienie każdej `reszta` na określonej pozycji
         reszty[reszta] = len(ulamek)
 
+        # sprawdzam następną resztę
         ulamek += str(reszta * 10 // mianownik)
         reszta = reszta * 10 % mianownik
-        if reszta in reszty:
+        if reszta in reszty: # reszta sie powtórzyła
             przed_okresem = ulamek[: reszty[reszta]]
             okres = ulamek[reszty[reszta] :]
             return f"{calkowite}.{przed_okresem}({okres})"
 
+    # reszta się wyzerowała, zwracam część całkowitą z ułamkiem.
     return calkowite + "." + (ulamek or "0")
 
 ```

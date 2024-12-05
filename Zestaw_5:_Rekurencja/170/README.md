@@ -6,17 +6,6 @@
 
 ```python
 def Zadanie_170(a, b):
-    """
-    Kolejkowanie wywołań, będziemy tworzyć tablice `stos` która ma na ostanich 2 wartościach `a` i `b`.
-    Wywołania są symulowane iteracyjnie poprzez odpowiednie manipulowanie stosu, aż do osiągnięcia końcowego wyniku.
-
-    Stos początkowo zawiera dwie wartości: `a` i `b`.
-    W każdej iteracji pobierane są dwie ostatnie wartości ze stosu.
-    Na podstawie wartości `a` i `b` wyznaczane są nowe wartości
-    i odkładane na stos, zgodnie z definicją funkcji Ackermanna:
-
-    Proces trwa, dopóki na stosie nie zostanie tylko jedna wartość.
-    """
     stos = [a, b]
 
     while len(stos) > 1:
@@ -35,3 +24,22 @@ def Zadanie_170(a, b):
     return stos[0]
 
 ```
+# Opis Rozwiązania
+
+## `Zadanie_170`
+
+### Funkcja Ackermana 
+[Wikipedia](https://pl.wikipedia.org/wiki/Funkcja_Ackermanna)
+
+[The Most Difficult Program to Compute? - Computerphile](https://www.youtube.com/watch?v=i7sm9dzFtEI&t)
+
+### Działanie `stos`
+Polega na kolejkowaniu wywołań, będziemy tworzyć tablice `stos` która ma na ostanich 2 wartościach `a` i `b`.
+Wywołania są symulowane iteracyjnie poprzez odpowiednie manipulowanie stosu, aż do osiągnięcia końcowego wyniku.
+
+Stos początkowo zawiera dwie wartości: `a` i `b`.
+W każdej iteracji pobierane są dwie ostatnie wartości ze stosu.
+Na podstawie wartości `a` i `b` wyznaczane są nowe wartości
+i odkładane na stos, zgodnie z definicją funkcji Ackermanna:
+
+Proces trwa, dopóki na stosie nie zostanie tylko jedna wartość.

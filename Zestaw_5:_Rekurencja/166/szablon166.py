@@ -14,6 +14,6 @@ def Zadanie_166(T1, T2): ...
 if __name__ == "__main__":
     from testy166 import odpal_testy
 
-    Zadanie_166(int(input("Podaj T1: ")), int(input("Podaj T2: ")))
+    Zadanie_166(list(input("Podaj T1: ")), list(input("Podaj T2: ")))
 
     # odpal_testy()

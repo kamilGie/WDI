@@ -4,7 +4,6 @@
   <img src="../../srt/zbior_zadan/black_103.png" alt="zadanie 103">
 </picture>
 
-![poziom](https://github.com/user-attachments/assets/5ebd78fb-a2f3-48e9-899b-9e7b52557e2a)
 
 ```python
 def is_complex(x):
@@ -42,3 +41,6 @@ def Zadanie_103(T):
 
 
 ```
+# Opis Rozwiązania
+
+![poziom](https://github.com/user-attachments/assets/5ebd78fb-a2f3-48e9-899b-9e7b52557e2a)

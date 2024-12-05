@@ -6,20 +6,19 @@
 
 ```python
 def multi(T):
-    """
-    Dla kazdego napisu iterujemy od połowy długości napisu w dół.
-    W każdej iteracji tworzę podnapis od 0 do bieżącej pozycji iteracji,
-    sprawdzam, czy powtarzając podnapis , otrzymam oryginalny napis.
-    """
-    res = 0
+    najdluzszy_cykl = 0
     for napis in T:
         n = len(napis)
-        for i in range(n // 2, 0, -1):
-            if n % i == 0 and napis[:i] * (n // i) == napis:
-                res = max(res, i)
-                break
-    return res
 
-
-
+        # Przeszukiwanie od połowy długości napisu w dół
+        for dlugosc_cyklu in range(n // 2, 0, -1):
+            # Sprawdzenie, czy długość napisu jest podzielna przez dlugosci_cyklu
+            if n % dlugosc_cyklu == 0:
+                # Sprawdzenie, czy podnapis o długości `dlugosc_cyklu` powtarzany `liczba_powtorzen` razy tworzy oryginalny napis
+                fragment = napis[:dlugosc_cyklu]
+                liczba_powtorzen = n // dlugosc_cyklu
+                if fragment * liczba_powtorzen == napis:
+                    najdluzszy_cykl = max(najdluzszy_cykl, dlugosc_cyklu)
+                    break
+    return najdluzszy_cykl
 ```
