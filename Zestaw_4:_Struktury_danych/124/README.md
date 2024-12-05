@@ -28,3 +28,11 @@ def Zadanie_124(Struktura):
     # Sprawdzamy, czy wszystkie punkty są obecne w strukturze
     return ( prawa_gora in Struktura and prawa_dol in Struktura and lewa_gora in Struktura and lewa_dol in Struktura)
 ```
+# Opis Rozwiązania
+Jeśli kwadrat istnieje i nie zawiera punktów w środku, jego wierzchołki będą znajdować się w odległości od osi współrzędnych równej odległości najbliższego punktu.
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/f9bb3ca3-144a-439a-b598-b19baac992f7" width="400" />
+</div>
+    
+Program wizualizacji znajduje się w rozwiązaniach. Klawisz `spacja` resetuje kwadrat, a klawisz `r` resetuje punkty.
