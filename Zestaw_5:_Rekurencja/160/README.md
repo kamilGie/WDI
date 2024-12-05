@@ -43,13 +43,12 @@ def Zadanie_160(T):
 
     return rek()
 ```
+
 # Opis Rozwiązania
 ## `nachodza`
 Nachodzenie zachodzi, jeśli kwadrat nie leży całkowicie po lewej, prawej, poniżej lub powyżej drugiego.
 
-https://github.com/user-attachments/assets/a1187c95-8b86-4e0a-9362-3ba7cd2aa890
-
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/d0757c79-6cd7-4993-90ca-acfdf58b845d" width="400" />
+</div>
 można potestowac program dostępny w rozwiązaniach 
-
-
-
