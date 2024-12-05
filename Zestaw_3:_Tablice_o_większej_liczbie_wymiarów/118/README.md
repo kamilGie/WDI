@@ -18,6 +18,7 @@ def Zadanie_118(T, w):
 
     return res
 ```
+
 # Opis Rozwiązania:
 
 Po usunięciu dwóch wież cztery pola stają się nieschowane, ale na dwóch z nich wcześniej stały wieże, więc i tak nie były szachowane. Jedynymi polami, które przestają być szachowane, są przecięcia, więc należy znaleźć maksymalne z tych przecięć.
@@ -27,8 +28,9 @@ Po usunięciu dwóch wież cztery pola stają się nieschowane, ale na dwóch z 
     <img src="https://github.com/user-attachments/assets/68d3df5a-5610-4fc9-9e45-b79141295649" style="width: 45%; height: auto;">
 </div>
 
-https://github.com/user-attachments/assets/8dd264d1-7c8e-4baf-803f-7d7dc0e0574c
-
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/ecf4c419-e22e-442b-8a9c-0efad6fea3d2" width="400" />
+</div>
 program Wizualizacji w rozwiązaniach pod nazwa `pomoc_szachowania` można sie pobawić
 
 
