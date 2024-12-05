@@ -131,7 +131,7 @@ highlighted_cells = []  # Przechowuje współrzędne dwóch wyróżnionych luste
 highlight_color = (255, 255, 0)
 # Główna pętla
 screen = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
-pygame.display.set_caption("Grid with Mirrors")
+pygame.display.set_caption("github.com/kamilGie/ASRT-WDI")
 generator = Zadanie_2A(GRID)  # Tworzymy generator
 grid = create_grid(GRID)
 n = len(grid)
