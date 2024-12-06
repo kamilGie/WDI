@@ -1,6 +1,4 @@
 import unittest
-from contextlib import redirect_stdout
-import io
 
 from szablon2022_A4 import place
 

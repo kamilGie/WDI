@@ -8,13 +8,21 @@
 # tablicę T zawierającą położenie wież po zmianie położenia wieży. Funkcja powinna zwrócić dwa pola (wiersz, kolumna) –
 # skąd i dokąd należy przenieść wieżę.
 #  ====================================================================================================>
+# To zadanie zazwyczaj ma wiele poprawnych rozwiązań, więc na testy patrzyłbym z przymrużeniem oka.
 
 
-def Zadanie_B4(): ...
+def move(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy2022_B4 import odpal_testy
 
-    Zadanie_B4()
-    # stworz_zadanie([Zadanie_B4])
+    move(
+        [
+            [True, True, False],
+            [False, True, False],
+            [False, False, False],
+        ]
+    )  # return  ((0, 0), (2, 0))
+
+    # odpal_testy()

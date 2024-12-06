@@ -16,6 +16,14 @@ def place(T): ...
 if __name__ == "__main__":
     from testy2022_A4 import odpal_testy
 
-    place(int(input('Podaj T: ')))
+    place(
+        [
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+        ]
+    )  # ->  return (2,2)
 
     # odpal_testy()
