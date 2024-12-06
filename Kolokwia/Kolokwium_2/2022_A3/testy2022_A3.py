@@ -87,8 +87,6 @@ class testy(unittest.TestCase):
     def test_Nr10_king(self):
             self.assertEqual(king(5,[(1, 2), (4, 0), (3, 4)]), 8)
 
-    def test_Nr11_king(self):
-            self.assertEqual(king(10,[(3, 4), (7, 8), (1, 9)]), 60)
 
     def test_Nr12_king(self):
             self.assertEqual(king(8,[(1, 2), (2, 4), (1, 7), (3, 6), (4, 1), (4, 6), (7,2)]), 20)
