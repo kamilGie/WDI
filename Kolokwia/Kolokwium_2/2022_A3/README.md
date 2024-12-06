@@ -1,4 +1,7 @@
+![black_Zrzut ekranu 2024-12-6 o 11 17 57](https://github.com/user-attachments/assets/0f7f8dc4-7234-4497-b068-a64a40a563d0)
+
 ```python
+
 from math import inf
 
 
@@ -36,3 +39,21 @@ def king(N, L):
     result = maximize_moves(0, 0, forbidden, N)
     return None if result == -inf else result
 ```
+
+# Opis Rozwiazania
+### Wizualizacja rozwiązania
+
+
+Ważne jest zauważenie że król cofnie się tylko wtedy, gdy po ruchu w górę wykona ruch w dół i odwrotnie.
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/be3b9445-ec0f-4738-877d-490f7df156df" width="400" />
+</div>
+
+Program w rozwiazaniach 
+- `r`  resetuje pozycję króla do startowej.
+-  `spacja` rozpoczyna animację ruchu króla wzdłuż wyznaczonej ścieżki, jeśli istnieje.
+
+jest miejsce na wpisanie swojej funkcji `king` by porownywala
+
+
