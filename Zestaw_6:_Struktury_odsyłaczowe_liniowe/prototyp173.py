@@ -4,7 +4,14 @@
 # ====================================================================================================>
 
 
-def Zadanie_173(): ...
+class Node:
+    def __init__(self, val, next=None):
+        self.val = val
+        self.next = next
+
+
+def Zadanie_173(node):
+
 
 
 if __name__ == "__main__":
