@@ -28,9 +28,7 @@ def liczba_ruchow(T, kierunek_kolumn, start):
 
         # Ruch w lewo/prawo.
         wartosc_ruch_bok = float("inf")
-        if 0 <= y + kierunek_kolumn < n and czy_wzglednie_pierwsze(
-            T[x][y], T[x][y + kierunek_kolumn]
-        ):
+        if 0 <= y + kierunek_kolumn < n and czy_wzglednie_pierwsze( T[x][y], T[x][y + kierunek_kolumn]):
             wartosc_ruch_bok = rek(x, y + kierunek_kolumn, "bok")
             if ostatni_ruch != "bok":
                 wartosc_ruch_bok += 1

@@ -9,11 +9,12 @@
 #  ====================================================================================================>
 
 
-def Zadanie_A3(): ...
+def king(N, L): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy2022_A3 import odpal_testy
 
-    Zadanie_A3()
-    # stworz_zadanie([Zadanie_A3])
+    king(int(input("Podaj N: ")), list(input("Podaj L: ")))
+
+    # odpal_testy()

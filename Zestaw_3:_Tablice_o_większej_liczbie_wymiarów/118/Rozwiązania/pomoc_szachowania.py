@@ -58,7 +58,7 @@ def draw_board(screen, t, w, removed_towers):
 def main():
     pygame.init()
     screen = pygame.display.set_mode((N * CELL_SIZE, N * CELL_SIZE))
-    pygame.display.set_caption("Wieże na szachownicy")
+    pygame.display.set_caption("github.com/kamilGie/ASRT-WD")
     clock = pygame.time.Clock()
 
     # Generowanie danych tablicy T i W
