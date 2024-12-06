@@ -4,7 +4,7 @@ from math import inf
 
 def maximize_moves(x, y, forbidden, N, prev_move=None):
     """Zwroci maxymalna ilosci ruchow do konca lub -inf jak sie nie da dotrzec do konca"""
-    # sprawdzam czy jestem na legalnej pozycji
+    # Sprawdzam czy jestem na legalnej pozycji
     if (x, y) in forbidden:  # bite pole
         return -inf
     if not (0 <= x < N and 0 <= y < N):  # za granicami szachownicy

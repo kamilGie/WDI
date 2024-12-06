@@ -8,13 +8,25 @@
 # funkcji należy przekazać wyłącznie dwa parametry: rozmiar szachownicy N oraz listę L zawierającą położenia pionków. Jeżeli dotarcie do celu nie jest możliwe funkcja powinna zwrócić wartość None.
 #  ====================================================================================================>
 
+from math import inf
 
-def king(N, L): ...
+def king(N, L):
+    forbidden = {p for p in L} | {(px - 1, py - 1) for px, py in L} | {(px - 1, py + 1) for px, py in L}
 
+    def maximize_moves(x, y, prev_move=None):
+        if not (0 <= x < N and 0 <= y < N) or (x, y) in forbidden:
+            return -inf # nie legalny ruch
 
-if __name__ == "__main__":
-    from testy2022_A3 import odpal_testy
+        if (x, y) == (N - 1, N - 1): # meta
+            return 0
 
-    king(int(input("Podaj N: ")), list(input("Podaj L: ")))
+        res = -inf
+        if prev_move != "up":  # czy moge w dol
+            res = maximize_moves(x + 1, y, "down")
+        if prev_move != "down":  # czy moge w gore
+            res = max(res, maximize_moves(x - 1, y, "up"))
+        return max(res, (maximize_moves(x, y + 1))) + 1  # W prawo
 
-    # odpal_testy()
+    result = maximize_moves(0, 0)
+    return None if result == -inf else result
+
