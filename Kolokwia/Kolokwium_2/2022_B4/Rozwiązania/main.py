@@ -10,7 +10,7 @@
 #  ====================================================================================================>
 
 
-# Brutal force, ale działa – prostszego rozwiązania nie wymyślę
+# Brutal force, ale działa – najprościej
 
 
 def wszystkie_szachowane(T):
@@ -54,5 +54,3 @@ def move(T):
                             T[k][z] = False
                 T[i][j] = True
     return
-
-
