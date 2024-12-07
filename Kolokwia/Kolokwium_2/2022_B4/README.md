@@ -1,12 +1,7 @@
-<picture>
-  <source srcset="../../srt/zbior_zadan/2022_B4.png" media="(prefers-color-scheme: light)">
-  <source srcset="../../srt/zbior_zadan/black_2022_B4.png" media="(prefers-color-scheme: dark)">
-  <img src="../../srt/zbior_zadan/black_2022_B4.png" alt="zadanie 2022_B4">
-</picture>
+
+![black_Zrzut ekranu 2024-12-6 o 11 18 07](https://github.com/user-attachments/assets/dace54b2-b630-431f-a13d-52133f1359fb)
 
 ```python
-# Brutal force, ale działa – najprościej
-
 
 def wszystkie_szachowane(T):
     """Sprawdza, czy wszystkie pola na szachownicy T są szachowane."""
@@ -50,3 +45,17 @@ def move(T):
                 T[i][j] = True
     return
 ```
+# Opis Rozwiązania
+
+# Wizualizacja algorytmu
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/d2717368-5ad3-42b4-94a6-d5a1232d8dbb" width="400" />
+</div>
+
+> **Wydajność:**
+> Można zauważyć, że jest to nieoptymalne rozwiązanie. Lepszym podejściem byłoby znalezienie 
+> jednego nieszachowanego pola i wstawianie kolejno każdej wieży – jedna z nich na pewno będzie 
+> rozwiązaniem, niezależnie od tego, które nieszachowane pole wybierzemy. 
+> Jednak dla prostoty rozwiązań z kolokwiów zdecydowałem się dodać najprostsze rozwiązanie.
+
