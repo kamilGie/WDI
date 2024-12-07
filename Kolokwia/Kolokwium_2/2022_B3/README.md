@@ -1,8 +1,4 @@
-<picture>
-  <source srcset="../../srt/zbior_zadan/2022_B3.png" media="(prefers-color-scheme: light)">
-  <source srcset="../../srt/zbior_zadan/black_2022_B3.png" media="(prefers-color-scheme: dark)">
-  <img src="../../srt/zbior_zadan/black_2022_B3.png" alt="zadanie 2022_B3">
-</picture>
+![black_Zrzut ekranu 2024-12-6 o 11 18 04](https://github.com/user-attachments/assets/76d72d65-7a41-4ab7-b668-5ec346a1d5c0)
 
 ```python
 from math import inf
