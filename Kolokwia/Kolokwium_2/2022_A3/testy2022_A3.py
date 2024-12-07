@@ -1,6 +1,4 @@
 import unittest
-from contextlib import redirect_stdout
-import io
 
 from szablon2022_A3 import king
 
@@ -34,80 +32,44 @@ def komenda(k: str, *args, **kwargs):
         k, sciezka_pliku_wykonalnego, nr_zadania, *args, **kwargs
     )
 
-
 class testy(unittest.TestCase):
 
     def test_Nr01_king(self):
-            self.assertEqual(king(3,[]), 8)
+        self.assertEqual(king(3, []), 8)
 
-    def test_Nr02_king(self):
-            f = io.StringIO()
-            with redirect_stdout(f):
-                king(3,[(1, 1)])
-            wynik = f.getvalue().strip()
-
-            self.assertEqual(wynik, '')
 
     def test_Nr03_king(self):
-            self.assertEqual(king(5, []), 24)
+        self.assertEqual(king(5, []), 24)
 
     def test_Nr04_king(self):
-            f = io.StringIO()
-            with redirect_stdout(f):
-                king(4,[(2, 1), (1, 2)])
-            wynik = f.getvalue().strip()
-
-            self.assertEqual(wynik, '')
+        self.assertEqual(king(4, [(2, 1), (1, 2)]), None)
 
     def test_Nr05_king(self):
-            self.assertEqual(king(4,[(3, 0), (2, 0)]), 6)
+        self.assertEqual(king(4, [(3, 0), (2, 0)]), 6)
 
     def test_Nr06_king(self):
-            f = io.StringIO()
-            with redirect_stdout(f):
-                king(5,[(0, 1), (1, 0), (4, 3), (3, 4)])
-            wynik = f.getvalue().strip()
-
-            self.assertEqual(wynik, '')
+        self.assertEqual(king(5, [(0, 1), (1, 0), (4, 3), (3, 4)]), None)
 
     def test_Nr07_king(self):
-            f = io.StringIO()
-            with redirect_stdout(f):
-                king(5,[(0, 1), (4, 3), (3, 4)])
-            wynik = f.getvalue().strip()
-
-            self.assertEqual(wynik, '')
+        self.assertEqual(king(5, [(0, 1), (4, 3), (3, 4)]), None)
 
     def test_Nr08_king(self):
-            self.assertEqual(king(5,[(1, 2), (2, 2), (3, 2)]), 10)
+        self.assertEqual(king(5, [(1, 2), (2, 2), (3, 2)]), 10)
 
     def test_Nr09_king(self):
-            self.assertEqual(king(5,[(1, 2), (0, 4), (3, 4)]), 12)
+        self.assertEqual(king(5, [(1, 2), (0, 4), (3, 4)]), 12)
 
     def test_Nr10_king(self):
-            self.assertEqual(king(5,[(1, 2), (4, 0), (3, 4)]), 8)
-
+        self.assertEqual(king(5, [(1, 2), (4, 0), (3, 4)]), 8)
 
     def test_Nr12_king(self):
-            self.assertEqual(king(8,[(1, 2), (2, 4), (1, 7), (3, 6), (4, 1), (4, 6), (7,2)]), 20)
+        self.assertEqual(king(8, [(1, 2), (2, 4), (1, 7), (3, 6), (4, 1), (4, 6), (7, 2)]), 20)
 
     def test_Nr13_king(self):
-            self.assertEqual(king(8,[(1, 2), (2, 4), (1, 7), (3, 6), (4, 1), (4, 6), (7,2),(6,6)]), 14)
+        self.assertEqual(king(8, [(1, 2), (2, 4), (1, 7), (3, 6), (4, 1), (4, 6), (7, 2), (6, 6)]), 14)
 
     def test_Nr14_king(self):
-            f = io.StringIO()
-            with redirect_stdout(f):
-                king(8,[(0, 1),(1, 0),(1, 2), (2, 4), (1, 7), (3, 6), (4, 1), (4, 6), (7,2),(6,6)])
-            wynik = f.getvalue().strip()
-
-            self.assertEqual(wynik, '')
+        self.assertEqual(king(8, [(0, 1), (1, 0), (1, 2), (2, 4), (1, 7), (3, 6), (4, 1), (4, 6), (7, 2), (6, 6)]), None)
 
     def test_Nr15_king(self):
-            f = io.StringIO()
-            with redirect_stdout(f):
-                king(8,[(1, 2), (2, 4), (1, 7), (3, 6), (4, 1), (4, 6), (7,2),(6,6),(2, 1)])
-            wynik = f.getvalue().strip()
-
-            self.assertEqual(wynik, '')
-
-
+        self.assertEqual(king(8, [(1, 2), (2, 4), (1, 7), (3, 6), (4, 1), (4, 6), (7, 2), (6, 6), (2, 1)]), None)

@@ -9,12 +9,18 @@
 # jest możliwe funkcja powinna zwrócić wartość None.
 #  ====================================================================================================>
 
+from math import inf
 
-def Zadanie_B3(): ...
 
+def rook(N, L):
+    def ruch(x, y, prev_move=None):
+        if not (0 <= x < N and 0 <= y < N) or (x, y) in L:
+            return inf
+        if (x, y) == (N - 1, N - 1):
+            return 0
+        return min(
+            ruch(x, y + 1, "p") + (prev_move != "p"),
+            ruch(x + 1, y, "d") + (prev_move != "d"),
+        )
 
-if __name__ == "__main__":
-    from Develop import stworz_zadanie
-
-    Zadanie_B3()
-    # stworz_zadanie([Zadanie_B3])
+    return None if (res := ruch(0, 0)) == inf else res

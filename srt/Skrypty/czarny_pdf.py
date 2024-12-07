@@ -52,7 +52,7 @@ def apply_custom_color_mapping(
 
 
 # Użycie
-inputOutput_folder = "../zbior_zadan/zestawy/"
+inputOutput_folder = "../../../../kolosy/"
 apply_custom_color_mapping(
     inputOutput_folder,
     inputOutput_folder,
