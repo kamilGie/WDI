@@ -1,8 +1,5 @@
-<picture>
-  <source srcset="../../srt/zbior_zadan/2022_A4.png" media="(prefers-color-scheme: light)">
-  <source srcset="../../srt/zbior_zadan/black_2022_A4.png" media="(prefers-color-scheme: dark)">
-  <img src="../../srt/zbior_zadan/black_2022_A4.png" alt="zadanie 2022_A4">
-</picture>
+
+![black_Zrzut ekranu 2024-12-6 o 11 18 01](https://github.com/user-attachments/assets/309f6b19-c811-4906-ad4b-8f810fd81857)
 
 ```python
 def place(T):
@@ -56,3 +53,17 @@ def place(T):
 
     return best_position
 ```
+
+# Opis Rozwiązania
+
+# Wizualizacja algorytmu
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/6ca02f8f-42f9-427e-95f8-06c7cbd3e0d2" width="400" />
+</div>
+
+
+program dostepny w rozwiązaniach 
+-`r` resetue plansze
+-`spacja` zaczyna wyszukiwanie
+
