@@ -3,12 +3,13 @@ import os
 
 
 def zmien_testy(
+    funkcje,
     sciezka,
     nr_zadania,
-    funkcje,
-    testy="domyslna",
-    rozwiazanie="domyslna",
-    szablon="domyslna",
+    testy="domyslne_t",
+    rozwiazanie="domyslne_r",
+    szablon="domyslne_s",
+    README="domyslne_rm",
 ):
     """
     Zeby nie modyfikowac funkcji stworz_zadanie to zmien test tworzy nowy plik na bazie
@@ -38,4 +39,5 @@ def zmien_testy(
         testy=testy,
         rozwiazanie=rozwiazanie,
         szablon=szablon,
+        README=README,
     )
