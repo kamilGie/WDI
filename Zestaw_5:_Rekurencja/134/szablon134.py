@@ -13,6 +13,6 @@ def Zadanie_134(t): ...
 if __name__ == "__main__":
     from testy134 import odpal_testy
 
-    Zadanie_134(int(input('Podaj t: ')))
+    Zadanie_134(list(input('Podaj t: ')))
 
     # odpal_testy()

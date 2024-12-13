@@ -8,15 +8,22 @@
 
 
 def waga(n):
-    suma = 0
-    k = 2
-    while n > 1 and k < n // 2:
-        if n % k == 0:
-            suma += 1
-            while n % k == 0:
-                n //= k
-        k += 1
-    return suma
+    if n < 2:
+        return 0
+    else:
+        suma = 0
+        k = 2
+        n_copy = n
+        while k < n_copy // 2 + 1:
+            if n % k == 0:
+                suma += 1
+                while n % k == 0:
+                    n //= k
+            k += 1
+        if suma > 0:
+            return suma
+        else:
+            return 1
 
 
 def podzial(t, n1=0, n2=0, n3=0, i=0):

@@ -28,9 +28,9 @@ def podzial(t, n1=0, n2=0, n3=0, i=0):
     if i == len(t):
         return n1 == n2 and n2 == n3
     return (
-        (t, n1 + t[i], n2, n3, i + 1)
-        or (t, n1, n2 + t[i], n3, i + 1)
-        or (t, n1, n2, n3 + t[i], i + 1)
+        podzial(t, n1 + t[i], n2, n3, i + 1)
+        or podzial(t, n1, n2 + t[i], n3, i + 1)
+        or podzial(t, n1, n2, n3 + t[i], i + 1)
     )
 
 
