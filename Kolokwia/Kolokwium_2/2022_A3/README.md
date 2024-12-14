@@ -8,7 +8,7 @@ from math import inf
 def maximize_moves(x, y, forbidden, N, prev_move=None):
     """Zwroci maxymalna ilosci ruchow do konca lub -inf jak sie nie da dotrzec do konca"""
     # Sprawdzam czy jestem na legalnej pozycji
-    if (x, y) in forbidden:  # bite pole
+    if (x, y) in forbidden:  # Zajęte
         return -inf
     if not (0 <= x < N and 0 <= y < N):  # za granicami szachownicy
         return -inf
@@ -29,14 +29,7 @@ def maximize_moves(x, y, forbidden, N, prev_move=None):
 
 
 def king(N, L):
-    # dodaje nie legalne ruchy czyli pozycje pionkow wraz z ich atakami
-    forbidden = set()
-    for px, py in L:
-        forbidden.add((px, py))
-        forbidden.add((px - 1, py - 1))
-        forbidden.add((px - 1, py + 1))
-
-    result = maximize_moves(0, 0, forbidden, N)
+    result = maximize_moves(0, 0, L, N)
     return None if result == -inf else result
 ```
 
@@ -46,8 +39,11 @@ def king(N, L):
 
 Ważne jest zauważenie że król cofnie się tylko wtedy, gdy po ruchu w górę wykona ruch w dół i odwrotnie.
 
+
+
+
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/be3b9445-ec0f-4738-877d-490f7df156df" width="400" />
+  <video src="https://github.com/user-attachments/assets/f49087cf-ea73-43d7-8f5f-f70232691ab6" width="400" />
 </div>
 
 Program w rozwiazaniach 

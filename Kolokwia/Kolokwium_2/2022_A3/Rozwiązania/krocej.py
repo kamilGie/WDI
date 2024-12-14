@@ -11,10 +11,8 @@
 from math import inf
 
 def king(N, L):
-    forbidden = {p for p in L} | {(px - 1, py - 1) for px, py in L} | {(px - 1, py + 1) for px, py in L}
-
     def maximize_moves(x, y, prev_move=None):
-        if not (0 <= x < N and 0 <= y < N) or (x, y) in forbidden:
+        if not (0 <= x < N and 0 <= y < N) or (x, y) in L:
             return -inf # nie legalny ruch
 
         if (x, y) == (N - 1, N - 1): # meta
