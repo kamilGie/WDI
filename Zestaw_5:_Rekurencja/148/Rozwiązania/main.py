@@ -1,10 +1,11 @@
-<picture>
-  <source srcset="../../srt/zbior_zadan/148.png" media="(prefers-color-scheme: light)">
-  <source srcset="../../srt/zbior_zadan/black_148.png" media="(prefers-color-scheme: dark)">
-  <img src="../../srt/zbior_zadan/black_148.png" alt="zadanie 148">
-</picture>
+# ====================================================================================================>
+# Zadanie 148
+# Problem 8 hetmanów
+# ====================================================================================================>
+# Problem polega na znalezieniu liczby możliwych ustawień 8 hetmanów na szachownicy 8x8 w taki sposób,
+# aby żadne dwa hetmany nie atakowały się nawzajem.
+# Przykładowe rozwiązanie to ustawienie hetmanów wzdłuż głównej przekątnej szachownicy.
 
-```python
 
 def hetmany():
     def rek(K, i):
@@ -28,4 +29,5 @@ def hetmany():
         return wynik
 
     return rek([0] * 8, 0)  # Tablica K przechowuje kolumny, w których są hetmany
-```
+
+
