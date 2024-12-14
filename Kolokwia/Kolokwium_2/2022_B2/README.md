@@ -1,8 +1,5 @@
-<picture>
-  <source srcset="../../srt/zbior_zadan/2022_B2.png" media="(prefers-color-scheme: light)">
-  <source srcset="../../srt/zbior_zadan/black_2022_B2.png" media="(prefers-color-scheme: dark)">
-  <img src="../../srt/zbior_zadan/black_2022_B2.png" alt="zadanie 2022_B2">
-</picture>
+
+![black_Zrzut ekranu 2024-12-14 o 22 13 21](https://github.com/user-attachments/assets/0d441cc8-2376-4fdd-993e-2cac506e9abb)
 
 ```python
 def dwa_rozne_czyniki(iloczyn):
