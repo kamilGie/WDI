@@ -15,6 +15,6 @@ def king(N, L): ...
 if __name__ == "__main__":
     from testy2022_A3 import odpal_testy
 
-    king(4, [(3, 0), (2, 0)])  # -> return 6
+    king(4, [(3, 0), (2, 0)])  # -> return 12
 
     # odpal_testy()
