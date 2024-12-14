@@ -1,10 +1,13 @@
-<picture>
-  <source srcset="../../srt/zbior_zadan/117.png" media="(prefers-color-scheme: light)">
-  <source srcset="../../srt/zbior_zadan/black_117.png" media="(prefers-color-scheme: dark)">
-  <img src="../../srt/zbior_zadan/black_117.png" alt="zadanie 117">
-</picture>
+# ====================================================================================================>
+# Zadanie 117
+# W tablicy o rozmiarze NxN wypełnionej liczbami naturalnymi umieszczono dokładnie jeden
+# fragment ciągu Fiboacciego o długości co najmniej 3 elementów. Ciąg ten może leżeć w tablicy pionowo lub
+# poziomo w kierunku rosnącym lub malejącym. Proszę napisać funkcje, która dla zadanej tablicy od szuka ten
+# fragment i zwróci jego długość.
+# ====================================================================================================>
 
-```python
+# rozwiazanie zaklada ze umieszczono `DOKLADNIE JEDEN` fragment
+
 
 def czy_podciag_fibo(n1, n2, n3):
     """sprawdzi czy 3 elementy sa nastepnymi elemetami ciagu fibo"""
@@ -55,22 +58,5 @@ def Zadanie_117(T):
         kolumna_odwrotnie = Podciag_fibo(transpozycja_T[i][::-1])
         if kolumna_odwrotnie > 2:
             return kolumna_odwrotnie
-```
-### Opis Rozwiązania
 
-Rozwiązanie zakłada, że w tablicy umieszczono *dokładnie jeden* fragment ciągu Fibonacciego.
 
-Jest to imo najprostsze podejście, jakie można zastosować.
-
-Możliwe jest jednak ulepszenie tego rozwiązania, na przykład poprzez dodanie dodatkowych warunków w funkcji `czy_podciag_fibo`. Można by sprawdzać właściwości kwadratowe ciągu Fibonacciego, takie jak:
-
-```math
-5n^2 + 4 \quad \text{lub} \quad 5n^2 - 4
-```
-https://stackoverflow.com/questions/2432669/test-if-a-number-is-a-fibonacci-number
-
-czy jakieś prostsze c > a itp
-
-Alternatywnie, można opracować bardziej optymalne podejście, które przekształca tablicę na indeksy ciągu Fibonacciego i sprawdza, czy któryś wiersz lub kolumna rośnie albo maleje.
-
-# Jednak takie rozwiązanie nie byłoby tak przejrzyste i proste jak obecne.
