@@ -56,21 +56,22 @@ def Zadanie_117(T):
         if kolumna_odwrotnie > 2:
             return kolumna_odwrotnie
 ```
-### Opis Rozwiązania
+# Opis Rozwiązania
 
 Rozwiązanie zakłada, że w tablicy umieszczono *dokładnie jeden* fragment ciągu Fibonacciego.
 
 Jest to imo najprostsze podejście, jakie można zastosować.
 
-Możliwe jest jednak ulepszenie tego rozwiązania, na przykład poprzez dodanie dodatkowych warunków w funkcji `czy_podciag_fibo`. Można by sprawdzać właściwości kwadratowe ciągu Fibonacciego, takie jak:
-
+Możliwe jest jednak ulepszenie tego rozwiązania, na przykład poprzez dodanie dodatkowych warunków w funkcji `czy_podciag_fibo`.
+- operacje typu `n3 > n1`
+- [właściwości kwadratowe ciągu Fibonacciego](https://stackoverflow.com/questions/2432669/test-if-a-number-is-a-fibonacci-number):
 ```math
 5n^2 + 4 \quad \text{lub} \quad 5n^2 - 4
 ```
-https://stackoverflow.com/questions/2432669/test-if-a-number-is-a-fibonacci-number
 
-czy jakieś prostsze c > a itp
+
+---
 
 Alternatywnie, można opracować bardziej optymalne podejście, które przekształca tablicę na indeksy ciągu Fibonacciego i sprawdza, czy któryś wiersz lub kolumna rośnie albo maleje.
 
-# Jednak takie rozwiązanie nie byłoby tak przejrzyste i proste jak obecne.
+###  Jednak takie rozwiązanie nie byłoby tak przejrzyste i proste jak obecne.
