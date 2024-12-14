@@ -39,8 +39,11 @@ def king(N, L):
 
 Ważne jest zauważenie że król cofnie się tylko wtedy, gdy po ruchu w górę wykona ruch w dół i odwrotnie.
 
+
+
+
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/be3b9445-ec0f-4738-877d-490f7df156df" width="400" />
+  <video src="https://github.com/user-attachments/assets/f49087cf-ea73-43d7-8f5f-f70232691ab6" width="400" />
 </div>
 
 Program w rozwiazaniach 
