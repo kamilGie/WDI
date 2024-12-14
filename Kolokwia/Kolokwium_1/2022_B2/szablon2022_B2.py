@@ -6,13 +6,15 @@
 # Funkcja powinna zwrócić rozmiar (bok) znalezionego kwadratu.
 # Jeżeli kwadrat taki nie istnieje funkcja powinna zwrócić wartość 0
 #  ====================================================================================================>
+# przyjmuje ze bok to conjamniej 2
 
 
-def Zadanie_B2(): ...
+def square(T): ...
 
 
 if __name__ == "__main__":
-    from Develop import stworz_zadanie
+    from testy2022_B2 import odpal_testy
 
-    Zadanie_B2()
-    # stworz_zadanie([Zadanie_B2])
+    square(int(input('Podaj T: ')))
+
+    # odpal_testy()
