@@ -29,3 +29,14 @@ def hetmany():
 
     return rek([0] * 8, 0)  # Tablica K przechowuje kolumny, w których są hetmany
 ```
+# Opis Rozwiązania 
+
+Szukamy ustawienia 8 hetmanów tak, aby żaden z nich nie atakował innego, wykorzystując rekurencję, i zwracamy liczbę takich ustawień.
+
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/52ea29fa-d361-4962-b845-6e73047e5803" width="400" />
+</div>
+
+
+
+Program wizu w `Rozwiązania`
