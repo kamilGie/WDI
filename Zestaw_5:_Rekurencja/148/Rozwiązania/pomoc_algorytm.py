@@ -73,7 +73,7 @@ def main():
     pygame.init()
     board_size = 600
     screen = pygame.display.set_mode((board_size, board_size))
-    pygame.display.set_caption("github.com/kamilGie/ASRT-WD")
+    pygame.display.set_caption("github.com/kamilGie/ASRT-WDI")
 
     board = [-1] * 8
     current_row, current_col = 0, 0
