@@ -1,3 +1,5 @@
+![black_Zrzut ekranu 2024-12-14 o 19 23 21](https://github.com/user-attachments/assets/16ebbddb-8d45-4b1f-83d3-f8c020a726d3)
+
 ```python 
 # sprawdza, czy tablica składa się z samych jedynek
 def allOnes(a):
