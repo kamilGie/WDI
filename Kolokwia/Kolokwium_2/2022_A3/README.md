@@ -39,13 +39,9 @@ def king(N, L):
 # Opis Rozwiązania
 **interaktywny Algorytm** klikni aby uzyć:
 
-<a href="https://gieras.pl/asrt/wdi/2022a3" target="_blank" rel="noopener noreferrer">
-  <img 
-    width="1511" 
-    alt="Zrzut ekranu 2024-12-15 o 20 47 52" 
-    src="https://github.com/user-attachments/assets/e3804eb4-a103-40eb-8f67-a0b01250e2f3"
-  />
-</a>
+[![Kliknij tutaj](https://github.com/user-attachments/assets/e3804eb4-a103-40eb-8f67-a0b01250e2f3)](https://gieras.pl/asrt/wdi/2022a3)
+
+
 Ważne jest zauważenie że król cofnie się tylko wtedy, gdy po ruchu w górę wykona ruch w dół i odwrotnie.
 
 
