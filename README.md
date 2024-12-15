@@ -17,8 +17,8 @@ Wypełnij plik `szablon.py` i uruchom go, odkomentowując funkcję `odpal_testy(
 https://github.com/user-attachments/assets/ad6d166e-bda7-4eca-a8cc-86d984913e0f
 
 ### 🌐 Wizualizacje Rozwiązań
-
 Niektóre zadania zawierają wizualne wyjaśnienia algorytmów, które są hostowane w chmurze na stronie internetowej lub zrealizowane w Pygame, na przykład [Kolokwium 2022 A3](https://github.com/kamilGie/ASRT-WDI/tree/main/Kolokwia/Kolokwium_2/2022_A3), [160](https://github.com/kamilGie/ASRT-WDI/tree/main/Zestaw_5%3A_Rekurencja/160) czy [148](https://github.com/kamilGie/ASRT-WDI/tree/main/Zestaw_5%3A_Rekurencja/148) 
+
 
 ### 🌑 Czarny Motyw Zestawu
 Każdy zestaw oraz każde zadanie zawiera plik `README` z opisem zadań. Jeśli masz ustawiony czarny motyw na GitHubie, zestaw ten będzie wyświetlany w ciemnej wersji.
@@ -26,6 +26,7 @@ Każdy zestaw oraz każde zadanie zawiera plik `README` z opisem zadań. Jeśli 
 
 ### 🐛 Zgłaszanie Błędów
 Błędy w rozwiązaniach, testach lub treściach zgłaszaj na <a href="https://github.com/kamilgie/ASRT-WDI/issues/new?labels=bug">****Issues****</a> lub <a href="https://gieras.pl/">****prywatnie****</a>.
+
 
 ### 🧱 Prototypy
 Nierozwiązane zadania znajdują się w plikach `prototyp.py` i czekają na rozwiązanie. Po rozwiązaniu zadania można stworzyć pełne zadanie, automatycznie generując wszystkie pliki.
