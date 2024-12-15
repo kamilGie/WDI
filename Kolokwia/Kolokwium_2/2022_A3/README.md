@@ -38,7 +38,7 @@ def king(N, L):
     
 # Opis Rozwiązania
     
-### Kliknij w gif, aby samodzielnie przetestować!
+### Kliknij w gif, aby samodzielnie przetestować algorytm
 
 <div align="center">
 <a href="https://gieras.pl/asrt/wdi/2022a3">
