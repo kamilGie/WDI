@@ -33,23 +33,17 @@ def king(N, L):
     return None if result == -inf else result
 ```
 
-# Opis Rozwiazania
-### Wizualizacja rozwiązania
+
+
+    
+# Opis Rozwiązania
+**interaktywny Algorytm** klikni aby uzyć:
+
+[![Kliknij tutaj](https://github.com/user-attachments/assets/e3804eb4-a103-40eb-8f67-a0b01250e2f3)](https://gieras.pl/asrt/wdi/2022a3)
 
 
 Ważne jest zauważenie że król cofnie się tylko wtedy, gdy po ruchu w górę wykona ruch w dół i odwrotnie.
 
 
-
-
-<div align="center">
-  <video src="https://github.com/user-attachments/assets/f49087cf-ea73-43d7-8f5f-f70232691ab6" width="400" />
-</div>
-
-Program w rozwiazaniach 
-- `r`  resetuje pozycję króla do startowej.
--  `spacja` rozpoczyna animację ruchu króla wzdłuż wyznaczonej ścieżki, jeśli istnieje.
-
-jest miejsce na wpisanie swojej funkcji `king` by porownywala
 
 
