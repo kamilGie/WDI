@@ -87,8 +87,6 @@ class testy(unittest.TestCase):
 
         oczekiwany_wynik = [(5, 7)]
         self.assertIn(wynik, oczekiwany_wynik)
-        oczekiwany_wynik = [(3, 4)]
-        self.assertIn(wynik, oczekiwany_wynik)
 
     def test_Nr31_sudoku_argumenty_tablica(self):
         wynik = sudoku(

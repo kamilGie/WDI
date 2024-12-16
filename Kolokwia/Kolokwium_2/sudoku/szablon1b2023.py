@@ -37,6 +37,7 @@ if __name__ == "__main__":
         [4, 3, 8, 5, 2, 6, 8, 4, 5],
         [7, 9, 6, 3, 1, 8, 1, 6, 9],
     ]
-    # sudoku(data)
+
+    sudoku(data)
 
     # odpal_testy()

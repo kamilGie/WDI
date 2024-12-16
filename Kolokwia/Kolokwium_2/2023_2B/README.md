@@ -36,13 +36,20 @@ def c(n):
 
 def cycle(x, n):
     def rek(l, i):
-        if l == x:
+        if l == x and i < n:
             return n - i  # powrocila
         if i == 0:
             return 0
+        # zwracam max dlugosci łańcucha jesli nie bedzie zadnego to max zwróci 0
         return max(rek(a(l), i - 1), rek(b(l), i - 1), rek(c(l), i - 1))
 
-    # zwracam max dlugosci łańcucha jesli nie bedzie zadnego to max zwróci 0
-    return max(rek(a(x), n - 1), rek(b(x), n - 1), rek(c(x), n - 1))
+    return rek(x, n)
 
+
+if __name__ == "__main__":
+    from testy2023_2B import odpal_testy, komenda
+
+    # cycle(int(input("Podaj x: ")), int(input("Podaj n: ")))
+
+    odpal_testy()
 ```

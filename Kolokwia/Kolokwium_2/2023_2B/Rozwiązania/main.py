@@ -14,7 +14,6 @@
 # cycle(29,6) powinno zwrócić 4 (cykl 29, B, 55, B, 89, C, 187, A, 29), [przykład jest błędny, 𝐵(29) = 34]
 # cycle(31,6) powinno zwrócić 0.
 # ====================================================================================================>
-# Autor rozwiązania Kamil Gieras
 # Uwaga: Przykład podany w zadaniu jest błędny: B(29) --> 34, nie 55
 
 from math import isqrt
@@ -51,11 +50,11 @@ def c(n):
 
 def cycle(x, n):
     def rek(l, i):
-        if l == x:
+        if l == x and i < n:
             return n - i  # powrocila
         if i == 0:
             return 0
+        # zwracam max dlugosci łańcucha jesli nie bedzie zadnego to max zwróci 0
         return max(rek(a(l), i - 1), rek(b(l), i - 1), rek(c(l), i - 1))
 
-    # zwracam max dlugosci łańcucha jesli nie bedzie zadnego to max zwróci 0
-    return max(rek(a(x), n - 1), rek(b(x), n - 1), rek(c(x), n - 1))
+    return rek(x, n)
