@@ -5,6 +5,7 @@
 </picture>
 
 ```python
+# takie cos napisalem w zaleznosci jak zostanie ocenione jeszcze bede to zmienial
 from math import isqrt
 
 
