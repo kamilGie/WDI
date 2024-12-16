@@ -5,6 +5,8 @@
 </picture>
 
 ```python
+# takie cos napisalem w zaleznosci jak zostanie ocenione jeszcze bede to zmienial
+
 def cyfry_piatkowe(x):
     """Zwraca zbiór cyfr liczby x w systemie o podstawie 5."""
     res = set()
