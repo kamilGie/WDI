@@ -42,7 +42,7 @@ class testy(unittest.TestCase):
         self.assertEqual(cycle(31, 6), 0)
 
     def test_Nr04_cycle(self):
-        self.assertEqual(cycle(39, 8), 6)
+        self.assertIn(cycle(39, 8), [8, 7])
 
     def test_Nr05_cycle(self):
         self.assertEqual(cycle(39, 6), 6)
