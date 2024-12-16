@@ -22,6 +22,9 @@ from math import isqrt
 
 def a(n):
     res = 1
+    if n == 1:
+        return res
+        
     for i in range(2, isqrt(n)):
         if n % i == 0:
             res += i
